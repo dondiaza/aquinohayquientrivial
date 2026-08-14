@@ -9,7 +9,13 @@
  *
  *   1. se amplía la ventana de dificultad,
  *   2. se ignora la categoría,
- *   3. se ignoran los tipos permitidos.
+ *   3. se ignoran los tipos permitidos,
+ *   4. se admite repetir el HECHO (no la pregunta) preguntado de otra forma.
+ *
+ * Dos filtros NUNCA se relajan, porque son promesas al jugador y no preferencias:
+ *
+ *   · `excludeIds` — una pregunta no se repite dentro de la misma partida;
+ *   · `sinSpoilers` — si el jugador ha pedido no destriparse la serie, no se le destripa.
  *
  * Solo devuelve `undefined` cuando el pool está realmente agotado.
  */
@@ -23,6 +29,14 @@ export type SelectionCriteria = {
   allowedTypes?: readonly QuestionType[];
   category?: CategorySelection;
   excludeIds?: ReadonlySet<string>;
+  /**
+   * Huellas de hechos ya preguntados. El pack trae el mismo dato en tres formas
+   * (escrita, opción múltiple y verdadero/falso): esto evita que salgan dos en la misma
+   * partida, que es la sensación de «esta ya me la has preguntado».
+   */
+  excludeFactKeys?: ReadonlySet<string>;
+  /** true = fuera las preguntas marcadas como destripe grave. */
+  sinSpoilers?: boolean;
   /** Ventana de dificultad aceptable alrededor del objetivo. */
   difficultyWindow?: number;
   /** Cuántos candidatos entran en el sorteo ponderado. */
@@ -32,7 +46,7 @@ export type SelectionCriteria = {
 export type SelectionResult = {
   question: Question;
   /** Qué filtros hubo que relajar para encontrarla. */
-  relaxed: ('difficulty' | 'category' | 'type')[];
+  relaxed: ('difficulty' | 'category' | 'type' | 'fact')[];
   /** Distancia entre la dificultad de la pregunta y la objetivo. */
   distance: number;
 };
@@ -43,7 +57,7 @@ export const SELECTION_DEFAULTS = {
 } as const;
 
 function isPlayable(question: Question): boolean {
-  return question.status === 'ACTIVE';
+  return question.status === 'ACTIVE' && question.needsReview !== true;
 }
 
 function matchesCategory(question: Question, category: CategorySelection | undefined): boolean {
@@ -59,14 +73,17 @@ function matchesType(question: Question, allowedTypes: readonly QuestionType[] |
 export function eligibleQuestions(
   pool: readonly Question[],
   criteria: SelectionCriteria,
-  ignore: { difficulty?: boolean; category?: boolean; type?: boolean } = {},
+  ignore: { difficulty?: boolean; category?: boolean; type?: boolean; fact?: boolean } = {},
 ): Question[] {
   const window = criteria.difficultyWindow ?? SELECTION_DEFAULTS.difficultyWindow;
   const exclude = criteria.excludeIds;
+  const huellas = criteria.excludeFactKeys;
 
   return pool.filter((question) => {
     if (!isPlayable(question)) return false;
     if (exclude?.has(question.id)) return false;
+    if (criteria.sinSpoilers && question.spoiler === 'major') return false;
+    if (!ignore.fact && question.factKey && huellas?.has(question.factKey)) return false;
     if (!ignore.type && !matchesType(question, criteria.allowedTypes)) return false;
     if (!ignore.category && !matchesCategory(question, criteria.category)) return false;
     if (!ignore.difficulty && Math.abs(question.difficulty - criteria.targetDifficulty) > window) {
@@ -82,11 +99,18 @@ export function selectQuestion(
   criteria: SelectionCriteria,
   rng: Rng,
 ): SelectionResult | undefined {
-  const attempts: { ignore: { difficulty?: boolean; category?: boolean; type?: boolean }; relaxed: SelectionResult['relaxed'] }[] = [
+  const attempts: {
+    ignore: { difficulty?: boolean; category?: boolean; type?: boolean; fact?: boolean };
+    relaxed: SelectionResult['relaxed'];
+  }[] = [
     { ignore: {}, relaxed: [] },
     { ignore: { difficulty: true }, relaxed: ['difficulty'] },
     { ignore: { difficulty: true, category: true }, relaxed: ['difficulty', 'category'] },
     { ignore: { difficulty: true, category: true, type: true }, relaxed: ['difficulty', 'category', 'type'] },
+    {
+      ignore: { difficulty: true, category: true, type: true, fact: true },
+      relaxed: ['difficulty', 'category', 'type', 'fact'],
+    },
   ];
 
   for (const attempt of attempts) {
@@ -128,14 +152,30 @@ export function selectQuestions(
   rng: Rng,
 ): Question[] {
   const used = new Set(criteria.excludeIds ?? []);
+  const huellas = new Set(criteria.excludeFactKeys ?? []);
   const result: Question[] = [];
 
   for (let index = 0; index < criteria.count; index += 1) {
-    const selection = selectQuestion(pool, { ...criteria, excludeIds: used }, rng);
+    const selection = selectQuestion(
+      pool,
+      { ...criteria, excludeIds: used, excludeFactKeys: huellas },
+      rng,
+    );
     if (!selection) break;
     used.add(selection.question.id);
+    if (selection.question.factKey) huellas.add(selection.question.factKey);
     result.push(selection.question);
   }
 
   return result;
+}
+
+/** Huellas de hecho de las preguntas ya usadas. Lo necesita el motor en cada selección. */
+export function factKeysOf(pool: readonly Question[], usedIds: readonly string[]): Set<string> {
+  const usados = new Set(usedIds);
+  const huellas = new Set<string>();
+  for (const question of pool) {
+    if (usados.has(question.id) && question.factKey) huellas.add(question.factKey);
+  }
+  return huellas;
 }

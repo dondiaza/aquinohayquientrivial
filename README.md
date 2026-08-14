@@ -1,21 +1,31 @@
-# EL TRIVIAL DE LA COMUNIDAD — Fases 1 y 2
+# EL TRIVIAL DE DESENGAÑO 21 — Fases 1, 2 y contenido ANHQV
 
-Trivial / party-game con la personalidad de una comunidad de vecinos española caótica de
-principios de los 2000: junta, derramas, Radio Patio, ascensor averiado y una apuesta
-final.
+Trivial / party-game sobre **AQUÍ NO HAY QUIEN VIVA** (Antena 3, 7 de septiembre de 2003 –
+6 de julio de 2006): el reparto, los pisos, las relaciones, las tramas, la producción, las
+audiencias y las adaptaciones, con la estética de una junta de vecinos de principios de los
+2000.
 
 * **Fase 1 (completa):** arquitectura, motor de juego, contenido, navegación y producto
   funcional en modo solitario.
 * **Fase 2 (completa):** identidad propia. Sistema de diseño «Comunidad», sonido original
-  sintetizado, home cinemática donde el portal ES el menú, 10 familias de prueba,
-  6 comodines con rareza, director de partida, combos, progresión con logros y rangos,
-  reto del día, desafíos con semilla, modo fantasma, ceremonia de resultados y PWA.
+  sintetizado, home cinemática donde el portal ES el menú, comodines con rareza, director
+  de partida, combos, progresión con logros y rangos, reto del día, desafíos con semilla,
+  modo fantasma, ceremonia de resultados y PWA.
+* **Contenido ANHQV (completo):** el pack editorial entero importado y jugable — 958
+  preguntas del pack + 75 derivadas de la biblia, 11 familias de prueba (incluida la de
+  escribir la respuesta), 14 temáticas, modo sin spoilers, 260 pruebas, 48 modos, 120
+  rondas preconstruidas y 174 tarjetas. Ver [docs/CONTENIDO-ANHQV.md](docs/CONTENIDO-ANHQV.md).
 * Fase 3 (pendiente): salas online, WebSockets y móviles como mandos.
 
-> **Identidad propia.** El juego está inspirado en el *género* de comedias de comunidad de
-> vecinos, pero no usa ni imita marcas, logotipos, fotogramas, clips, audios ni fuentes de
-> ninguna serie. Toda la identidad gráfica es original y hecha con CSS; los huecos para
-> assets con derechos son *placeholders* sustituibles. Ver [docs/CONTENIDO-DEMO.md](docs/CONTENIDO-DEMO.md).
+> **Qué es y qué no es.** Este es un juego de aficionados sobre una serie ajena. Las
+> preguntas son **datos sobre la serie** (reparto, pisos, fechas, tramas), con su
+> explicación y su fuente. Lo que NO hay es material con derechos: ni un fotograma, ni un
+> logotipo, ni una tipografía, ni un audio de la serie. Toda la identidad gráfica —fachada,
+> retratos, placas, buzones— es **original**, hecha en SVG y CSS. Los huecos para imágenes
+> con licencia están preparados y documentados en
+> [public/serie/LEEME.md](public/serie/LEEME.md): quien tenga los derechos copia los
+> ficheros y la web los usa sin tocar código. Sin relación ni afiliación con Antena 3,
+> Atresmedia ni la productora.
 
 ---
 
@@ -31,7 +41,7 @@ cp .env.example .env          # en Windows: copy .env.example .env
 # Terminal 1 — base de datos local (déjala abierta)
 npm run db:up
 
-# Terminal 2 — migraciones + cliente Prisma + banco de preguntas demo
+# Terminal 2 — migraciones + cliente Prisma + banco de preguntas de la serie
 npm run setup
 
 # Terminal 2 — a jugar
@@ -51,7 +61,7 @@ Si prefieres tu propio PostgreSQL, olvida `db:up` y apunta `DATABASE_URL` a tu s
 | `npm run dev` | Servidor de desarrollo en el puerto 3210 |
 | `npm run build` | `prisma generate` + build de producción |
 | `npm start` | Servidor de producción |
-| `npm test` | Tests de dominio con Vitest (170 tests) |
+| `npm test` | Tests de dominio y de contenido con Vitest (200 tests) |
 | `npm run test:watch` | Vitest en modo watch |
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run lint` | ESLint (flat config + typescript-eslint + react-hooks) |
@@ -59,7 +69,7 @@ Si prefieres tu propio PostgreSQL, olvida `db:up` y apunta `DATABASE_URL` a tu s
 | `npm run db:up` | PostgreSQL local embebido (primer plano) |
 | `npm run setup` | `migrate deploy` + `generate` + `seed` |
 | `npm run db:migrate` | Nueva migración en desarrollo |
-| `npm run db:seed` | Siembra/actualiza el banco demo (idempotente) |
+| `npm run db:seed` | Siembra/actualiza el banco de la serie (idempotente; archiva lo que ya no está) |
 | `npm run db:reset` | Borra y recrea la base de datos |
 
 ---
@@ -114,7 +124,11 @@ src/
 │  ├─ guest.ts                cookie anónima de invitado
 │  └─ admin.ts                puerta del panel
 ├─ lib/                       ← audio sintetizado y sistema de motion
-├─ content/                   ← BANCO DEMO. Constructores + 184 preguntas + "biblia" del portal
+├─ content/                   ← CONTENIDO
+│  ├─ serie.ts                biblia editorial: reparto, zonas, relaciones y temporadas
+│  ├─ imagenes.ts             huecos de imagen (public/serie/) con respaldo de arte propio
+│  ├─ builders.ts             constructores de preguntas validables con Zod
+│  └─ anhqv/                  pack editorial: data/*.json + importador + derivadas + catálogos
 ├─ components/                ← UI. ui/ · portal/ (identidad) · game/ · admin/ · layout/
 └─ app/                       ← RUTAS (App Router)
 ```
@@ -161,7 +175,10 @@ En Fase 3 se invierte el reparto sin tocar el motor ni el modelo de datos.
 | --- | --- |
 | `/` | Portada: qué es el juego y **JUGAR AHORA** (una partida en un clic) |
 | `/jugar` | Selección de modo (solitario jugable; con vecinos, Fase 3) |
-| `/jugar/solo` | Setup: duración, dificultad, temática, adaptativa, nombre |
+| `/jugar/solo` | Setup: duración, dificultad, temática (14), adaptativa, **sin spoilers**, nombre |
+| `/portal` | El edificio planta por planta: quién vive dónde, reparto, temporadas y relaciones |
+| `/pruebas` | Las 260 pruebas y los 48 modos del pack, con filtros y con qué ronda se juega cada una |
+| `/tarjetas` | Las 174 tarjetas de curiosidades, filtrables por categoría |
 | `/partida/[gameId]` | La partida (motor en el cliente) |
 | `/resultados/[gameId]` | Acta de la partida: estadísticas, rango, por rondas y por tipo |
 | `/como-jugar` | Reglas **generadas desde el dominio** (nunca se desactualizan) |
@@ -186,7 +203,7 @@ que el formulario funciona incluso sin JavaScript.
 
 | Modelo | Para qué |
 | --- | --- |
-| `Question` | Banco. Columnas indexadas para filtrar (`type`, `difficulty`, `category`, `status`, `verified`, `season`) + `payload` JSON con lo propio de cada tipo |
+| `Question` | Banco. Columnas indexadas para filtrar (`type`, `difficulty`, `category`, `status`, `verified`, `season`, `spoiler`, `factKey`, `needsReview`) + `payload` JSON con lo propio de cada tipo |
 | `QuestionStat` | Analítica: veces mostrada, respondida, acertada, abandonos, tiempo total, **dificultad estimada** |
 | `GuestPlayer` | Jugador anónimo por cookie. Sin registro |
 | `User` | Hueco para cuentas opcionales (Fase 2/3). No se usa |
@@ -205,16 +222,23 @@ Dos decisiones que conviene conocer:
 
 ## 6. Mecánicas disponibles
 
-**Diez familias de prueba**: elección múltiple · verdadero/falso (Radio Patio) ·
-¿quién es? (pistas progresivas, presentadas en buzones que decides abrir) · el infiltrado ·
-ordena el desastre (arrastrando **o** con flechas, con acierto parcial) · la derrama
-(apuesta) · memoria de vecino (objetos que desaparecen) · ¿qué falta aquí? (composición
-visual con iconos propios) · la junta (decisiones con peso y consecuencia) · portero
-automático (secuencia de timbres).
+**Once familias de prueba**: elección múltiple · verdadero/falso (Radio Patio) ·
+**ficha del vecino (se escribe la respuesta)** · ¿quién es? (pistas progresivas,
+presentadas en buzones que decides abrir) · el infiltrado · ordena el desastre (arrastrando
+**o** con flechas, con acierto parcial) · la derrama (apuesta) · memoria del portal
+(objetos que desaparecen) · ¿qué falta aquí? (composición visual con iconos propios) ·
+la junta (decisiones con peso y consecuencia) · portero automático (secuencia de timbres).
 
-**Rondas con identidad**: calentando la junta, Radio Patio, ¿quién vive aquí?, memoria de
-vecino, ¿qué falta aquí?, la junta, llamada al telefonillo (ultrarrápida), caos en el
-portal, lectura del acta, apagón relámpago, la derrama y presidente por un día. Dos de
+Encima de las once, las **14 familias del pack** (`emparejar`, `doble_pista`,
+`clasificacion`, `ficha_rapida`, `inferencia`, `comparacion`, `cadena_relacional`…) se
+conservan como *presentación*: cambian el rótulo, la instrucción y cómo se parte el
+enunciado (dos lados enfrentados, pistas en fichas…) sin duplicar catorce vistas casi
+idénticas. Catálogo en `domain/questions/variants.ts`.
+
+**Rondas con identidad**: calentando la junta, Radio Patio, ¿quién vive aquí?, **ficha del
+vecino**, memoria del portal, ¿qué falta aquí?, la junta, llamada al telefonillo
+(ultrarrápida), caos en el portal, lectura del acta, apagón relámpago, la derrama y
+presidente por un día. Dos de
 ellas incorporan minijuego: **buzones** (pistas ocultas) y **ascensor** (el progreso sube
 plantas y se para al fallar).
 
@@ -249,8 +273,17 @@ que se desbloquean. **Reto del día** determinista (misma partida para todos, si
 **desafíos con etiqueta compartible** tipo `#21DESENGANO` y **modo fantasma** contra tu
 propio récord.
 
-**Tres formatos** (datos, no código de UI): Express 12 preguntas (~5 min), Normal 28
-(~12-15 min), Maratón 45 (~20-25 min), todos con ronda final de apuesta.
+**Modo sin spoilers**: cada pregunta trae del pack su nivel de destripe
+(`none` / `light` / `major`) y es una columna indexada. Con el modo activado, la selección
+descarta todo lo marcado como destripe grave —muertes, bodas decisivas y final de la
+quinta— y ese filtro **no se relaja nunca**, ni cuando el banco se queda corto.
+
+**Sin repetir el mismo dato**: el pack genera tríos sobre un mismo hecho (escrita, opción
+múltiple y verdadero/falso). Cada pregunta guarda una huella del hecho (`factKey`) y la
+selección evita que dos formas del mismo dato caigan en la misma partida.
+
+**Tres formatos** (datos, no código de UI): Express 12 preguntas (~5 min), Normal 32
+(~13-16 min), Maratón 50 (~21-26 min), todos con ronda final de apuesta.
 
 ---
 
@@ -261,15 +294,28 @@ Todo lo siguiente está ejecutado y en verde en este repositorio:
 ```
 npm run typecheck   ✓ TypeScript estricto, sin `any`
 npm run lint        ✓ 0 problemas
-npm test            ✓ 170 tests en 12 ficheros
-npm run build       ✓ build de producción (21 rutas)
+npm test            ✓ 200 tests en 14 ficheros
+npm run build       ✓ build de producción (24 rutas)
+npm run db:seed     ✓ 1033 preguntas sembradas (950 publicadas, 8 en revisión)
 ```
 
 Los tests cubren: puntuación (tramos de tiempo, topes, parciales, apuesta), rachas e hitos,
 dificultad adaptativa, selección sin repetición y relajación de filtros, comodines
-(compatibilidad e inventario), evaluación de los seis tipos, transiciones de la máquina de
-estados, sucesos y penalizaciones, **partidas completas** (reproducibles, banco agotado,
-abandono), validación de esquemas y del formulario del panel, y contrato de red.
+(compatibilidad e inventario), evaluación de las once familias, tolerancia de las respuestas
+escritas (tildes, artículos, erratas, y que NO cuele otra respuesta), transiciones de la
+máquina de estados, sucesos y penalizaciones, **partidas completas** (reproducibles, banco
+agotado, abandono), validación de esquemas y del formulario del panel, y contrato de red.
+
+Y sobre el contenido real, no sobre fixtures (`src/content/anhqv/banco.test.ts`):
+
+* el pack entero valida con Zod, sin ids perdidos ni repetidos (`Q0001`… siguen siendo suyos);
+* las once familias tienen preguntas jugables y repartidas por dificultad;
+* en las de opciones, la respuesta correcta aparece **exactamente una vez** y no hay opciones repetidas;
+* **ningún enunciado publicado contiene su propia respuesta** (el pack traía siete que sí);
+* se juega una partida completa de cada formato sin repetir pregunta **ni hecho**;
+* con el modo sin spoilers no sale ni una pregunta de destripe grave;
+* el importador es determinista: mismo JSON, mismo banco;
+* las 120 rondas preconstruidas apuntan a preguntas que existen.
 
 Verificación manual hecha con navegador real (Chromium):
 
@@ -307,9 +353,13 @@ El proyecto está listo para Vercel, con dos avisos del terreno conocido del equ
 
 Resumido; el detalle está en [docs/FASES.md](docs/FASES.md).
 
-* **Fase 2** — hecha. Queda pendiente para más adelante: ilustración propia en los
-  `placeholder` de `media`, música (hoy solo hay efectos y ambiente), más minijuegos y
-  cuentas opcionales sobre el modelo `User`.
+* **Fase 2** — hecha. Queda pendiente para más adelante: música (hoy solo hay efectos y
+  ambiente), más minijuegos y cuentas opcionales sobre el modelo `User`.
+* **Contenido** — 8 entradas del pack están marcadas `needsReview` y esperan una pasada
+  humana (el seed las lista por id). Del catálogo de 260 pruebas, 20 familias ya tienen su
+  ronda en el motor; el resto está descrito en `/pruebas` y aún por construir.
+* **Imágenes** — la web está completa con arte propio. Si se consigue licencia, los huecos
+  de `public/serie/` (fachada, 9 zonas y 27 vecinos) se rellenan copiando ficheros.
 * **Fase 3** — salas online, WebSockets, móviles como mandos, equipos. El motor y los
   contratos ya están hechos para eso: reducer puro y determinista, eventos tipados con
   número de secuencia y rutas `/unirse`, `/sala/[code]`, `/host/[code]` reservadas.

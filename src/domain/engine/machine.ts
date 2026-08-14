@@ -57,7 +57,7 @@ import { createRng, shuffle, type Rng } from '../rng';
 import { getGameFormat, type RoundDefinition } from '../rounds/formats';
 import { applyStreak, createStreakState } from '../streaks/streaks';
 import { buildSummary } from '../results/summary';
-import { selectQuestion } from '../selection/select';
+import { factKeysOf, selectQuestion } from '../selection/select';
 import { studyMsFor, type AnswerSubmission, type Question } from '../questions/types';
 import type { DistributiveOmit } from '../types';
 import type { EngineEvent } from './engine-events';
@@ -179,6 +179,7 @@ function presentationOrder(question: Question, rng: Rng): string[] {
       return shuffled;
     }
     case 'TRUE_FALSE':
+    case 'SHORT_ANSWER':
       return [];
   }
 }
@@ -317,6 +318,8 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
         allowedTypes: round.allowedTypes,
         category: next.config.category,
         excludeIds: new Set(next.usedQuestionIds),
+        excludeFactKeys: factKeysOf(deps.pool, next.usedQuestionIds),
+        sinSpoilers: next.config.sinSpoilers,
       },
       nextRng(),
     );
@@ -782,6 +785,8 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
               allowedTypes: round.allowedTypes,
               category: next.config.category,
               excludeIds: new Set(next.usedQuestionIds),
+              excludeFactKeys: factKeysOf(deps.pool, next.usedQuestionIds),
+              sinSpoilers: next.config.sinSpoilers,
             },
             nextRng(),
           );

@@ -12,6 +12,15 @@ export function SiteFooter() {
           <Link className="underline hover:text-tinta" href="/como-jugar">
             Cómo jugar
           </Link>
+          <Link className="underline hover:text-tinta" href="/portal">
+            El portal
+          </Link>
+          <Link className="underline hover:text-tinta" href="/pruebas">
+            Pruebas y modos
+          </Link>
+          <Link className="underline hover:text-tinta" href="/tarjetas">
+            Tarjetas
+          </Link>
           <Link className="underline hover:text-tinta" href="/admin/preguntas">
             Banco de preguntas
           </Link>

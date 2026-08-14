@@ -65,11 +65,12 @@ export default async function AdminHomePage() {
 
       {bank.verified === 0 ? (
         <Nota tone="papel" className="mt-4 p-4 text-sm">
-          <p className="texto-sello">Todo el banco es contenido demo</p>
+          <p className="texto-sello">Ninguna pregunta está verificada</p>
           <p className="mt-1 text-tinta-suave">
-            Ninguna pregunta está marcada como verificada. Cuando añadas contenido con fuente
-            comprobable, rellena la nota de fuente y marca la casilla «verificada»: el juego dejará
-            de mostrar el sello de demo en esas preguntas.
+            El banco del pack llega con su nota de fuente y marcado como verificado. Si aquí no hay
+            ninguna, el seed no se ha ejecutado: <code>npm run db:seed</code>. Al crear preguntas a
+            mano, rellena la nota de fuente y marca «verificada» para que no salgan con el sello de
+            pendiente de contrastar.
           </p>
         </Nota>
       ) : null}

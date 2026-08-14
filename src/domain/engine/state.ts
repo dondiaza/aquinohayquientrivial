@@ -49,6 +49,8 @@ export type GameConfig = {
   difficultyId: string;
   category: CategorySelection;
   adaptiveDifficulty: boolean;
+  /** El jugador ha pedido no destriparse la serie: fuera las preguntas de destripe grave. */
+  sinSpoilers: boolean;
   playerName?: string;
   /** Semilla del RNG. La misma semilla + mismo banco = misma partida. */
   seed: string;

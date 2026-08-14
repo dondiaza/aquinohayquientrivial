@@ -1,8 +1,12 @@
 /**
- * Constructores del banco de preguntas DEMO.
+ * Constructores de preguntas.
  *
  * Producen `QuestionRecord` (base + payload) ya validables con Zod, con ids estables
- * (slug) para que el seed sea idempotente: volver a sembrar actualiza, no duplica.
+ * para que el seed sea idempotente: volver a sembrar actualiza, no duplica.
+ *
+ * Los usa el contenido derivado de la biblia editorial de ANHQV
+ * (`src/content/anhqv/derivadas.ts`) y las fixtures de los tests. El pack editorial NO
+ * pasa por aquí: tiene su propio importador, que trabaja sobre el JSON original.
  */
 
 import type { CategoryId } from '@/domain/questions/categories';
@@ -12,8 +16,12 @@ import type { QuestionStatus } from '@/domain/questions/types';
 /** Fecha fija: el contenido semilla no debe cambiar entre ejecuciones. */
 export const SEED_DATE = '2026-01-01T00:00:00.000Z';
 
-export const DEMO_SOURCE_NOTE =
-  'CONTENIDO DEMO — comunidad ficticia creada para probar el juego. No es canon de ninguna serie.';
+export const NOTA_BIBLIA =
+  'Biblia editorial ANHQV (docs/pack/04) — datos de la serie de Antena 3 (2003-2006).';
+
+/** Para minijuegos de memoria y decisiones: no afirman ningún dato de la serie. */
+export const NOTA_MINIJUEGO =
+  'Minijuego ambientado en Desengaño 21. No afirma datos concretos de la serie.';
 
 export type CommonInput = {
   id: string;
@@ -35,6 +43,12 @@ export type CommonInput = {
   /** Destacada: el panel la marca y el director de partida la prioriza. */
   featured?: boolean;
   sourceNote?: string;
+  /** Nivel de destripe. Por defecto `none`. */
+  spoiler?: 'none' | 'light' | 'major';
+  /** Familia de presentación del catálogo de variantes. */
+  variant?: string;
+  /** Huella del hecho, para que no salgan dos formas del mismo dato en una partida. */
+  factKey?: string;
 };
 
 function base(input: CommonInput, defaultTime: number, defaultPoints: number) {
@@ -51,9 +65,14 @@ function base(input: CommonInput, defaultTime: number, defaultPoints: number) {
     tags: input.tags ?? [],
     basePoints: input.points ?? defaultPoints,
     timeLimitSeconds: input.time ?? defaultTime,
-    sourceNote: input.sourceNote ?? DEMO_SOURCE_NOTE,
-    verified: input.verified ?? false,
+    sourceNote: input.sourceNote ?? NOTA_BIBLIA,
+    verified: input.verified ?? true,
     featured: input.featured ?? false,
+    spoiler: input.spoiler ?? 'none',
+    confidence: 'high' as const,
+    ...(input.variant ? { variant: input.variant } : {}),
+    ...(input.factKey ? { factKey: input.factKey } : {}),
+    needsReview: false,
     createdAt: SEED_DATE,
     updatedAt: SEED_DATE,
   };
@@ -247,6 +266,21 @@ export function junta(
       situation: input.situation,
       options,
       bestOptionId: mejor ? mejor.id : 'a',
+    },
+  };
+}
+
+/** 11. Ficha del vecino: se escribe la respuesta. */
+export function escrita(
+  input: CommonInput & { answer: string; accepted?: readonly string[]; hint?: string },
+): QuestionRecord {
+  return {
+    ...base(input, 25, 1400),
+    type: 'SHORT_ANSWER',
+    payload: {
+      answer: input.answer,
+      accepted: [...(input.accepted ?? [])],
+      ...(input.hint ? { hint: input.hint } : {}),
     },
   };
 }

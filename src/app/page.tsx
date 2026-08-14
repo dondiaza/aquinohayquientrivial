@@ -15,6 +15,11 @@ import { MailboxWall } from '@/components/portal/MailboxWall';
 import { GossipTicker } from '@/components/portal/Espectaculo';
 import { NeighbourAvatar } from '@/components/portal/Avatar';
 import { PortalFacade } from '@/components/portal/PortalScene';
+import { Retrato } from '@/components/serie/Retrato';
+import { Foto } from '@/components/serie/Foto';
+import { RESUMEN_PACK } from '@/content/anhqv/catalogos';
+import { PERSONAJES, SERIE, ZONAS } from '@/content/serie';
+import { huecoDeVecino, imagenDe, resumenDeImagenes } from '@/content/imagenes';
 import { BRAND, HOME } from '@/domain/copy/ui';
 import { RUMORES_TICKER } from '@/domain/copy/announcer';
 import { DEFAULT_SETUP } from '@/domain/engine/config';
@@ -43,13 +48,27 @@ export default async function HomePage() {
   ]);
 
   const rango = perfil ? rangoPorId(perfil.rangoId) : null;
+  const imagenes = resumenDeImagenes();
 
   return (
     <div>
       {/* ── Fachada ──────────────────────────────────────────────────────────── */}
       <section>
-        {/* El edificio se ve entero: es la puerta de entrada al juego, no un adorno */}
-        <PortalFacade className="h-44 w-full sm:h-64 lg:h-[26rem]" />
+        {/* El edificio se ve entero: es la puerta de entrada al juego, no un adorno.
+            Si alguien con licencia pone una imagen en public/serie/portal/, sustituye al
+            dibujo sin tocar nada más (ver src/content/imagenes.ts). */}
+        {imagenDe('portal/fachada') ? (
+          <Foto
+            hueco="portal/fachada"
+            alt={`Fachada de ${SERIE.direccionFicticia}`}
+            proporcion="escena"
+            className="max-h-[26rem] w-full"
+          >
+            <PortalFacade className="h-44 w-full sm:h-64 lg:h-[26rem]" />
+          </Foto>
+        ) : (
+          <PortalFacade className="h-44 w-full sm:h-64 lg:h-[26rem]" />
+        )}
 
         <div className="mx-auto -mt-6 max-w-6xl px-4 sm:-mt-10">
           <ApartmentPlaque
@@ -197,13 +216,44 @@ export default async function HomePage() {
               <p className="texto-sello">Banco de preguntas</p>
               <p className="marcador mt-1 text-2xl">{bank.active}</p>
               <p className="text-xs text-tinta-suave">
-                preguntas activas de {bank.total} · {QUESTION_TYPE_LIST.length} familias de prueba
+                preguntas activas de {bank.total} · {QUESTION_TYPE_LIST.length} familias de prueba ·{' '}
+                {RESUMEN_PACK.tarjetas} tarjetas
               </p>
-              <p className="mt-2">
-                <Sello>Contenido demo</Sello>
+              <p className="mt-2 flex flex-wrap gap-1">
+                <Sello tone="ok">{bank.verified} verificadas</Sello>
               </p>
             </PaperNotice>
           </NoticeBoard>
+        </section>
+
+        {/* ── El reparto ─────────────────────────────────────────────────────── */}
+        <section className="mt-8">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <h2 className="text-xl sm:text-2xl">Los vecinos de {SERIE.direccionFicticia}</h2>
+            <Link href="/portal" className="texto-sello underline">
+              Ver el portal entero →
+            </Link>
+          </div>
+          <p className="texto-sello text-tinta-tenue">
+            {PERSONAJES.length} personajes y {ZONAS.length} zonas del edificio
+          </p>
+
+          <ul className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-6 lg:grid-cols-9">
+            {PERSONAJES.slice(0, 18).map((personaje) => (
+              <li key={personaje.nombre} className="papel p-2 text-center">
+                <Foto
+                  hueco={huecoDeVecino(personaje.nombre)}
+                  alt={personaje.nombre}
+                  proporcion="cuadrada"
+                  className="mx-auto w-full bg-gotele"
+                >
+                  <Retrato nombre={personaje.nombre} paleta={personaje.paleta} tamano={72} />
+                </Foto>
+                <p className="texto-sello mt-1 leading-tight text-tinta">{personaje.corto}</p>
+                <p className="text-[0.6rem] leading-tight text-tinta-tenue">{personaje.zona}</p>
+              </li>
+            ))}
+          </ul>
         </section>
 
         {/* ── Formatos ───────────────────────────────────────────────────────── */}
@@ -250,17 +300,36 @@ export default async function HomePage() {
           </section>
         ) : null}
 
-        {/* ── Aviso de contenido demo ───────────────────────────────────────── */}
-        <section className="mt-8">
+        {/* ── Avisos de contenido y de derechos ─────────────────────────────── */}
+        <section className="mt-8 grid gap-3 sm:grid-cols-2">
           <PaperNotice tono="papel" className="p-4">
             <p className="texto-sello">Aviso de contenido</p>
             <p className="mt-1 max-w-prose text-sm text-tinta-suave">{HOME.demoNotice}</p>
+          </PaperNotice>
+
+          <PaperNotice tono="papel" className="p-4">
+            <p className="texto-sello">Nada de fotogramas</p>
+            <p className="mt-1 max-w-prose text-sm text-tinta-suave">{BRAND.legalNote}</p>
+            <p className="texto-sello mt-2 text-tinta-tenue">
+              {imagenes.ficheros === 0
+                ? 'Todo lo que ves está dibujado en SVG y CSS'
+                : `${imagenes.ficheros} imágenes con licencia añadidas por la comunidad`}
+            </p>
           </PaperNotice>
         </section>
 
         <p className="mt-6 flex flex-wrap gap-2">
           <LinkButton href="/jugar" tone="papel" size="sm">
             Todos los modos
+          </LinkButton>
+          <LinkButton href="/portal" tone="papel" size="sm">
+            El portal
+          </LinkButton>
+          <LinkButton href="/pruebas" tone="papel" size="sm">
+            Pruebas y modos
+          </LinkButton>
+          <LinkButton href="/tarjetas" tone="papel" size="sm">
+            Tarjetas
           </LinkButton>
           <LinkButton href="/admin/preguntas" tone="fantasma" size="sm">
             Banco de preguntas

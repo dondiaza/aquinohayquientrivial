@@ -6,8 +6,9 @@
  * probabilidad base el director puede disparar un suceso.
  *
  * Fase 2 añade familias de ronda (Radio Patio, telefonillo, memoria, qué falta, la junta,
- * la derrama, presidente por un día) y dos "minijuegos" que en realidad son formas de
- * presentar rondas existentes:
+ * la derrama, presidente por un día) y el contenido de ANHQV añade FICHA DEL VECINO, la
+ * única ronda en la que se escribe la respuesta. Hay además dos "minijuegos" que en
+ * realidad son formas de presentar rondas existentes:
  *
  *   · BUZONES  → las pistas de ¿QUIÉN ES? aparecen tras buzones que el jugador decide
  *                abrir. Cuantos menos abra, más puntos.
@@ -165,6 +166,20 @@ const ROUND_TELEFONILLO = {
   icon: '☎️',
 } satisfies Omit<RoundDefinition, 'questionCount'>;
 
+const ROUND_FICHA = {
+  id: 'ficha-del-vecino',
+  title: 'Ficha del vecino',
+  subtitle: 'Aquí se escribe la respuesta',
+  line: 'Se acabó elegir entre cuatro. Escribe tú el nombre.',
+  rule: 'Sin opciones que copiar. Vale sin tildes y con una letra bailada.',
+  allowedTypes: ['SHORT_ANSWER'] as const,
+  timeScale: 1.15,
+  modifiers: [{ id: 'ronda-ficha', label: 'Ficha', multiplier: 1.3 }] as const,
+  eventChance: 0.1,
+  accent: 'azul' as const,
+  icon: '✍️',
+} satisfies Omit<RoundDefinition, 'questionCount'>;
+
 const ROUND_CHAOS = {
   id: 'caos-en-el-portal',
   title: 'Caos en el portal',
@@ -261,6 +276,7 @@ export const GAME_FORMATS = [
       { ...ROUND_WARMUP, questionCount: 6 },
       { ...ROUND_RADIO_PATIO, questionCount: 6 },
       { ...ROUND_BUZONES, questionCount: 5 },
+      { ...ROUND_FICHA, questionCount: 4 },
       { ...ROUND_MEMORIA, questionCount: 4 },
       { ...ROUND_CHAOS, questionCount: 5 },
       { ...ROUND_TELEFONILLO, questionCount: 2 },
@@ -276,6 +292,7 @@ export const GAME_FORMATS = [
       { ...ROUND_WARMUP, questionCount: 7 },
       { ...ROUND_RADIO_PATIO, questionCount: 7 },
       { ...ROUND_BUZONES, questionCount: 5 },
+      { ...ROUND_FICHA, questionCount: 5 },
       { ...ROUND_MEMORIA, questionCount: 5 },
       { ...ROUND_QUE_FALTA, questionCount: 4 },
       { ...ROUND_LA_JUNTA, questionCount: 3 },
@@ -302,6 +319,7 @@ export const ROUND_FAMILIES: readonly Omit<RoundDefinition, 'questionCount'>[] =
   ROUND_WARMUP,
   ROUND_RADIO_PATIO,
   ROUND_BUZONES,
+  ROUND_FICHA,
   ROUND_MEMORIA,
   ROUND_QUE_FALTA,
   ROUND_LA_JUNTA,

@@ -1,0 +1,1568 @@
+[
+  {
+    "id": "C0001",
+    "front": "La serie original: se estrenó en…",
+    "back": "7 de septiembre de 2003",
+    "category": "Serie",
+    "difficulty": 1,
+    "note": "La emisión original comenzó en Antena 3 en septiembre de 2003.",
+    "tags": "historia,fechas"
+  },
+  {
+    "id": "C0002",
+    "front": "La serie original: finalizó en…",
+    "back": "6 de julio de 2006",
+    "category": "Serie",
+    "difficulty": 1,
+    "note": "La emisión original terminó en julio de 2006.",
+    "tags": "historia,fechas"
+  },
+  {
+    "id": "C0003",
+    "front": "La serie original: se emitió originalmente en…",
+    "back": "Antena 3",
+    "category": "Serie",
+    "difficulty": 1,
+    "note": "Antena 3 fue la cadena de estreno.",
+    "tags": "cadena"
+  },
+  {
+    "id": "C0004",
+    "front": "La comunidad: está situada en…",
+    "back": "Desengaño 21",
+    "category": "Serie",
+    "difficulty": 1,
+    "note": "El edificio ficticio se encuentra en la calle Desengaño, 21.",
+    "tags": "lugar"
+  },
+  {
+    "id": "C0005",
+    "front": "La serie: tiene como núcleo…",
+    "back": "una comunidad de vecinos",
+    "category": "Serie",
+    "difficulty": 1,
+    "note": "La comedia gira alrededor de la convivencia en un edificio.",
+    "tags": "premisa"
+  },
+  {
+    "id": "C0006",
+    "front": "La productora: fue…",
+    "back": "Miramón Mendi",
+    "category": "Producción",
+    "difficulty": 3,
+    "note": "Miramón Mendi produjo la serie.",
+    "tags": "produccion"
+  },
+  {
+    "id": "C0007",
+    "front": "El productor ejecutivo asociado a la serie: fue…",
+    "back": "José Luis Moreno",
+    "category": "Producción",
+    "difficulty": 3,
+    "note": "José Luis Moreno ejerció como productor ejecutivo.",
+    "tags": "produccion"
+  },
+  {
+    "id": "C0008",
+    "front": "Uno de los creadores: fue…",
+    "back": "Alberto Caballero",
+    "category": "Producción",
+    "difficulty": 2,
+    "note": "Alberto Caballero figura entre los creadores principales.",
+    "tags": "creadores"
+  },
+  {
+    "id": "C0009",
+    "front": "Otro de los creadores: fue…",
+    "back": "Iñaki Ariztimuño",
+    "category": "Producción",
+    "difficulty": 4,
+    "note": "Iñaki Ariztimuño figura como cocreador.",
+    "tags": "creadores"
+  },
+  {
+    "id": "C0010",
+    "front": "Una de las directoras principales: fue…",
+    "back": "Laura Caballero",
+    "category": "Producción",
+    "difficulty": 2,
+    "note": "Laura Caballero dirigió gran parte de la serie.",
+    "tags": "direccion"
+  },
+  {
+    "id": "C0011",
+    "front": "El tema principal: fue compuesto e interpretado por…",
+    "back": "Vocal Factory",
+    "category": "Producción",
+    "difficulty": 3,
+    "note": "La música vocal a capela fue una seña de identidad.",
+    "tags": "musica"
+  },
+  {
+    "id": "C0012",
+    "front": "El sistema de rodaje: era…",
+    "back": "multicámara",
+    "category": "Producción",
+    "difficulty": 4,
+    "note": "La serie se rodaba con configuración multicámara.",
+    "tags": "rodaje"
+  },
+  {
+    "id": "C0013",
+    "front": "Una localización exterior usada en episodios: fue…",
+    "back": "Terra Mítica",
+    "category": "Producción",
+    "difficulty": 5,
+    "note": "Algunos episodios se rodaron fuera de plató, incluida Terra Mítica.",
+    "tags": "rodaje,exteriores"
+  },
+  {
+    "id": "C0014",
+    "front": "Otra localización exterior usada: fue…",
+    "back": "Gran Hotel Bali",
+    "category": "Producción",
+    "difficulty": 5,
+    "note": "El Gran Hotel Bali aparece entre las localizaciones exteriores documentadas.",
+    "tags": "rodaje,exteriores"
+  },
+  {
+    "id": "C0015",
+    "front": "El episodio citado como el más visto: es…",
+    "back": "Érase un famoso",
+    "category": "Audiencias",
+    "difficulty": 4,
+    "note": "Se cita como el capítulo con mayor audiencia, por encima de ocho millones de espectadores.",
+    "tags": "audiencias,episodios"
+  },
+  {
+    "id": "C0016",
+    "front": "Juan Cuesta: fue interpretado/a por…",
+    "back": "José Luis Gil",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "José Luis Gil dio vida a Juan Cuesta.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0017",
+    "front": "Emilio Delgado: fue interpretado/a por…",
+    "back": "Fernando Tejero",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Fernando Tejero dio vida a Emilio Delgado.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0018",
+    "front": "Belén López Vázquez: fue interpretado/a por…",
+    "back": "Malena Alterio",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Malena Alterio dio vida a Belén López Vázquez.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0019",
+    "front": "Mauri Hidalgo: fue interpretado/a por…",
+    "back": "Luis Merlo",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Luis Merlo dio vida a Mauri Hidalgo.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0020",
+    "front": "Marisa Benito: fue interpretado/a por…",
+    "back": "Mariví Bilbao",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Mariví Bilbao dio vida a Marisa Benito.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0021",
+    "front": "Vicenta Benito: fue interpretado/a por…",
+    "back": "Gemma Cuervo",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Gemma Cuervo dio vida a Vicenta Benito.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0022",
+    "front": "Concha: fue interpretado/a por…",
+    "back": "Emma Penella",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Emma Penella dio vida a Concha.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0023",
+    "front": "Lucía Álvarez: fue interpretado/a por…",
+    "back": "María Adánez",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "María Adánez dio vida a Lucía Álvarez.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0024",
+    "front": "Roberto Alonso: fue interpretado/a por…",
+    "back": "Daniel Guzmán",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Daniel Guzmán dio vida a Roberto Alonso.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0025",
+    "front": "Fernando Navarro: fue interpretado/a por…",
+    "back": "Adrià Collado",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Adrià Collado dio vida a Fernando Navarro.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0026",
+    "front": "Alicia Sanz: fue interpretado/a por…",
+    "back": "Laura Pamplona",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Laura Pamplona dio vida a Alicia Sanz.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0027",
+    "front": "Paloma Hurtado: fue interpretado/a por…",
+    "back": "Loles León",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Loles León dio vida a Paloma Hurtado.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0028",
+    "front": "Mariano Delgado: fue interpretado/a por…",
+    "back": "Eduardo Gómez",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Eduardo Gómez dio vida a Mariano Delgado.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0029",
+    "front": "Paco: fue interpretado/a por…",
+    "back": "Guillermo Ortega",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Guillermo Ortega dio vida a Paco.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0030",
+    "front": "José Miguel Cuesta: fue interpretado/a por…",
+    "back": "Eduardo García",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Eduardo García dio vida a José Miguel Cuesta.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0031",
+    "front": "Natalia Cuesta: fue interpretado/a por…",
+    "back": "Sofía Nieto",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Sofía Nieto dio vida a Natalia Cuesta.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0032",
+    "front": "Isabel Ruiz: fue interpretado/a por…",
+    "back": "Isabel Ordaz",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Isabel Ordaz dio vida a Isabel Ruiz.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0033",
+    "front": "Andrés Guerra: fue interpretado/a por…",
+    "back": "Santiago Ramos",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Santiago Ramos dio vida a Andrés Guerra.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0034",
+    "front": "Pablo Guerra: fue interpretado/a por…",
+    "back": "Elio González",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Elio González dio vida a Pablo Guerra.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0035",
+    "front": "Álex Guerra: fue interpretado/a por…",
+    "back": "Juan Díaz",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Juan Díaz dio vida a Álex Guerra.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0036",
+    "front": "Nieves Cuesta: fue interpretado/a por…",
+    "back": "Carmen Balagué",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Carmen Balagué dio vida a Nieves Cuesta.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0037",
+    "front": "Bea Villarejo: fue interpretado/a por…",
+    "back": "Eva Isanta",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Eva Isanta dio vida a Bea Villarejo.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0038",
+    "front": "Carlos de Haro: fue interpretado/a por…",
+    "back": "Diego Martín",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Diego Martín dio vida a Carlos de Haro.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0039",
+    "front": "Carmen Villanueva: fue interpretado/a por…",
+    "back": "Llum Barrera",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Llum Barrera dio vida a Carmen Villanueva.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0040",
+    "front": "Ana: fue interpretado/a por…",
+    "back": "Vanesa Romero",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Vanesa Romero dio vida a Ana.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0041",
+    "front": "María Jesús Vázquez: fue interpretado/a por…",
+    "back": "Beatriz Carvajal",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Beatriz Carvajal dio vida a María Jesús Vázquez.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0042",
+    "front": "Yago: fue interpretado/a por…",
+    "back": "Roberto San Martín",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Roberto San Martín dio vida a Yago.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0043",
+    "front": "Higinio Heredia: fue interpretado/a por…",
+    "back": "Ricardo Arroyo",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Ricardo Arroyo dio vida a Higinio Heredia.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0044",
+    "front": "Mamen: fue interpretado/a por…",
+    "back": "Emma Ozores",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Emma Ozores dio vida a Mamen.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0045",
+    "front": "Candela: fue interpretado/a por…",
+    "back": "Denise Maestre",
+    "category": "Reparto",
+    "difficulty": 4,
+    "note": "Denise Maestre dio vida a Candela.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0046",
+    "front": "Raquel: fue interpretado/a por…",
+    "back": "Elena Lombao",
+    "category": "Reparto",
+    "difficulty": 4,
+    "note": "Elena Lombao dio vida a Raquel.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0047",
+    "front": "Rafael Álvarez: fue interpretado/a por…",
+    "back": "Nicolás Dueñas",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Nicolás Dueñas dio vida a Rafael Álvarez.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0048",
+    "front": "Juan Cuesta: es conocido por ser…",
+    "back": "presidente de la comunidad",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Juan Cuesta: es conocido por ser presidente de la comunidad.",
+    "tags": "presidencia,comunidad"
+  },
+  {
+    "id": "C0049",
+    "front": "Emilio Delgado: trabaja principalmente como…",
+    "back": "portero del edificio",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Emilio Delgado: trabaja principalmente como portero del edificio.",
+    "tags": "profesion,porteria"
+  },
+  {
+    "id": "C0050",
+    "front": "Paco: trabaja en…",
+    "back": "el videoclub",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Paco: trabaja en el videoclub.",
+    "tags": "profesion,videoclub"
+  },
+  {
+    "id": "C0051",
+    "front": "Juan Cuesta: trabaja como…",
+    "back": "profesor",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Juan Cuesta: trabaja como profesor.",
+    "tags": "profesion"
+  },
+  {
+    "id": "C0052",
+    "front": "Mauri Hidalgo: trabaja como…",
+    "back": "periodista",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Mauri Hidalgo: trabaja como periodista.",
+    "tags": "profesion"
+  },
+  {
+    "id": "C0053",
+    "front": "Fernando Navarro: trabaja como…",
+    "back": "abogado",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Fernando Navarro: trabaja como abogado.",
+    "tags": "profesion"
+  },
+  {
+    "id": "C0054",
+    "front": "Roberto Alonso: es…",
+    "back": "arquitecto",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Roberto Alonso: es arquitecto.",
+    "tags": "profesion"
+  },
+  {
+    "id": "C0055",
+    "front": "Lucía Álvarez: es apodada…",
+    "back": "la Pija",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Lucía Álvarez: es apodada la Pija.",
+    "tags": "apodo"
+  },
+  {
+    "id": "C0056",
+    "front": "Isabel Ruiz: es apodada…",
+    "back": "la Hierbas",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Isabel Ruiz: es apodada la Hierbas.",
+    "tags": "apodo"
+  },
+  {
+    "id": "C0057",
+    "front": "Nieves Cuesta: es apodada…",
+    "back": "la Chunga",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Nieves Cuesta: es apodada la Chunga.",
+    "tags": "apodo"
+  },
+  {
+    "id": "C0058",
+    "front": "Marisa y Vicenta: son…",
+    "back": "hermanas",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Marisa y Vicenta: son hermanas.",
+    "tags": "familia"
+  },
+  {
+    "id": "C0059",
+    "front": "Concha: es…",
+    "back": "amiga y compañera inseparable de Marisa y Vicenta",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Concha: es amiga y compañera inseparable de Marisa y Vicenta.",
+    "tags": "radio-patio,amistad"
+  },
+  {
+    "id": "C0060",
+    "front": "Marisa, Vicenta y Concha: forman el núcleo conocido como…",
+    "back": "Radio Patio",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Marisa, Vicenta y Concha: forman el núcleo conocido como Radio Patio.",
+    "tags": "radio-patio"
+  },
+  {
+    "id": "C0061",
+    "front": "Mariano Delgado: es…",
+    "back": "padre de Emilio",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Mariano Delgado: es padre de Emilio.",
+    "tags": "familia"
+  },
+  {
+    "id": "C0062",
+    "front": "Natalia y José Miguel: son…",
+    "back": "hijos de Juan y Paloma",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Natalia y José Miguel: son hijos de Juan y Paloma.",
+    "tags": "familia"
+  },
+  {
+    "id": "C0063",
+    "front": "Nieves Cuesta: es…",
+    "back": "hermana de Juan Cuesta",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Nieves Cuesta: es hermana de Juan Cuesta.",
+    "tags": "familia"
+  },
+  {
+    "id": "C0064",
+    "front": "Fernando Navarro: es…",
+    "back": "pareja de Mauri durante buena parte de la serie",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Fernando Navarro: es pareja de Mauri durante buena parte de la serie.",
+    "tags": "parejas"
+  },
+  {
+    "id": "C0065",
+    "front": "Bea Villarejo: es…",
+    "back": "madre de Ezequiel",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Bea Villarejo: es madre de Ezequiel.",
+    "tags": "familia"
+  },
+  {
+    "id": "C0066",
+    "front": "Mauri Hidalgo: es…",
+    "back": "padre de Ezequiel",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Mauri Hidalgo: es padre de Ezequiel.",
+    "tags": "familia"
+  },
+  {
+    "id": "C0067",
+    "front": "Yago: es…",
+    "back": "ecologista cubano",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Yago: es ecologista cubano.",
+    "tags": "personaje"
+  },
+  {
+    "id": "C0068",
+    "front": "Rafael Álvarez: es…",
+    "back": "padre de Lucía",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Rafael Álvarez: es padre de Lucía.",
+    "tags": "familia"
+  },
+  {
+    "id": "C0069",
+    "front": "Belén y Alicia: son…",
+    "back": "amigas y compañeras de piso durante una etapa",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Belén y Alicia: son amigas y compañeras de piso durante una etapa.",
+    "tags": "amistad,piso"
+  },
+  {
+    "id": "C0070",
+    "front": "Andrés Guerra: es…",
+    "back": "padre de Pablo y Álex",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Andrés Guerra: es padre de Pablo y Álex.",
+    "tags": "familia"
+  },
+  {
+    "id": "C0071",
+    "front": "Isabel Ruiz: es…",
+    "back": "madre de Pablo y Álex",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Isabel Ruiz: es madre de Pablo y Álex.",
+    "tags": "familia"
+  },
+  {
+    "id": "C0072",
+    "front": "Paloma Hurtado: es…",
+    "back": "esposa de Juan Cuesta durante las primeras temporadas",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Paloma Hurtado: es esposa de Juan Cuesta durante las primeras temporadas.",
+    "tags": "parejas"
+  },
+  {
+    "id": "C0073",
+    "front": "El edificio: dispone de…",
+    "back": "tres plantas principales, ático, portería y local",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "El edificio: dispone de tres plantas principales, ático, portería y local.",
+    "tags": "edificio"
+  },
+  {
+    "id": "C0074",
+    "front": "El local contiguo: alberga durante gran parte de la serie…",
+    "back": "el videoclub",
+    "category": "Tramas",
+    "difficulty": 2,
+    "note": "El local contiguo: alberga durante gran parte de la serie el videoclub.",
+    "tags": "lugar,videoclub"
+  },
+  {
+    "id": "C0075",
+    "front": "Emilio y Mariano: viven en…",
+    "back": "la portería",
+    "category": "Tramas",
+    "difficulty": 1,
+    "note": "Emilio y Mariano: viven en la portería.",
+    "tags": "lugar,porteria"
+  },
+  {
+    "id": "C0076",
+    "front": "Mauri y Fernando: viven durante buena parte de la serie en…",
+    "back": "1.º B",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Mauri y Fernando: viven durante buena parte de la serie en 1.º B.",
+    "tags": "piso"
+  },
+  {
+    "id": "C0077",
+    "front": "Marisa y Vicenta: viven durante buena parte de la serie en…",
+    "back": "1.º A",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Marisa y Vicenta: viven durante buena parte de la serie en 1.º A.",
+    "tags": "piso"
+  },
+  {
+    "id": "C0078",
+    "front": "Juan y su familia: viven durante buena parte de la serie en…",
+    "back": "2.º A",
+    "category": "Tramas",
+    "difficulty": 2,
+    "note": "Juan y su familia: viven durante buena parte de la serie en 2.º A.",
+    "tags": "piso"
+  },
+  {
+    "id": "C0079",
+    "front": "Lucía: vive durante buena parte de la serie en…",
+    "back": "3.º A",
+    "category": "Tramas",
+    "difficulty": 2,
+    "note": "Lucía: vive durante buena parte de la serie en 3.º A.",
+    "tags": "piso"
+  },
+  {
+    "id": "C0080",
+    "front": "Belén: vive durante buena parte de la serie en…",
+    "back": "3.º B",
+    "category": "Tramas",
+    "difficulty": 2,
+    "note": "Belén: vive durante buena parte de la serie en 3.º B.",
+    "tags": "piso"
+  },
+  {
+    "id": "C0081",
+    "front": "En la quinta temporada: se instala en el 2.º B…",
+    "back": "la familia Heredia",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "En la quinta temporada: se instala en el 2.º B la familia Heredia.",
+    "tags": "temporada5"
+  },
+  {
+    "id": "C0082",
+    "front": "El final de la serie: obliga al desalojo por…",
+    "back": "termitas que afectan a la estructura",
+    "category": "Tramas",
+    "difficulty": 2,
+    "note": "El final de la serie: obliga al desalojo por termitas que afectan a la estructura.",
+    "tags": "final,spoiler"
+  },
+  {
+    "id": "C0083",
+    "front": "Tras el desalojo: Marisa, Vicenta y Concha…",
+    "back": "se marchan a un apartotel en Benidorm",
+    "category": "Tramas",
+    "difficulty": 4,
+    "note": "Tras el desalojo: Marisa, Vicenta y Concha se marchan a un apartotel en Benidorm.",
+    "tags": "final,spoiler"
+  },
+  {
+    "id": "C0084",
+    "front": "Tras el desalojo: Paco y Emilio…",
+    "back": "se van en caravana por Europa",
+    "category": "Tramas",
+    "difficulty": 4,
+    "note": "Tras el desalojo: Paco y Emilio se van en caravana por Europa.",
+    "tags": "final,spoiler"
+  },
+  {
+    "id": "C0085",
+    "front": "En la quinta temporada: Mauri y Fernando…",
+    "back": "se casan",
+    "category": "Tramas",
+    "difficulty": 2,
+    "note": "En la quinta temporada: Mauri y Fernando se casan.",
+    "tags": "temporada5,parejas"
+  },
+  {
+    "id": "C0086",
+    "front": "Natalia: da a luz a…",
+    "back": "Yamiley",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Natalia: da a luz a Yamiley.",
+    "tags": "temporada5,familia"
+  },
+  {
+    "id": "C0087",
+    "front": "Yamiley: nace en…",
+    "back": "el ascensor del edificio",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Yamiley: nace en el ascensor del edificio.",
+    "tags": "temporada5"
+  },
+  {
+    "id": "C0088",
+    "front": "Lucía: se marcha al inicio de la quinta temporada a…",
+    "back": "África como misionera",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Lucía: se marcha al inicio de la quinta temporada a África como misionera.",
+    "tags": "temporada5"
+  },
+  {
+    "id": "C0089",
+    "front": "Carlos: abandona el edificio para ingresar en…",
+    "back": "una clínica psiquiátrica",
+    "category": "Tramas",
+    "difficulty": 4,
+    "note": "Carlos: abandona el edificio para ingresar en una clínica psiquiátrica.",
+    "tags": "temporada5"
+  },
+  {
+    "id": "C0090",
+    "front": "Roberto: se marcha a…",
+    "back": "Puerto Banús",
+    "category": "Tramas",
+    "difficulty": 4,
+    "note": "Roberto: se marcha a Puerto Banús.",
+    "tags": "temporada5"
+  },
+  {
+    "id": "C0091",
+    "front": "Pedro: se casa con…",
+    "back": "Belén",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Pedro: se casa con Belén.",
+    "tags": "temporada4"
+  },
+  {
+    "id": "C0092",
+    "front": "Pedro: muere…",
+    "back": "en la noche de bodas",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Pedro: muere en la noche de bodas.",
+    "tags": "temporada4,spoiler"
+  },
+  {
+    "id": "C0093",
+    "front": "Paco: se casa con…",
+    "back": "Lourdes",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Paco: se casa con Lourdes.",
+    "tags": "temporada4"
+  },
+  {
+    "id": "C0094",
+    "front": "Andrés: sufre…",
+    "back": "una caída con el ascensor y pierde la memoria",
+    "category": "Tramas",
+    "difficulty": 4,
+    "note": "Andrés: sufre una caída con el ascensor y pierde la memoria.",
+    "tags": "temporada4"
+  },
+  {
+    "id": "C0095",
+    "front": "Vicenta: aprovecha la amnesia de Andrés para hacerle creer que…",
+    "back": "es su marido",
+    "category": "Tramas",
+    "difficulty": 4,
+    "note": "Vicenta: aprovecha la amnesia de Andrés para hacerle creer que es su marido.",
+    "tags": "temporada4"
+  },
+  {
+    "id": "C0096",
+    "front": "Ana: mantiene una relación con…",
+    "back": "Bea",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Ana: mantiene una relación con Bea.",
+    "tags": "temporada4,parejas"
+  },
+  {
+    "id": "C0097",
+    "front": "Lucía: mantiene una relación con…",
+    "back": "Yago",
+    "category": "Tramas",
+    "difficulty": 2,
+    "note": "Lucía: mantiene una relación con Yago.",
+    "tags": "temporada4,parejas"
+  },
+  {
+    "id": "C0098",
+    "front": "Mauri: mantiene una relación con…",
+    "back": "Diego, hermano de Lucía",
+    "category": "Tramas",
+    "difficulty": 4,
+    "note": "Mauri: mantiene una relación con Diego, hermano de Lucía.",
+    "tags": "temporada3,parejas"
+  },
+  {
+    "id": "C0099",
+    "front": "Alicia: termina marchándose a…",
+    "back": "Estados Unidos",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Alicia: termina marchándose a Estados Unidos.",
+    "tags": "temporada3"
+  },
+  {
+    "id": "C0100",
+    "front": "Paloma: permanece durante una larga etapa…",
+    "back": "en coma",
+    "category": "Tramas",
+    "difficulty": 2,
+    "note": "Paloma: permanece durante una larga etapa en coma.",
+    "tags": "trama,spoiler"
+  },
+  {
+    "id": "C0101",
+    "front": "Paloma: muere…",
+    "back": "en la quinta temporada",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Paloma: muere en la quinta temporada.",
+    "tags": "temporada5,spoiler"
+  },
+  {
+    "id": "C0102",
+    "front": "La expresión «Un poquito de por favor»: se asocia principalmente a…",
+    "back": "Emilio",
+    "category": "Frases",
+    "difficulty": 1,
+    "note": "Es una de las expresiones más recordadas del personaje.",
+    "tags": "frase,cultura-pop"
+  },
+  {
+    "id": "C0103",
+    "front": "La expresión «Qué mona va esta chica siempre»: se asocia a…",
+    "back": "Marisa",
+    "category": "Frases",
+    "difficulty": 2,
+    "note": "Es una de las frases más recordadas vinculadas a Marisa.",
+    "tags": "frase,cultura-pop"
+  },
+  {
+    "id": "C0104",
+    "front": "La marca de moda PUF: significa…",
+    "back": "Paloma Urban Fashion",
+    "category": "Curiosidades",
+    "difficulty": 2,
+    "note": "Paloma crea la firma PUF en una de sus tramas.",
+    "tags": "puf,moda"
+  },
+  {
+    "id": "C0105",
+    "front": "Los personajes de la serie: presentaron las Campanadas de Antena 3…",
+    "back": "tres años consecutivos",
+    "category": "Curiosidades",
+    "difficulty": 4,
+    "note": "Antena 3 ha recordado que el reparto dio las Campanadas caracterizado como sus personajes durante tres años.",
+    "tags": "campanadas"
+  },
+  {
+    "id": "C0106",
+    "front": "Eduardo García: dio las Campanadas con…",
+    "back": "13 años",
+    "category": "Curiosidades",
+    "difficulty": 5,
+    "note": "Antena 3 lo señala como el presentador más joven de sus Campanadas.",
+    "tags": "campanadas,josemi"
+  },
+  {
+    "id": "C0107",
+    "front": "La serie: tuvo…",
+    "back": "adaptaciones internacionales en varios países",
+    "category": "Curiosidades",
+    "difficulty": 3,
+    "note": "El formato fue adaptado fuera de España.",
+    "tags": "adaptaciones"
+  },
+  {
+    "id": "C0108",
+    "front": "La serie posterior con gran parte del equipo: es…",
+    "back": "La que se avecina",
+    "category": "Curiosidades",
+    "difficulty": 1,
+    "note": "Compartió gran parte de intérpretes y equipo creativo.",
+    "tags": "lqsa"
+  },
+  {
+    "id": "C0109",
+    "front": "¿Qué personaje interpreta José Luis Gil?",
+    "back": "Juan Cuesta",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "José Luis Gil interpreta a Juan Cuesta.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0110",
+    "front": "¿Qué personaje interpreta Fernando Tejero?",
+    "back": "Emilio Delgado",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Fernando Tejero interpreta a Emilio Delgado.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0111",
+    "front": "¿Qué personaje interpreta Malena Alterio?",
+    "back": "Belén López Vázquez",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Malena Alterio interpreta a Belén López Vázquez.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0112",
+    "front": "¿Qué personaje interpreta Luis Merlo?",
+    "back": "Mauri Hidalgo",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Luis Merlo interpreta a Mauri Hidalgo.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0113",
+    "front": "¿Qué personaje interpreta Mariví Bilbao?",
+    "back": "Marisa Benito",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Mariví Bilbao interpreta a Marisa Benito.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0114",
+    "front": "¿Qué personaje interpreta Gemma Cuervo?",
+    "back": "Vicenta Benito",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Gemma Cuervo interpreta a Vicenta Benito.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0115",
+    "front": "¿Qué personaje interpreta Emma Penella?",
+    "back": "Concha",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Emma Penella interpreta a Concha.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0116",
+    "front": "¿Qué personaje interpreta María Adánez?",
+    "back": "Lucía Álvarez",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "María Adánez interpreta a Lucía Álvarez.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0117",
+    "front": "¿Qué personaje interpreta Daniel Guzmán?",
+    "back": "Roberto Alonso",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Daniel Guzmán interpreta a Roberto Alonso.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0118",
+    "front": "¿Qué personaje interpreta Adrià Collado?",
+    "back": "Fernando Navarro",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Adrià Collado interpreta a Fernando Navarro.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0119",
+    "front": "¿Qué personaje interpreta Laura Pamplona?",
+    "back": "Alicia Sanz",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Laura Pamplona interpreta a Alicia Sanz.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0120",
+    "front": "¿Qué personaje interpreta Loles León?",
+    "back": "Paloma Hurtado",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Loles León interpreta a Paloma Hurtado.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0121",
+    "front": "¿Qué personaje interpreta Eduardo Gómez?",
+    "back": "Mariano Delgado",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Eduardo Gómez interpreta a Mariano Delgado.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0122",
+    "front": "¿Qué personaje interpreta Guillermo Ortega?",
+    "back": "Paco",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Guillermo Ortega interpreta a Paco.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0123",
+    "front": "¿Qué personaje interpreta Eduardo García?",
+    "back": "José Miguel Cuesta",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Eduardo García interpreta a José Miguel Cuesta.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0124",
+    "front": "¿Qué personaje interpreta Sofía Nieto?",
+    "back": "Natalia Cuesta",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Sofía Nieto interpreta a Natalia Cuesta.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0125",
+    "front": "¿Qué personaje interpreta Isabel Ordaz?",
+    "back": "Isabel Ruiz",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Isabel Ordaz interpreta a Isabel Ruiz.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0126",
+    "front": "¿Qué personaje interpreta Santiago Ramos?",
+    "back": "Andrés Guerra",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Santiago Ramos interpreta a Andrés Guerra.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0127",
+    "front": "¿Qué personaje interpreta Elio González?",
+    "back": "Pablo Guerra",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Elio González interpreta a Pablo Guerra.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0128",
+    "front": "¿Qué personaje interpreta Juan Díaz?",
+    "back": "Álex Guerra",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Juan Díaz interpreta a Álex Guerra.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0129",
+    "front": "¿Qué personaje interpreta Carmen Balagué?",
+    "back": "Nieves Cuesta",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Carmen Balagué interpreta a Nieves Cuesta.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0130",
+    "front": "¿Qué personaje interpreta Eva Isanta?",
+    "back": "Bea Villarejo",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Eva Isanta interpreta a Bea Villarejo.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0131",
+    "front": "¿Qué personaje interpreta Diego Martín?",
+    "back": "Carlos de Haro",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Diego Martín interpreta a Carlos de Haro.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0132",
+    "front": "¿Qué personaje interpreta Llum Barrera?",
+    "back": "Carmen Villanueva",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Llum Barrera interpreta a Carmen Villanueva.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0133",
+    "front": "¿Qué personaje interpreta Vanesa Romero?",
+    "back": "Ana",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Vanesa Romero interpreta a Ana.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0134",
+    "front": "¿Qué personaje interpreta Beatriz Carvajal?",
+    "back": "María Jesús Vázquez",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Beatriz Carvajal interpreta a María Jesús Vázquez.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0135",
+    "front": "¿Qué personaje interpreta Roberto San Martín?",
+    "back": "Yago",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Roberto San Martín interpreta a Yago.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0136",
+    "front": "¿Qué personaje interpreta Ricardo Arroyo?",
+    "back": "Higinio Heredia",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Ricardo Arroyo interpreta a Higinio Heredia.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0137",
+    "front": "¿Qué personaje interpreta Emma Ozores?",
+    "back": "Mamen",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Emma Ozores interpreta a Mamen.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0138",
+    "front": "¿Qué personaje interpreta Denise Maestre?",
+    "back": "Candela",
+    "category": "Reparto",
+    "difficulty": 4,
+    "note": "Denise Maestre interpreta a Candela.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0139",
+    "front": "¿Qué personaje interpreta Elena Lombao?",
+    "back": "Raquel",
+    "category": "Reparto",
+    "difficulty": 4,
+    "note": "Elena Lombao interpreta a Raquel.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0140",
+    "front": "¿Qué personaje interpreta Nicolás Dueñas?",
+    "back": "Rafael Álvarez",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Nicolás Dueñas interpreta a Rafael Álvarez.",
+    "tags": "actor,personaje"
+  },
+  {
+    "id": "C0141",
+    "front": "¿Qué tres veteranas forman el trío clásico de Radio Patio?",
+    "back": "Marisa, Vicenta y Concha",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Son el núcleo cotilla más reconocible del edificio.",
+    "tags": "radio-patio"
+  },
+  {
+    "id": "C0142",
+    "front": "¿Cuál es la relación familiar entre Marisa y Vicenta?",
+    "back": "Son hermanas",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Marisa y Vicenta son hermanas y comparten vivienda.",
+    "tags": "familia"
+  },
+  {
+    "id": "C0143",
+    "front": "¿Quién es el padre de Emilio?",
+    "back": "Mariano Delgado",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Mariano es el padre de Emilio y acaba viviendo con él.",
+    "tags": "familia"
+  },
+  {
+    "id": "C0144",
+    "front": "¿Cómo se llama la hija que tiene Natalia?",
+    "back": "Yamiley",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Natalia da a luz a Yamiley en la etapa final.",
+    "tags": "temporada5"
+  },
+  {
+    "id": "C0145",
+    "front": "¿Dónde nace Yamiley?",
+    "back": "En el ascensor",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "El parto ocurre en el ascensor del edificio.",
+    "tags": "temporada5"
+  },
+  {
+    "id": "C0146",
+    "front": "¿Qué problema estructural desencadena el desalojo definitivo?",
+    "back": "Una plaga de termitas",
+    "category": "Tramas",
+    "difficulty": 2,
+    "note": "Las termitas dañan la estructura y fuerzan el desalojo.",
+    "tags": "final"
+  },
+  {
+    "id": "C0147",
+    "front": "¿Qué significa PUF en la trama de Paloma?",
+    "back": "Paloma Urban Fashion",
+    "category": "Curiosidades",
+    "difficulty": 2,
+    "note": "Es el nombre de la marca de moda creada por Paloma.",
+    "tags": "puf"
+  },
+  {
+    "id": "C0148",
+    "front": "¿Qué profesión tiene Fernando?",
+    "back": "Abogado",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Fernando trabaja como abogado.",
+    "tags": "profesion"
+  },
+  {
+    "id": "C0149",
+    "front": "¿Qué profesión tiene Mauri?",
+    "back": "Periodista",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Mauri trabaja como periodista.",
+    "tags": "profesion"
+  },
+  {
+    "id": "C0150",
+    "front": "¿Qué profesión tiene Roberto?",
+    "back": "Arquitecto",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Roberto es arquitecto.",
+    "tags": "profesion"
+  },
+  {
+    "id": "C0151",
+    "front": "¿Cómo se conoce popularmente a Isabel Ruiz?",
+    "back": "La Hierbas",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Es el apodo más recordado de Isabel.",
+    "tags": "apodo"
+  },
+  {
+    "id": "C0152",
+    "front": "¿Cómo se conoce popularmente a Nieves Cuesta?",
+    "back": "La Chunga",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Nieves recibe el apodo de la Chunga.",
+    "tags": "apodo"
+  },
+  {
+    "id": "C0153",
+    "front": "¿Qué actor interpreta a Mariano Delgado?",
+    "back": "Eduardo Gómez",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Eduardo Gómez encarna a Mariano.",
+    "tags": "actor"
+  },
+  {
+    "id": "C0154",
+    "front": "¿Qué actriz interpreta a Concha?",
+    "back": "Emma Penella",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Emma Penella encarna a Concha.",
+    "tags": "actor"
+  },
+  {
+    "id": "C0155",
+    "front": "¿Qué actriz interpreta a Vicenta?",
+    "back": "Gemma Cuervo",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Gemma Cuervo encarna a Vicenta.",
+    "tags": "actor"
+  },
+  {
+    "id": "C0156",
+    "front": "¿Qué actriz interpreta a Marisa?",
+    "back": "Mariví Bilbao",
+    "category": "Reparto",
+    "difficulty": 1,
+    "note": "Mariví Bilbao encarna a Marisa.",
+    "tags": "actor"
+  },
+  {
+    "id": "C0157",
+    "front": "¿Quién interpreta a la Hierbas?",
+    "back": "Isabel Ordaz",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Isabel Ordaz interpreta a Isabel Ruiz.",
+    "tags": "actor"
+  },
+  {
+    "id": "C0158",
+    "front": "¿Quién interpreta a Bea Villarejo?",
+    "back": "Eva Isanta",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Eva Isanta da vida a Bea.",
+    "tags": "actor"
+  },
+  {
+    "id": "C0159",
+    "front": "¿Qué personaje interpreta Beatriz Carvajal?",
+    "back": "María Jesús Vázquez",
+    "category": "Reparto",
+    "difficulty": 3,
+    "note": "Beatriz Carvajal interpreta a la madre de Belén.",
+    "tags": "actor"
+  },
+  {
+    "id": "C0160",
+    "front": "¿Qué personaje interpreta Vanesa Romero?",
+    "back": "Ana",
+    "category": "Reparto",
+    "difficulty": 2,
+    "note": "Vanesa Romero interpreta a Ana.",
+    "tags": "actor"
+  },
+  {
+    "id": "C0161",
+    "front": "¿A qué país se marcha Alicia?",
+    "back": "Estados Unidos",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Alicia se marcha a Estados Unidos.",
+    "tags": "temporada3"
+  },
+  {
+    "id": "C0162",
+    "front": "¿A qué continente se marcha Lucía como misionera?",
+    "back": "África",
+    "category": "Tramas",
+    "difficulty": 3,
+    "note": "Lucía abandona el edificio para ir a África.",
+    "tags": "temporada5"
+  },
+  {
+    "id": "C0163",
+    "front": "¿Quién es el padre de Lucía?",
+    "back": "Rafael Álvarez",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Rafael es el padre de Lucía.",
+    "tags": "familia"
+  },
+  {
+    "id": "C0164",
+    "front": "¿Quiénes son los padres de Pablo y Álex?",
+    "back": "Andrés e Isabel",
+    "category": "Personajes",
+    "difficulty": 3,
+    "note": "Pablo y Álex son hijos de Andrés Guerra e Isabel Ruiz.",
+    "tags": "familia"
+  },
+  {
+    "id": "C0165",
+    "front": "¿Qué dos personajes terminan recorriendo Europa en caravana?",
+    "back": "Paco y Emilio",
+    "category": "Tramas",
+    "difficulty": 4,
+    "note": "Tras el desalojo, Paco y Emilio se marchan juntos.",
+    "tags": "final"
+  },
+  {
+    "id": "C0166",
+    "front": "¿A qué localidad se marchan Marisa, Vicenta y Concha al final?",
+    "back": "Benidorm",
+    "category": "Tramas",
+    "difficulty": 4,
+    "note": "El trío acaba en un apartotel en Benidorm.",
+    "tags": "final"
+  },
+  {
+    "id": "C0167",
+    "front": "¿Qué pareja se casa en la quinta temporada?",
+    "back": "Mauri y Fernando",
+    "category": "Tramas",
+    "difficulty": 2,
+    "note": "Mauri y Fernando consolidan su relación con una boda.",
+    "tags": "temporada5"
+  },
+  {
+    "id": "C0168",
+    "front": "¿Cuál fue la cadena original de emisión?",
+    "back": "Antena 3",
+    "category": "Serie",
+    "difficulty": 1,
+    "note": "La serie nació televisivamente en Antena 3.",
+    "tags": "cadena"
+  },
+  {
+    "id": "C0169",
+    "front": "¿En qué año empezó la serie?",
+    "back": "2003",
+    "category": "Serie",
+    "difficulty": 1,
+    "note": "La serie se estrenó en 2003.",
+    "tags": "fecha"
+  },
+  {
+    "id": "C0170",
+    "front": "¿En qué año terminó la serie?",
+    "back": "2006",
+    "category": "Serie",
+    "difficulty": 1,
+    "note": "La emisión original acabó en 2006.",
+    "tags": "fecha"
+  },
+  {
+    "id": "C0171",
+    "front": "¿Qué grupo está asociado a la sintonía vocal de la serie?",
+    "back": "Vocal Factory",
+    "category": "Producción",
+    "difficulty": 3,
+    "note": "Vocal Factory compuso e interpretó el tema principal.",
+    "tags": "musica"
+  },
+  {
+    "id": "C0172",
+    "front": "¿Qué episodio es citado habitualmente como el más visto de la serie?",
+    "back": "Érase un famoso",
+    "category": "Audiencias",
+    "difficulty": 4,
+    "note": "Es el capítulo señalado como récord de audiencia.",
+    "tags": "audiencias"
+  },
+  {
+    "id": "C0173",
+    "front": "¿Qué miembro de Radio Patio tiene un perro llamado Valentín?",
+    "back": "Vicenta",
+    "category": "Personajes",
+    "difficulty": 2,
+    "note": "Valentín es el perro inseparable de Vicenta.",
+    "tags": "valentin"
+  },
+  {
+    "id": "C0174",
+    "front": "¿Qué animal es Valentín?",
+    "back": "Un perro",
+    "category": "Personajes",
+    "difficulty": 1,
+    "note": "Valentín es el perro de Vicenta.",
+    "tags": "valentin"
+  }
+]

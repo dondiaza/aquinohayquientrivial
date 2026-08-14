@@ -21,6 +21,7 @@ export const answerSubmissionSchema = z.discriminatedUnion('kind', [
   z.object({ kind: z.literal('BOOLEAN'), value: z.boolean() }),
   z.object({ kind: z.literal('ITEM'), itemId: z.string().min(1).max(40) }),
   z.object({ kind: z.literal('ORDER'), orderedIds: z.array(z.string().min(1).max(40)).max(10) }),
+  z.object({ kind: z.literal('TEXT'), text: z.string().max(160) }),
   z.object({ kind: z.literal('NONE') }),
 ]);
 

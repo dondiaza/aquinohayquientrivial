@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest';
 
-import { DEMO_QUESTION_RECORDS, validatedDemoRecords } from '@/content/demo';
+import { bancoANHQV } from '@/content/anhqv/banco';
+import { isCategoryId } from './categories';
 import { assembleQuestion, questionInputSchema, questionRecordSchema, splitQuestion } from './schemas';
+import { normalizarTexto } from './texto';
 import { QUESTION_TYPES } from './types';
 
 const baseInput = {
@@ -126,35 +128,95 @@ describe('conversión entre registro y pregunta', () => {
   });
 });
 
-describe('banco de contenido demo', () => {
-  it('está entero validado y sin ids repetidos', () => {
-    const records = validatedDemoRecords();
-    expect(records).toHaveLength(DEMO_QUESTION_RECORDS.length);
-    expect(new Set(records.map((record) => record.id)).size).toBe(records.length);
+describe('banco de AQUÍ NO HAY QUIEN VIVA', () => {
+  const { registros, diagnostico } = bancoANHQV();
+
+  it('importa el pack entero sin perder ni duplicar ids', () => {
+    expect(registros.length).toBe(diagnostico.total + diagnostico.derivadas);
+    expect(new Set(registros.map((record) => record.id)).size).toBe(registros.length);
+    // Los ids del pack se conservan tal cual: es lo que permite volver a importarlo.
+    expect(registros.some((record) => record.id === 'Q0001')).toBe(true);
+    expect(registros.some((record) => record.id === 'Q0958')).toBe(true);
   });
 
-  it('cubre los seis tipos de prueba', () => {
-    const records = validatedDemoRecords();
+  it('cubre las once familias jugables', () => {
     for (const type of QUESTION_TYPES) {
-      expect(records.filter((record) => record.type === type).length).toBeGreaterThan(0);
+      const jugables = registros.filter(
+        (record) => record.type === type && record.status === 'ACTIVE' && !record.needsReview,
+      );
+      expect(jugables.length, `sin preguntas jugables de tipo ${type}`).toBeGreaterThan(0);
     }
   });
 
-  it('está marcado como NO verificado y con nota de contenido demo', () => {
-    for (const record of validatedDemoRecords()) {
-      expect(record.verified).toBe(false);
-      expect(record.sourceNote).toContain('DEMO');
+  it('todas las preguntas tienen explicación y categoría del catálogo', () => {
+    const sinExplicacion = registros.filter((record) => !record.explanation);
+    expect(sinExplicacion.map((record) => record.id)).toEqual([]);
+    for (const record of registros) {
+      expect(isCategoryId(record.category), `categoría inválida en ${record.id}`).toBe(true);
     }
   });
 
   it('cubre todo el rango de dificultades', () => {
-    const difficulties = new Set(validatedDemoRecords().map((record) => record.difficulty));
+    const difficulties = new Set(registros.map((record) => record.difficulty));
     expect(Math.min(...difficulties)).toBeLessThanOrEqual(2);
     expect(Math.max(...difficulties)).toBeGreaterThanOrEqual(9);
   });
 
-  it('todas las preguntas tienen explicación', () => {
-    const sinExplicacion = validatedDemoRecords().filter((record) => !record.explanation);
-    expect(sinExplicacion.map((record) => record.id)).toEqual([]);
+  it('en las de opciones, la respuesta correcta está exactamente una vez', () => {
+    for (const record of registros) {
+      if (
+        record.type !== 'MULTIPLE_CHOICE' &&
+        record.type !== 'FINAL_BET' &&
+        record.type !== 'WHO_IS_IT'
+      ) {
+        continue;
+      }
+      const correcta = record.payload.options.filter(
+        (option) => option.id === record.payload.correctOptionId,
+      );
+      expect(correcta.length, `respuesta correcta mal marcada en ${record.id}`).toBe(1);
+      const textos = record.payload.options.map((option) => option.text);
+      expect(new Set(textos).size, `opciones repetidas en ${record.id}`).toBe(textos.length);
+    }
+  });
+
+  it('ningún enunciado publicado contiene su propia respuesta', () => {
+    const chivatas: string[] = [];
+    for (const record of registros) {
+      if (record.needsReview || record.status !== 'ACTIVE') continue;
+      const respuesta =
+        record.type === 'SHORT_ANSWER'
+          ? record.payload.answer
+          : record.type === 'MULTIPLE_CHOICE' || record.type === 'FINAL_BET'
+            ? record.payload.options.find((option) => option.id === record.payload.correctOptionId)?.text
+            : undefined;
+      if (!respuesta || respuesta.length < 5) continue;
+      const enunciado = ` ${normalizarTexto(record.prompt)} `;
+      if (enunciado.includes(` ${normalizarTexto(respuesta)} `)) chivatas.push(record.id);
+    }
+    expect(chivatas).toEqual([]);
+  });
+
+  it('lo que no se puede jugar limpio queda en borrador', () => {
+    for (const record of registros) {
+      if (!record.needsReview) continue;
+      expect(record.status, `${record.id} está marcada para revisión pero activa`).toBe('DRAFT');
+    }
+    // Si esto sube mucho, algo se ha roto en el importador.
+    expect(diagnostico.enRevision).toBeLessThan(20);
+  });
+
+  it('el destripe está clasificado y hay contenido para el modo sin spoilers', () => {
+    const sinSpoilers = registros.filter(
+      (record) => record.spoiler !== 'major' && record.status === 'ACTIVE' && !record.needsReview,
+    );
+    expect(sinSpoilers.length).toBeGreaterThan(800);
+    expect(registros.some((record) => record.spoiler === 'major')).toBe(true);
+  });
+
+  it('el trío del pack sobre un mismo dato comparte huella', () => {
+    const primeras = registros.filter((record) => ['Q0001', 'Q0002', 'Q0003'].includes(record.id));
+    expect(primeras).toHaveLength(3);
+    expect(new Set(primeras.map((record) => record.factKey)).size).toBe(1);
   });
 });

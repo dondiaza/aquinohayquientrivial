@@ -1,5 +1,7 @@
 'use client';
 
+import { SERIE } from '@/content/serie';
+
 import { useCallback, useRef, useState } from 'react';
 
 import { Button } from '@/components/ui/Button';
@@ -57,7 +59,7 @@ export function ShareCard({ datos, url }: { datos: DatosTarjeta; url: string }) 
     ctx.fillText('EL TRIVIAL DE LA COMUNIDAD', 64, 90);
     ctx.font = '18px system-ui, sans-serif';
     ctx.fillStyle = '#f2cd76';
-    ctx.fillText('Travesía del Portalón, 13', 64, 122);
+    ctx.fillText(`${SERIE.direccionFicticia} · ${SERIE.cadena}`, 64, 122);
     ctx.fillStyle = '#eee7d5';
     ctx.font = '16px monospace';
     ctx.fillText(datos.formato.toUpperCase(), 64, 158);

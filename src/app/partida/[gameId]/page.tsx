@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
 
 import { GameShell } from '@/components/game/GameShell';
+import { tarjetasParaCartelas } from '@/content/anhqv/catalogos';
 import { ErrorNote } from '@/components/ui/Feedback';
 import { LinkButton } from '@/components/ui/Button';
 import { loadGameForPlay } from '@/server/games/service';
@@ -44,6 +45,10 @@ export default async function GamePage({ params }: { params: Promise<{ gameId: s
       config={game.config}
       pool={game.pool}
       ghost={game.ghost ?? undefined}
+      /* Las tarjetas del pack se eligen aquí, en el servidor: así el catálogo entero
+         (174 tarjetas) no viaja al navegador y dos personas con el mismo desafío ven
+         las mismas curiosidades entre rondas. */
+      tarjetas={tarjetasParaCartelas(game.config.seed, 12)}
     />
   );
 }

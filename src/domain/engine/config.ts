@@ -15,6 +15,11 @@ export const gameSetupSchema = z.object({
   difficultyId: z.enum(DIFFICULTY_LEVEL_IDS).default(DEFAULT_DIFFICULTY_LEVEL),
   category: z.enum(CATEGORY_SELECTIONS).default('mezcla'),
   adaptiveDifficulty: z.boolean().default(true),
+  /**
+   * Modo sin spoilers. Lo pide la guía del pack: si está activo, no sale ninguna pregunta
+   * marcada como destripe grave (muertes, bodas decisivas y final de la serie).
+   */
+  sinSpoilers: z.boolean().default(false),
   playerName: z.string().trim().min(1).max(24).optional(),
 });
 
@@ -34,4 +39,5 @@ export const DEFAULT_SETUP: GameSetup = {
   difficultyId: DEFAULT_DIFFICULTY_LEVEL,
   category: 'mezcla',
   adaptiveDifficulty: true,
+  sinSpoilers: false,
 };

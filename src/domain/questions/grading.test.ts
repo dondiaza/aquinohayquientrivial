@@ -6,6 +6,7 @@ import {
   makeImpostor,
   makeMultipleChoice,
   makeOrderChaos,
+  makeShortAnswer,
   makeTrueFalse,
   makeWhoIsIt,
 } from '@/test/fixtures';
@@ -16,12 +17,12 @@ describe('evaluación de respuestas', () => {
     const bien = gradeAnswer(question, { kind: 'OPTION', optionId: question.correctOptionId });
     expect(bien.isCorrect).toBe(true);
     expect(bien.accuracy).toBe(1);
-    expect(bien.correctSummary).toBe('El del 2ºA');
+    expect(bien.correctSummary).toBe('Juan Cuesta');
 
     const mal = gradeAnswer(question, { kind: 'OPTION', optionId: 'b' });
     expect(mal.isCorrect).toBe(false);
     expect(mal.accuracy).toBe(0);
-    expect(mal.submittedSummary).toBe('El del 3ºB');
+    expect(mal.submittedSummary).toBe('Emilio Delgado');
   });
 
   it('verdadero/falso', () => {
@@ -97,6 +98,28 @@ describe('evaluación de respuestas', () => {
     expect(allowsPartialCredit(makeOrderChaos())).toBe(true);
     expect(allowsPartialCredit(makeMultipleChoice())).toBe(false);
     expect(allowsPartialCredit(makeTrueFalse())).toBe(false);
+  });
+
+  it('ficha del vecino: perdona tildes, mayúsculas y una errata, pero no otra respuesta', () => {
+    const question = makeShortAnswer();
+
+    for (const escrito of ['José Luis Gil', 'jose luis gil', 'JOSE LUIS GIL', 'Jose Luis Gill', 'Gil']) {
+      expect(
+        gradeAnswer(question, { kind: 'TEXT', text: escrito }).isCorrect,
+        `debería valer «${escrito}»`,
+      ).toBe(true);
+    }
+
+    for (const escrito of ['Fernando Tejero', 'Luis Merlo', '', 'no me acuerdo']) {
+      expect(
+        gradeAnswer(question, { kind: 'TEXT', text: escrito }).isCorrect,
+        `no debería valer «${escrito}»`,
+      ).toBe(false);
+    }
+
+    const revelado = gradeAnswer(question, { kind: 'TEXT', text: 'jose luis gil' });
+    expect(revelado.correctSummary).toBe('José Luis Gil');
+    expect(revelado.submittedSummary).toBe('jose luis gil');
   });
 
   it('la racha solo se alarga con acierto pleno', () => {

@@ -15,8 +15,10 @@ import { z } from 'zod';
 
 import { CATEGORY_IDS } from './categories';
 import {
+  CONFIDENCE_LEVELS,
   QUESTION_STATUSES,
   QUESTION_TYPES,
+  SPOILER_LEVELS,
   type Question,
   type QuestionBase,
   type QuestionPayloadMap,
@@ -208,6 +210,25 @@ const sequencePayloadSchema = z
     }
   });
 
+const shortAnswerPayloadSchema = z
+  .object({
+    answer: z.string().min(1).max(120),
+    accepted: z.array(z.string().min(1).max(120)).max(12).default([]),
+    hint: z.string().max(160).optional(),
+  })
+  .superRefine((value, ctx) => {
+    // Una respuesta escrita tiene que caber en un campo de texto. El importador es aún
+    // más estricto (tres palabras) para lo que de verdad sale a jugar; aquí solo se corta
+    // el caso absurdo de meter un párrafo.
+    if (value.answer.split(/\s+/).length > 12) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'Una respuesta escrita no puede ser un párrafo',
+        path: ['answer'],
+      });
+    }
+  });
+
 export const PAYLOAD_SCHEMAS = {
   MULTIPLE_CHOICE: multipleChoicePayloadSchema,
   TRUE_FALSE: trueFalsePayloadSchema,
@@ -219,6 +240,7 @@ export const PAYLOAD_SCHEMAS = {
   MISSING_ITEM: missingItemPayloadSchema,
   DECISION: decisionPayloadSchema,
   SEQUENCE: sequencePayloadSchema,
+  SHORT_ANSWER: shortAnswerPayloadSchema,
 } as const;
 
 // ── Campos comunes ──────────────────────────────────────────────────────────────
@@ -239,6 +261,11 @@ const baseInputShape = {
   sourceNote: z.string().max(300).optional(),
   verified: z.boolean().default(false),
   featured: z.boolean().default(false),
+  spoiler: z.enum(SPOILER_LEVELS).default('none'),
+  confidence: z.enum(CONFIDENCE_LEVELS).default('high'),
+  variant: z.string().min(2).max(40).optional(),
+  factKey: z.string().min(4).max(80).optional(),
+  needsReview: z.boolean().default(false),
 } as const;
 
 const persistedShape = {
@@ -259,6 +286,7 @@ export const questionInputSchema = z.discriminatedUnion('type', [
   z.object({ ...baseInputShape, type: z.literal('MISSING_ITEM'), payload: missingItemPayloadSchema }),
   z.object({ ...baseInputShape, type: z.literal('DECISION'), payload: decisionPayloadSchema }),
   z.object({ ...baseInputShape, type: z.literal('SEQUENCE'), payload: sequencePayloadSchema }),
+  z.object({ ...baseInputShape, type: z.literal('SHORT_ANSWER'), payload: shortAnswerPayloadSchema }),
 ]);
 
 export type QuestionInput = z.infer<typeof questionInputSchema>;
@@ -275,6 +303,7 @@ export const questionRecordSchema = z.discriminatedUnion('type', [
   z.object({ ...baseInputShape, ...persistedShape, type: z.literal('MISSING_ITEM'), payload: missingItemPayloadSchema }),
   z.object({ ...baseInputShape, ...persistedShape, type: z.literal('DECISION'), payload: decisionPayloadSchema }),
   z.object({ ...baseInputShape, ...persistedShape, type: z.literal('SEQUENCE'), payload: sequencePayloadSchema }),
+  z.object({ ...baseInputShape, ...persistedShape, type: z.literal('SHORT_ANSWER'), payload: shortAnswerPayloadSchema }),
 ]);
 
 export type QuestionRecord = z.infer<typeof questionRecordSchema>;
@@ -311,6 +340,8 @@ export function assembleQuestion(record: QuestionRecord): Question {
       return { ...common, type, ...payload };
     case 'SEQUENCE':
       return { ...common, type, ...payload };
+    case 'SHORT_ANSWER':
+      return { ...common, type, ...payload };
   }
 }
 
@@ -333,6 +364,11 @@ export function splitQuestion(question: Question): QuestionRecord {
     sourceNote: question.sourceNote,
     verified: question.verified,
     featured: question.featured ?? false,
+    spoiler: question.spoiler,
+    confidence: question.confidence,
+    variant: question.variant,
+    factKey: question.factKey,
+    needsReview: question.needsReview ?? false,
     createdAt: question.createdAt,
     updatedAt: question.updatedAt,
   };
@@ -427,6 +463,16 @@ export function splitQuestion(question: Question): QuestionRecord {
           pads: question.pads,
           sequence: question.sequence,
           stepMs: question.stepMs,
+        },
+      };
+    case 'SHORT_ANSWER':
+      return {
+        ...common,
+        type: question.type,
+        payload: {
+          answer: question.answer,
+          accepted: question.accepted,
+          hint: question.hint,
         },
       };
   }

@@ -32,7 +32,7 @@ export default function HowToPlayPage() {
         <h2 className="text-xl">En tres frases</h2>
         <PaperNotice tono="papel" className="mt-3 p-4">
           <ol className="list-inside list-decimal space-y-1 text-sm">
-            <li>Responde sobre la comunidad antes de que se acabe el tiempo.</li>
+            <li>Responde sobre Aquí no hay quien viva antes de que se acabe el tiempo.</li>
             <li>Acertar seguido sube el combo, y el combo sube los puntos.</li>
             <li>La última ronda es una apuesta: puedes ganar o perder lo que arriesgues.</li>
           </ol>

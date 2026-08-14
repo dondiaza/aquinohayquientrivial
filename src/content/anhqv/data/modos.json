@@ -1,0 +1,818 @@
+[
+  {
+    "id": "M001",
+    "name": "Temporada completa",
+    "kind": "campaña",
+    "description": "Campaña de 5 capítulos jugables, uno por temporada, con jefe final de cronología.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:campaña"
+    ]
+  },
+  {
+    "id": "M002",
+    "name": "Presidencia",
+    "kind": "campaña",
+    "description": "Gana apoyos vecinales para mantener la presidencia durante una semana de juego.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:campaña"
+    ]
+  },
+  {
+    "id": "M003",
+    "name": "Radio Patio Live",
+    "kind": "party",
+    "description": "Partida social de rumor/dato, sabotaje y votación.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:party"
+    ]
+  },
+  {
+    "id": "M004",
+    "name": "Portería Survival",
+    "kind": "survival",
+    "description": "Tres vidas; cada bloque sube la dificultad hasta expulsarte del edificio.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:survival"
+    ]
+  },
+  {
+    "id": "M005",
+    "name": "Desengaño Daily",
+    "kind": "daily",
+    "description": "Reto diario de 7 preguntas con una categoría protagonista.",
+    "recommended_players": "1",
+    "session_min": 5,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:daily"
+    ]
+  },
+  {
+    "id": "M006",
+    "name": "Junta semanal",
+    "kind": "weekly",
+    "description": "Evento semanal de 25 preguntas con clasificación y desempates.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:weekly"
+    ]
+  },
+  {
+    "id": "M007",
+    "name": "Vecino del mes",
+    "kind": "seasonal",
+    "description": "Liga mensual por puntos, rachas y colecciones.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:seasonal"
+    ]
+  },
+  {
+    "id": "M008",
+    "name": "Ascensor 1A→Ático",
+    "kind": "ladder",
+    "description": "Escalera de nueve niveles, cada zona usa una mecánica distinta.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:ladder"
+    ]
+  },
+  {
+    "id": "M009",
+    "name": "Radio Patio Bingo",
+    "kind": "party",
+    "description": "Cartones temáticos que se completan con respuestas correctas.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:party"
+    ]
+  },
+  {
+    "id": "M010",
+    "name": "Draft de vecinos",
+    "kind": "strategy",
+    "description": "Construye un equipo equilibrado por roles, pisos y relaciones.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:strategy"
+    ]
+  },
+  {
+    "id": "M011",
+    "name": "Moción de censura PvP",
+    "kind": "pvp",
+    "description": "Duelo directo con robo de turno y preguntas de rebote.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:pvp"
+    ]
+  },
+  {
+    "id": "M012",
+    "name": "Consejo de Sabios",
+    "kind": "expert",
+    "description": "Solo dificultad 4-5, sin ayudas y con puntuación de precisión.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:expert"
+    ]
+  },
+  {
+    "id": "M013",
+    "name": "Archivo 2003-2006",
+    "kind": "chronology",
+    "description": "Viaje cronológico con eventos ordenados y desbloqueo por temporadas.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:chronology"
+    ]
+  },
+  {
+    "id": "M014",
+    "name": "Casting imposible",
+    "kind": "production",
+    "description": "Modo centrado en reparto, decisiones de casting y producción.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:production"
+    ]
+  },
+  {
+    "id": "M015",
+    "name": "ANHQV por el mundo",
+    "kind": "international",
+    "description": "Adaptaciones internacionales y ecosistema fuera de la serie.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:international"
+    ]
+  },
+  {
+    "id": "M016",
+    "name": "Campanadas",
+    "kind": "event",
+    "description": "Reto especial de Nochevieja sobre las tres Campanadas del reparto.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:event"
+    ]
+  },
+  {
+    "id": "M017",
+    "name": "PUF Collection",
+    "kind": "collection",
+    "description": "Colecciona tarjetas al acertar sets de moda, personajes y relaciones.",
+    "recommended_players": "1",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:collection"
+    ]
+  },
+  {
+    "id": "M018",
+    "name": "Valentín",
+    "kind": "pet_mode",
+    "description": "Mini retos cortos; cada acierto hace avanzar a Valentín por el edificio.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:pet_mode"
+    ]
+  },
+  {
+    "id": "M019",
+    "name": "Termitas",
+    "kind": "battle_royale",
+    "description": "Cada ronda clausura una habitación; sobrevive siendo el último jugador.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:battle_royale"
+    ]
+  },
+  {
+    "id": "M020",
+    "name": "Quién es quién vecinal",
+    "kind": "deduction",
+    "description": "Descarta personajes preguntando por zona, actor, profesión y relaciones.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:deduction"
+    ]
+  },
+  {
+    "id": "M021",
+    "name": "La mirilla",
+    "kind": "memory",
+    "description": "Muestra fichas brevemente y pregunta detalles al ocultarlas.",
+    "recommended_players": "1",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:memory"
+    ]
+  },
+  {
+    "id": "M022",
+    "name": "El telefonillo",
+    "kind": "quickplay",
+    "description": "Rondas de diez segundos para identificar quién o dónde.",
+    "recommended_players": "1-8",
+    "session_min": 5,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:quickplay"
+    ]
+  },
+  {
+    "id": "M023",
+    "name": "Vecino secreto",
+    "kind": "social",
+    "description": "Roles ocultos y preguntas para deducir quién interpreta cada jugador.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:social"
+    ]
+  },
+  {
+    "id": "M024",
+    "name": "Maratón 90",
+    "kind": "marathon",
+    "description": "90 preguntas consecutivas como homenaje al conteo editorial de 90 episodios.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:marathon"
+    ]
+  },
+  {
+    "id": "M025",
+    "name": "Perfecta comunidad",
+    "kind": "perfect_run",
+    "description": "Termina 21 preguntas sin un solo fallo.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:perfect_run"
+    ]
+  },
+  {
+    "id": "M026",
+    "name": "21 de Desengaño",
+    "kind": "quickplay",
+    "description": "21 preguntas mixtas con dificultad adaptativa.",
+    "recommended_players": "1-8",
+    "session_min": 5,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:quickplay"
+    ]
+  },
+  {
+    "id": "M027",
+    "name": "Racha del presidente",
+    "kind": "streak",
+    "description": "Mantén una racha para subir de vocal a presidente.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:streak"
+    ]
+  },
+  {
+    "id": "M028",
+    "name": "El videoclub",
+    "kind": "theme",
+    "description": "Modo temático de Paco, cine, local y cultura pop vinculada.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:theme"
+    ]
+  },
+  {
+    "id": "M029",
+    "name": "Las golfas",
+    "kind": "theme",
+    "description": "Modo temático de 3.º B, convivencia y relaciones.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:theme"
+    ]
+  },
+  {
+    "id": "M030",
+    "name": "Radio Patio",
+    "kind": "theme",
+    "description": "Modo temático de Marisa, Vicenta, Concha y cotilleos.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:theme"
+    ]
+  },
+  {
+    "id": "M031",
+    "name": "Los Cuesta",
+    "kind": "theme",
+    "description": "Modo temático de familia, presidencia y 2.º A.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:theme"
+    ]
+  },
+  {
+    "id": "M032",
+    "name": "Los Guerra",
+    "kind": "theme",
+    "description": "Modo temático de Isabel, Andrés, Pablo y Álex.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:theme"
+    ]
+  },
+  {
+    "id": "M033",
+    "name": "Mauri y Fernando",
+    "kind": "theme",
+    "description": "Modo temático de pareja, convivencia y familia elegida.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:theme"
+    ]
+  },
+  {
+    "id": "M034",
+    "name": "Belén y Emilio",
+    "kind": "theme",
+    "description": "Modo temático de la relación central e intermitente.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:theme"
+    ]
+  },
+  {
+    "id": "M035",
+    "name": "El ático",
+    "kind": "theme",
+    "description": "Preguntas sobre cambios de vivienda y personajes temporales.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:theme"
+    ]
+  },
+  {
+    "id": "M036",
+    "name": "Mapmaker",
+    "kind": "builder",
+    "description": "Construye el mapa del edificio con fichas desbloqueadas.",
+    "recommended_players": "1",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:builder"
+    ]
+  },
+  {
+    "id": "M037",
+    "name": "Acta falsa",
+    "kind": "detective",
+    "description": "Detecta una línea falsa en un acta llena de datos correctos.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:detective"
+    ]
+  },
+  {
+    "id": "M038",
+    "name": "Cinco temporadas",
+    "kind": "boss_rush",
+    "description": "Cinco rondas, una por temporada; cada una termina con reto experto.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:boss_rush"
+    ]
+  },
+  {
+    "id": "M039",
+    "name": "Noche de estreno",
+    "kind": "event",
+    "description": "Ronda basada en inicio de serie, llegada de Lucía y Roberto y primeras ubicaciones.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:event"
+    ]
+  },
+  {
+    "id": "M040",
+    "name": "Última junta",
+    "kind": "event",
+    "description": "Modo con spoilers del final, termitas, boda y despedida.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:event"
+    ]
+  },
+  {
+    "id": "M041",
+    "name": "Sin spoilers",
+    "kind": "safe",
+    "description": "Solo preguntas spoiler=none para usuarios que aún no acabaron la serie.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:safe"
+    ]
+  },
+  {
+    "id": "M042",
+    "name": "Spoiler total",
+    "kind": "expert",
+    "description": "Banco completo con tramas finales y dificultad alta.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:expert"
+    ]
+  },
+  {
+    "id": "M043",
+    "name": "Solo reparto",
+    "kind": "filter",
+    "description": "Actor↔personaje, cameos y casting.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:filter"
+    ]
+  },
+  {
+    "id": "M044",
+    "name": "Solo mapa",
+    "kind": "filter",
+    "description": "Pisos, portería, videoclub y ático.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:filter"
+    ]
+  },
+  {
+    "id": "M045",
+    "name": "Solo relaciones",
+    "kind": "filter",
+    "description": "Parejas, familia, amistades y convivencia.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:filter"
+    ]
+  },
+  {
+    "id": "M046",
+    "name": "Solo producción",
+    "kind": "filter",
+    "description": "Creadores, casting, música, adaptaciones y curiosidades.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:filter"
+    ]
+  },
+  {
+    "id": "M047",
+    "name": "Aleatorio caótico",
+    "kind": "random",
+    "description": "Cada pregunta cambia de tipo, categoría y dificultad.",
+    "recommended_players": "1-8",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:random"
+    ]
+  },
+  {
+    "id": "M048",
+    "name": "Entrenamiento",
+    "kind": "practice",
+    "description": "Sin vidas ni ranking; explicación inmediata y repetición espaciada.",
+    "recommended_players": "1",
+    "session_min": 15,
+    "uses": [
+      "preguntas",
+      "retos",
+      "tarjetas"
+    ],
+    "reward_hook": "XP, insignias y coleccionables temáticos",
+    "tags": [
+      "modo:practice"
+    ]
+  }
+]

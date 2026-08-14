@@ -12,6 +12,7 @@ describe('configuración de partida', () => {
     expect(setup).toEqual({
       formatId: 'normal',
       difficultyId: 'vecino',
+      sinSpoilers: false,
       category: 'mezcla',
       adaptiveDifficulty: true,
     });

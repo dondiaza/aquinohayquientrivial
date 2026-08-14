@@ -1,0 +1,3602 @@
+[
+  {
+    "id": "R001",
+    "name": "Ronda vecinal 001",
+    "question_ids": [
+      "Q0010",
+      "Q0335",
+      "Q0374",
+      "Q0200",
+      "Q0307",
+      "Q0614",
+      "Q0302",
+      "Q0819",
+      "Q0887",
+      "Q0713"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M030"
+  },
+  {
+    "id": "R002",
+    "name": "Ronda vecinal 002",
+    "question_ids": [
+      "Q0352",
+      "Q0067",
+      "Q0913",
+      "Q0389",
+      "Q0405",
+      "Q0765",
+      "Q0787",
+      "Q0851",
+      "Q0806",
+      "Q0042"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M016"
+  },
+  {
+    "id": "R003",
+    "name": "Ronda vecinal 003",
+    "question_ids": [
+      "Q0008",
+      "Q0327",
+      "Q0498",
+      "Q0306",
+      "Q0347",
+      "Q0783",
+      "Q0277",
+      "Q0814",
+      "Q0930",
+      "Q0737"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M032"
+  },
+  {
+    "id": "R004",
+    "name": "Ronda vecinal 004",
+    "question_ids": [
+      "Q0056",
+      "Q0143",
+      "Q0425",
+      "Q0419",
+      "Q0221",
+      "Q0472",
+      "Q0527",
+      "Q0276",
+      "Q0136",
+      "Q0038"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M012"
+  },
+  {
+    "id": "R005",
+    "name": "Ronda vecinal 005",
+    "question_ids": [
+      "Q0013",
+      "Q0082",
+      "Q0216",
+      "Q0441",
+      "Q0154",
+      "Q0499",
+      "Q0210",
+      "Q0863",
+      "Q0821",
+      "Q0731"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M018"
+  },
+  {
+    "id": "R006",
+    "name": "Ronda vecinal 006",
+    "question_ids": [
+      "Q0326",
+      "Q0146",
+      "Q0150",
+      "Q0456",
+      "Q0594",
+      "Q0103",
+      "Q0412",
+      "Q0929",
+      "Q0018",
+      "Q0716"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M008"
+  },
+  {
+    "id": "R007",
+    "name": "Ronda vecinal 007",
+    "question_ids": [
+      "Q0206",
+      "Q0143",
+      "Q0324",
+      "Q0073",
+      "Q0186",
+      "Q0139",
+      "Q0842",
+      "Q0129",
+      "Q0261",
+      "Q0728"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M027"
+  },
+  {
+    "id": "R008",
+    "name": "Ronda vecinal 008",
+    "question_ids": [
+      "Q0052",
+      "Q0148",
+      "Q0907",
+      "Q0952",
+      "Q0351",
+      "Q0801",
+      "Q0616",
+      "Q0902",
+      "Q0942",
+      "Q0696"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M003"
+  },
+  {
+    "id": "R009",
+    "name": "Ronda vecinal 009",
+    "question_ids": [
+      "Q0062",
+      "Q0184",
+      "Q0236",
+      "Q0144",
+      "Q0051",
+      "Q0312",
+      "Q0428",
+      "Q0644",
+      "Q0825",
+      "Q0717"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M043"
+  },
+  {
+    "id": "R010",
+    "name": "Ronda vecinal 010",
+    "question_ids": [
+      "Q0050",
+      "Q0008",
+      "Q0399",
+      "Q0669",
+      "Q0074",
+      "Q0799",
+      "Q0499",
+      "Q0645",
+      "Q0891",
+      "Q0668"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M001"
+  },
+  {
+    "id": "R011",
+    "name": "Ronda vecinal 011",
+    "question_ids": [
+      "Q0064",
+      "Q0001",
+      "Q0186",
+      "Q0466",
+      "Q0325",
+      "Q0603",
+      "Q0320",
+      "Q0821",
+      "Q0219",
+      "Q0726"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M026"
+  },
+  {
+    "id": "R012",
+    "name": "Ronda vecinal 012",
+    "question_ids": [
+      "Q0013",
+      "Q0055",
+      "Q0239",
+      "Q0459",
+      "Q0391",
+      "Q0548",
+      "Q0615",
+      "Q0281",
+      "Q0808",
+      "Q0680"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M026"
+  },
+  {
+    "id": "R013",
+    "name": "Ronda vecinal 013",
+    "question_ids": [
+      "Q0010",
+      "Q0046",
+      "Q0404",
+      "Q0411",
+      "Q0424",
+      "Q0116",
+      "Q0104",
+      "Q0818",
+      "Q0642",
+      "Q0701"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M029"
+  },
+  {
+    "id": "R014",
+    "name": "Ronda vecinal 014",
+    "question_ids": [
+      "Q0013",
+      "Q0353",
+      "Q0220",
+      "Q0155",
+      "Q0212",
+      "Q0793",
+      "Q0794",
+      "Q0829",
+      "Q0953",
+      "Q0695"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M045"
+  },
+  {
+    "id": "R015",
+    "name": "Ronda vecinal 015",
+    "question_ids": [
+      "Q0178",
+      "Q0337",
+      "Q0239",
+      "Q0441",
+      "Q0094",
+      "Q0529",
+      "Q0075",
+      "Q0820",
+      "Q0350",
+      "Q0707"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M039"
+  },
+  {
+    "id": "R016",
+    "name": "Ronda vecinal 016",
+    "question_ids": [
+      "Q0339",
+      "Q0014",
+      "Q0943",
+      "Q0069",
+      "Q0955",
+      "Q0795",
+      "Q0195",
+      "Q0914",
+      "Q0264",
+      "Q0666"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M004"
+  },
+  {
+    "id": "R017",
+    "name": "Ronda vecinal 017",
+    "question_ids": [
+      "Q0185",
+      "Q0013",
+      "Q0381",
+      "Q0510",
+      "Q0522",
+      "Q0346",
+      "Q0024",
+      "Q0108",
+      "Q0924",
+      "Q0723"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M006"
+  },
+  {
+    "id": "R018",
+    "name": "Ronda vecinal 018",
+    "question_ids": [
+      "Q0185",
+      "Q0205",
+      "Q0369",
+      "Q0492",
+      "Q0211",
+      "Q0562",
+      "Q0783",
+      "Q0927",
+      "Q0258",
+      "Q0684"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M014"
+  },
+  {
+    "id": "R019",
+    "name": "Ronda vecinal 019",
+    "question_ids": [
+      "Q0146",
+      "Q0181",
+      "Q0385",
+      "Q0441",
+      "Q0750",
+      "Q0794",
+      "Q0757",
+      "Q0953",
+      "Q0915",
+      "Q0719"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M047"
+  },
+  {
+    "id": "R020",
+    "name": "Ronda vecinal 020",
+    "question_ids": [
+      "Q0010",
+      "Q0322",
+      "Q0361",
+      "Q0331",
+      "Q0152",
+      "Q0795",
+      "Q0876",
+      "Q0034",
+      "Q0944",
+      "Q0724"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M036"
+  },
+  {
+    "id": "R021",
+    "name": "Ronda vecinal 021",
+    "question_ids": [
+      "Q0167",
+      "Q0053",
+      "Q0429",
+      "Q0522",
+      "Q0669",
+      "Q0587",
+      "Q0627",
+      "Q0924",
+      "Q0902",
+      "Q0656"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M044"
+  },
+  {
+    "id": "R022",
+    "name": "Ronda vecinal 022",
+    "question_ids": [
+      "Q0046",
+      "Q0067",
+      "Q0109",
+      "Q0113",
+      "Q0943",
+      "Q0472",
+      "Q0888",
+      "Q0812",
+      "Q0915",
+      "Q0705"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M033"
+  },
+  {
+    "id": "R023",
+    "name": "Ronda vecinal 023",
+    "question_ids": [
+      "Q0001",
+      "Q0059",
+      "Q0429",
+      "Q0747",
+      "Q0395",
+      "Q0162",
+      "Q0589",
+      "Q0923",
+      "Q0102",
+      "Q0697"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M008"
+  },
+  {
+    "id": "R024",
+    "name": "Ronda vecinal 024",
+    "question_ids": [
+      "Q0142",
+      "Q0059",
+      "Q0381",
+      "Q0484",
+      "Q0449",
+      "Q0628",
+      "Q0846",
+      "Q0297",
+      "Q0829",
+      "Q0682"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M018"
+  },
+  {
+    "id": "R025",
+    "name": "Ronda vecinal 025",
+    "question_ids": [
+      "Q0065",
+      "Q0181",
+      "Q0207",
+      "Q0597",
+      "Q0057",
+      "Q0296",
+      "Q0478",
+      "Q0812",
+      "Q0280",
+      "Q0683"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M037"
+  },
+  {
+    "id": "R026",
+    "name": "Ronda vecinal 026",
+    "question_ids": [
+      "Q0011",
+      "Q0354",
+      "Q0109",
+      "Q0490",
+      "Q0155",
+      "Q0880",
+      "Q0575",
+      "Q0646",
+      "Q0693",
+      "Q0315"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M015"
+  },
+  {
+    "id": "R027",
+    "name": "Ronda vecinal 027",
+    "question_ids": [
+      "Q0050",
+      "Q0340",
+      "Q0077",
+      "Q0015",
+      "Q0364",
+      "Q0760",
+      "Q0552",
+      "Q0918",
+      "Q0824",
+      "Q0739"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M041"
+  },
+  {
+    "id": "R028",
+    "name": "Ronda vecinal 028",
+    "question_ids": [
+      "Q0049",
+      "Q0062",
+      "Q0202",
+      "Q0937",
+      "Q0518",
+      "Q0572",
+      "Q0093",
+      "Q0646",
+      "Q0248",
+      "Q0135"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M016"
+  },
+  {
+    "id": "R029",
+    "name": "Ronda vecinal 029",
+    "question_ids": [
+      "Q0014",
+      "Q0068",
+      "Q0401",
+      "Q0582",
+      "Q0357",
+      "Q0234",
+      "Q0637",
+      "Q0266",
+      "Q0885",
+      "Q0036"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M014"
+  },
+  {
+    "id": "R030",
+    "name": "Ronda vecinal 030",
+    "question_ids": [
+      "Q0050",
+      "Q0004",
+      "Q0492",
+      "Q0429",
+      "Q0390",
+      "Q0259",
+      "Q0614",
+      "Q0646",
+      "Q0954",
+      "Q0739"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M032"
+  },
+  {
+    "id": "R031",
+    "name": "Ronda vecinal 031",
+    "question_ids": [
+      "Q0173",
+      "Q0065",
+      "Q0380",
+      "Q0113",
+      "Q0514",
+      "Q0754",
+      "Q0198",
+      "Q0654",
+      "Q0899",
+      "Q0661"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M043"
+  },
+  {
+    "id": "R032",
+    "name": "Ronda vecinal 032",
+    "question_ids": [
+      "Q0223",
+      "Q0146",
+      "Q0084",
+      "Q0474",
+      "Q0307",
+      "Q0078",
+      "Q0549",
+      "Q0636",
+      "Q0810",
+      "Q0702"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M004"
+  },
+  {
+    "id": "R033",
+    "name": "Ronda vecinal 033",
+    "question_ids": [
+      "Q0047",
+      "Q0146",
+      "Q0588",
+      "Q0414",
+      "Q0415",
+      "Q0153",
+      "Q0263",
+      "Q0873",
+      "Q0929",
+      "Q0730"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M013"
+  },
+  {
+    "id": "R034",
+    "name": "Ronda vecinal 034",
+    "question_ids": [
+      "Q0164",
+      "Q0008",
+      "Q0375",
+      "Q0003",
+      "Q0937",
+      "Q0452",
+      "Q0309",
+      "Q0863",
+      "Q0885",
+      "Q0138"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M012"
+  },
+  {
+    "id": "R035",
+    "name": "Ronda vecinal 035",
+    "question_ids": [
+      "Q0143",
+      "Q0148",
+      "Q0193",
+      "Q0092",
+      "Q0253",
+      "Q0604",
+      "Q0531",
+      "Q0693",
+      "Q0099",
+      "Q0720"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M040"
+  },
+  {
+    "id": "R036",
+    "name": "Ronda vecinal 036",
+    "question_ids": [
+      "Q0010",
+      "Q0338",
+      "Q0333",
+      "Q0446",
+      "Q0450",
+      "Q0428",
+      "Q0241",
+      "Q0942",
+      "Q0947",
+      "Q0677"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M012"
+  },
+  {
+    "id": "R037",
+    "name": "Ronda vecinal 037",
+    "question_ids": [
+      "Q0322",
+      "Q0340",
+      "Q0113",
+      "Q0336",
+      "Q0054",
+      "Q0614",
+      "Q0592",
+      "Q0828",
+      "Q0815",
+      "Q0715"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M009"
+  },
+  {
+    "id": "R038",
+    "name": "Ronda vecinal 038",
+    "question_ids": [
+      "Q0058",
+      "Q0067",
+      "Q0334",
+      "Q0360",
+      "Q0235",
+      "Q0630",
+      "Q0509",
+      "Q0927",
+      "Q0281",
+      "Q0249"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M014"
+  },
+  {
+    "id": "R039",
+    "name": "Ronda vecinal 039",
+    "question_ids": [
+      "Q0172",
+      "Q0005",
+      "Q0582",
+      "Q0371",
+      "Q0015",
+      "Q0087",
+      "Q0561",
+      "Q0021",
+      "Q0645",
+      "Q0745"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M012"
+  },
+  {
+    "id": "R040",
+    "name": "Ronda vecinal 040",
+    "question_ids": [
+      "Q0068",
+      "Q0190",
+      "Q0211",
+      "Q0334",
+      "Q0048",
+      "Q0554",
+      "Q0777",
+      "Q0902",
+      "Q0281",
+      "Q0694"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M036"
+  },
+  {
+    "id": "R041",
+    "name": "Ronda vecinal 041",
+    "question_ids": [
+      "Q0164",
+      "Q0079",
+      "Q0466",
+      "Q0081",
+      "Q0579",
+      "Q0227",
+      "Q0523",
+      "Q0231",
+      "Q0108",
+      "Q0027"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M033"
+  },
+  {
+    "id": "R042",
+    "name": "Ronda vecinal 042",
+    "question_ids": [
+      "Q0067",
+      "Q0182",
+      "Q0484",
+      "Q0048",
+      "Q0430",
+      "Q0493",
+      "Q0140",
+      "Q0356",
+      "Q0812",
+      "Q0734"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M002"
+  },
+  {
+    "id": "R043",
+    "name": "Ronda vecinal 043",
+    "question_ids": [
+      "Q0011",
+      "Q0304",
+      "Q0074",
+      "Q0306",
+      "Q0475",
+      "Q0287",
+      "Q0781",
+      "Q0954",
+      "Q0219",
+      "Q0294"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M034"
+  },
+  {
+    "id": "R044",
+    "name": "Ronda vecinal 044",
+    "question_ids": [
+      "Q0047",
+      "Q0083",
+      "Q0424",
+      "Q0168",
+      "Q0245",
+      "Q0017",
+      "Q0392",
+      "Q0811",
+      "Q0825",
+      "Q0717"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M038"
+  },
+  {
+    "id": "R045",
+    "name": "Ronda vecinal 045",
+    "question_ids": [
+      "Q0223",
+      "Q0049",
+      "Q0253",
+      "Q0913",
+      "Q0124",
+      "Q0495",
+      "Q0756",
+      "Q0044",
+      "Q0895",
+      "Q0655"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M006"
+  },
+  {
+    "id": "R046",
+    "name": "Ronda vecinal 046",
+    "question_ids": [
+      "Q0005",
+      "Q0001",
+      "Q0188",
+      "Q0023",
+      "Q0048",
+      "Q0894",
+      "Q0348",
+      "Q0823",
+      "Q0809",
+      "Q0653"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M045"
+  },
+  {
+    "id": "R047",
+    "name": "Ronda vecinal 047",
+    "question_ids": [
+      "Q0223",
+      "Q0082",
+      "Q0299",
+      "Q0409",
+      "Q0306",
+      "Q0606",
+      "Q0831",
+      "Q0932",
+      "Q0280",
+      "Q0315"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M039"
+  },
+  {
+    "id": "R048",
+    "name": "Ronda vecinal 048",
+    "question_ids": [
+      "Q0179",
+      "Q0214",
+      "Q0445",
+      "Q0196",
+      "Q0220",
+      "Q0256",
+      "Q0599",
+      "Q0906",
+      "Q0806",
+      "Q0041"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M002"
+  },
+  {
+    "id": "R049",
+    "name": "Ronda vecinal 049",
+    "question_ids": [
+      "Q0065",
+      "Q0215",
+      "Q0157",
+      "Q0576",
+      "Q0187",
+      "Q0767",
+      "Q0894",
+      "Q0133",
+      "Q0280",
+      "Q0282"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M045"
+  },
+  {
+    "id": "R050",
+    "name": "Ronda vecinal 050",
+    "question_ids": [
+      "Q0059",
+      "Q0338",
+      "Q0365",
+      "Q0071",
+      "Q0370",
+      "Q0587",
+      "Q0649",
+      "Q0812",
+      "Q0269",
+      "Q0710"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M038"
+  },
+  {
+    "id": "R051",
+    "name": "Ronda vecinal 051",
+    "question_ids": [
+      "Q0050",
+      "Q0185",
+      "Q0360",
+      "Q0186",
+      "Q0450",
+      "Q0833",
+      "Q0770",
+      "Q0920",
+      "Q0251",
+      "Q0700"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M047"
+  },
+  {
+    "id": "R052",
+    "name": "Ronda vecinal 052",
+    "question_ids": [
+      "Q0224",
+      "Q0052",
+      "Q0369",
+      "Q0253",
+      "Q0169",
+      "Q0574",
+      "Q0107",
+      "Q0957",
+      "Q0808",
+      "Q0672"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M013"
+  },
+  {
+    "id": "R053",
+    "name": "Ronda vecinal 053",
+    "question_ids": [
+      "Q0013",
+      "Q0046",
+      "Q0374",
+      "Q0006",
+      "Q0112",
+      "Q0162",
+      "Q0348",
+      "Q0855",
+      "Q0219",
+      "Q0684"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M014"
+  },
+  {
+    "id": "R054",
+    "name": "Ronda vecinal 054",
+    "question_ids": [
+      "Q0050",
+      "Q0067",
+      "Q0088",
+      "Q0235",
+      "Q0464",
+      "Q0756",
+      "Q0278",
+      "Q0356",
+      "Q0129",
+      "Q0668"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M017"
+  },
+  {
+    "id": "R055",
+    "name": "Ronda vecinal 055",
+    "question_ids": [
+      "Q0340",
+      "Q0205",
+      "Q0538",
+      "Q0203",
+      "Q0196",
+      "Q0631",
+      "Q0257",
+      "Q0638",
+      "Q0133",
+      "Q0698"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M025"
+  },
+  {
+    "id": "R056",
+    "name": "Ronda vecinal 056",
+    "question_ids": [
+      "Q0172",
+      "Q0047",
+      "Q0404",
+      "Q0028",
+      "Q0576",
+      "Q0621",
+      "Q0517",
+      "Q0636",
+      "Q0133",
+      "Q0040"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M019"
+  },
+  {
+    "id": "R057",
+    "name": "Ronda vecinal 057",
+    "question_ids": [
+      "Q0173",
+      "Q0205",
+      "Q0370",
+      "Q0369",
+      "Q0244",
+      "Q0876",
+      "Q0770",
+      "Q0293",
+      "Q0132",
+      "Q0672"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M020"
+  },
+  {
+    "id": "R058",
+    "name": "Ronda vecinal 058",
+    "question_ids": [
+      "Q0007",
+      "Q0322",
+      "Q0144",
+      "Q0225",
+      "Q0239",
+      "Q0517",
+      "Q0785",
+      "Q0942",
+      "Q0895",
+      "Q0690"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M022"
+  },
+  {
+    "id": "R059",
+    "name": "Ronda vecinal 059",
+    "question_ids": [
+      "Q0335",
+      "Q0146",
+      "Q0481",
+      "Q0456",
+      "Q0341",
+      "Q0557",
+      "Q0255",
+      "Q0927",
+      "Q0865",
+      "Q0725"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M009"
+  },
+  {
+    "id": "R060",
+    "name": "Ronda vecinal 060",
+    "question_ids": [
+      "Q0082",
+      "Q0145",
+      "Q0375",
+      "Q0330",
+      "Q0542",
+      "Q0748",
+      "Q0870",
+      "Q0917",
+      "Q0903",
+      "Q0652"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M007"
+  },
+  {
+    "id": "R061",
+    "name": "Ronda vecinal 061",
+    "question_ids": [
+      "Q0143",
+      "Q0062",
+      "Q0421",
+      "Q0094",
+      "Q0530",
+      "Q0775",
+      "Q0097",
+      "Q0321",
+      "Q0853",
+      "Q0665"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M044"
+  },
+  {
+    "id": "R062",
+    "name": "Ronda vecinal 062",
+    "question_ids": [
+      "Q0352",
+      "Q0068",
+      "Q0183",
+      "Q0508",
+      "Q0465",
+      "Q0478",
+      "Q0622",
+      "Q0813",
+      "Q0930",
+      "Q0285"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M029"
+  },
+  {
+    "id": "R063",
+    "name": "Ronda vecinal 063",
+    "question_ids": [
+      "Q0305",
+      "Q0340",
+      "Q0931",
+      "Q0934",
+      "Q0333",
+      "Q0833",
+      "Q0612",
+      "Q0281",
+      "Q0303",
+      "Q0662"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M030"
+  },
+  {
+    "id": "R064",
+    "name": "Ronda vecinal 064",
+    "question_ids": [
+      "Q0149",
+      "Q0056",
+      "Q0401",
+      "Q0573",
+      "Q0425",
+      "Q0631",
+      "Q0482",
+      "Q0636",
+      "Q0292",
+      "Q0732"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M047"
+  },
+  {
+    "id": "R065",
+    "name": "Ronda vecinal 065",
+    "question_ids": [
+      "Q0061",
+      "Q0305",
+      "Q0012",
+      "Q0504",
+      "Q0095",
+      "Q0898",
+      "Q0467",
+      "Q0903",
+      "Q0025",
+      "Q0730"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M011"
+  },
+  {
+    "id": "R066",
+    "name": "Ronda vecinal 066",
+    "question_ids": [
+      "Q0065",
+      "Q0179",
+      "Q0238",
+      "Q0512",
+      "Q0657",
+      "Q0577",
+      "Q0639",
+      "Q0935",
+      "Q0811",
+      "Q0744"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M009"
+  },
+  {
+    "id": "R067",
+    "name": "Ronda vecinal 067",
+    "question_ids": [
+      "Q0214",
+      "Q0173",
+      "Q0012",
+      "Q0169",
+      "Q0394",
+      "Q0348",
+      "Q0320",
+      "Q0117",
+      "Q0921",
+      "Q0282"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M010"
+  },
+  {
+    "id": "R068",
+    "name": "Ronda vecinal 068",
+    "question_ids": [
+      "Q0062",
+      "Q0214",
+      "Q0253",
+      "Q0158",
+      "Q0244",
+      "Q0103",
+      "Q0605",
+      "Q0908",
+      "Q0136",
+      "Q0656"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M010"
+  },
+  {
+    "id": "R069",
+    "name": "Ronda vecinal 069",
+    "question_ids": [
+      "Q0052",
+      "Q0008",
+      "Q0394",
+      "Q0436",
+      "Q0424",
+      "Q0605",
+      "Q0519",
+      "Q0873",
+      "Q0947",
+      "Q0682"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M036"
+  },
+  {
+    "id": "R070",
+    "name": "Ronda vecinal 070",
+    "question_ids": [
+      "Q0064",
+      "Q0206",
+      "Q0484",
+      "Q0520",
+      "Q0200",
+      "Q0554",
+      "Q0277",
+      "Q0356",
+      "Q0906",
+      "Q0682"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M022"
+  },
+  {
+    "id": "R071",
+    "name": "Ronda vecinal 071",
+    "question_ids": [
+      "Q0166",
+      "Q0079",
+      "Q0212",
+      "Q0480",
+      "Q0514",
+      "Q0838",
+      "Q0577",
+      "Q0927",
+      "Q0292",
+      "Q0722"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M042"
+  },
+  {
+    "id": "R072",
+    "name": "Ronda vecinal 072",
+    "question_ids": [
+      "Q0050",
+      "Q0055",
+      "Q0076",
+      "Q0496",
+      "Q0112",
+      "Q0319",
+      "Q0291",
+      "Q0957",
+      "Q0956",
+      "Q0685"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M003"
+  },
+  {
+    "id": "R073",
+    "name": "Ronda vecinal 073",
+    "question_ids": [
+      "Q0001",
+      "Q0062",
+      "Q0919",
+      "Q0151",
+      "Q0307",
+      "Q0659",
+      "Q0776",
+      "Q0921",
+      "Q0284",
+      "Q0694"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M037"
+  },
+  {
+    "id": "R074",
+    "name": "Ronda vecinal 074",
+    "question_ids": [
+      "Q0143",
+      "Q0215",
+      "Q0381",
+      "Q0325",
+      "Q0937",
+      "Q0467",
+      "Q0785",
+      "Q0885",
+      "Q0634",
+      "Q0664"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M003"
+  },
+  {
+    "id": "R075",
+    "name": "Ronda vecinal 075",
+    "question_ids": [
+      "Q0163",
+      "Q0335",
+      "Q0594",
+      "Q0399",
+      "Q0299",
+      "Q0592",
+      "Q0769",
+      "Q0932",
+      "Q0950",
+      "Q0709"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M041"
+  },
+  {
+    "id": "R076",
+    "name": "Ronda vecinal 076",
+    "question_ids": [
+      "Q0146",
+      "Q0055",
+      "Q0109",
+      "Q0414",
+      "Q0029",
+      "Q0840",
+      "Q0894",
+      "Q0921",
+      "Q0265",
+      "Q0664"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M011"
+  },
+  {
+    "id": "R077",
+    "name": "Ronda vecinal 077",
+    "question_ids": [
+      "Q0224",
+      "Q0079",
+      "Q0573",
+      "Q0451",
+      "Q0202",
+      "Q0768",
+      "Q0611",
+      "Q0035",
+      "Q0918",
+      "Q0705"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M010"
+  },
+  {
+    "id": "R078",
+    "name": "Ronda vecinal 078",
+    "question_ids": [
+      "Q0058",
+      "Q0181",
+      "Q0750",
+      "Q0440",
+      "Q0459",
+      "Q0569",
+      "Q0373",
+      "Q0929",
+      "Q0350",
+      "Q0716"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M004"
+  },
+  {
+    "id": "R079",
+    "name": "Ronda vecinal 079",
+    "question_ids": [
+      "Q0323",
+      "Q0061",
+      "Q0063",
+      "Q0197",
+      "Q0520",
+      "Q0427",
+      "Q0846",
+      "Q0941",
+      "Q0947",
+      "Q0683"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M043"
+  },
+  {
+    "id": "R080",
+    "name": "Ronda vecinal 080",
+    "question_ids": [
+      "Q0340",
+      "Q0326",
+      "Q0069",
+      "Q0022",
+      "Q0931",
+      "Q0878",
+      "Q0260",
+      "Q0909",
+      "Q0644",
+      "Q0249"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M028"
+  },
+  {
+    "id": "R081",
+    "name": "Ronda vecinal 081",
+    "question_ids": [
+      "Q0008",
+      "Q0335",
+      "Q0466",
+      "Q0324",
+      "Q0542",
+      "Q0572",
+      "Q0839",
+      "Q0889",
+      "Q0273",
+      "Q0726"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M001"
+  },
+  {
+    "id": "R082",
+    "name": "Ronda vecinal 082",
+    "question_ids": [
+      "Q0082",
+      "Q0322",
+      "Q0155",
+      "Q0416",
+      "Q0460",
+      "Q0787",
+      "Q0670",
+      "Q0264",
+      "Q0247",
+      "Q0045"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M027"
+  },
+  {
+    "id": "R083",
+    "name": "Ronda vecinal 083",
+    "question_ids": [
+      "Q0061",
+      "Q0215",
+      "Q0365",
+      "Q0579",
+      "Q0648",
+      "Q0643",
+      "Q0845",
+      "Q0905",
+      "Q0273",
+      "Q0689"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M030"
+  },
+  {
+    "id": "R084",
+    "name": "Ronda vecinal 084",
+    "question_ids": [
+      "Q0065",
+      "Q0010",
+      "Q0490",
+      "Q0212",
+      "Q0669",
+      "Q0127",
+      "Q0894",
+      "Q0102",
+      "Q0293",
+      "Q0729"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M034"
+  },
+  {
+    "id": "R085",
+    "name": "Ronda vecinal 085",
+    "question_ids": [
+      "Q0166",
+      "Q0052",
+      "Q0332",
+      "Q0085",
+      "Q0051",
+      "Q0362",
+      "Q0603",
+      "Q0269",
+      "Q0859",
+      "Q0317"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M018"
+  },
+  {
+    "id": "R086",
+    "name": "Ronda vecinal 086",
+    "question_ids": [
+      "Q0163",
+      "Q0185",
+      "Q0406",
+      "Q0459",
+      "Q0380",
+      "Q0621",
+      "Q0412",
+      "Q0809",
+      "Q0935",
+      "Q0662"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M048"
+  },
+  {
+    "id": "R087",
+    "name": "Ronda vecinal 087",
+    "question_ids": [
+      "Q0064",
+      "Q0142",
+      "Q0591",
+      "Q0199",
+      "Q0542",
+      "Q0302",
+      "Q0300",
+      "Q0350",
+      "Q0867",
+      "Q0696"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M030"
+  },
+  {
+    "id": "R088",
+    "name": "Ronda vecinal 088",
+    "question_ids": [
+      "Q0056",
+      "Q0354",
+      "Q0077",
+      "Q0424",
+      "Q0361",
+      "Q0884",
+      "Q0801",
+      "Q0638",
+      "Q0264",
+      "Q0294"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M024"
+  },
+  {
+    "id": "R089",
+    "name": "Ronda vecinal 089",
+    "question_ids": [
+      "Q0191",
+      "Q0065",
+      "Q0203",
+      "Q0094",
+      "Q0485",
+      "Q0427",
+      "Q0241",
+      "Q0903",
+      "Q0935",
+      "Q0686"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M039"
+  },
+  {
+    "id": "R090",
+    "name": "Ronda vecinal 090",
+    "question_ids": [
+      "Q0082",
+      "Q0011",
+      "Q0454",
+      "Q0532",
+      "Q0429",
+      "Q0834",
+      "Q0230",
+      "Q0280",
+      "Q0321",
+      "Q0684"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M020"
+  },
+  {
+    "id": "R091",
+    "name": "Ronda vecinal 091",
+    "question_ids": [
+      "Q0215",
+      "Q0327",
+      "Q0406",
+      "Q0324",
+      "Q0333",
+      "Q0649",
+      "Q0613",
+      "Q0944",
+      "Q0825",
+      "Q0744"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M008"
+  },
+  {
+    "id": "R092",
+    "name": "Ronda vecinal 092",
+    "question_ids": [
+      "Q0055",
+      "Q0080",
+      "Q0459",
+      "Q0424",
+      "Q0506",
+      "Q0845",
+      "Q0615",
+      "Q0231",
+      "Q0808",
+      "Q0045"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M022"
+  },
+  {
+    "id": "R093",
+    "name": "Ronda vecinal 093",
+    "question_ids": [
+      "Q0322",
+      "Q0143",
+      "Q0376",
+      "Q0471",
+      "Q0077",
+      "Q0623",
+      "Q0075",
+      "Q0953",
+      "Q0693",
+      "Q0138"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M046"
+  },
+  {
+    "id": "R094",
+    "name": "Ronda vecinal 094",
+    "question_ids": [
+      "Q0062",
+      "Q0172",
+      "Q0514",
+      "Q0200",
+      "Q0236",
+      "Q0345",
+      "Q0432",
+      "Q0823",
+      "Q0288",
+      "Q0690"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M042"
+  },
+  {
+    "id": "R095",
+    "name": "Ronda vecinal 095",
+    "question_ids": [
+      "Q0046",
+      "Q0184",
+      "Q0415",
+      "Q0158",
+      "Q0439",
+      "Q0378",
+      "Q0571",
+      "Q0809",
+      "Q0829",
+      "Q0737"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M024"
+  },
+  {
+    "id": "R096",
+    "name": "Ronda vecinal 096",
+    "question_ids": [
+      "Q0215",
+      "Q0068",
+      "Q0342",
+      "Q0750",
+      "Q0074",
+      "Q0565",
+      "Q0800",
+      "Q0026",
+      "Q0297",
+      "Q0285"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M030"
+  },
+  {
+    "id": "R097",
+    "name": "Ronda vecinal 097",
+    "question_ids": [
+      "Q0206",
+      "Q0353",
+      "Q0747",
+      "Q0125",
+      "Q0540",
+      "Q0831",
+      "Q0153",
+      "Q0134",
+      "Q0944",
+      "Q0701"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M020"
+  },
+  {
+    "id": "R098",
+    "name": "Ronda vecinal 098",
+    "question_ids": [
+      "Q0322",
+      "Q0052",
+      "Q0440",
+      "Q0934",
+      "Q0913",
+      "Q0840",
+      "Q0886",
+      "Q0283",
+      "Q0248",
+      "Q0716"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M025"
+  },
+  {
+    "id": "R099",
+    "name": "Ronda vecinal 099",
+    "question_ids": [
+      "Q0182",
+      "Q0062",
+      "Q0084",
+      "Q0197",
+      "Q0375",
+      "Q0230",
+      "Q0488",
+      "Q0947",
+      "Q0948",
+      "Q0743"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M009"
+  },
+  {
+    "id": "R100",
+    "name": "Ronda vecinal 100",
+    "question_ids": [
+      "Q0223",
+      "Q0004",
+      "Q0112",
+      "Q0582",
+      "Q0370",
+      "Q0835",
+      "Q0509",
+      "Q0638",
+      "Q0313",
+      "Q0741"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M043"
+  },
+  {
+    "id": "R101",
+    "name": "Ronda vecinal 101",
+    "question_ids": [
+      "Q0059",
+      "Q0181",
+      "Q0484",
+      "Q0907",
+      "Q0054",
+      "Q0880",
+      "Q0858",
+      "Q0644",
+      "Q0303",
+      "Q0743"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M022"
+  },
+  {
+    "id": "R102",
+    "name": "Ronda vecinal 102",
+    "question_ids": [
+      "Q0305",
+      "Q0322",
+      "Q0344",
+      "Q0244",
+      "Q0466",
+      "Q0788",
+      "Q0548",
+      "Q0929",
+      "Q0283",
+      "Q0682"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M029"
+  },
+  {
+    "id": "R103",
+    "name": "Ronda vecinal 103",
+    "question_ids": [
+      "Q0338",
+      "Q0058",
+      "Q0464",
+      "Q0441",
+      "Q0347",
+      "Q0387",
+      "Q0123",
+      "Q0281",
+      "Q0250",
+      "Q0706"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M035"
+  },
+  {
+    "id": "R104",
+    "name": "Ronda vecinal 104",
+    "question_ids": [
+      "Q0323",
+      "Q0065",
+      "Q0118",
+      "Q0591",
+      "Q0233",
+      "Q0556",
+      "Q0535",
+      "Q0920",
+      "Q0807",
+      "Q0656"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M011"
+  },
+  {
+    "id": "R105",
+    "name": "Ronda vecinal 105",
+    "question_ids": [
+      "Q0338",
+      "Q0068",
+      "Q0212",
+      "Q0943",
+      "Q0504",
+      "Q0519",
+      "Q0513",
+      "Q0877",
+      "Q0927",
+      "Q0682"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M047"
+  },
+  {
+    "id": "R106",
+    "name": "Ronda vecinal 106",
+    "question_ids": [
+      "Q0079",
+      "Q0223",
+      "Q0357",
+      "Q0150",
+      "Q0308",
+      "Q0519",
+      "Q0850",
+      "Q0820",
+      "Q0269",
+      "Q0698"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M003"
+  },
+  {
+    "id": "R107",
+    "name": "Ronda vecinal 107",
+    "question_ids": [
+      "Q0323",
+      "Q0082",
+      "Q0411",
+      "Q0424",
+      "Q0573",
+      "Q0769",
+      "Q0093",
+      "Q0939",
+      "Q0885",
+      "Q0692"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M034"
+  },
+  {
+    "id": "R108",
+    "name": "Ronda vecinal 108",
+    "question_ids": [
+      "Q0164",
+      "Q0179",
+      "Q0494",
+      "Q0410",
+      "Q0426",
+      "Q0801",
+      "Q0505",
+      "Q0815",
+      "Q0303",
+      "Q0652"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M009"
+  },
+  {
+    "id": "R109",
+    "name": "Ronda vecinal 109",
+    "question_ids": [
+      "Q0185",
+      "Q0058",
+      "Q0233",
+      "Q0341",
+      "Q0421",
+      "Q0198",
+      "Q0328",
+      "Q0117",
+      "Q0930",
+      "Q0681"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M032"
+  },
+  {
+    "id": "R110",
+    "name": "Ronda vecinal 110",
+    "question_ids": [
+      "Q0083",
+      "Q0059",
+      "Q0390",
+      "Q0435",
+      "Q0504",
+      "Q0447",
+      "Q0802",
+      "Q0861",
+      "Q0043",
+      "Q0727"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M046"
+  },
+  {
+    "id": "R111",
+    "name": "Ronda vecinal 111",
+    "question_ids": [
+      "Q0014",
+      "Q0354",
+      "Q0344",
+      "Q0380",
+      "Q0399",
+      "Q0607",
+      "Q0377",
+      "Q0857",
+      "Q0276",
+      "Q0686"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M044"
+  },
+  {
+    "id": "R112",
+    "name": "Ronda vecinal 112",
+    "question_ids": [
+      "Q0050",
+      "Q0146",
+      "Q0168",
+      "Q0209",
+      "Q0077",
+      "Q0566",
+      "Q0477",
+      "Q0136",
+      "Q0646",
+      "Q0685"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M012"
+  },
+  {
+    "id": "R113",
+    "name": "Ronda vecinal 113",
+    "question_ids": [
+      "Q0007",
+      "Q0323",
+      "Q0396",
+      "Q0425",
+      "Q0544",
+      "Q0159",
+      "Q0581",
+      "Q0134",
+      "Q0865",
+      "Q0727"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M046"
+  },
+  {
+    "id": "R114",
+    "name": "Ronda vecinal 114",
+    "question_ids": [
+      "Q0190",
+      "Q0304",
+      "Q0943",
+      "Q0384",
+      "Q0124",
+      "Q0659",
+      "Q0592",
+      "Q0651",
+      "Q0881",
+      "Q0294"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M042"
+  },
+  {
+    "id": "R115",
+    "name": "Ronda vecinal 115",
+    "question_ids": [
+      "Q0007",
+      "Q0353",
+      "Q0446",
+      "Q0088",
+      "Q0474",
+      "Q0838",
+      "Q0860",
+      "Q0021",
+      "Q0108",
+      "Q0717"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M039"
+  },
+  {
+    "id": "R116",
+    "name": "Ronda vecinal 116",
+    "question_ids": [
+      "Q0058",
+      "Q0182",
+      "Q0144",
+      "Q0177",
+      "Q0202",
+      "Q0601",
+      "Q0545",
+      "Q0822",
+      "Q0132",
+      "Q0708"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M046"
+  },
+  {
+    "id": "R117",
+    "name": "Ronda vecinal 117",
+    "question_ids": [
+      "Q0046",
+      "Q0062",
+      "Q0232",
+      "Q0747",
+      "Q0310",
+      "Q0798",
+      "Q0598",
+      "Q0102",
+      "Q0877",
+      "Q0738"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M026"
+  },
+  {
+    "id": "R118",
+    "name": "Ronda vecinal 118",
+    "question_ids": [
+      "Q0082",
+      "Q0005",
+      "Q0512",
+      "Q0400",
+      "Q0334",
+      "Q0329",
+      "Q0507",
+      "Q0819",
+      "Q0939",
+      "Q0689"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M008"
+  },
+  {
+    "id": "R119",
+    "name": "Ronda vecinal 119",
+    "question_ids": [
+      "Q0358",
+      "Q0082",
+      "Q0253",
+      "Q0379",
+      "Q0009",
+      "Q0801",
+      "Q0581",
+      "Q0693",
+      "Q0899",
+      "Q0135"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M022"
+  },
+  {
+    "id": "R120",
+    "name": "Ronda vecinal 120",
+    "question_ids": [
+      "Q0064",
+      "Q0142",
+      "Q0907",
+      "Q0585",
+      "Q0365",
+      "Q0452",
+      "Q0201",
+      "Q0954",
+      "Q0035",
+      "Q0672"
+    ],
+    "format": "10 preguntas mixtas",
+    "difficulty_curve": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "recommended_mode": "M006"
+  }
+]

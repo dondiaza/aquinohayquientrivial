@@ -9,27 +9,33 @@
 export const QUESTION_CATEGORIES = [
   {
     id: 'general',
-    label: 'General',
-    tagline: 'De todo un poco, como en la junta',
-    icon: '🏢',
+    label: 'La serie',
+    tagline: 'Antena 3, 2003-2006 y Desengaño 21',
+    icon: '📺',
   },
   {
     id: 'personajes',
     label: 'Personajes',
-    tagline: 'Quién es quién en el portal',
+    tagline: 'Quién es quién en Desengaño 21',
     icon: '🧑‍🤝‍🧑',
+  },
+  {
+    id: 'reparto',
+    label: 'Reparto',
+    tagline: 'Qué actor puso la cara a cada vecino',
+    icon: '🎭',
   },
   {
     id: 'lugares',
     label: 'Lugares',
-    tagline: 'Portal, azotea, cuarto de contadores',
+    tagline: 'Pisos, portería, videoclub y ático',
     icon: '🚪',
   },
   {
-    id: 'situaciones',
-    label: 'Situaciones',
-    tagline: 'Derramas, obras y malentendidos',
-    icon: '🧯',
+    id: 'relaciones',
+    label: 'Relaciones',
+    tagline: 'Parejas, familias y quién no se habla con quién',
+    icon: '💍',
   },
   {
     id: 'tramas',
@@ -39,9 +45,51 @@ export const QUESTION_CATEGORIES = [
   },
   {
     id: 'temporadas',
-    label: 'Temporadas',
-    tagline: 'Qué pasó y cuándo',
+    label: 'Cronología',
+    tagline: 'Qué pasó y en qué temporada',
     icon: '📅',
+  },
+  {
+    id: 'situaciones',
+    label: 'Situaciones',
+    tagline: 'Derramas, juntas, obras y malentendidos',
+    icon: '🧯',
+  },
+  {
+    id: 'frases',
+    label: 'Frases',
+    tagline: 'Un poquito de por favor',
+    icon: '💬',
+  },
+  {
+    id: 'produccion',
+    label: 'Producción',
+    tagline: 'Quién estaba detrás de la cámara',
+    icon: '🎬',
+  },
+  {
+    id: 'audiencias',
+    label: 'Audiencias',
+    tagline: 'Cuota, espectadores y récords',
+    icon: '📈',
+  },
+  {
+    id: 'curiosidades',
+    label: 'Curiosidades',
+    tagline: 'PUF, Campanadas y detalles menores',
+    icon: '🔎',
+  },
+  {
+    id: 'ecosistema',
+    label: 'Ecosistema',
+    tagline: 'Campanadas, especiales y lo que vino después',
+    icon: '🎉',
+  },
+  {
+    id: 'adaptaciones',
+    label: 'Adaptaciones',
+    tagline: 'El portal en otros países',
+    icon: '🌍',
   },
 ] as const;
 

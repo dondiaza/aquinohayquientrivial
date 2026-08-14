@@ -54,6 +54,16 @@ jobs:
           # (con el pooler dan P1002 por el advisory lock).
           DATABASE_URL: ${{ secrets.DATABASE_URL_UNPOOLED }}
 
+      # El banco de preguntas es CONTENIDO, no datos de usuario: el seed es idempotente
+      # (upsert por id) y archiva lo que ya no forma parte del pack en lugar de borrarlo,
+      # así que no toca partidas ni perfiles. Sin este paso, un deploy con preguntas nuevas
+      # dejaría la web con el banco viejo.
+      - name: Sembrar el banco de preguntas
+        if: env.TIENE_BD == 'true'
+        run: npx tsx prisma/seed.ts
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL_UNPOOLED }}
+
       - name: Configuración del proyecto de Vercel
         if: env.TIENE_VERCEL == 'true'
         run: npx vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
@@ -76,7 +86,7 @@ jobs:
         if: env.TIENE_VERCEL == 'true'
         run: |
           URL="${{ steps.deploy.outputs.url }}"
-          for ruta in "/" "/jugar/solo" "/como-jugar"; do
+          for ruta in "/" "/jugar/solo" "/como-jugar" "/portal" "/pruebas" "/tarjetas"; do
             codigo=$(curl -s -o /dev/null -w '%{http_code}' "$URL$ruta")
             echo "$codigo  $ruta"
             test "$codigo" = "200"

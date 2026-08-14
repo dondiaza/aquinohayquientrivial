@@ -34,6 +34,12 @@ export function toQuestionRecord(row: QuestionRow): QuestionRecord {
     timeLimitSeconds: row.timeLimitSeconds,
     sourceNote: row.sourceNote ?? undefined,
     verified: row.verified,
+    featured: row.featured,
+    spoiler: row.spoiler,
+    confidence: row.confidence,
+    variant: row.variant ?? undefined,
+    factKey: row.factKey ?? undefined,
+    needsReview: row.needsReview,
     createdAt: row.createdAt.toISOString(),
     updatedAt: row.updatedAt.toISOString(),
   });
@@ -66,6 +72,12 @@ function toRowData(input: QuestionInput) {
     timeLimitSeconds: input.timeLimitSeconds,
     sourceNote: input.sourceNote ?? null,
     verified: input.verified,
+    featured: input.featured,
+    spoiler: input.spoiler,
+    confidence: input.confidence,
+    variant: input.variant ?? null,
+    factKey: input.factKey ?? null,
+    needsReview: input.needsReview,
   };
 }
 
@@ -78,6 +90,9 @@ export type QuestionFilters = {
   status?: QuestionStatus;
   season?: number;
   verified?: boolean;
+  spoiler?: string;
+  needsReview?: boolean;
+  variant?: string;
   difficultyMin?: number;
   difficultyMax?: number;
   page?: number;
@@ -93,6 +108,9 @@ function toWhere(filters: QuestionFilters): Prisma.QuestionWhereInput {
   if (filters.status) where.status = filters.status;
   if (filters.season) where.season = filters.season;
   if (filters.verified !== undefined) where.verified = filters.verified;
+  if (filters.needsReview !== undefined) where.needsReview = filters.needsReview;
+  if (filters.spoiler) where.spoiler = filters.spoiler;
+  if (filters.variant) where.variant = filters.variant;
   if (filters.difficultyMin !== undefined || filters.difficultyMax !== undefined) {
     where.difficulty = {
       ...(filters.difficultyMin !== undefined ? { gte: filters.difficultyMin } : {}),
@@ -243,6 +261,11 @@ export async function duplicateQuestion(id: string): Promise<Question | null> {
       timeLimitSeconds: source.timeLimitSeconds,
       sourceNote: source.sourceNote,
       verified: false,
+      spoiler: source.spoiler,
+      confidence: source.confidence,
+      variant: source.variant,
+      factKey: source.factKey,
+      needsReview: source.needsReview,
       stat: { create: {} },
     },
   });
@@ -256,7 +279,8 @@ export async function deleteQuestion(id: string): Promise<void> {
 // ── Banco disponible para jugar ─────────────────────────────────────────────────
 
 /**
- * Preguntas ACTIVE candidatas para una partida.
+ * Preguntas ACTIVE candidatas para una partida. Las marcadas para revisión editorial
+ * nunca salen: están en el banco para que alguien las arregle, no para jugarlas.
  *
  * Nota de escala: con un banco pequeño (cientos) traerlo entero es lo más simple y
  * rápido. Si el banco creciera a decenas de miles, aquí es donde habría que muestrear
@@ -270,6 +294,7 @@ export async function loadPlayableQuestions(options?: {
   const rows = await prisma.question.findMany({
     where: {
       status: 'ACTIVE',
+      needsReview: false,
       ...(options?.categories?.length ? { category: { in: options.categories } } : {}),
       ...(options?.types?.length ? { type: { in: options.types } } : {}),
     },

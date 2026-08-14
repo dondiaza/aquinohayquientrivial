@@ -24,6 +24,8 @@ export const QUESTION_TYPES = [
   'MISSING_ITEM',
   'DECISION',
   'SEQUENCE',
+  // Contenido ANHQV: respuesta escrita a mano, sin opciones que copiar.
+  'SHORT_ANSWER',
 ] as const;
 
 export type QuestionType = (typeof QUESTION_TYPES)[number];
@@ -42,6 +44,21 @@ export type QuestionMedia = {
   src?: string;
   alt?: string;
 };
+
+/**
+ * Aviso de destripe. Lo trae el pack editorial y decide si una pregunta puede salir
+ * con el modo «sin spoilers» activado.
+ *
+ *   none  · dato inocuo (reparto, lugares, producción)
+ *   light · avance de trama sin desenlace
+ *   major · muertes, bodas decisivas y final de la serie
+ */
+export const SPOILER_LEVELS = ['none', 'light', 'major'] as const;
+export type SpoilerLevel = (typeof SPOILER_LEVELS)[number];
+
+/** Cuánto se fía el equipo editorial del dato. `medium` no se usa en el reto del día. */
+export const CONFIDENCE_LEVELS = ['high', 'medium'] as const;
+export type ConfidenceLevel = (typeof CONFIDENCE_LEVELS)[number];
 
 export type QuestionOption = {
   id: string;
@@ -70,6 +87,24 @@ export type QuestionBase = {
   verified: boolean;
   /** Destacada: el admin la marca y el director de partida la prioriza. */
   featured?: boolean;
+  /** Nivel de destripe del pack editorial. */
+  spoiler: SpoilerLevel;
+  /** Confianza editorial en el dato. */
+  confidence: ConfidenceLevel;
+  /**
+   * Familia de pregunta del pack ANHQV (`emparejar`, `doble_pista`, `ficha_rapida`…).
+   * El motor solo entiende `type`; `variant` es lo que cambia la presentación y el
+   * rótulo en pantalla. Catálogo en src/domain/questions/variants.ts.
+   */
+  variant?: string;
+  /**
+   * Huella del HECHO que se pregunta. El pack genera tríos (corta + opción múltiple +
+   * verdadero/falso) sobre el mismo dato: compartir `factKey` permite que la selección
+   * no meta dos formas del mismo hecho en la misma partida.
+   */
+  factKey?: string;
+  /** Marcada para revisión humana: no entra en partidas hasta que alguien la valide. */
+  needsReview?: boolean;
   createdAt: string;
   updatedAt: string;
 };
@@ -178,6 +213,20 @@ export type SequencePayload = {
   stepMs: number;
 };
 
+/**
+ * 11. FICHA DEL VECINO — se escribe la respuesta. No hay opciones que descartar, así
+ * que es la familia que mejor separa a quien se sabe la serie de quien acierta a dedo.
+ * La corrección es tolerante: ignora tildes, mayúsculas, artículos y erratas de una letra.
+ */
+export type ShortAnswerPayload = {
+  /** Respuesta canónica, tal y como se muestra en el revelado. */
+  answer: string;
+  /** Otras formas que también se aceptan (nombre corto, variantes de grafía…). */
+  accepted: string[];
+  /** Ayuda opcional que se muestra desde el principio (no resta puntos). */
+  hint?: string;
+};
+
 export type QuestionPayloadMap = {
   MULTIPLE_CHOICE: MultipleChoicePayload;
   TRUE_FALSE: TrueFalsePayload;
@@ -189,6 +238,7 @@ export type QuestionPayloadMap = {
   MISSING_ITEM: MissingItemPayload;
   DECISION: DecisionPayload;
   SEQUENCE: SequencePayload;
+  SHORT_ANSWER: ShortAnswerPayload;
 };
 
 export type QuestionPayloadFor<T extends QuestionType> = QuestionPayloadMap[T];
@@ -205,6 +255,7 @@ export type MemoryGridQuestion = QuestionOf<'MEMORY_GRID'>;
 export type MissingItemQuestion = QuestionOf<'MISSING_ITEM'>;
 export type DecisionQuestion = QuestionOf<'DECISION'>;
 export type SequenceQuestion = QuestionOf<'SEQUENCE'>;
+export type ShortAnswerQuestion = QuestionOf<'SHORT_ANSWER'>;
 
 export type Question =
   | MultipleChoiceQuestion
@@ -216,7 +267,8 @@ export type Question =
   | MemoryGridQuestion
   | MissingItemQuestion
   | DecisionQuestion
-  | SequenceQuestion;
+  | SequenceQuestion
+  | ShortAnswerQuestion;
 
 /** Pregunta sin los campos que asigna la persistencia. */
 export type QuestionDraft = Omit<Question, 'id' | 'createdAt' | 'updatedAt'> & {
@@ -230,6 +282,7 @@ export type AnswerSubmission =
   | { kind: 'BOOLEAN'; value: boolean }
   | { kind: 'ITEM'; itemId: string }
   | { kind: 'ORDER'; orderedIds: string[] }
+  | { kind: 'TEXT'; text: string }
   /** Tiempo agotado o abandono: no hay respuesta. */
   | { kind: 'NONE' };
 
@@ -247,6 +300,7 @@ export const ANSWER_KIND_BY_TYPE: Record<QuestionType, AnswerKind> = {
   MISSING_ITEM: 'OPTION',
   DECISION: 'OPTION',
   SEQUENCE: 'ORDER',
+  SHORT_ANSWER: 'TEXT',
 };
 
 // ── Ayudas de acceso seguro (noUncheckedIndexedAccess) ──────────────────────────
@@ -267,6 +321,7 @@ export function questionOptions(question: Question): QuestionOption[] | null {
       return question.pads;
     case 'ORDER_CHAOS':
     case 'TRUE_FALSE':
+    case 'SHORT_ANSWER':
       return null;
   }
 }
@@ -292,6 +347,7 @@ export function wrongOptionIds(question: Question): string[] {
     case 'ORDER_CHAOS':
     case 'TRUE_FALSE':
     case 'SEQUENCE':
+    case 'SHORT_ANSWER':
       return [];
   }
 }

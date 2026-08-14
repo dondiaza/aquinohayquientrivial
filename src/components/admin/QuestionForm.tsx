@@ -632,7 +632,7 @@ export function QuestionForm({
             <Checkbox
               name="verified"
               label="Verificada con fuente fiable"
-              hint="Si no está marcada, el juego la muestra con el sello de contenido demo."
+              hint="Si no está marcada, el juego la muestra con el sello de pendiente de contrastar."
               defaultChecked={question?.verified ?? false}
             />
             <Checkbox

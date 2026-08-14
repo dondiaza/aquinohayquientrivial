@@ -70,7 +70,7 @@ export default function SoloSetupPage() {
                 {
                   value: CATEGORY_MIX,
                   label: 'Mezcla total',
-                  description: 'Todo el banco, sin filtros',
+                  description: 'Las catorce temáticas del banco, sin filtros',
                 },
                 ...QUESTION_CATEGORIES.map((category) => ({
                   value: category.id,
@@ -91,6 +91,12 @@ export default function SoloSetupPage() {
               hint={SETUP.adaptiveHint}
               defaultChecked={DEFAULT_SETUP.adaptiveDifficulty}
             />
+            <Checkbox
+              name="sinSpoilers"
+              label={SETUP.spoilers}
+              hint={SETUP.spoilersHint}
+              defaultChecked={DEFAULT_SETUP.sinSpoilers}
+            />
             <Field label={SETUP.name} htmlFor="playerName">
               <TextInput
                 id="playerName"
@@ -105,7 +111,8 @@ export default function SoloSetupPage() {
 
         <Nota tone="papel" className="p-3 text-xs text-tinta-suave">
           No hay registro ni cuentas: se guarda una cookie anónima para poder recuperar tus
-          partidas y estadísticas.
+          partidas y estadísticas. Las preguntas salen del banco de la serie y cada una lleva su
+          explicación al revelarla.
         </Nota>
 
         <div className="flex flex-wrap items-center gap-3">

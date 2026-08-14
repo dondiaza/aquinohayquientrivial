@@ -42,6 +42,8 @@ enum QuestionType {
   MISSING_ITEM
   DECISION
   SEQUENCE
+  // Contenido ANHQV: respuesta escrita, sin opciones
+  SHORT_ANSWER
 }
 
 enum QuestionStatus {
@@ -84,6 +86,16 @@ model Question {
   verified         Boolean        @default(false)
   /// Destacada por el equipo: el director de partida la prioriza.
   featured         Boolean        @default(false)
+  /// Nivel de destripe del pack editorial: none | light | major.
+  spoiler          String         @default("none")
+  /// Confianza editorial en el dato: high | medium.
+  confidence       String         @default("high")
+  /// Familia de presentación del pack (emparejar, doble_pista, ficha_rapida…).
+  variant          String?
+  /// Huella del HECHO preguntado: evita que dos formas del mismo dato salgan en la misma partida.
+  factKey          String?
+  /// Marcada para revisión humana. Nunca entra en una partida.
+  needsReview      Boolean        @default(false)
   createdAt        DateTime       @default(now())
   updatedAt        DateTime       @updatedAt
 
@@ -95,6 +107,9 @@ model Question {
   @@index([status, difficulty])
   @@index([status, verified])
   @@index([status, featured])
+  @@index([status, spoiler])
+  @@index([factKey])
+  @@index([needsReview])
 }
 
 /// Analítica del banco de preguntas: permite recalibrar dificultades más adelante.

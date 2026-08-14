@@ -52,13 +52,13 @@ describe('formulario del panel → QuestionInput', () => {
         ...fourOptions,
         type: 'MULTIPLE_CHOICE',
         correctOptionId: 'a',
-        characters: 'Amancio Quintela, Charo Peláez',
+        characters: 'Juan Cuesta, Emilio Delgado',
         tags: 'portal\nascensor',
       }),
     );
     expect(result.ok).toBe(true);
     if (result.ok) {
-      expect(result.input.characters).toEqual(['Amancio Quintela', 'Charo Peláez']);
+      expect(result.input.characters).toEqual(['Juan Cuesta', 'Emilio Delgado']);
       expect(result.input.tags).toEqual(['portal', 'ascensor']);
     }
   });

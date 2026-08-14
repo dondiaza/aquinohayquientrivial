@@ -4,6 +4,7 @@ import { Chip, Sello } from '@/components/ui/Surfaces';
 import { RarityBadge } from '@/components/portal/Espectaculo';
 import { difficultyValueLabel } from '@/domain/difficulty/levels';
 import { questionTypeMeta } from '@/domain/questions/registry';
+import { extraerPistas, partirDuo, variantMeta } from '@/domain/questions/variants';
 import type { AnswerSubmission, Question, QuestionMedia } from '@/domain/questions/types';
 import type { RoundPresentation } from '@/domain/rounds/formats';
 import type { ActiveQuestion, RevealSummary } from '@/domain/engine/state';
@@ -15,6 +16,7 @@ import { MissingItemView } from './views/MissingItemView';
 import { MultipleChoiceView, OptionGrid } from './views/MultipleChoiceView';
 import { OrderChaosView } from './views/OrderChaosView';
 import { SequenceView } from './views/SequenceView';
+import { ShortAnswerView } from './views/ShortAnswerView';
 import { TrueFalseView } from './views/TrueFalseView';
 import { WhoIsItView } from './views/WhoIsItView';
 
@@ -108,17 +110,27 @@ export function QuestionStage({
         return <DecisionView question={question} {...viewProps} />;
       case 'SEQUENCE':
         return <SequenceView question={question} {...viewProps} />;
+      case 'SHORT_ANSWER':
+        return <ShortAnswerView question={question} {...viewProps} />;
     }
   })();
 
   // En memoria y secuencia el enunciado se lee ANTES; en el resto acompaña siempre.
   const ocultarEnunciado = meta.hasStudyPhase && studyRemainingMs <= 0;
 
+  // Familia del pack: cambia el rótulo, la instrucción y cómo se parte el enunciado.
+  const familia = variantMeta(question.variant);
+  const duo = familia?.layout === 'duo' ? partirDuo(question.prompt) : null;
+  const pistas = familia?.layout === 'pistas' && question.type !== 'WHO_IS_IT'
+    ? extraerPistas(question.prompt)
+    : [];
+  const enunciado = duo ? null : pistas.length >= 2 ? question.prompt.slice(0, question.prompt.indexOf(':') + 1) : question.prompt;
+
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <Chip>
-          <span aria-hidden>{meta.icon}</span> {meta.label}
+          <span aria-hidden>{familia?.icon ?? meta.icon}</span> {familia?.label ?? meta.label}
         </Chip>
         <Chip title={`Dificultad interna ${question.difficulty}/10`}>
           {difficultyValueLabel(question.difficulty)}
@@ -135,20 +147,55 @@ export function QuestionStage({
           <Chip className="border-rojo-buzon text-rojo-buzon">A oscuras</Chip>
         ) : null}
         {active.powerUpsBlocked ? <Chip>Sin comodines</Chip> : null}
-        {!question.verified ? <Sello>Demo</Sello> : <Sello tone="ok">Verificada</Sello>}
+        {question.verified ? (
+          <Sello tone="ok">Verificada</Sello>
+        ) : (
+          <Sello>Pendiente de contrastar</Sello>
+        )}
       </div>
 
       {!ocultarEnunciado ? (
-        <h2
-          className="anim-aparecer text-[clamp(1.25rem,5.5vw,2rem)] leading-tight normal-case"
-          style={{ fontFamily: 'var(--font-cuerpo)', fontWeight: 600 }}
-        >
-          {question.prompt}
-        </h2>
+        duo ? (
+          <div className="anim-aparecer flex flex-wrap items-center gap-3">
+            <span
+              className="border-2 border-tinta bg-white/60 px-3 py-2 text-[clamp(1.1rem,4.5vw,1.6rem)] leading-tight"
+              style={{ fontFamily: 'var(--font-cuerpo)', fontWeight: 600 }}
+            >
+              {duo[0]}
+            </span>
+            <span aria-hidden className="text-2xl text-tinta-tenue">
+              ↔
+            </span>
+            <span
+              className="border-2 border-dashed border-tinta-tenue px-3 py-2 text-[clamp(1rem,4vw,1.4rem)] leading-tight text-tinta-suave"
+              style={{ fontFamily: 'var(--font-cuerpo)' }}
+            >
+              {duo[1]}
+            </span>
+          </div>
+        ) : (
+          <div className="space-y-2">
+            <h2
+              className="anim-aparecer text-[clamp(1.25rem,5.5vw,2rem)] leading-tight normal-case"
+              style={{ fontFamily: 'var(--font-cuerpo)', fontWeight: 600 }}
+            >
+              {enunciado}
+            </h2>
+            {pistas.length >= 2 ? (
+              <ul className="flex flex-wrap gap-2">
+                {pistas.map((pista) => (
+                  <li key={pista} className="chip border-azul-buzon text-azul-buzon">
+                    {pista}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
+        )
       ) : null}
 
       {!meta.hasStudyPhase ? (
-        <p className="texto-sello text-tinta-tenue">{meta.instruction}</p>
+        <p className="texto-sello text-tinta-tenue">{familia?.instruction ?? meta.instruction}</p>
       ) : null}
 
       {question.media ? <MediaPlaceholder media={question.media} /> : null}

@@ -136,6 +136,7 @@ export async function createSoloGame(
     difficultyId: setup.difficultyId,
     category: setup.category,
     adaptiveDifficulty: setup.adaptiveDifficulty,
+    sinSpoilers: setup.sinSpoilers,
     ...(setup.playerName ? { playerName: setup.playerName } : {}),
     seed,
     origin: opciones.origin ?? 'LIBRE',

@@ -39,6 +39,7 @@ export default function manifest(): MetadataRoute.Manifest {
     shortcuts: [
       { name: 'Jugar ahora', url: '/jugar/solo' },
       { name: 'Reto del día', url: '/reto' },
+      { name: 'El portal', url: '/portal' },
       { name: 'Tu ficha', url: '/perfil' },
     ],
   };

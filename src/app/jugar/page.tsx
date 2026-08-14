@@ -8,6 +8,7 @@ import {
   IntercomPanel,
   PaperNotice,
 } from '@/components/portal/Estructuras';
+import { RESUMEN_PACK } from '@/content/anhqv/catalogos';
 import { MODES } from '@/domain/copy/ui';
 import { claveDelDia, configuracionDelReto } from '@/domain/challenges/daily';
 import { ENGINE_EVENT_TYPES } from '@/domain/engine/engine-events';
@@ -51,6 +52,28 @@ export default function ModeSelectPage() {
           titulo="Tu ficha"
           descripcion="Avatar, rango, logros y récords"
           href="/perfil"
+        />
+
+        <DoorCard
+          numero="5"
+          titulo="El portal"
+          descripcion="Quién vive en cada piso de Desengaño 21"
+          href="/portal"
+        />
+
+        <DoorCard
+          numero="6"
+          titulo="Pruebas y modos"
+          descripcion={`${RESUMEN_PACK.pruebas} pruebas y ${RESUMEN_PACK.modos} modos del catálogo`}
+          href="/pruebas"
+          tono="granate"
+        />
+
+        <DoorCard
+          numero="7"
+          titulo="Tarjetas"
+          descripcion={`${RESUMEN_PACK.tarjetas} curiosidades para repasar`}
+          href="/tarjetas"
         />
       </div>
 

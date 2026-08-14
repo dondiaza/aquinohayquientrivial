@@ -3,11 +3,12 @@ import Link from 'next/link';
 import { AudioControls } from '@/components/ui/AudioControls';
 import { BuildingHeader } from '@/components/portal/Estructuras';
 import { BRAND } from '@/domain/copy/ui';
-import { PORTAL } from '@/content/portal';
+import { SERIE } from '@/content/serie';
 
 const LINKS = [
   { href: '/jugar', label: 'Jugar' },
   { href: '/reto', label: 'Reto' },
+  { href: '/portal', label: 'Portal' },
   { href: '/perfil', label: 'Ficha' },
   { href: '/como-jugar', label: 'Cómo jugar' },
 ];
@@ -16,9 +17,9 @@ const LINKS = [
 export function SiteHeader() {
   return (
     <BuildingHeader
-      numero="13"
+      numero="21"
       nombre={BRAND.short}
-      direccion={PORTAL.address}
+      direccion={SERIE.direccionFicticia}
       acciones={
         <div className="flex items-center gap-1 sm:gap-2">
           <nav aria-label="Navegación principal">

@@ -4,18 +4,23 @@
  */
 
 export const BRAND = {
-  name: 'El Trivial de la Comunidad',
-  short: 'El Trivial',
-  tagline: 'Junta de vecinos, preguntas y muy poca paciencia',
+  name: 'El Trivial de Desengaño 21',
+  short: 'Desengaño 21',
+  tagline: 'El trivial de Aquí no hay quien viva',
   legalNote:
-    'Juego original inspirado en el género de comedias de comunidad de vecinos. Sin relación ni afiliación con ninguna serie. Todo el contenido y los gráficos son propios.',
+    'Juego de aficionados sobre «Aquí no hay quien viva» (Antena 3, 2003-2006). Sin relación ' +
+    'ni afiliación con Antena 3, Atresmedia ni la productora. Las preguntas son datos sobre la ' +
+    'serie; toda la identidad gráfica de esta web es original y hecha con SVG y CSS: no se usa ' +
+    'ningún fotograma, logotipo, tipografía ni audio de la serie.',
 } as const;
 
 export const HOME = {
-  kicker: 'Travesía del Portalón, 13 · Comunidad de propietarios',
-  title: 'El trivial de la comunidad',
+  kicker: 'Desengaño 21 · Comunidad de propietarios',
+  title: 'El trivial de Aquí no hay quien viva',
   subtitle:
-    'Preguntas rápidas, comodines, derramas inesperadas y una apuesta final. Se juega en un minuto de aprendizaje y se pierde por confiarse.',
+    'Casi mil preguntas sobre la serie de Antena 3: el reparto, los pisos, las tramas y las cinco ' +
+    'temporadas. Once formas de preguntar, comodines, derramas y una apuesta final. Un poquito de ' +
+    'por favor y a jugar.',
   primaryCta: 'Jugar ahora',
   secondary: {
     solo: 'Jugar solo',
@@ -24,13 +29,31 @@ export const HOME = {
     how: 'Cómo jugar',
   },
   bullets: [
-    { icon: '⏱️', title: 'Partidas de 5 a 25 minutos', text: 'Express para el ascensor, maratón para la junta de julio.' },
-    { icon: '🎯', title: 'Seis tipos de prueba', text: 'Múltiple, verdadero/falso, ¿quién es?, infiltrado, ordenar y apuesta final.' },
-    { icon: '📡', title: 'Comodines y eventos', text: 'Radio Patio, un poquito de por favor, derramas y ascensores averiados.' },
-    { icon: '🏆', title: 'Rangos y estadísticas', text: 'De visitante a leyenda de Radio Patio, con tus números al final.' },
+    {
+      icon: '🏢',
+      title: 'Todo el portal',
+      text: 'Reparto, pisos, relaciones, tramas, producción, audiencias y adaptaciones.',
+    },
+    {
+      icon: '🎯',
+      title: 'Once formas de preguntar',
+      text: 'Opciones, verdadero/falso, escribir la respuesta, pistas, intruso, ordenar y memoria.',
+    },
+    {
+      icon: '🙈',
+      title: 'Modo sin spoilers',
+      text: 'Si no has llegado al final, activa el modo y no verás lo que pasa en la quinta.',
+    },
+    {
+      icon: '📡',
+      title: 'Comodines y sucesos',
+      text: 'Radio Patio, un poquito de por favor, derramas y ascensores averiados.',
+    },
   ],
   demoNotice:
-    'El banco de preguntas de esta versión es CONTENIDO DEMO: describe una comunidad de vecinos ficticia creada para el juego. Nada aquí se presenta como dato real de ninguna serie.',
+    'Las preguntas salen de un pack editorial contrastado con Antena 3 y FormulaTV, y cada una ' +
+    'lleva su explicación y su nivel de destripe. Lo que no se ha podido dejar impecable está ' +
+    'marcado para revisión y no sale en las partidas.',
 } as const;
 
 export const MODES = {
@@ -49,14 +72,17 @@ export const MODES = {
 
 export const SETUP = {
   title: 'Configura la junta',
-  subtitle: 'Tres decisiones y a jugar. Todo se puede cambiar en la siguiente partida.',
+  subtitle: 'Cuatro decisiones y a jugar. Todo se puede cambiar en la siguiente partida.',
   duration: 'Duración',
   difficulty: 'Dificultad',
   category: 'Temática',
   adaptive: 'Dificultad adaptativa',
   adaptiveHint: 'Sube o baja según cómo te vaya. Desactívala para dificultad fija.',
+  spoilers: 'Modo sin spoilers',
+  spoilersHint:
+    'Fuera las preguntas que destripan la serie: muertes, bodas decisivas y final de la quinta.',
   name: 'Tu nombre (opcional)',
-  namePlaceholder: 'Vecino/a del 3ºB',
+  namePlaceholder: 'Vecino/a del 3.º B',
   submit: 'Empezar la partida',
   back: 'Volver',
 } as const;
@@ -121,6 +147,25 @@ export const RESULTS = {
 export const HOW_TO = {
   title: 'Cómo jugar',
   subtitle: 'Dos minutos de lectura para no perder por despiste.',
+} as const;
+
+export const PORTAL_PAGE = {
+  title: 'El portal',
+  subtitle: 'Quién vive dónde en Desengaño 21, según la biblia editorial del pack.',
+} as const;
+
+export const PRUEBAS_PAGE = {
+  title: 'Pruebas y modos',
+  subtitle:
+    'El catálogo del pack editorial: retos y minijuegos con sus reglas, y los modos de juego ' +
+    'que los combinan. Lo que ya está jugable lleva su enlace.',
+} as const;
+
+export const TARJETAS_PAGE = {
+  title: 'Tarjetas del portal',
+  subtitle:
+    'Microcontenidos del pack: un dato por tarjeta. Salen entre rondas mientras carga la ' +
+    'siguiente pregunta y se pueden repasar aquí.',
 } as const;
 
 export const PHASE3 = {

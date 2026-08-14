@@ -25,6 +25,7 @@ export async function startSoloGame(formData: FormData): Promise<void> {
     difficultyId: formData.get('difficultyId') ?? undefined,
     category: formData.get('category') ?? undefined,
     adaptiveDifficulty: formData.get('adaptiveDifficulty') !== null,
+    sinSpoilers: formData.get('sinSpoilers') !== null,
     playerName: (formData.get('playerName') as string | null)?.trim() || undefined,
   };
 

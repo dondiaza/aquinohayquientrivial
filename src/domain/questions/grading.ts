@@ -11,6 +11,7 @@
  */
 
 import { questionTypeMeta } from './registry';
+import { coincideRespuesta } from './texto';
 import type { AnswerSubmission, Question } from './types';
 
 export type Grade = {
@@ -134,6 +135,19 @@ export function gradeAnswer(question: Question, submission: AnswerSubmission): G
         accuracy,
         correctSummary: question.sequence.map(nombre).join(' → '),
         submittedSummary: submittedIds.length === 0 ? NO_ANSWER : submittedIds.map(nombre).join(' → '),
+      };
+    }
+
+    case 'SHORT_ANSWER': {
+      const escrita = submission.kind === 'TEXT' ? submission.text.trim() : '';
+      const coincidencia = escrita
+        ? coincideRespuesta(escrita, question.answer, question.accepted)
+        : { acierta: false, conErrata: false };
+      return {
+        isCorrect: coincidencia.acierta,
+        accuracy: coincidencia.acierta ? 1 : 0,
+        correctSummary: question.answer,
+        submittedSummary: escrita || NO_ANSWER,
       };
     }
   }

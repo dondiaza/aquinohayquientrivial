@@ -1,0 +1,3602 @@
+[
+  {
+    "id": "P001",
+    "name": "¿Quién soy? · Fácil",
+    "kind": "adivinanza",
+    "level": "Fácil",
+    "instruction": "Recibe 3 pistas progresivas sobre un personaje y adivínalo antes de la tercera. con pistas muy directas.",
+    "scoring": "3 puntos con una pista, 2 con dos, 1 con tres.",
+    "tags": "personajes"
+  },
+  {
+    "id": "P002",
+    "name": "Vecino intruso · Fácil",
+    "kind": "clasificacion",
+    "level": "Fácil",
+    "instruction": "Se muestran cuatro nombres; tres comparten familia, piso, oficio o trama. Elige al intruso. con pistas muy directas.",
+    "scoring": "1 punto por acierto; +1 si justificas el vínculo.",
+    "tags": "relaciones"
+  },
+  {
+    "id": "P003",
+    "name": "Radio Patio · Fácil",
+    "kind": "velocidad",
+    "level": "Fácil",
+    "instruction": "Responde cinco preguntas rápidas de cotilleos, parejas y parentescos. con pistas muy directas.",
+    "scoring": "1 punto por respuesta en menos de 8 segundos.",
+    "tags": "radio-patio"
+  },
+  {
+    "id": "P004",
+    "name": "Presidente de la comunidad · Fácil",
+    "kind": "quiz",
+    "level": "Fácil",
+    "instruction": "Ronda de 10 preguntas de dificultad ascendente sobre Juan, juntas y edificio. con pistas muy directas.",
+    "scoring": "Puntuación 1-2-3-4-5 por dificultad.",
+    "tags": "juan-cuesta"
+  },
+  {
+    "id": "P005",
+    "name": "Un poquito de por favor · Fácil",
+    "kind": "frases",
+    "level": "Fácil",
+    "instruction": "Identifica el personaje asociado a una frase corta o coletilla. con pistas muy directas.",
+    "scoring": "2 puntos por personaje; 1 extra si explicas el contexto general.",
+    "tags": "frases"
+  },
+  {
+    "id": "P006",
+    "name": "Desengaño 21 · Fácil",
+    "kind": "mapa",
+    "level": "Fácil",
+    "instruction": "Coloca personajes en piso, portería, ático o local según la etapa indicada. con pistas muy directas.",
+    "scoring": "1 punto por ubicación correcta.",
+    "tags": "lugares"
+  },
+  {
+    "id": "P007",
+    "name": "¿Actor o personaje? · Fácil",
+    "kind": "reparto",
+    "level": "Fácil",
+    "instruction": "Clasifica nombres mezclados entre intérpretes y personajes. con pistas muy directas.",
+    "scoring": "1 punto por clasificación correcta.",
+    "tags": "reparto"
+  },
+  {
+    "id": "P008",
+    "name": "Parejas imposibles · Fácil",
+    "kind": "parejas",
+    "level": "Fácil",
+    "instruction": "Decide si dos personajes fueron pareja, interés amoroso, familia o ninguna de las anteriores. con pistas muy directas.",
+    "scoring": "2 puntos por categoría exacta.",
+    "tags": "parejas"
+  },
+  {
+    "id": "P009",
+    "name": "Final de temporada · Fácil",
+    "kind": "cronologia",
+    "level": "Fácil",
+    "instruction": "Ordena cinco sucesos de una temporada. con pistas muy directas.",
+    "scoring": "5 puntos si el orden es perfecto; 3 si solo hay una inversión.",
+    "tags": "cronologia"
+  },
+  {
+    "id": "P010",
+    "name": "La derrama · Fácil",
+    "kind": "apuesta",
+    "level": "Fácil",
+    "instruction": "Cada jugador apuesta puntos antes de una pregunta de nivel experto. con pistas muy directas.",
+    "scoring": "Ganas o pierdes lo apostado.",
+    "tags": "multijugador"
+  },
+  {
+    "id": "P011",
+    "name": "El videoclub · Fácil",
+    "kind": "pelicula-falsa",
+    "level": "Fácil",
+    "instruction": "Se mezclan títulos ficticios con elementos reales de la serie; detecta los inventados. con pistas muy directas.",
+    "scoring": "1 punto por detección.",
+    "tags": "paco,videoclub"
+  },
+  {
+    "id": "P012",
+    "name": "La portería · Fácil",
+    "kind": "supervivencia",
+    "level": "Fácil",
+    "instruction": "Encadena respuestas sin fallar. Cada acierto desbloquea una más difícil. con pistas muy directas.",
+    "scoring": "Racha máxima.",
+    "tags": "emilio"
+  },
+  {
+    "id": "P013",
+    "name": "La junta · Fácil",
+    "kind": "debate",
+    "level": "Fácil",
+    "instruction": "Se plantea un conflicto de comunidad y hay que elegir qué personaje reaccionaría de cada forma. con pistas muy directas.",
+    "scoring": "Puntos por coincidencia con la ficha de personaje.",
+    "tags": "comunidad"
+  },
+  {
+    "id": "P014",
+    "name": "Spoiler controlado · Fácil",
+    "kind": "tramas",
+    "level": "Fácil",
+    "instruction": "Adivina el desenlace de una trama entre cuatro opciones, con aviso de spoiler. con pistas muy directas.",
+    "scoring": "2 puntos por acierto.",
+    "tags": "spoilers"
+  },
+  {
+    "id": "P015",
+    "name": "Antes o después · Fácil",
+    "kind": "cronologia",
+    "level": "Fácil",
+    "instruction": "Decide cuál de dos sucesos ocurre antes. con pistas muy directas.",
+    "scoring": "1 punto por pareja.",
+    "tags": "cronologia"
+  },
+  {
+    "id": "P016",
+    "name": "Cadena de vecinos · Fácil",
+    "kind": "relaciones",
+    "level": "Fácil",
+    "instruction": "Une personaje A con B mediante relaciones reales: familia, pareja, convivencia o amistad. con pistas muy directas.",
+    "scoring": "1 punto por cada enlace válido.",
+    "tags": "relaciones"
+  },
+  {
+    "id": "P017",
+    "name": "Nivel profesional · Fácil",
+    "kind": "expert",
+    "level": "Fácil",
+    "instruction": "Preguntas de actores secundarios, producción, localizaciones y audiencias. con pistas muy directas.",
+    "scoring": "5 puntos por acierto.",
+    "tags": "expert"
+  },
+  {
+    "id": "P018",
+    "name": "Campanadas · Fácil",
+    "kind": "curiosidades",
+    "level": "Fácil",
+    "instruction": "Ronda de cultura televisiva alrededor del fenómeno de la serie fuera de los episodios. con pistas muy directas.",
+    "scoring": "3 puntos por acierto.",
+    "tags": "curiosidades"
+  },
+  {
+    "id": "P019",
+    "name": "Termitas · Fácil",
+    "kind": "eliminacion",
+    "level": "Fácil",
+    "instruction": "Cada fallo “debilita” el edificio. Tres fallos eliminan al jugador. con pistas muy directas.",
+    "scoring": "Sobrevive más rondas.",
+    "tags": "final"
+  },
+  {
+    "id": "P020",
+    "name": "PUF · Fácil",
+    "kind": "creativo",
+    "level": "Fácil",
+    "instruction": "Dado un personaje y una situación, elige cuál de cuatro titulares de moda o negocio encaja mejor con su personalidad. con pistas muy directas.",
+    "scoring": "Votación o clave editorial.",
+    "tags": "paloma,puf"
+  },
+  {
+    "id": "P021",
+    "name": "¿Quién soy? · Medio",
+    "kind": "adivinanza",
+    "level": "Medio",
+    "instruction": "Recibe 3 pistas progresivas sobre un personaje y adivínalo antes de la tercera. con pistas menos obvias.",
+    "scoring": "3 puntos con una pista, 2 con dos, 1 con tres.",
+    "tags": "personajes"
+  },
+  {
+    "id": "P022",
+    "name": "Vecino intruso · Medio",
+    "kind": "clasificacion",
+    "level": "Medio",
+    "instruction": "Se muestran cuatro nombres; tres comparten familia, piso, oficio o trama. Elige al intruso. con pistas menos obvias.",
+    "scoring": "1 punto por acierto; +1 si justificas el vínculo.",
+    "tags": "relaciones"
+  },
+  {
+    "id": "P023",
+    "name": "Radio Patio · Medio",
+    "kind": "velocidad",
+    "level": "Medio",
+    "instruction": "Responde cinco preguntas rápidas de cotilleos, parejas y parentescos. con pistas menos obvias.",
+    "scoring": "1 punto por respuesta en menos de 8 segundos.",
+    "tags": "radio-patio"
+  },
+  {
+    "id": "P024",
+    "name": "Presidente de la comunidad · Medio",
+    "kind": "quiz",
+    "level": "Medio",
+    "instruction": "Ronda de 10 preguntas de dificultad ascendente sobre Juan, juntas y edificio. con pistas menos obvias.",
+    "scoring": "Puntuación 1-2-3-4-5 por dificultad.",
+    "tags": "juan-cuesta"
+  },
+  {
+    "id": "P025",
+    "name": "Un poquito de por favor · Medio",
+    "kind": "frases",
+    "level": "Medio",
+    "instruction": "Identifica el personaje asociado a una frase corta o coletilla. con pistas menos obvias.",
+    "scoring": "2 puntos por personaje; 1 extra si explicas el contexto general.",
+    "tags": "frases"
+  },
+  {
+    "id": "P026",
+    "name": "Desengaño 21 · Medio",
+    "kind": "mapa",
+    "level": "Medio",
+    "instruction": "Coloca personajes en piso, portería, ático o local según la etapa indicada. con pistas menos obvias.",
+    "scoring": "1 punto por ubicación correcta.",
+    "tags": "lugares"
+  },
+  {
+    "id": "P027",
+    "name": "¿Actor o personaje? · Medio",
+    "kind": "reparto",
+    "level": "Medio",
+    "instruction": "Clasifica nombres mezclados entre intérpretes y personajes. con pistas menos obvias.",
+    "scoring": "1 punto por clasificación correcta.",
+    "tags": "reparto"
+  },
+  {
+    "id": "P028",
+    "name": "Parejas imposibles · Medio",
+    "kind": "parejas",
+    "level": "Medio",
+    "instruction": "Decide si dos personajes fueron pareja, interés amoroso, familia o ninguna de las anteriores. con pistas menos obvias.",
+    "scoring": "2 puntos por categoría exacta.",
+    "tags": "parejas"
+  },
+  {
+    "id": "P029",
+    "name": "Final de temporada · Medio",
+    "kind": "cronologia",
+    "level": "Medio",
+    "instruction": "Ordena cinco sucesos de una temporada. con pistas menos obvias.",
+    "scoring": "5 puntos si el orden es perfecto; 3 si solo hay una inversión.",
+    "tags": "cronologia"
+  },
+  {
+    "id": "P030",
+    "name": "La derrama · Medio",
+    "kind": "apuesta",
+    "level": "Medio",
+    "instruction": "Cada jugador apuesta puntos antes de una pregunta de nivel experto. con pistas menos obvias.",
+    "scoring": "Ganas o pierdes lo apostado.",
+    "tags": "multijugador"
+  },
+  {
+    "id": "P031",
+    "name": "El videoclub · Medio",
+    "kind": "pelicula-falsa",
+    "level": "Medio",
+    "instruction": "Se mezclan títulos ficticios con elementos reales de la serie; detecta los inventados. con pistas menos obvias.",
+    "scoring": "1 punto por detección.",
+    "tags": "paco,videoclub"
+  },
+  {
+    "id": "P032",
+    "name": "La portería · Medio",
+    "kind": "supervivencia",
+    "level": "Medio",
+    "instruction": "Encadena respuestas sin fallar. Cada acierto desbloquea una más difícil. con pistas menos obvias.",
+    "scoring": "Racha máxima.",
+    "tags": "emilio"
+  },
+  {
+    "id": "P033",
+    "name": "La junta · Medio",
+    "kind": "debate",
+    "level": "Medio",
+    "instruction": "Se plantea un conflicto de comunidad y hay que elegir qué personaje reaccionaría de cada forma. con pistas menos obvias.",
+    "scoring": "Puntos por coincidencia con la ficha de personaje.",
+    "tags": "comunidad"
+  },
+  {
+    "id": "P034",
+    "name": "Spoiler controlado · Medio",
+    "kind": "tramas",
+    "level": "Medio",
+    "instruction": "Adivina el desenlace de una trama entre cuatro opciones, con aviso de spoiler. con pistas menos obvias.",
+    "scoring": "2 puntos por acierto.",
+    "tags": "spoilers"
+  },
+  {
+    "id": "P035",
+    "name": "Antes o después · Medio",
+    "kind": "cronologia",
+    "level": "Medio",
+    "instruction": "Decide cuál de dos sucesos ocurre antes. con pistas menos obvias.",
+    "scoring": "1 punto por pareja.",
+    "tags": "cronologia"
+  },
+  {
+    "id": "P036",
+    "name": "Cadena de vecinos · Medio",
+    "kind": "relaciones",
+    "level": "Medio",
+    "instruction": "Une personaje A con B mediante relaciones reales: familia, pareja, convivencia o amistad. con pistas menos obvias.",
+    "scoring": "1 punto por cada enlace válido.",
+    "tags": "relaciones"
+  },
+  {
+    "id": "P037",
+    "name": "Nivel profesional · Medio",
+    "kind": "expert",
+    "level": "Medio",
+    "instruction": "Preguntas de actores secundarios, producción, localizaciones y audiencias. con pistas menos obvias.",
+    "scoring": "5 puntos por acierto.",
+    "tags": "expert"
+  },
+  {
+    "id": "P038",
+    "name": "Campanadas · Medio",
+    "kind": "curiosidades",
+    "level": "Medio",
+    "instruction": "Ronda de cultura televisiva alrededor del fenómeno de la serie fuera de los episodios. con pistas menos obvias.",
+    "scoring": "3 puntos por acierto.",
+    "tags": "curiosidades"
+  },
+  {
+    "id": "P039",
+    "name": "Termitas · Medio",
+    "kind": "eliminacion",
+    "level": "Medio",
+    "instruction": "Cada fallo “debilita” el edificio. Tres fallos eliminan al jugador. con pistas menos obvias.",
+    "scoring": "Sobrevive más rondas.",
+    "tags": "final"
+  },
+  {
+    "id": "P040",
+    "name": "PUF · Medio",
+    "kind": "creativo",
+    "level": "Medio",
+    "instruction": "Dado un personaje y una situación, elige cuál de cuatro titulares de moda o negocio encaja mejor con su personalidad. con pistas menos obvias.",
+    "scoring": "Votación o clave editorial.",
+    "tags": "paloma,puf"
+  },
+  {
+    "id": "P041",
+    "name": "¿Quién soy? · Difícil",
+    "kind": "adivinanza",
+    "level": "Difícil",
+    "instruction": "Recibe 3 pistas progresivas sobre un personaje y adivínalo antes de la tercera. con detalles de temporadas concretas.",
+    "scoring": "3 puntos con una pista, 2 con dos, 1 con tres.",
+    "tags": "personajes"
+  },
+  {
+    "id": "P042",
+    "name": "Vecino intruso · Difícil",
+    "kind": "clasificacion",
+    "level": "Difícil",
+    "instruction": "Se muestran cuatro nombres; tres comparten familia, piso, oficio o trama. Elige al intruso. con detalles de temporadas concretas.",
+    "scoring": "1 punto por acierto; +1 si justificas el vínculo.",
+    "tags": "relaciones"
+  },
+  {
+    "id": "P043",
+    "name": "Radio Patio · Difícil",
+    "kind": "velocidad",
+    "level": "Difícil",
+    "instruction": "Responde cinco preguntas rápidas de cotilleos, parejas y parentescos. con detalles de temporadas concretas.",
+    "scoring": "1 punto por respuesta en menos de 8 segundos.",
+    "tags": "radio-patio"
+  },
+  {
+    "id": "P044",
+    "name": "Presidente de la comunidad · Difícil",
+    "kind": "quiz",
+    "level": "Difícil",
+    "instruction": "Ronda de 10 preguntas de dificultad ascendente sobre Juan, juntas y edificio. con detalles de temporadas concretas.",
+    "scoring": "Puntuación 1-2-3-4-5 por dificultad.",
+    "tags": "juan-cuesta"
+  },
+  {
+    "id": "P045",
+    "name": "Un poquito de por favor · Difícil",
+    "kind": "frases",
+    "level": "Difícil",
+    "instruction": "Identifica el personaje asociado a una frase corta o coletilla. con detalles de temporadas concretas.",
+    "scoring": "2 puntos por personaje; 1 extra si explicas el contexto general.",
+    "tags": "frases"
+  },
+  {
+    "id": "P046",
+    "name": "Desengaño 21 · Difícil",
+    "kind": "mapa",
+    "level": "Difícil",
+    "instruction": "Coloca personajes en piso, portería, ático o local según la etapa indicada. con detalles de temporadas concretas.",
+    "scoring": "1 punto por ubicación correcta.",
+    "tags": "lugares"
+  },
+  {
+    "id": "P047",
+    "name": "¿Actor o personaje? · Difícil",
+    "kind": "reparto",
+    "level": "Difícil",
+    "instruction": "Clasifica nombres mezclados entre intérpretes y personajes. con detalles de temporadas concretas.",
+    "scoring": "1 punto por clasificación correcta.",
+    "tags": "reparto"
+  },
+  {
+    "id": "P048",
+    "name": "Parejas imposibles · Difícil",
+    "kind": "parejas",
+    "level": "Difícil",
+    "instruction": "Decide si dos personajes fueron pareja, interés amoroso, familia o ninguna de las anteriores. con detalles de temporadas concretas.",
+    "scoring": "2 puntos por categoría exacta.",
+    "tags": "parejas"
+  },
+  {
+    "id": "P049",
+    "name": "Final de temporada · Difícil",
+    "kind": "cronologia",
+    "level": "Difícil",
+    "instruction": "Ordena cinco sucesos de una temporada. con detalles de temporadas concretas.",
+    "scoring": "5 puntos si el orden es perfecto; 3 si solo hay una inversión.",
+    "tags": "cronologia"
+  },
+  {
+    "id": "P050",
+    "name": "La derrama · Difícil",
+    "kind": "apuesta",
+    "level": "Difícil",
+    "instruction": "Cada jugador apuesta puntos antes de una pregunta de nivel experto. con detalles de temporadas concretas.",
+    "scoring": "Ganas o pierdes lo apostado.",
+    "tags": "multijugador"
+  },
+  {
+    "id": "P051",
+    "name": "El videoclub · Difícil",
+    "kind": "pelicula-falsa",
+    "level": "Difícil",
+    "instruction": "Se mezclan títulos ficticios con elementos reales de la serie; detecta los inventados. con detalles de temporadas concretas.",
+    "scoring": "1 punto por detección.",
+    "tags": "paco,videoclub"
+  },
+  {
+    "id": "P052",
+    "name": "La portería · Difícil",
+    "kind": "supervivencia",
+    "level": "Difícil",
+    "instruction": "Encadena respuestas sin fallar. Cada acierto desbloquea una más difícil. con detalles de temporadas concretas.",
+    "scoring": "Racha máxima.",
+    "tags": "emilio"
+  },
+  {
+    "id": "P053",
+    "name": "La junta · Difícil",
+    "kind": "debate",
+    "level": "Difícil",
+    "instruction": "Se plantea un conflicto de comunidad y hay que elegir qué personaje reaccionaría de cada forma. con detalles de temporadas concretas.",
+    "scoring": "Puntos por coincidencia con la ficha de personaje.",
+    "tags": "comunidad"
+  },
+  {
+    "id": "P054",
+    "name": "Spoiler controlado · Difícil",
+    "kind": "tramas",
+    "level": "Difícil",
+    "instruction": "Adivina el desenlace de una trama entre cuatro opciones, con aviso de spoiler. con detalles de temporadas concretas.",
+    "scoring": "2 puntos por acierto.",
+    "tags": "spoilers"
+  },
+  {
+    "id": "P055",
+    "name": "Antes o después · Difícil",
+    "kind": "cronologia",
+    "level": "Difícil",
+    "instruction": "Decide cuál de dos sucesos ocurre antes. con detalles de temporadas concretas.",
+    "scoring": "1 punto por pareja.",
+    "tags": "cronologia"
+  },
+  {
+    "id": "P056",
+    "name": "Cadena de vecinos · Difícil",
+    "kind": "relaciones",
+    "level": "Difícil",
+    "instruction": "Une personaje A con B mediante relaciones reales: familia, pareja, convivencia o amistad. con detalles de temporadas concretas.",
+    "scoring": "1 punto por cada enlace válido.",
+    "tags": "relaciones"
+  },
+  {
+    "id": "P057",
+    "name": "Nivel profesional · Difícil",
+    "kind": "expert",
+    "level": "Difícil",
+    "instruction": "Preguntas de actores secundarios, producción, localizaciones y audiencias. con detalles de temporadas concretas.",
+    "scoring": "5 puntos por acierto.",
+    "tags": "expert"
+  },
+  {
+    "id": "P058",
+    "name": "Campanadas · Difícil",
+    "kind": "curiosidades",
+    "level": "Difícil",
+    "instruction": "Ronda de cultura televisiva alrededor del fenómeno de la serie fuera de los episodios. con detalles de temporadas concretas.",
+    "scoring": "3 puntos por acierto.",
+    "tags": "curiosidades"
+  },
+  {
+    "id": "P059",
+    "name": "Termitas · Difícil",
+    "kind": "eliminacion",
+    "level": "Difícil",
+    "instruction": "Cada fallo “debilita” el edificio. Tres fallos eliminan al jugador. con detalles de temporadas concretas.",
+    "scoring": "Sobrevive más rondas.",
+    "tags": "final"
+  },
+  {
+    "id": "P060",
+    "name": "PUF · Difícil",
+    "kind": "creativo",
+    "level": "Difícil",
+    "instruction": "Dado un personaje y una situación, elige cuál de cuatro titulares de moda o negocio encaja mejor con su personalidad. con detalles de temporadas concretas.",
+    "scoring": "Votación o clave editorial.",
+    "tags": "paloma,puf"
+  },
+  {
+    "id": "P061",
+    "name": "¿Quién soy? · Experto",
+    "kind": "adivinanza",
+    "level": "Experto",
+    "instruction": "Recibe 3 pistas progresivas sobre un personaje y adivínalo antes de la tercera. con secundarios, producción y cronología fina.",
+    "scoring": "3 puntos con una pista, 2 con dos, 1 con tres.",
+    "tags": "personajes"
+  },
+  {
+    "id": "P062",
+    "name": "Vecino intruso · Experto",
+    "kind": "clasificacion",
+    "level": "Experto",
+    "instruction": "Se muestran cuatro nombres; tres comparten familia, piso, oficio o trama. Elige al intruso. con secundarios, producción y cronología fina.",
+    "scoring": "1 punto por acierto; +1 si justificas el vínculo.",
+    "tags": "relaciones"
+  },
+  {
+    "id": "P063",
+    "name": "Radio Patio · Experto",
+    "kind": "velocidad",
+    "level": "Experto",
+    "instruction": "Responde cinco preguntas rápidas de cotilleos, parejas y parentescos. con secundarios, producción y cronología fina.",
+    "scoring": "1 punto por respuesta en menos de 8 segundos.",
+    "tags": "radio-patio"
+  },
+  {
+    "id": "P064",
+    "name": "Presidente de la comunidad · Experto",
+    "kind": "quiz",
+    "level": "Experto",
+    "instruction": "Ronda de 10 preguntas de dificultad ascendente sobre Juan, juntas y edificio. con secundarios, producción y cronología fina.",
+    "scoring": "Puntuación 1-2-3-4-5 por dificultad.",
+    "tags": "juan-cuesta"
+  },
+  {
+    "id": "P065",
+    "name": "Un poquito de por favor · Experto",
+    "kind": "frases",
+    "level": "Experto",
+    "instruction": "Identifica el personaje asociado a una frase corta o coletilla. con secundarios, producción y cronología fina.",
+    "scoring": "2 puntos por personaje; 1 extra si explicas el contexto general.",
+    "tags": "frases"
+  },
+  {
+    "id": "P066",
+    "name": "Desengaño 21 · Experto",
+    "kind": "mapa",
+    "level": "Experto",
+    "instruction": "Coloca personajes en piso, portería, ático o local según la etapa indicada. con secundarios, producción y cronología fina.",
+    "scoring": "1 punto por ubicación correcta.",
+    "tags": "lugares"
+  },
+  {
+    "id": "P067",
+    "name": "¿Actor o personaje? · Experto",
+    "kind": "reparto",
+    "level": "Experto",
+    "instruction": "Clasifica nombres mezclados entre intérpretes y personajes. con secundarios, producción y cronología fina.",
+    "scoring": "1 punto por clasificación correcta.",
+    "tags": "reparto"
+  },
+  {
+    "id": "P068",
+    "name": "Parejas imposibles · Experto",
+    "kind": "parejas",
+    "level": "Experto",
+    "instruction": "Decide si dos personajes fueron pareja, interés amoroso, familia o ninguna de las anteriores. con secundarios, producción y cronología fina.",
+    "scoring": "2 puntos por categoría exacta.",
+    "tags": "parejas"
+  },
+  {
+    "id": "P069",
+    "name": "Final de temporada · Experto",
+    "kind": "cronologia",
+    "level": "Experto",
+    "instruction": "Ordena cinco sucesos de una temporada. con secundarios, producción y cronología fina.",
+    "scoring": "5 puntos si el orden es perfecto; 3 si solo hay una inversión.",
+    "tags": "cronologia"
+  },
+  {
+    "id": "P070",
+    "name": "La derrama · Experto",
+    "kind": "apuesta",
+    "level": "Experto",
+    "instruction": "Cada jugador apuesta puntos antes de una pregunta de nivel experto. con secundarios, producción y cronología fina.",
+    "scoring": "Ganas o pierdes lo apostado.",
+    "tags": "multijugador"
+  },
+  {
+    "id": "P071",
+    "name": "El videoclub · Experto",
+    "kind": "pelicula-falsa",
+    "level": "Experto",
+    "instruction": "Se mezclan títulos ficticios con elementos reales de la serie; detecta los inventados. con secundarios, producción y cronología fina.",
+    "scoring": "1 punto por detección.",
+    "tags": "paco,videoclub"
+  },
+  {
+    "id": "P072",
+    "name": "La portería · Experto",
+    "kind": "supervivencia",
+    "level": "Experto",
+    "instruction": "Encadena respuestas sin fallar. Cada acierto desbloquea una más difícil. con secundarios, producción y cronología fina.",
+    "scoring": "Racha máxima.",
+    "tags": "emilio"
+  },
+  {
+    "id": "P073",
+    "name": "La junta · Experto",
+    "kind": "debate",
+    "level": "Experto",
+    "instruction": "Se plantea un conflicto de comunidad y hay que elegir qué personaje reaccionaría de cada forma. con secundarios, producción y cronología fina.",
+    "scoring": "Puntos por coincidencia con la ficha de personaje.",
+    "tags": "comunidad"
+  },
+  {
+    "id": "P074",
+    "name": "Spoiler controlado · Experto",
+    "kind": "tramas",
+    "level": "Experto",
+    "instruction": "Adivina el desenlace de una trama entre cuatro opciones, con aviso de spoiler. con secundarios, producción y cronología fina.",
+    "scoring": "2 puntos por acierto.",
+    "tags": "spoilers"
+  },
+  {
+    "id": "P075",
+    "name": "Antes o después · Experto",
+    "kind": "cronologia",
+    "level": "Experto",
+    "instruction": "Decide cuál de dos sucesos ocurre antes. con secundarios, producción y cronología fina.",
+    "scoring": "1 punto por pareja.",
+    "tags": "cronologia"
+  },
+  {
+    "id": "P076",
+    "name": "Cadena de vecinos · Experto",
+    "kind": "relaciones",
+    "level": "Experto",
+    "instruction": "Une personaje A con B mediante relaciones reales: familia, pareja, convivencia o amistad. con secundarios, producción y cronología fina.",
+    "scoring": "1 punto por cada enlace válido.",
+    "tags": "relaciones"
+  },
+  {
+    "id": "P077",
+    "name": "Nivel profesional · Experto",
+    "kind": "expert",
+    "level": "Experto",
+    "instruction": "Preguntas de actores secundarios, producción, localizaciones y audiencias. con secundarios, producción y cronología fina.",
+    "scoring": "5 puntos por acierto.",
+    "tags": "expert"
+  },
+  {
+    "id": "P078",
+    "name": "Campanadas · Experto",
+    "kind": "curiosidades",
+    "level": "Experto",
+    "instruction": "Ronda de cultura televisiva alrededor del fenómeno de la serie fuera de los episodios. con secundarios, producción y cronología fina.",
+    "scoring": "3 puntos por acierto.",
+    "tags": "curiosidades"
+  },
+  {
+    "id": "P079",
+    "name": "Termitas · Experto",
+    "kind": "eliminacion",
+    "level": "Experto",
+    "instruction": "Cada fallo “debilita” el edificio. Tres fallos eliminan al jugador. con secundarios, producción y cronología fina.",
+    "scoring": "Sobrevive más rondas.",
+    "tags": "final"
+  },
+  {
+    "id": "P080",
+    "name": "PUF · Experto",
+    "kind": "creativo",
+    "level": "Experto",
+    "instruction": "Dado un personaje y una situación, elige cuál de cuatro titulares de moda o negocio encaja mejor con su personalidad. con secundarios, producción y cronología fina.",
+    "scoring": "Votación o clave editorial.",
+    "tags": "paloma,puf"
+  },
+  {
+    "id": "P081",
+    "name": "Junta relámpago · Fácil",
+    "kind": "velocidad",
+    "level": "Fácil",
+    "instruction": "Responde una cadena de preguntas antes de que termine una junta ficticia. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "velocidad",
+    "tags": [
+      "modo:velocidad",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P082",
+    "name": "Junta relámpago · Medio",
+    "kind": "velocidad",
+    "level": "Medio",
+    "instruction": "Responde una cadena de preguntas antes de que termine una junta ficticia. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "velocidad",
+    "tags": [
+      "modo:velocidad",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P083",
+    "name": "Junta relámpago · Difícil",
+    "kind": "velocidad",
+    "level": "Difícil",
+    "instruction": "Responde una cadena de preguntas antes de que termine una junta ficticia. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "velocidad",
+    "tags": [
+      "modo:velocidad",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P084",
+    "name": "Junta relámpago · Experto",
+    "kind": "velocidad",
+    "level": "Experto",
+    "instruction": "Responde una cadena de preguntas antes de que termine una junta ficticia. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "velocidad",
+    "tags": [
+      "modo:velocidad",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P085",
+    "name": "Radio Patio: rumor o dato · Fácil",
+    "kind": "rumor_dato",
+    "level": "Fácil",
+    "instruction": "Decide si cada afirmación es un dato canónico o un rumor inventado. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "rumor_dato",
+    "tags": [
+      "modo:rumor_dato",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P086",
+    "name": "Radio Patio: rumor o dato · Medio",
+    "kind": "rumor_dato",
+    "level": "Medio",
+    "instruction": "Decide si cada afirmación es un dato canónico o un rumor inventado. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "rumor_dato",
+    "tags": [
+      "modo:rumor_dato",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P087",
+    "name": "Radio Patio: rumor o dato · Difícil",
+    "kind": "rumor_dato",
+    "level": "Difícil",
+    "instruction": "Decide si cada afirmación es un dato canónico o un rumor inventado. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "rumor_dato",
+    "tags": [
+      "modo:rumor_dato",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P088",
+    "name": "Radio Patio: rumor o dato · Experto",
+    "kind": "rumor_dato",
+    "level": "Experto",
+    "instruction": "Decide si cada afirmación es un dato canónico o un rumor inventado. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "rumor_dato",
+    "tags": [
+      "modo:rumor_dato",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P089",
+    "name": "La mirilla · Fácil",
+    "kind": "pistas",
+    "level": "Fácil",
+    "instruction": "Adivina un personaje con pistas que se revelan una a una. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "pistas",
+    "tags": [
+      "modo:pistas",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P090",
+    "name": "La mirilla · Medio",
+    "kind": "pistas",
+    "level": "Medio",
+    "instruction": "Adivina un personaje con pistas que se revelan una a una. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "pistas",
+    "tags": [
+      "modo:pistas",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P091",
+    "name": "La mirilla · Difícil",
+    "kind": "pistas",
+    "level": "Difícil",
+    "instruction": "Adivina un personaje con pistas que se revelan una a una. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "pistas",
+    "tags": [
+      "modo:pistas",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P092",
+    "name": "La mirilla · Experto",
+    "kind": "pistas",
+    "level": "Experto",
+    "instruction": "Adivina un personaje con pistas que se revelan una a una. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "pistas",
+    "tags": [
+      "modo:pistas",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P093",
+    "name": "¿Quién vive dónde? · Fácil",
+    "kind": "mapa",
+    "level": "Fácil",
+    "instruction": "Coloca personajes y grupos en pisos, portería, ático o local. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "mapa",
+    "tags": [
+      "modo:mapa",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P094",
+    "name": "¿Quién vive dónde? · Medio",
+    "kind": "mapa",
+    "level": "Medio",
+    "instruction": "Coloca personajes y grupos en pisos, portería, ático o local. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "mapa",
+    "tags": [
+      "modo:mapa",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P095",
+    "name": "¿Quién vive dónde? · Difícil",
+    "kind": "mapa",
+    "level": "Difícil",
+    "instruction": "Coloca personajes y grupos en pisos, portería, ático o local. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "mapa",
+    "tags": [
+      "modo:mapa",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P096",
+    "name": "¿Quién vive dónde? · Experto",
+    "kind": "mapa",
+    "level": "Experto",
+    "instruction": "Coloca personajes y grupos en pisos, portería, ático o local. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "mapa",
+    "tags": [
+      "modo:mapa",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P097",
+    "name": "Mudanza imposible · Fácil",
+    "kind": "mapa",
+    "level": "Fácil",
+    "instruction": "Reconstruye una planta después de mezclar todas las viviendas. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "mapa",
+    "tags": [
+      "modo:mapa",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P098",
+    "name": "Mudanza imposible · Medio",
+    "kind": "mapa",
+    "level": "Medio",
+    "instruction": "Reconstruye una planta después de mezclar todas las viviendas. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "mapa",
+    "tags": [
+      "modo:mapa",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P099",
+    "name": "Mudanza imposible · Difícil",
+    "kind": "mapa",
+    "level": "Difícil",
+    "instruction": "Reconstruye una planta después de mezclar todas las viviendas. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "mapa",
+    "tags": [
+      "modo:mapa",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P100",
+    "name": "Mudanza imposible · Experto",
+    "kind": "mapa",
+    "level": "Experto",
+    "instruction": "Reconstruye una planta después de mezclar todas las viviendas. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "mapa",
+    "tags": [
+      "modo:mapa",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P101",
+    "name": "Cadena de vecinos · Fácil",
+    "kind": "relaciones",
+    "level": "Fácil",
+    "instruction": "Une personajes mediante relaciones válidas con el menor número de saltos. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "relaciones",
+    "tags": [
+      "modo:relaciones",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P102",
+    "name": "Cadena de vecinos · Medio",
+    "kind": "relaciones",
+    "level": "Medio",
+    "instruction": "Une personajes mediante relaciones válidas con el menor número de saltos. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "relaciones",
+    "tags": [
+      "modo:relaciones",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P103",
+    "name": "Cadena de vecinos · Difícil",
+    "kind": "relaciones",
+    "level": "Difícil",
+    "instruction": "Une personajes mediante relaciones válidas con el menor número de saltos. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "relaciones",
+    "tags": [
+      "modo:relaciones",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P104",
+    "name": "Cadena de vecinos · Experto",
+    "kind": "relaciones",
+    "level": "Experto",
+    "instruction": "Une personajes mediante relaciones válidas con el menor número de saltos. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "relaciones",
+    "tags": [
+      "modo:relaciones",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P105",
+    "name": "Árbol de los Cuesta · Fácil",
+    "kind": "familia",
+    "level": "Fácil",
+    "instruction": "Reconstruye parentescos sin cometer conexiones falsas. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "familia",
+    "tags": [
+      "modo:familia",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P106",
+    "name": "Árbol de los Cuesta · Medio",
+    "kind": "familia",
+    "level": "Medio",
+    "instruction": "Reconstruye parentescos sin cometer conexiones falsas. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "familia",
+    "tags": [
+      "modo:familia",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P107",
+    "name": "Árbol de los Cuesta · Difícil",
+    "kind": "familia",
+    "level": "Difícil",
+    "instruction": "Reconstruye parentescos sin cometer conexiones falsas. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "familia",
+    "tags": [
+      "modo:familia",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P108",
+    "name": "Árbol de los Cuesta · Experto",
+    "kind": "familia",
+    "level": "Experto",
+    "instruction": "Reconstruye parentescos sin cometer conexiones falsas. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "familia",
+    "tags": [
+      "modo:familia",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P109",
+    "name": "Portería en hora punta · Fácil",
+    "kind": "velocidad",
+    "level": "Fácil",
+    "instruction": "Clasifica peticiones, personajes y lugares bajo presión de tiempo. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "velocidad",
+    "tags": [
+      "modo:velocidad",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P110",
+    "name": "Portería en hora punta · Medio",
+    "kind": "velocidad",
+    "level": "Medio",
+    "instruction": "Clasifica peticiones, personajes y lugares bajo presión de tiempo. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "velocidad",
+    "tags": [
+      "modo:velocidad",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P111",
+    "name": "Portería en hora punta · Difícil",
+    "kind": "velocidad",
+    "level": "Difícil",
+    "instruction": "Clasifica peticiones, personajes y lugares bajo presión de tiempo. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "velocidad",
+    "tags": [
+      "modo:velocidad",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P112",
+    "name": "Portería en hora punta · Experto",
+    "kind": "velocidad",
+    "level": "Experto",
+    "instruction": "Clasifica peticiones, personajes y lugares bajo presión de tiempo. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "velocidad",
+    "tags": [
+      "modo:velocidad",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P113",
+    "name": "El parte de Emilio · Fácil",
+    "kind": "memoria",
+    "level": "Fácil",
+    "instruction": "Memoriza una secuencia de datos y repítela en orden. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "memoria",
+    "tags": [
+      "modo:memoria",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P114",
+    "name": "El parte de Emilio · Medio",
+    "kind": "memoria",
+    "level": "Medio",
+    "instruction": "Memoriza una secuencia de datos y repítela en orden. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "memoria",
+    "tags": [
+      "modo:memoria",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P115",
+    "name": "El parte de Emilio · Difícil",
+    "kind": "memoria",
+    "level": "Difícil",
+    "instruction": "Memoriza una secuencia de datos y repítela en orden. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "memoria",
+    "tags": [
+      "modo:memoria",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P116",
+    "name": "El parte de Emilio · Experto",
+    "kind": "memoria",
+    "level": "Experto",
+    "instruction": "Memoriza una secuencia de datos y repítela en orden. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "memoria",
+    "tags": [
+      "modo:memoria",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P117",
+    "name": "Consejo de Sabios · Fácil",
+    "kind": "deduccion",
+    "level": "Fácil",
+    "instruction": "Resuelve preguntas por descarte usando pistas lógicas. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "deduccion",
+    "tags": [
+      "modo:deduccion",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P118",
+    "name": "Consejo de Sabios · Medio",
+    "kind": "deduccion",
+    "level": "Medio",
+    "instruction": "Resuelve preguntas por descarte usando pistas lógicas. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "deduccion",
+    "tags": [
+      "modo:deduccion",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P119",
+    "name": "Consejo de Sabios · Difícil",
+    "kind": "deduccion",
+    "level": "Difícil",
+    "instruction": "Resuelve preguntas por descarte usando pistas lógicas. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "deduccion",
+    "tags": [
+      "modo:deduccion",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P120",
+    "name": "Consejo de Sabios · Experto",
+    "kind": "deduccion",
+    "level": "Experto",
+    "instruction": "Resuelve preguntas por descarte usando pistas lógicas. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "deduccion",
+    "tags": [
+      "modo:deduccion",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P121",
+    "name": "PUF: pasarela vecinal · Fácil",
+    "kind": "clasificacion",
+    "level": "Fácil",
+    "instruction": "Clasifica personajes, lugares, relaciones y objetos por categorías. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "clasificacion",
+    "tags": [
+      "modo:clasificacion",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P122",
+    "name": "PUF: pasarela vecinal · Medio",
+    "kind": "clasificacion",
+    "level": "Medio",
+    "instruction": "Clasifica personajes, lugares, relaciones y objetos por categorías. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "clasificacion",
+    "tags": [
+      "modo:clasificacion",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P123",
+    "name": "PUF: pasarela vecinal · Difícil",
+    "kind": "clasificacion",
+    "level": "Difícil",
+    "instruction": "Clasifica personajes, lugares, relaciones y objetos por categorías. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "clasificacion",
+    "tags": [
+      "modo:clasificacion",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P124",
+    "name": "PUF: pasarela vecinal · Experto",
+    "kind": "clasificacion",
+    "level": "Experto",
+    "instruction": "Clasifica personajes, lugares, relaciones y objetos por categorías. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "clasificacion",
+    "tags": [
+      "modo:clasificacion",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P125",
+    "name": "Videoclub cinéfilo · Fácil",
+    "kind": "referencias",
+    "level": "Fácil",
+    "instruction": "Relaciona personajes y tramas con el contexto del videoclub y el cine. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "referencias",
+    "tags": [
+      "modo:referencias",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P126",
+    "name": "Videoclub cinéfilo · Medio",
+    "kind": "referencias",
+    "level": "Medio",
+    "instruction": "Relaciona personajes y tramas con el contexto del videoclub y el cine. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "referencias",
+    "tags": [
+      "modo:referencias",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P127",
+    "name": "Videoclub cinéfilo · Difícil",
+    "kind": "referencias",
+    "level": "Difícil",
+    "instruction": "Relaciona personajes y tramas con el contexto del videoclub y el cine. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "referencias",
+    "tags": [
+      "modo:referencias",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P128",
+    "name": "Videoclub cinéfilo · Experto",
+    "kind": "referencias",
+    "level": "Experto",
+    "instruction": "Relaciona personajes y tramas con el contexto del videoclub y el cine. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "referencias",
+    "tags": [
+      "modo:referencias",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P129",
+    "name": "Termitas · Fácil",
+    "kind": "eliminacion",
+    "level": "Fácil",
+    "instruction": "Cada fallo elimina una opción o “habitación”; sobrevive hasta el final. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "eliminacion",
+    "tags": [
+      "modo:eliminacion",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P130",
+    "name": "Termitas · Medio",
+    "kind": "eliminacion",
+    "level": "Medio",
+    "instruction": "Cada fallo elimina una opción o “habitación”; sobrevive hasta el final. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "eliminacion",
+    "tags": [
+      "modo:eliminacion",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P131",
+    "name": "Termitas · Difícil",
+    "kind": "eliminacion",
+    "level": "Difícil",
+    "instruction": "Cada fallo elimina una opción o “habitación”; sobrevive hasta el final. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "eliminacion",
+    "tags": [
+      "modo:eliminacion",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P132",
+    "name": "Termitas · Experto",
+    "kind": "eliminacion",
+    "level": "Experto",
+    "instruction": "Cada fallo elimina una opción o “habitación”; sobrevive hasta el final. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "eliminacion",
+    "tags": [
+      "modo:eliminacion",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P133",
+    "name": "Presidente por un día · Fácil",
+    "kind": "estrategia",
+    "level": "Fácil",
+    "instruction": "Gestiona incidencias vecinales acertando preguntas para mantener apoyo. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "estrategia",
+    "tags": [
+      "modo:estrategia",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P134",
+    "name": "Presidente por un día · Medio",
+    "kind": "estrategia",
+    "level": "Medio",
+    "instruction": "Gestiona incidencias vecinales acertando preguntas para mantener apoyo. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "estrategia",
+    "tags": [
+      "modo:estrategia",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P135",
+    "name": "Presidente por un día · Difícil",
+    "kind": "estrategia",
+    "level": "Difícil",
+    "instruction": "Gestiona incidencias vecinales acertando preguntas para mantener apoyo. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "estrategia",
+    "tags": [
+      "modo:estrategia",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P136",
+    "name": "Presidente por un día · Experto",
+    "kind": "estrategia",
+    "level": "Experto",
+    "instruction": "Gestiona incidencias vecinales acertando preguntas para mantener apoyo. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "estrategia",
+    "tags": [
+      "modo:estrategia",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P137",
+    "name": "Moción de censura · Fácil",
+    "kind": "duelo",
+    "level": "Fácil",
+    "instruction": "Dos jugadores compiten; los fallos restan apoyos en la comunidad. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "duelo",
+    "tags": [
+      "modo:duelo",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P138",
+    "name": "Moción de censura · Medio",
+    "kind": "duelo",
+    "level": "Medio",
+    "instruction": "Dos jugadores compiten; los fallos restan apoyos en la comunidad. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "duelo",
+    "tags": [
+      "modo:duelo",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P139",
+    "name": "Moción de censura · Difícil",
+    "kind": "duelo",
+    "level": "Difícil",
+    "instruction": "Dos jugadores compiten; los fallos restan apoyos en la comunidad. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "duelo",
+    "tags": [
+      "modo:duelo",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P140",
+    "name": "Moción de censura · Experto",
+    "kind": "duelo",
+    "level": "Experto",
+    "instruction": "Dos jugadores compiten; los fallos restan apoyos en la comunidad. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "duelo",
+    "tags": [
+      "modo:duelo",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P141",
+    "name": "Ascensor averiado · Fácil",
+    "kind": "escalera",
+    "level": "Fácil",
+    "instruction": "Sube plantas acertando; un fallo puede hacerte bajar. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "escalera",
+    "tags": [
+      "modo:escalera",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P142",
+    "name": "Ascensor averiado · Medio",
+    "kind": "escalera",
+    "level": "Medio",
+    "instruction": "Sube plantas acertando; un fallo puede hacerte bajar. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "escalera",
+    "tags": [
+      "modo:escalera",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P143",
+    "name": "Ascensor averiado · Difícil",
+    "kind": "escalera",
+    "level": "Difícil",
+    "instruction": "Sube plantas acertando; un fallo puede hacerte bajar. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "escalera",
+    "tags": [
+      "modo:escalera",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P144",
+    "name": "Ascensor averiado · Experto",
+    "kind": "escalera",
+    "level": "Experto",
+    "instruction": "Sube plantas acertando; un fallo puede hacerte bajar. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "escalera",
+    "tags": [
+      "modo:escalera",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P145",
+    "name": "El telefonillo · Fácil",
+    "kind": "audio_texto",
+    "level": "Fácil",
+    "instruction": "Identifica personaje o situación a partir de una frase parafraseada o pista. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "audio_texto",
+    "tags": [
+      "modo:audio_texto",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P146",
+    "name": "El telefonillo · Medio",
+    "kind": "audio_texto",
+    "level": "Medio",
+    "instruction": "Identifica personaje o situación a partir de una frase parafraseada o pista. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "audio_texto",
+    "tags": [
+      "modo:audio_texto",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P147",
+    "name": "El telefonillo · Difícil",
+    "kind": "audio_texto",
+    "level": "Difícil",
+    "instruction": "Identifica personaje o situación a partir de una frase parafraseada o pista. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "audio_texto",
+    "tags": [
+      "modo:audio_texto",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P148",
+    "name": "El telefonillo · Experto",
+    "kind": "audio_texto",
+    "level": "Experto",
+    "instruction": "Identifica personaje o situación a partir de una frase parafraseada o pista. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "audio_texto",
+    "tags": [
+      "modo:audio_texto",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P149",
+    "name": "Bingo de Desengaño · Fácil",
+    "kind": "bingo",
+    "level": "Fácil",
+    "instruction": "Completa una cuadrícula de categorías y personajes mediante aciertos. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "bingo",
+    "tags": [
+      "modo:bingo",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P150",
+    "name": "Bingo de Desengaño · Medio",
+    "kind": "bingo",
+    "level": "Medio",
+    "instruction": "Completa una cuadrícula de categorías y personajes mediante aciertos. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "bingo",
+    "tags": [
+      "modo:bingo",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P151",
+    "name": "Bingo de Desengaño · Difícil",
+    "kind": "bingo",
+    "level": "Difícil",
+    "instruction": "Completa una cuadrícula de categorías y personajes mediante aciertos. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "bingo",
+    "tags": [
+      "modo:bingo",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P152",
+    "name": "Bingo de Desengaño · Experto",
+    "kind": "bingo",
+    "level": "Experto",
+    "instruction": "Completa una cuadrícula de categorías y personajes mediante aciertos. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "bingo",
+    "tags": [
+      "modo:bingo",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P153",
+    "name": "El intruso del rellano · Fácil",
+    "kind": "intruso",
+    "level": "Fácil",
+    "instruction": "Detecta el elemento que no pertenece a un grupo temático. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "intruso",
+    "tags": [
+      "modo:intruso",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P154",
+    "name": "El intruso del rellano · Medio",
+    "kind": "intruso",
+    "level": "Medio",
+    "instruction": "Detecta el elemento que no pertenece a un grupo temático. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "intruso",
+    "tags": [
+      "modo:intruso",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P155",
+    "name": "El intruso del rellano · Difícil",
+    "kind": "intruso",
+    "level": "Difícil",
+    "instruction": "Detecta el elemento que no pertenece a un grupo temático. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "intruso",
+    "tags": [
+      "modo:intruso",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P156",
+    "name": "El intruso del rellano · Experto",
+    "kind": "intruso",
+    "level": "Experto",
+    "instruction": "Detecta el elemento que no pertenece a un grupo temático. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "intruso",
+    "tags": [
+      "modo:intruso",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P157",
+    "name": "Parejas en crisis · Fácil",
+    "kind": "parejas",
+    "level": "Fácil",
+    "instruction": "Empareja relaciones sentimentales y detecta combinaciones imposibles. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "parejas",
+    "tags": [
+      "modo:parejas",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P158",
+    "name": "Parejas en crisis · Medio",
+    "kind": "parejas",
+    "level": "Medio",
+    "instruction": "Empareja relaciones sentimentales y detecta combinaciones imposibles. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "parejas",
+    "tags": [
+      "modo:parejas",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P159",
+    "name": "Parejas en crisis · Difícil",
+    "kind": "parejas",
+    "level": "Difícil",
+    "instruction": "Empareja relaciones sentimentales y detecta combinaciones imposibles. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "parejas",
+    "tags": [
+      "modo:parejas",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P160",
+    "name": "Parejas en crisis · Experto",
+    "kind": "parejas",
+    "level": "Experto",
+    "instruction": "Empareja relaciones sentimentales y detecta combinaciones imposibles. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "parejas",
+    "tags": [
+      "modo:parejas",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P161",
+    "name": "Profesiones de Belén · Fácil",
+    "kind": "memoria",
+    "level": "Fácil",
+    "instruction": "Ronda temática sobre trabajos, cambios y datos laborales de Belén. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "memoria",
+    "tags": [
+      "modo:memoria",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P162",
+    "name": "Profesiones de Belén · Medio",
+    "kind": "memoria",
+    "level": "Medio",
+    "instruction": "Ronda temática sobre trabajos, cambios y datos laborales de Belén. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "memoria",
+    "tags": [
+      "modo:memoria",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P163",
+    "name": "Profesiones de Belén · Difícil",
+    "kind": "memoria",
+    "level": "Difícil",
+    "instruction": "Ronda temática sobre trabajos, cambios y datos laborales de Belén. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "memoria",
+    "tags": [
+      "modo:memoria",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P164",
+    "name": "Profesiones de Belén · Experto",
+    "kind": "memoria",
+    "level": "Experto",
+    "instruction": "Ronda temática sobre trabajos, cambios y datos laborales de Belén. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "memoria",
+    "tags": [
+      "modo:memoria",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P165",
+    "name": "Cronología caótica · Fácil",
+    "kind": "cronologia",
+    "level": "Fácil",
+    "instruction": "Ordena hitos de temporadas y relaciones. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "cronologia",
+    "tags": [
+      "modo:cronologia",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P166",
+    "name": "Cronología caótica · Medio",
+    "kind": "cronologia",
+    "level": "Medio",
+    "instruction": "Ordena hitos de temporadas y relaciones. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "cronologia",
+    "tags": [
+      "modo:cronologia",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P167",
+    "name": "Cronología caótica · Difícil",
+    "kind": "cronologia",
+    "level": "Difícil",
+    "instruction": "Ordena hitos de temporadas y relaciones. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "cronologia",
+    "tags": [
+      "modo:cronologia",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P168",
+    "name": "Cronología caótica · Experto",
+    "kind": "cronologia",
+    "level": "Experto",
+    "instruction": "Ordena hitos de temporadas y relaciones. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "cronologia",
+    "tags": [
+      "modo:cronologia",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P169",
+    "name": "Tres pistas y una mentira · Fácil",
+    "kind": "deduccion",
+    "level": "Fácil",
+    "instruction": "Cuatro pistas, una falsa; identifica la falsa y el personaje. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "deduccion",
+    "tags": [
+      "modo:deduccion",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P170",
+    "name": "Tres pistas y una mentira · Medio",
+    "kind": "deduccion",
+    "level": "Medio",
+    "instruction": "Cuatro pistas, una falsa; identifica la falsa y el personaje. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "deduccion",
+    "tags": [
+      "modo:deduccion",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P171",
+    "name": "Tres pistas y una mentira · Difícil",
+    "kind": "deduccion",
+    "level": "Difícil",
+    "instruction": "Cuatro pistas, una falsa; identifica la falsa y el personaje. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "deduccion",
+    "tags": [
+      "modo:deduccion",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P172",
+    "name": "Tres pistas y una mentira · Experto",
+    "kind": "deduccion",
+    "level": "Experto",
+    "instruction": "Cuatro pistas, una falsa; identifica la falsa y el personaje. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "deduccion",
+    "tags": [
+      "modo:deduccion",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P173",
+    "name": "Casting alternativo · Fácil",
+    "kind": "produccion",
+    "level": "Fácil",
+    "instruction": "Responde curiosidades de casting, producción y decisiones previas. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "produccion",
+    "tags": [
+      "modo:produccion",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P174",
+    "name": "Casting alternativo · Medio",
+    "kind": "produccion",
+    "level": "Medio",
+    "instruction": "Responde curiosidades de casting, producción y decisiones previas. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "produccion",
+    "tags": [
+      "modo:produccion",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P175",
+    "name": "Casting alternativo · Difícil",
+    "kind": "produccion",
+    "level": "Difícil",
+    "instruction": "Responde curiosidades de casting, producción y decisiones previas. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "produccion",
+    "tags": [
+      "modo:produccion",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P176",
+    "name": "Casting alternativo · Experto",
+    "kind": "produccion",
+    "level": "Experto",
+    "instruction": "Responde curiosidades de casting, producción y decisiones previas. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "produccion",
+    "tags": [
+      "modo:produccion",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P177",
+    "name": "Campanadas 21 · Fácil",
+    "kind": "ecosistema",
+    "level": "Fácil",
+    "instruction": "Ronda sobre las Campanadas protagonizadas por personajes de la serie. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "ecosistema",
+    "tags": [
+      "modo:ecosistema",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P178",
+    "name": "Campanadas 21 · Medio",
+    "kind": "ecosistema",
+    "level": "Medio",
+    "instruction": "Ronda sobre las Campanadas protagonizadas por personajes de la serie. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "ecosistema",
+    "tags": [
+      "modo:ecosistema",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P179",
+    "name": "Campanadas 21 · Difícil",
+    "kind": "ecosistema",
+    "level": "Difícil",
+    "instruction": "Ronda sobre las Campanadas protagonizadas por personajes de la serie. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "ecosistema",
+    "tags": [
+      "modo:ecosistema",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P180",
+    "name": "Campanadas 21 · Experto",
+    "kind": "ecosistema",
+    "level": "Experto",
+    "instruction": "Ronda sobre las Campanadas protagonizadas por personajes de la serie. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "ecosistema",
+    "tags": [
+      "modo:ecosistema",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P181",
+    "name": "ANHQV internacional · Fácil",
+    "kind": "adaptaciones",
+    "level": "Fácil",
+    "instruction": "Relaciona países con adaptaciones, títulos y peculiaridades. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "adaptaciones",
+    "tags": [
+      "modo:adaptaciones",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P182",
+    "name": "ANHQV internacional · Medio",
+    "kind": "adaptaciones",
+    "level": "Medio",
+    "instruction": "Relaciona países con adaptaciones, títulos y peculiaridades. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "adaptaciones",
+    "tags": [
+      "modo:adaptaciones",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P183",
+    "name": "ANHQV internacional · Difícil",
+    "kind": "adaptaciones",
+    "level": "Difícil",
+    "instruction": "Relaciona países con adaptaciones, títulos y peculiaridades. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "adaptaciones",
+    "tags": [
+      "modo:adaptaciones",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P184",
+    "name": "ANHQV internacional · Experto",
+    "kind": "adaptaciones",
+    "level": "Experto",
+    "instruction": "Relaciona países con adaptaciones, títulos y peculiaridades. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "adaptaciones",
+    "tags": [
+      "modo:adaptaciones",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P185",
+    "name": "Vocal Factory · Fácil",
+    "kind": "musica",
+    "level": "Fácil",
+    "instruction": "Ronda sobre cabecera, música y elementos sonoros. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "musica",
+    "tags": [
+      "modo:musica",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P186",
+    "name": "Vocal Factory · Medio",
+    "kind": "musica",
+    "level": "Medio",
+    "instruction": "Ronda sobre cabecera, música y elementos sonoros. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "musica",
+    "tags": [
+      "modo:musica",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P187",
+    "name": "Vocal Factory · Difícil",
+    "kind": "musica",
+    "level": "Difícil",
+    "instruction": "Ronda sobre cabecera, música y elementos sonoros. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "musica",
+    "tags": [
+      "modo:musica",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P188",
+    "name": "Vocal Factory · Experto",
+    "kind": "musica",
+    "level": "Experto",
+    "instruction": "Ronda sobre cabecera, música y elementos sonoros. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "musica",
+    "tags": [
+      "modo:musica",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P189",
+    "name": "El primer presidente · Fácil",
+    "kind": "produccion",
+    "level": "Fácil",
+    "instruction": "Ronda de detalles de producción, homenajes y fotografías del edificio. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "produccion",
+    "tags": [
+      "modo:produccion",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P190",
+    "name": "El primer presidente · Medio",
+    "kind": "produccion",
+    "level": "Medio",
+    "instruction": "Ronda de detalles de producción, homenajes y fotografías del edificio. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "produccion",
+    "tags": [
+      "modo:produccion",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P191",
+    "name": "El primer presidente · Difícil",
+    "kind": "produccion",
+    "level": "Difícil",
+    "instruction": "Ronda de detalles de producción, homenajes y fotografías del edificio. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "produccion",
+    "tags": [
+      "modo:produccion",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P192",
+    "name": "El primer presidente · Experto",
+    "kind": "produccion",
+    "level": "Experto",
+    "instruction": "Ronda de detalles de producción, homenajes y fotografías del edificio. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "produccion",
+    "tags": [
+      "modo:produccion",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P193",
+    "name": "¿Actor o personaje? · Fácil",
+    "kind": "reparto",
+    "level": "Fácil",
+    "instruction": "Alterna nombres reales y ficticios y exige identificar su categoría. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "reparto",
+    "tags": [
+      "modo:reparto",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P194",
+    "name": "¿Actor o personaje? · Medio",
+    "kind": "reparto",
+    "level": "Medio",
+    "instruction": "Alterna nombres reales y ficticios y exige identificar su categoría. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "reparto",
+    "tags": [
+      "modo:reparto",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P195",
+    "name": "¿Actor o personaje? · Difícil",
+    "kind": "reparto",
+    "level": "Difícil",
+    "instruction": "Alterna nombres reales y ficticios y exige identificar su categoría. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "reparto",
+    "tags": [
+      "modo:reparto",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P196",
+    "name": "¿Actor o personaje? · Experto",
+    "kind": "reparto",
+    "level": "Experto",
+    "instruction": "Alterna nombres reales y ficticios y exige identificar su categoría. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "reparto",
+    "tags": [
+      "modo:reparto",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P197",
+    "name": "Doblete interpretativo · Fácil",
+    "kind": "reparto",
+    "level": "Fácil",
+    "instruction": "Une actor y personaje en ambas direcciones sin repetir. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "reparto",
+    "tags": [
+      "modo:reparto",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P198",
+    "name": "Doblete interpretativo · Medio",
+    "kind": "reparto",
+    "level": "Medio",
+    "instruction": "Une actor y personaje en ambas direcciones sin repetir. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "reparto",
+    "tags": [
+      "modo:reparto",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P199",
+    "name": "Doblete interpretativo · Difícil",
+    "kind": "reparto",
+    "level": "Difícil",
+    "instruction": "Une actor y personaje en ambas direcciones sin repetir. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "reparto",
+    "tags": [
+      "modo:reparto",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P200",
+    "name": "Doblete interpretativo · Experto",
+    "kind": "reparto",
+    "level": "Experto",
+    "instruction": "Une actor y personaje en ambas direcciones sin repetir. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "reparto",
+    "tags": [
+      "modo:reparto",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P201",
+    "name": "Mapa ciego · Fácil",
+    "kind": "mapa",
+    "level": "Fácil",
+    "instruction": "Sin ver el plano, reconstruye Desengaño 21 con pistas textuales. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "mapa",
+    "tags": [
+      "modo:mapa",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P202",
+    "name": "Mapa ciego · Medio",
+    "kind": "mapa",
+    "level": "Medio",
+    "instruction": "Sin ver el plano, reconstruye Desengaño 21 con pistas textuales. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "mapa",
+    "tags": [
+      "modo:mapa",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P203",
+    "name": "Mapa ciego · Difícil",
+    "kind": "mapa",
+    "level": "Difícil",
+    "instruction": "Sin ver el plano, reconstruye Desengaño 21 con pistas textuales. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "mapa",
+    "tags": [
+      "modo:mapa",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P204",
+    "name": "Mapa ciego · Experto",
+    "kind": "mapa",
+    "level": "Experto",
+    "instruction": "Sin ver el plano, reconstruye Desengaño 21 con pistas textuales. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "mapa",
+    "tags": [
+      "modo:mapa",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P205",
+    "name": "Vecino secreto · Fácil",
+    "kind": "social",
+    "level": "Fácil",
+    "instruction": "Cada jugador recibe un personaje y debe disimularlo mientras responde. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "social",
+    "tags": [
+      "modo:social",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P206",
+    "name": "Vecino secreto · Medio",
+    "kind": "social",
+    "level": "Medio",
+    "instruction": "Cada jugador recibe un personaje y debe disimularlo mientras responde. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "social",
+    "tags": [
+      "modo:social",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P207",
+    "name": "Vecino secreto · Difícil",
+    "kind": "social",
+    "level": "Difícil",
+    "instruction": "Cada jugador recibe un personaje y debe disimularlo mientras responde. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "social",
+    "tags": [
+      "modo:social",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P208",
+    "name": "Vecino secreto · Experto",
+    "kind": "social",
+    "level": "Experto",
+    "instruction": "Cada jugador recibe un personaje y debe disimularlo mientras responde. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "social",
+    "tags": [
+      "modo:social",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P209",
+    "name": "Saboteador de la junta · Fácil",
+    "kind": "social",
+    "level": "Fácil",
+    "instruction": "Un jugador recibe una afirmación falsa e intenta colarla entre datos reales. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "social",
+    "tags": [
+      "modo:social",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P210",
+    "name": "Saboteador de la junta · Medio",
+    "kind": "social",
+    "level": "Medio",
+    "instruction": "Un jugador recibe una afirmación falsa e intenta colarla entre datos reales. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "social",
+    "tags": [
+      "modo:social",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P211",
+    "name": "Saboteador de la junta · Difícil",
+    "kind": "social",
+    "level": "Difícil",
+    "instruction": "Un jugador recibe una afirmación falsa e intenta colarla entre datos reales. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "social",
+    "tags": [
+      "modo:social",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P212",
+    "name": "Saboteador de la junta · Experto",
+    "kind": "social",
+    "level": "Experto",
+    "instruction": "Un jugador recibe una afirmación falsa e intenta colarla entre datos reales. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "social",
+    "tags": [
+      "modo:social",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P213",
+    "name": "Subasta de pistas · Fácil",
+    "kind": "apuesta",
+    "level": "Fácil",
+    "instruction": "Apuesta cuántas pistas necesitas para identificar una respuesta. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "apuesta",
+    "tags": [
+      "modo:apuesta",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P214",
+    "name": "Subasta de pistas · Medio",
+    "kind": "apuesta",
+    "level": "Medio",
+    "instruction": "Apuesta cuántas pistas necesitas para identificar una respuesta. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "apuesta",
+    "tags": [
+      "modo:apuesta",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P215",
+    "name": "Subasta de pistas · Difícil",
+    "kind": "apuesta",
+    "level": "Difícil",
+    "instruction": "Apuesta cuántas pistas necesitas para identificar una respuesta. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "apuesta",
+    "tags": [
+      "modo:apuesta",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P216",
+    "name": "Subasta de pistas · Experto",
+    "kind": "apuesta",
+    "level": "Experto",
+    "instruction": "Apuesta cuántas pistas necesitas para identificar una respuesta. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "apuesta",
+    "tags": [
+      "modo:apuesta",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P217",
+    "name": "Riesgo en el ático · Fácil",
+    "kind": "apuesta",
+    "level": "Fácil",
+    "instruction": "Elige dificultad y multiplicador; si fallas pierdes la apuesta. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "apuesta",
+    "tags": [
+      "modo:apuesta",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P218",
+    "name": "Riesgo en el ático · Medio",
+    "kind": "apuesta",
+    "level": "Medio",
+    "instruction": "Elige dificultad y multiplicador; si fallas pierdes la apuesta. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "apuesta",
+    "tags": [
+      "modo:apuesta",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P219",
+    "name": "Riesgo en el ático · Difícil",
+    "kind": "apuesta",
+    "level": "Difícil",
+    "instruction": "Elige dificultad y multiplicador; si fallas pierdes la apuesta. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "apuesta",
+    "tags": [
+      "modo:apuesta",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P220",
+    "name": "Riesgo en el ático · Experto",
+    "kind": "apuesta",
+    "level": "Experto",
+    "instruction": "Elige dificultad y multiplicador; si fallas pierdes la apuesta. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "apuesta",
+    "tags": [
+      "modo:apuesta",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P221",
+    "name": "Escalera de dificultad · Fácil",
+    "kind": "progresion",
+    "level": "Fácil",
+    "instruction": "Cinco preguntas de dificultad creciente; decide cuándo plantarte. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "progresion",
+    "tags": [
+      "modo:progresion",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P222",
+    "name": "Escalera de dificultad · Medio",
+    "kind": "progresion",
+    "level": "Medio",
+    "instruction": "Cinco preguntas de dificultad creciente; decide cuándo plantarte. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "progresion",
+    "tags": [
+      "modo:progresion",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P223",
+    "name": "Escalera de dificultad · Difícil",
+    "kind": "progresion",
+    "level": "Difícil",
+    "instruction": "Cinco preguntas de dificultad creciente; decide cuándo plantarte. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "progresion",
+    "tags": [
+      "modo:progresion",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P224",
+    "name": "Escalera de dificultad · Experto",
+    "kind": "progresion",
+    "level": "Experto",
+    "instruction": "Cinco preguntas de dificultad creciente; decide cuándo plantarte. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "progresion",
+    "tags": [
+      "modo:progresion",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P225",
+    "name": "Sin un poquito de por favor · Fácil",
+    "kind": "precision",
+    "level": "Fácil",
+    "instruction": "Solo puntúa la respuesta exacta, sin aproximaciones. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "precision",
+    "tags": [
+      "modo:precision",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P226",
+    "name": "Sin un poquito de por favor · Medio",
+    "kind": "precision",
+    "level": "Medio",
+    "instruction": "Solo puntúa la respuesta exacta, sin aproximaciones. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "precision",
+    "tags": [
+      "modo:precision",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P227",
+    "name": "Sin un poquito de por favor · Difícil",
+    "kind": "precision",
+    "level": "Difícil",
+    "instruction": "Solo puntúa la respuesta exacta, sin aproximaciones. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "precision",
+    "tags": [
+      "modo:precision",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P228",
+    "name": "Sin un poquito de por favor · Experto",
+    "kind": "precision",
+    "level": "Experto",
+    "instruction": "Solo puntúa la respuesta exacta, sin aproximaciones. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "precision",
+    "tags": [
+      "modo:precision",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P229",
+    "name": "La comunidad decide · Fácil",
+    "kind": "votacion",
+    "level": "Fácil",
+    "instruction": "Tras responder, los jugadores votan la opción que creen correcta antes de revelar. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "votacion",
+    "tags": [
+      "modo:votacion",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P230",
+    "name": "La comunidad decide · Medio",
+    "kind": "votacion",
+    "level": "Medio",
+    "instruction": "Tras responder, los jugadores votan la opción que creen correcta antes de revelar. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "votacion",
+    "tags": [
+      "modo:votacion",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P231",
+    "name": "La comunidad decide · Difícil",
+    "kind": "votacion",
+    "level": "Difícil",
+    "instruction": "Tras responder, los jugadores votan la opción que creen correcta antes de revelar. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "votacion",
+    "tags": [
+      "modo:votacion",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P232",
+    "name": "La comunidad decide · Experto",
+    "kind": "votacion",
+    "level": "Experto",
+    "instruction": "Tras responder, los jugadores votan la opción que creen correcta antes de revelar. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "votacion",
+    "tags": [
+      "modo:votacion",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P233",
+    "name": "Duelo de porteros · Fácil",
+    "kind": "duelo",
+    "level": "Fácil",
+    "instruction": "Turnos ultrarrápidos con rebote de pregunta al rival. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "duelo",
+    "tags": [
+      "modo:duelo",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P234",
+    "name": "Duelo de porteros · Medio",
+    "kind": "duelo",
+    "level": "Medio",
+    "instruction": "Turnos ultrarrápidos con rebote de pregunta al rival. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "duelo",
+    "tags": [
+      "modo:duelo",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P235",
+    "name": "Duelo de porteros · Difícil",
+    "kind": "duelo",
+    "level": "Difícil",
+    "instruction": "Turnos ultrarrápidos con rebote de pregunta al rival. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "duelo",
+    "tags": [
+      "modo:duelo",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P236",
+    "name": "Duelo de porteros · Experto",
+    "kind": "duelo",
+    "level": "Experto",
+    "instruction": "Turnos ultrarrápidos con rebote de pregunta al rival. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "duelo",
+    "tags": [
+      "modo:duelo",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P237",
+    "name": "Radio Patio encadenado · Fácil",
+    "kind": "cadena",
+    "level": "Fácil",
+    "instruction": "La respuesta de una pregunta sirve como pista de la siguiente. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "cadena",
+    "tags": [
+      "modo:cadena",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P238",
+    "name": "Radio Patio encadenado · Medio",
+    "kind": "cadena",
+    "level": "Medio",
+    "instruction": "La respuesta de una pregunta sirve como pista de la siguiente. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "cadena",
+    "tags": [
+      "modo:cadena",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P239",
+    "name": "Radio Patio encadenado · Difícil",
+    "kind": "cadena",
+    "level": "Difícil",
+    "instruction": "La respuesta de una pregunta sirve como pista de la siguiente. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "cadena",
+    "tags": [
+      "modo:cadena",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P240",
+    "name": "Radio Patio encadenado · Experto",
+    "kind": "cadena",
+    "level": "Experto",
+    "instruction": "La respuesta de una pregunta sirve como pista de la siguiente. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "cadena",
+    "tags": [
+      "modo:cadena",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P241",
+    "name": "Archivo de actas · Fácil",
+    "kind": "archivo",
+    "level": "Fácil",
+    "instruction": "Recupera datos de fichas y cronología como si consultaras actas vecinales. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "archivo",
+    "tags": [
+      "modo:archivo",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P242",
+    "name": "Archivo de actas · Medio",
+    "kind": "archivo",
+    "level": "Medio",
+    "instruction": "Recupera datos de fichas y cronología como si consultaras actas vecinales. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "archivo",
+    "tags": [
+      "modo:archivo",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P243",
+    "name": "Archivo de actas · Difícil",
+    "kind": "archivo",
+    "level": "Difícil",
+    "instruction": "Recupera datos de fichas y cronología como si consultaras actas vecinales. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "archivo",
+    "tags": [
+      "modo:archivo",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P244",
+    "name": "Archivo de actas · Experto",
+    "kind": "archivo",
+    "level": "Experto",
+    "instruction": "Recupera datos de fichas y cronología como si consultaras actas vecinales. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "archivo",
+    "tags": [
+      "modo:archivo",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P245",
+    "name": "Vecinos por categorías · Fácil",
+    "kind": "draft",
+    "level": "Fácil",
+    "instruction": "Forma un equipo de personajes cumpliendo restricciones de pisos, roles y relaciones. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "draft",
+    "tags": [
+      "modo:draft",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P246",
+    "name": "Vecinos por categorías · Medio",
+    "kind": "draft",
+    "level": "Medio",
+    "instruction": "Forma un equipo de personajes cumpliendo restricciones de pisos, roles y relaciones. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "draft",
+    "tags": [
+      "modo:draft",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P247",
+    "name": "Vecinos por categorías · Difícil",
+    "kind": "draft",
+    "level": "Difícil",
+    "instruction": "Forma un equipo de personajes cumpliendo restricciones de pisos, roles y relaciones. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "draft",
+    "tags": [
+      "modo:draft",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P248",
+    "name": "Vecinos por categorías · Experto",
+    "kind": "draft",
+    "level": "Experto",
+    "instruction": "Forma un equipo de personajes cumpliendo restricciones de pisos, roles y relaciones. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "draft",
+    "tags": [
+      "modo:draft",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P249",
+    "name": "El casero invisible · Fácil",
+    "kind": "deduccion",
+    "level": "Fácil",
+    "instruction": "Adivina una ficha oculta descartando por actor, zona, rol y relaciones. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "deduccion",
+    "tags": [
+      "modo:deduccion",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P250",
+    "name": "El casero invisible · Medio",
+    "kind": "deduccion",
+    "level": "Medio",
+    "instruction": "Adivina una ficha oculta descartando por actor, zona, rol y relaciones. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "deduccion",
+    "tags": [
+      "modo:deduccion",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P251",
+    "name": "El casero invisible · Difícil",
+    "kind": "deduccion",
+    "level": "Difícil",
+    "instruction": "Adivina una ficha oculta descartando por actor, zona, rol y relaciones. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "deduccion",
+    "tags": [
+      "modo:deduccion",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P252",
+    "name": "El casero invisible · Experto",
+    "kind": "deduccion",
+    "level": "Experto",
+    "instruction": "Adivina una ficha oculta descartando por actor, zona, rol y relaciones. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "deduccion",
+    "tags": [
+      "modo:deduccion",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P253",
+    "name": "La llamada de Antena 3 · Fácil",
+    "kind": "ecosistema",
+    "level": "Fácil",
+    "instruction": "Curiosidades externas: cameos, programas, campanadas y adaptaciones. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "ecosistema",
+    "tags": [
+      "modo:ecosistema",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P254",
+    "name": "La llamada de Antena 3 · Medio",
+    "kind": "ecosistema",
+    "level": "Medio",
+    "instruction": "Curiosidades externas: cameos, programas, campanadas y adaptaciones. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "ecosistema",
+    "tags": [
+      "modo:ecosistema",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P255",
+    "name": "La llamada de Antena 3 · Difícil",
+    "kind": "ecosistema",
+    "level": "Difícil",
+    "instruction": "Curiosidades externas: cameos, programas, campanadas y adaptaciones. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "ecosistema",
+    "tags": [
+      "modo:ecosistema",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P256",
+    "name": "La llamada de Antena 3 · Experto",
+    "kind": "ecosistema",
+    "level": "Experto",
+    "instruction": "Curiosidades externas: cameos, programas, campanadas y adaptaciones. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "ecosistema",
+    "tags": [
+      "modo:ecosistema",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P257",
+    "name": "Desengaño 21 infinito · Fácil",
+    "kind": "endless",
+    "level": "Fácil",
+    "instruction": "Modo sin final con dificultad adaptativa y vidas limitadas. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
+    "scoring": "1 punto por acierto; sin penalización.",
+    "players": "1-8",
+    "duration_min": 3,
+    "question_pool_hint": "endless",
+    "tags": [
+      "modo:endless",
+      "nivel:fácil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P258",
+    "name": "Desengaño 21 infinito · Medio",
+    "kind": "endless",
+    "level": "Medio",
+    "instruction": "Modo sin final con dificultad adaptativa y vidas limitadas. Variante medio: menos pistas y distractores plausibles.",
+    "scoring": "2 puntos por acierto; racha x1,25.",
+    "players": "1-8",
+    "duration_min": 5,
+    "question_pool_hint": "endless",
+    "tags": [
+      "modo:endless",
+      "nivel:medio"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P259",
+    "name": "Desengaño 21 infinito · Difícil",
+    "kind": "endless",
+    "level": "Difícil",
+    "instruction": "Modo sin final con dificultad adaptativa y vidas limitadas. Variante difícil: tiempo reducido, más categorías y penalización por error.",
+    "scoring": "3 puntos por acierto; -1 por error; bonus por racha.",
+    "players": "1-8",
+    "duration_min": 7,
+    "question_pool_hint": "endless",
+    "tags": [
+      "modo:endless",
+      "nivel:difícil"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  },
+  {
+    "id": "P260",
+    "name": "Desengaño 21 infinito · Experto",
+    "kind": "endless",
+    "level": "Experto",
+    "instruction": "Modo sin final con dificultad adaptativa y vidas limitadas. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
+    "scoring": "5 puntos por acierto; -2 por error; multiplicador por precisión perfecta.",
+    "players": "1-8",
+    "duration_min": 10,
+    "question_pool_hint": "endless",
+    "tags": [
+      "modo:endless",
+      "nivel:experto"
+    ],
+    "source_hint": "Diseño original basado en el ecosistema ANHQV"
+  }
+]

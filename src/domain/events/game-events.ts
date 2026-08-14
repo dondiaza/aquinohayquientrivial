@@ -141,7 +141,7 @@ export const GAME_EVENTS: Record<GameEventId, GameEventDefinition> = {
   PORTERO_DE_VACACIONES: {
     id: 'PORTERO_DE_VACACIONES',
     title: 'El portero está de vacaciones',
-    line: 'Sin Amancio no hay favores, ni sopla nadie desde el rellano.',
+    line: 'Sin Emilio en la portería no hay favores, ni sopla nadie desde el rellano.',
     consequence: 'Sin comodines en la próxima, pero vale ×1.4',
     icon: '🏖️',
     accent: 'rojo',

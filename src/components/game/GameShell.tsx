@@ -24,6 +24,8 @@ import type { GameConfig, GameState, GhostRun } from '@/domain/engine/state';
 import type { AnswerSubmission, Question } from '@/domain/questions/types';
 import type { PowerUpId } from '@/domain/powerups/powerups';
 
+import type { Tarjeta } from '@/content/anhqv/catalogos';
+
 import { EventCartela, IntroCartela, RoundIntroCartela, RoundResultsCartela } from './Cartelas';
 import { FinalBetSetup } from './FinalBetSetup';
 import { Hud } from './Hud';
@@ -55,11 +57,14 @@ export function GameShell({
   config,
   pool,
   ghost,
+  tarjetas = [],
 }: {
   gameId: string;
   config: GameConfig;
   pool: Question[];
   ghost?: GhostRun | undefined;
+  /** Curiosidades del pack para los descansos. Las elige el servidor por semilla. */
+  tarjetas?: readonly Tarjeta[];
 }) {
   const router = useRouter();
   const { sonar } = useAudio();
@@ -493,6 +498,7 @@ export function GameShell({
             progress={roundProgress}
             isLastRound={isLastRound}
             totalScore={state.score}
+            tarjeta={tarjetas[state.roundIndex % Math.max(1, tarjetas.length)]}
             onNext={() => act({ type: 'NEXT' })}
           />
         ) : null}

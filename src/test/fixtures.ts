@@ -3,7 +3,7 @@
  * automático" capaz de terminar una partida entera contra el motor real.
  */
 
-import { bet, imp, mc, ord, tf, who } from '@/content/builders';
+import { bet, escrita, imp, mc, ord, tf, who } from '@/content/builders';
 import { assembleQuestion } from '@/domain/questions/schemas';
 import { applyAction, createGameState, type EngineDeps } from '@/domain/engine/machine';
 import type { GameAction } from '@/domain/engine/actions';
@@ -18,6 +18,7 @@ import type {
   OrderChaosQuestion,
   Question,
   QuestionType,
+  ShortAnswerQuestion,
   TrueFalseQuestion,
   WhoIsItQuestion,
 } from '@/domain/questions/types';
@@ -50,8 +51,8 @@ export function makeMultipleChoice(overrides?: {
     assembleQuestion(
       mc({
       id: overrides?.id ?? nextId('mc'),
-      prompt: '¿Quién dejó la basura en el rellano del segundo?',
-      options: ['El del 2ºA', 'El del 3ºB', 'Nadie lo sabe', 'El portero'],
+      prompt: '¿Quién es el presidente de la comunidad de Desengaño 21?',
+      options: ['Juan Cuesta', 'Emilio Delgado', 'Mariano Delgado', 'Andrés Guerra'],
       correct: 0,
       difficulty: overrides?.difficulty ?? 5,
       category: overrides?.category ?? 'general',
@@ -72,7 +73,7 @@ export function makeTrueFalse(overrides?: {
     assembleQuestion(
       tf({
         id: overrides?.id ?? nextId('tf'),
-        prompt: 'El ascensor se para entre el segundo y el tercero.',
+        prompt: 'Emilio Delgado es el portero de Desengaño 21.',
         answer: overrides?.answer ?? true,
         difficulty: overrides?.difficulty ?? 4,
         category: 'general',
@@ -92,8 +93,12 @@ export function makeWhoIsIt(overrides?: {
       who({
         id: overrides?.id ?? nextId('who'),
         prompt: '¿Quién es?',
-        clues: overrides?.clues ?? ['Tiene tres bicicletas', 'Vive en el bajo', 'Vota no a todo'],
-        options: ['Braulio', 'Charo', 'Amancio', 'Yeyo'],
+        clues: overrides?.clues ?? [
+          'Se asocia con el 1.º A',
+          'Forma parte de Radio Patio',
+          'La interpreta Mariví Bilbao',
+        ],
+        options: ['Marisa', 'Vicenta', 'Concha', 'Paloma'],
         correct: 0,
         difficulty: overrides?.difficulty ?? 6,
         category: 'personajes',
@@ -108,9 +113,9 @@ export function makeImpostor(overrides?: { id?: string; difficulty?: number }): 
     assembleQuestion(
       imp({
         id: overrides?.id ?? nextId('imp'),
-        prompt: '¿Cuál no encaja?',
-        setLabel: 'Zonas comunes',
-        items: ['El portal', 'La azotea', 'El patio', 'El salón del 1ºA'],
+        prompt: '¿Cuál no encaja entre los vecinos del 2.º A?',
+        setLabel: 'Familia Cuesta',
+        items: ['Juan', 'Paloma', 'Natalia', 'Mauri'],
         impostor: 3,
         difficulty: overrides?.difficulty ?? 5,
         category: 'lugares',
@@ -126,7 +131,11 @@ export function makeOrderChaos(overrides?: { id?: string; difficulty?: number })
       ord({
         id: overrides?.id ?? nextId('ord'),
         prompt: 'Ordena el desastre',
-        steps: ['Se avería el ascensor', 'Se convoca junta', 'Se aprueba la derrama'],
+        steps: [
+          'Llegan Lucía y Roberto al portal',
+          'Entra la familia Guerra',
+          'Las termitas fuerzan el desalojo',
+        ],
         difficulty: overrides?.difficulty ?? 6,
         category: 'situaciones',
       }),
@@ -144,8 +153,8 @@ export function makeFinalBet(overrides?: {
     assembleQuestion(
       bet({
         id: overrides?.id ?? nextId('bet'),
-        prompt: 'Apuesta final: ¿de cuánto fue la derrama?',
-        options: ['2.400 €', '900 €', '5.000 €', '120 €'],
+        prompt: 'Apuesta final: ¿en qué año se estrenó la serie?',
+        options: ['2003', '2001', '2006', '1999'],
         correct: 0,
         difficulty: overrides?.difficulty ?? 8,
         category: 'general',
@@ -153,6 +162,26 @@ export function makeFinalBet(overrides?: {
       }),
     ),
     'FINAL_BET',
+  );
+}
+
+export function makeShortAnswer(overrides?: {
+  id?: string;
+  difficulty?: number;
+  answer?: string;
+}): ShortAnswerQuestion {
+  return narrow(
+    assembleQuestion(
+      escrita({
+        id: overrides?.id ?? nextId('esc'),
+        prompt: '¿Qué actor interpreta a Juan Cuesta?',
+        answer: overrides?.answer ?? 'José Luis Gil',
+        accepted: ['Gil'],
+        difficulty: overrides?.difficulty ?? 5,
+        category: 'reparto',
+      }),
+    ),
+    'SHORT_ANSWER',
   );
 }
 
@@ -168,6 +197,7 @@ export function makePool(): Question[] {
     pool.push(makeImpostor({ id: `pool-imp-${index}`, difficulty: (index % 8) + 2 }));
     pool.push(makeOrderChaos({ id: `pool-ord-${index}`, difficulty: (index % 8) + 2 }));
     pool.push(makeFinalBet({ id: `pool-bet-${index}`, difficulty: (index % 4) + 6 }));
+    pool.push(makeShortAnswer({ id: `pool-esc-${index}`, difficulty: (index % 8) + 2 }));
   }
   return pool;
 }
@@ -179,6 +209,7 @@ export function makeConfig(overrides?: Partial<GameConfig>): GameConfig {
     difficultyId: 'vecino',
     category: 'mezcla',
     adaptiveDifficulty: true,
+    sinSpoilers: false,
     seed: 'semilla-de-test',
     ...overrides,
   };
@@ -203,6 +234,8 @@ export function correctSubmissionFor(question: Question): AnswerSubmission {
       return { kind: 'ITEM', itemId: question.impostorItemId };
     case 'ORDER_CHAOS':
       return { kind: 'ORDER', orderedIds: question.steps.map((step) => step.id) };
+    case 'SHORT_ANSWER':
+      return { kind: 'TEXT', text: question.answer };
   }
 }
 
@@ -231,6 +264,8 @@ export function wrongSubmissionFor(question: Question): AnswerSubmission {
     }
     case 'ORDER_CHAOS':
       return { kind: 'ORDER', orderedIds: [...question.steps].reverse().map((step) => step.id) };
+    case 'SHORT_ANSWER':
+      return { kind: 'TEXT', text: 'la respuesta que no es' };
   }
 }
 

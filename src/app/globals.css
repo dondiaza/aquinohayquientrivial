@@ -622,6 +622,23 @@
     white-space: nowrap;
   }
 
+  /* Chip que además es filtro: el estado activo se ve por color Y por borde grueso,
+     nunca solo por color. */
+  .chip-activo {
+    background: var(--color-verde-portal);
+    border-color: var(--color-verde-portal);
+    border-width: 2px;
+    color: var(--color-papel);
+  }
+
+  a.chip:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  a.chip-activo:hover {
+    background: var(--color-verde-claro);
+  }
+
   .sello {
     border: 2px solid currentColor;
     border-radius: var(--radius-poco);

@@ -7,6 +7,8 @@ import {
   PaperNotice,
 } from '@/components/portal/Estructuras';
 import { GameShowBanner, RarityBadge, TVFrame } from '@/components/portal/Espectaculo';
+import type { Tarjeta } from '@/content/anhqv/catalogos';
+import { SERIE } from '@/content/serie';
 import { GAME } from '@/domain/copy/ui';
 import { getGameEvent } from '@/domain/events/game-events';
 import { getDifficultyLevel } from '@/domain/difficulty/levels';
@@ -24,7 +26,10 @@ export function IntroCartela({ state, onStart }: { state: GameState; onStart: ()
   return (
     <div className="space-y-4">
       <TVFrame canal="PORTAL TV">
-        <p className="text-center text-[0.7rem] opacity-80">TRAVESÍA DEL PORTALÓN, 13</p>
+        <p className="text-center text-[0.7rem] opacity-80">
+          {SERIE.direccionFicticia.toUpperCase()} · {SERIE.cadena.toUpperCase()} {'·'}{' '}
+          2003-2006
+        </p>
         <p
           className="mt-1 text-center text-[clamp(1.5rem,7vw,2.6rem)] leading-none"
           style={{ fontFamily: 'var(--font-cartel)' }}
@@ -183,15 +188,40 @@ export function EventCartela({
 }
 
 /** ROUND_RESULTS: cierre de ronda con lo conseguido. */
+/**
+ * Tarjeta del portal: un dato del pack editorial entre ronda y ronda. Es el rato en el
+ * que el jugador respira, así que en lugar de una pantalla vacía se aprende algo.
+ */
+export function TarjetaDelPortal({ tarjeta }: { tarjeta: Tarjeta }) {
+  return (
+    <PaperNotice tono="mostaza" giro="der" sujecion="chincheta" className="p-4 pt-5">
+      <p className="texto-sello text-center text-tinta-tenue">
+        Tarjeta del portal · {tarjeta.categoria}
+      </p>
+      <p className="mt-2 text-center text-sm text-tinta-suave">{tarjeta.anverso}</p>
+      <p
+        className="mt-1 text-center text-[clamp(1.1rem,4.5vw,1.5rem)] leading-tight"
+        style={{ fontFamily: 'var(--font-cuerpo)', fontWeight: 600 }}
+      >
+        {tarjeta.reverso}
+      </p>
+      <p className="mt-2 text-center text-xs text-tinta-suave">{tarjeta.nota}</p>
+    </PaperNotice>
+  );
+}
+
 export function RoundResultsCartela({
   progress,
   isLastRound,
   totalScore,
+  tarjeta,
   onNext,
 }: {
   progress: RoundProgress;
   isLastRound: boolean;
   totalScore: number;
+  /** Curiosidad del pack para el descanso. Opcional: si no hay, no se muestra nada. */
+  tarjeta?: Tarjeta | undefined;
   onNext: () => void;
 }) {
   const pleno = progress.answered > 0 && progress.correct === progress.answered;
@@ -228,6 +258,8 @@ export function RoundResultsCartela({
           </p>
         ) : null}
       </PaperNotice>
+
+      {tarjeta && !isLastRound ? <TarjetaDelPortal tarjeta={tarjeta} /> : null}
 
       <button type="button" className="btn btn-verde btn-lg w-full" onClick={onNext} autoFocus>
         {isLastRound ? GAME.finish : GAME.continue}
