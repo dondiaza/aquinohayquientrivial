@@ -317,3 +317,268 @@ model DailyResult {
   @@unique([guestId, dailyKey])
   @@index([dailyKey, score])
 }
+
+// ── FASE 3 · SALAS EN TIEMPO REAL ────────────────────────────────────────────
+//
+// Decisiones de diseño (el porqué del transporte está en docs/FASE3-REALTIME.md):
+//
+// 1. LA SALA ES LA AUTORIDAD Y VIVE AQUÍ. No hay estado de juego en memoria de una
+//    función serverless: `Room.state` guarda el estado autoritativo completo (validado
+//    con Zod en el boundary, igual que `Question.payload`). Dos invocaciones distintas
+//    ven exactamente lo mismo.
+//
+// 2. LOS CLIENTES NO RECIBEN MENSAJES, LEEN UN REGISTRO. `RoomEvent` es append-only con
+//    `seq` monotónico por sala. Un cliente que se reconecta pide «lo que haya después de
+//    mi seq»: la reconexión es la misma consulta que el caso normal.
+//
+// 3. CADA EVENTO SABE PARA QUIÉN ES. `RoomEvent.audience` vale 'ALL', 'HOST' o
+//    'P:<playerId>'. Es lo que impide que la respuesta correcta viaje al móvil antes del
+//    reveal: el evento con la solución tiene audiencia HOST hasta que se revela.
+//
+// 4. EL CÓDIGO CORTO NO AUTORIZA NADA. `Room.code` sirve para encontrar la sala; para
+//    actuar hacen falta `RoomPlayer.token` (jugador) o `Room.hostToken` (host).
+
+enum RoomPhase {
+  LOBBY
+  COUNTDOWN
+  ROUND_INTRO
+  QUESTION
+  LOCKED
+  REVEAL
+  SCORE
+  ROUND_RESULTS
+  FINAL_BET
+  GAME_RESULTS
+  CLOSED
+}
+
+enum RoomPrivacy {
+  PRIVADA
+  PROTEGIDA
+  /// Reservado: no hay directorio público ni matchmaking (y no debe haberlo sin moderación).
+  PUBLICA
+}
+
+enum RoomTeamMode {
+  NINGUNO
+  /// Un móvil representa a un equipo entero (reuniones en el mismo salón).
+  COMPARTIDO
+  /// Cada persona con su móvil, pero suma para su equipo.
+  INDIVIDUAL
+}
+
+enum RoomLateJoin {
+  /// No se entra una vez empezada.
+  CERRADO
+  /// Se entra, pero como espectador y sin puntuar.
+  ESPECTADOR
+  /// Se entra hasta que acabe la primera ronda, con puntuación normalizada.
+  PRIMERA_RONDA
+  ABIERTO
+}
+
+enum RoomRole {
+  HOST
+  PLAYER
+  SPECTATOR
+}
+
+enum RoomMemberStatus {
+  ACTIVE
+  RECONNECTING
+  AWAY
+  KICKED
+  LEFT
+}
+
+model Room {
+  /// Id interno NO adivinable. Es lo que se usa en relaciones y en logs.
+  id        String      @id @default(cuid())
+  /// Código humano de 4 caracteres sin letras ambiguas. Único mientras la sala vive.
+  code      String      @unique
+  /// Autorización del host. Nunca se envía a un jugador.
+  hostToken String
+  phase     RoomPhase   @default(LOBBY)
+  privacy   RoomPrivacy @default(PRIVADA)
+
+  teamMode RoomTeamMode @default(NINGUNO)
+  lateJoin RoomLateJoin @default(PRIMERA_RONDA)
+  /// Entrada cerrada por el host.
+  locked   Boolean      @default(false)
+  /// true = el juego dirige solo; false = modo presentador (el host avanza a mano).
+  autoPilot Boolean @default(true)
+  /// Cada cuántas preguntas se muestra la clasificación (0 = solo al final).
+  leaderboardEvery Int @default(3)
+  reactionsEnabled Boolean @default(true)
+  maxPlayers       Int     @default(24)
+
+  /// GameSetup validado con Zod (formato, dificultad, categoría, sin spoilers).
+  config Json
+  /// Semilla del RNG: la sala es reproducible.
+  seed   String
+  /// Banco reducido de la partida. Igual que en solitario, permite recargar sin perderla.
+  poolIds String[] @default([])
+
+  /// Estado autoritativo completo de la sala (RoomState, validado con Zod al leer).
+  state Json
+  /// Último `seq` emitido. Se incrementa en la misma transacción que los eventos.
+  seq   Int  @default(0)
+
+  /// Cuándo caduca la sala. Las salas son efímeras: el código se puede reutilizar después.
+  expiresAt DateTime
+  /// Última señal de vida del host: base del periodo de gracia si se le va la conexión.
+  hostSeenAt DateTime  @default(now())
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  closedAt   DateTime?
+
+  players RoomPlayer[]
+  teams   RoomTeam[]
+  answers RoomAnswer[]
+  events  RoomEvent[]
+
+  @@index([phase, expiresAt])
+  @@index([expiresAt])
+}
+
+model RoomPlayer {
+  id     String @id @default(cuid())
+  roomId String
+  room   Room   @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  /// Autorización del jugador. Va en el navegador (localStorage) y permite reconectar.
+  token  String           @unique
+  role   RoomRole         @default(PLAYER)
+  status RoomMemberStatus @default(ACTIVE)
+
+  nickname String
+  /// Ids del catálogo de src/domain/players/avatar.ts
+  arquetipo   String @default("presidente")
+  colorAvatar String @default("verde")
+
+  teamId String?
+  team   RoomTeam? @relation(fields: [teamId], references: [id], onDelete: SetNull)
+
+  /// Puntuación autoritativa. La calcula el servidor, nunca llega del cliente.
+  score      Int @default(0)
+  streak     Int @default(0)
+  bestStreak Int @default(0)
+  correct    Int @default(0)
+  answered   Int @default(0)
+  /// Suma de tiempos de respuesta, para la estadística de «el más rápido».
+  totalResponseMs Int @default(0)
+  /// Comodines ya gastados en esta sala.
+  powerUpsUsed    String[] @default([])
+  /// Puntuación al entrar (late join normalizado): base del cálculo justo.
+  joinScore       Int @default(0)
+  /// En qué pregunta entró. Sirve para normalizar y para el resumen.
+  joinedAtIndex   Int @default(0)
+
+  /// Invitado anónimo asociado, si el jugador ya tenía cookie en este navegador.
+  guestId String?
+
+  joinedAt   DateTime @default(now())
+  lastSeenAt DateTime @default(now())
+
+  answers   RoomAnswer[]
+  reactions RoomReaction[]
+
+  @@unique([roomId, nickname])
+  @@index([roomId, status])
+  @@index([roomId, score])
+}
+
+model RoomTeam {
+  id     String @id @default(cuid())
+  roomId String
+  room   Room   @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  /// Puerta del portal: «1.º A», «2.º B»… Nunca un personaje protegido.
+  name  String
+  color String
+  slot  Int
+
+  /// Puntuación de equipo calculada por el servidor (ver domain/party/equipos.ts).
+  score Int @default(0)
+
+  players RoomPlayer[]
+
+  @@unique([roomId, slot])
+  @@index([roomId])
+}
+
+model RoomAnswer {
+  id     String @id @default(cuid())
+  roomId String
+  room   Room   @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  playerId String
+  player   RoomPlayer @relation(fields: [playerId], references: [id], onDelete: Cascade)
+
+  questionId String
+  /// Índice de la pregunta dentro de la partida: con el playerId forma la clave única.
+  questionIndex Int
+  roundId       String
+
+  /// Id de operación del cliente: hace idempotente el envío (doble tap, reintento).
+  opId String
+
+  answered   Boolean @default(true)
+  correct    Boolean @default(false)
+  accuracy   Float   @default(0)
+  responseMs Int     @default(0)
+
+  pointsAwarded Int      @default(0)
+  basePoints    Int      @default(0)
+  timeBonus     Int      @default(0)
+  streakBonus   Int      @default(0)
+  multiplier    Float    @default(1)
+  streakAfter   Int      @default(0)
+  wager         Int?
+  powerUpsUsed  String[] @default([])
+
+  /// Lo que envió el jugador (AnswerSubmission).
+  submitted Json?
+  /// Texto libre de las rondas sociales, ya saneado.
+  texto     String?
+  /// Votos recibidos en la ronda social.
+  votes     Int     @default(0)
+  /// El host ha ocultado esta respuesta abierta.
+  hidden    Boolean @default(false)
+
+  createdAt DateTime @default(now())
+
+  @@unique([roomId, playerId, questionIndex])
+  @@unique([roomId, playerId, opId])
+  @@index([roomId, questionIndex])
+}
+
+model RoomEvent {
+  id     BigInt @id @default(autoincrement())
+  roomId String
+  room   Room   @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  /// Monotónico por sala, empieza en 1. Es el cursor del cliente.
+  seq  Int
+  type String
+  /// 'ALL' | 'HOST' | 'P:<playerId>'. Lo que impide filtrar la solución antes del reveal.
+  audience String @default("ALL")
+  payload  Json
+
+  createdAt DateTime @default(now())
+
+  @@unique([roomId, seq])
+  @@index([roomId, seq])
+}
+
+/// Reacciones del público. Efímeras y con límite de ritmo; se agregan en la pantalla grande.
+model RoomReaction {
+  id       BigInt     @id @default(autoincrement())
+  roomId   String
+  playerId String
+  player   RoomPlayer @relation(fields: [playerId], references: [id], onDelete: Cascade)
+  emoji    String
+  at       DateTime   @default(now())
+
+  @@index([roomId, at])
+}

@@ -16,7 +16,7 @@
  * confundir dos nombres distintos del reparto.
  */
 
-const MARCAS_DIACRITICAS = /[̀-ͯ]/g;
+const MARCAS_DIACRITICAS = /[\u0300-\u036f]/g;
 const VOLADAS = /[ºª°]/g;
 
 /** Minúsculas, sin tildes, sin puntuación y con los espacios colapsados. */
