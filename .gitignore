@@ -1,0 +1,24 @@
+# dependencias
+node_modules/
+
+# next
+.next/
+out/
+next-env.d.ts
+
+# base de datos local (embedded-postgres)
+.pgdata/
+
+# entorno: nada de esto se versiona nunca
+.env
+.env.local
+.env*.local
+
+# despliegue
+.vercel/
+
+# varios
+*.log
+.DS_Store
+coverage/
+tsconfig.tsbuildinfo

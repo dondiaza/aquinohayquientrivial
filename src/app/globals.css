@@ -1,0 +1,541 @@
+@import 'tailwindcss';
+
+/*
+  EL TRIVIAL DE LA COMUNIDAD — base visual (Fase 1)
+
+  La referencia NO es un dashboard: es un portal español de principios de los 2000.
+  Pared de gotelé, tablón de anuncios con notas pegadas, placas de puerta atornilladas,
+  sellos de registro y papel administrativo. Todo con CSS: cero imágenes de terceros,
+  cero fuentes propietarias, cero material protegido.
+
+  Reglas de la casa:
+   · Radios pequeños (2-6 px). Nada de tarjetas con 24 px de redondeo.
+   · Sombras duras y desplazadas (como papel sobre pared), no difusas tipo SaaS.
+   · Tipografía condensada en mayúsculas para cartelería; papel para el cuerpo.
+   · Los estados nunca dependen solo del color (icono + texto + forma).
+   · Fase 2 añadirá movimiento: los bloques de `prefers-reduced-motion` ya están puestos.
+*/
+
+@theme {
+  /* Paleta */
+  --color-gotele: #e7e0d2;
+  --color-gotele-oscuro: #d6cdba;
+  --color-papel: #f7f2e6;
+  --color-papel-viejo: #efe6d0;
+  --color-tinta: #23201b;
+  --color-tinta-suave: #5b544a;
+  --color-tinta-tenue: #8a8175;
+  --color-verde-portal: #1e4b3e;
+  --color-verde-claro: #2f6d59;
+  --color-verde-azulejo: #7fa89a;
+  --color-rojo-buzon: #a6301e;
+  --color-rojo-claro: #c94a34;
+  --color-mostaza: #e0a32b;
+  --color-mostaza-claro: #f2cd76;
+  --color-azul-telefonillo: #23557e;
+  --color-azul-claro: #4d84ad;
+  --color-morado-junta: #55385f;
+  --color-madera: #6b4429;
+  --color-linea: rgba(35, 32, 27, 0.16);
+  --color-linea-fuerte: rgba(35, 32, 27, 0.32);
+
+  /* Tipografía: solo fuentes de sistema (sustituibles en Fase 2) */
+  --font-cartel: 'Arial Narrow', 'Helvetica Neue Condensed', 'Liberation Sans Narrow', ui-sans-serif,
+    system-ui, sans-serif;
+  --font-cuerpo: ui-sans-serif, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-sello: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', Consolas, monospace;
+
+  /* Radios contenidos a propósito */
+  --radius-nada: 0px;
+  --radius-poco: 2px;
+  --radius-normal: 4px;
+  --radius-algo: 6px;
+
+  --shadow-papel: 2px 3px 0 rgba(35, 32, 27, 0.18);
+  --shadow-papel-alto: 4px 6px 0 rgba(35, 32, 27, 0.22);
+  --shadow-hundido: inset 0 2px 4px rgba(35, 32, 27, 0.25);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-linea);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-gotele);
+    /* Gotelé: puntitos irregulares sobre la pared */
+    background-image:
+      radial-gradient(rgba(35, 32, 27, 0.05) 1px, transparent 1.7px),
+      radial-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1.6px);
+    background-position:
+      0 0,
+      4px 5px;
+    background-size:
+      8px 8px,
+      11px 11px;
+    color: var(--color-tinta);
+    font-family: var(--font-cuerpo);
+    font-size: 16px;
+    line-height: 1.5;
+    min-height: 100dvh;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-cartel);
+    letter-spacing: 0.02em;
+    line-height: 1.05;
+    text-transform: uppercase;
+  }
+
+  /* Foco visible y grueso: se ve sobre papel, sobre placa y sobre azulejo */
+  :focus-visible {
+    outline: 3px solid var(--color-azul-telefonillo);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-mostaza-claro);
+    color: var(--color-tinta);
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@layer components {
+  /* ── Botones ─────────────────────────────────────────────────────────────── */
+  .btn {
+    align-items: center;
+    border: 2px solid var(--color-tinta);
+    border-radius: var(--radius-normal);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: var(--font-cartel);
+    font-weight: 700;
+    gap: 0.5rem;
+    justify-content: center;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    padding: 0.75rem 1.1rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition:
+      transform 90ms ease-out,
+      box-shadow 90ms ease-out,
+      background-color 90ms ease-out;
+    user-select: none;
+  }
+
+  .btn:active:not(:disabled) {
+    box-shadow: 0 1px 0 var(--color-tinta);
+    transform: translateY(3px);
+  }
+
+  .btn:disabled {
+    box-shadow: none;
+    opacity: 0.45;
+    transform: none;
+  }
+
+  .btn-verde {
+    background: var(--color-verde-portal);
+    box-shadow: 0 4px 0 var(--color-tinta);
+    color: #f4efe1;
+  }
+  .btn-verde:hover:not(:disabled) {
+    background: var(--color-verde-claro);
+  }
+
+  .btn-rojo {
+    background: var(--color-rojo-buzon);
+    box-shadow: 0 4px 0 var(--color-tinta);
+    color: #fdf6ec;
+  }
+  .btn-rojo:hover:not(:disabled) {
+    background: var(--color-rojo-claro);
+  }
+
+  .btn-mostaza {
+    background: var(--color-mostaza);
+    box-shadow: 0 4px 0 var(--color-tinta);
+    color: var(--color-tinta);
+  }
+  .btn-mostaza:hover:not(:disabled) {
+    background: var(--color-mostaza-claro);
+  }
+
+  .btn-papel {
+    background: var(--color-papel);
+    box-shadow: 0 4px 0 var(--color-tinta);
+    color: var(--color-tinta);
+  }
+  .btn-papel:hover:not(:disabled) {
+    background: #fffdf6;
+  }
+
+  .btn-fantasma {
+    background: transparent;
+    border-color: var(--color-linea-fuerte);
+    box-shadow: none;
+    color: var(--color-tinta-suave);
+  }
+  .btn-fantasma:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.4);
+    color: var(--color-tinta);
+  }
+  .btn-fantasma:active:not(:disabled) {
+    box-shadow: none;
+    transform: translateY(1px);
+  }
+
+  .btn-xl {
+    font-size: 1.35rem;
+    padding: 1.15rem 1.75rem;
+  }
+  .btn-lg {
+    font-size: 1.1rem;
+    padding: 0.95rem 1.4rem;
+  }
+  .btn-sm {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.7rem;
+  }
+
+  /* ── Papel y notas ───────────────────────────────────────────────────────── */
+  .papel {
+    background-color: var(--color-papel);
+    background-image: repeating-linear-gradient(
+      180deg,
+      transparent 0 23px,
+      rgba(35, 32, 27, 0.045) 23px 24px
+    );
+    border: 1px solid var(--color-linea-fuerte);
+    border-radius: var(--radius-poco);
+    box-shadow: var(--shadow-papel);
+  }
+
+  .nota {
+    background-color: var(--color-mostaza-claro);
+    border: 1px solid rgba(35, 32, 27, 0.22);
+    border-radius: var(--radius-poco);
+    box-shadow: var(--shadow-papel);
+    position: relative;
+  }
+
+  .nota-papel {
+    background-color: var(--color-papel);
+  }
+
+  .nota-azul {
+    background-color: #cfe0ec;
+  }
+
+  .nota-verde {
+    background-color: #cfe0d6;
+  }
+
+  /* Cinta adhesiva en la esquina superior */
+  .con-cinta::before {
+    background: rgba(255, 255, 255, 0.55);
+    border-left: 1px solid rgba(35, 32, 27, 0.08);
+    border-right: 1px solid rgba(35, 32, 27, 0.08);
+    content: '';
+    height: 1.4rem;
+    left: 50%;
+    position: absolute;
+    top: -0.7rem;
+    transform: translateX(-50%) rotate(-2.5deg);
+    width: 4.5rem;
+  }
+
+  /* Chincheta */
+  .con-chincheta::after {
+    background: radial-gradient(circle at 35% 35%, #e8604a, #8f2415 70%);
+    border-radius: 999px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.35);
+    content: '';
+    height: 0.85rem;
+    left: 50%;
+    position: absolute;
+    top: -0.3rem;
+    transform: translateX(-50%);
+    width: 0.85rem;
+  }
+
+  .girada-izq {
+    transform: rotate(-0.9deg);
+  }
+  .girada-der {
+    transform: rotate(0.8deg);
+  }
+
+  /* ── Placa de puerta ─────────────────────────────────────────────────────── */
+  .placa {
+    background: linear-gradient(165deg, #2a5a4b 0%, var(--color-verde-portal) 55%, #163a30 100%);
+    border: 1px solid #0f2b23;
+    border-radius: var(--radius-poco);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      var(--shadow-papel);
+    color: #eee7d5;
+    position: relative;
+  }
+
+  /* Tornillos en las esquinas */
+  .placa::before,
+  .placa::after {
+    background: radial-gradient(circle at 40% 35%, #dcd6c4, #7c7566 75%);
+    border-radius: 999px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+    content: '';
+    height: 0.45rem;
+    position: absolute;
+    top: 0.45rem;
+    width: 0.45rem;
+  }
+  .placa::before {
+    left: 0.5rem;
+  }
+  .placa::after {
+    right: 0.5rem;
+  }
+
+  .placa-azul {
+    background: linear-gradient(165deg, #2f6592 0%, var(--color-azul-telefonillo) 55%, #17405f 100%);
+    border-color: #12324a;
+  }
+
+  .placa-roja {
+    background: linear-gradient(165deg, #bf4230 0%, var(--color-rojo-buzon) 55%, #7b220f 100%);
+    border-color: #641a0c;
+  }
+
+  /* ── Tablón de anuncios ──────────────────────────────────────────────────── */
+  .tablon {
+    background-color: #b98c56;
+    background-image:
+      radial-gradient(rgba(94, 61, 30, 0.35) 1px, transparent 1.5px),
+      radial-gradient(rgba(255, 236, 200, 0.25) 1px, transparent 1.5px);
+    background-position:
+      0 0,
+      5px 6px;
+    background-size:
+      9px 9px,
+      13px 13px;
+    border: 8px solid var(--color-madera);
+    border-radius: var(--radius-poco);
+    box-shadow:
+      inset 0 0 22px rgba(70, 44, 20, 0.45),
+      var(--shadow-papel-alto);
+  }
+
+  /* ── Azulejo del portal (cabeceras y HUD) ────────────────────────────────── */
+  .azulejo {
+    background-color: var(--color-verde-azulejo);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+    background-size: 34px 34px;
+    border-bottom: 3px solid var(--color-verde-portal);
+  }
+
+  /* ── Sello de registro ───────────────────────────────────────────────────── */
+  .sello {
+    border: 2px solid currentColor;
+    border-radius: var(--radius-poco);
+    display: inline-flex;
+    font-family: var(--font-sello);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    opacity: 0.9;
+    padding: 0.2rem 0.4rem;
+    text-transform: uppercase;
+    transform: rotate(-2deg);
+  }
+
+  .sello-demo {
+    color: var(--color-rojo-buzon);
+  }
+  .sello-ok {
+    color: var(--color-verde-portal);
+  }
+
+  /* ── Chips / etiquetas ───────────────────────────────────────────────────── */
+  .chip {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid var(--color-linea-fuerte);
+    border-radius: var(--radius-poco);
+    display: inline-flex;
+    font-family: var(--font-sello);
+    font-size: 0.68rem;
+    gap: 0.3rem;
+    letter-spacing: 0.04em;
+    padding: 0.15rem 0.4rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* ── Campos de formulario (papeleo) ──────────────────────────────────────── */
+  .campo {
+    background: #fffdf7;
+    border: 2px solid var(--color-linea-fuerte);
+    border-radius: var(--radius-poco);
+    box-shadow: var(--shadow-hundido);
+    color: var(--color-tinta);
+    font-family: var(--font-cuerpo);
+    font-size: 1rem;
+    padding: 0.6rem 0.7rem;
+    width: 100%;
+  }
+
+  .campo:hover {
+    border-color: var(--color-tinta-suave);
+  }
+
+  .campo-error {
+    border-color: var(--color-rojo-buzon);
+  }
+
+  .etiqueta {
+    display: block;
+    font-family: var(--font-sello);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+  }
+
+  /* ── Botonera de respuesta ───────────────────────────────────────────────── */
+  .respuesta {
+    align-items: center;
+    background: var(--color-papel);
+    border: 2px solid var(--color-tinta);
+    border-radius: var(--radius-normal);
+    box-shadow: 0 4px 0 rgba(35, 32, 27, 0.55);
+    cursor: pointer;
+    display: flex;
+    gap: 0.75rem;
+    min-height: 4rem;
+    padding: 0.85rem 1rem;
+    text-align: left;
+    transition:
+      transform 90ms ease-out,
+      box-shadow 90ms ease-out,
+      background-color 90ms ease-out;
+    width: 100%;
+  }
+
+  .respuesta:hover:not(:disabled) {
+    background: #fffdf6;
+  }
+
+  .respuesta:active:not(:disabled) {
+    box-shadow: 0 1px 0 rgba(35, 32, 27, 0.55);
+    transform: translateY(3px);
+  }
+
+  .respuesta-elegida {
+    background: var(--color-azul-claro);
+    color: #fff;
+  }
+
+  .respuesta-correcta {
+    background: var(--color-verde-claro);
+    color: #fff;
+  }
+
+  .respuesta-fallo {
+    background: var(--color-rojo-claro);
+    color: #fff;
+  }
+
+  .respuesta-descartada {
+    background: repeating-linear-gradient(
+      135deg,
+      rgba(35, 32, 27, 0.08) 0 8px,
+      rgba(35, 32, 27, 0.16) 8px 16px
+    );
+    box-shadow: none;
+    color: var(--color-tinta-tenue);
+    cursor: not-allowed;
+    text-decoration: line-through;
+  }
+
+  .respuesta:disabled:not(.respuesta-descartada) {
+    cursor: default;
+  }
+
+  .indice-respuesta {
+    align-items: center;
+    background: rgba(35, 32, 27, 0.1);
+    border: 1px solid var(--color-linea-fuerte);
+    border-radius: var(--radius-poco);
+    display: flex;
+    flex: 0 0 auto;
+    font-family: var(--font-cartel);
+    font-size: 1.1rem;
+    font-weight: 700;
+    height: 2rem;
+    justify-content: center;
+    width: 2rem;
+  }
+
+  /* ── Marcador y barras ───────────────────────────────────────────────────── */
+  .marcador {
+    font-family: var(--font-cartel);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+  }
+
+  .barra-tiempo {
+    background: rgba(35, 32, 27, 0.18);
+    border: 1px solid var(--color-linea-fuerte);
+    border-radius: var(--radius-poco);
+    height: 0.9rem;
+    overflow: hidden;
+  }
+
+  .barra-tiempo > span {
+    display: block;
+    height: 100%;
+    transition: width 120ms linear;
+  }
+}
+
+@utility texto-cartel {
+  font-family: var(--font-cartel);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@utility texto-sello {
+  font-family: var(--font-sello);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Fase 2 llevará el movimiento mucho más lejos; el respeto ya está preparado. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .girada-izq,
+  .girada-der,
+  .sello {
+    transform: none;
+  }
+}

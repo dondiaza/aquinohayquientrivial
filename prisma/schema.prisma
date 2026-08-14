@@ -1,0 +1,209 @@
+// EL TRIVIAL DE LA COMUNIDAD — modelo de datos (Fase 1)
+//
+// Decisiones de diseño:
+//
+// 1. `Question.payload` (Json) guarda los datos ESPECÍFICOS de cada tipo de prueba
+//    (opciones, pistas, pasos a ordenar…). Los campos que se usan para filtrar y
+//    seleccionar (type, difficulty, category, status, verified, season) son columnas
+//    reales e indexadas. El payload se valida SIEMPRE con Zod en el boundary
+//    (src/server/questions/repository.ts) antes de entrar al dominio: la base de datos
+//    es flexible, el dominio es estricto.
+//    Ventaja: añadir un séptimo tipo de prueba en Fase 2 no requiere migración.
+//
+// 2. `category` es String y no enum: el enunciado pide que añadir categorías sea
+//    trivial. El catálogo vive en src/domain/questions/categories.ts y se valida con Zod.
+//
+// 3. `GameEventLog` persiste el stream de eventos tipados del motor
+//    (GAME_STARTED, QUESTION_STARTED, ANSWER_SUBMITTED…). En Fase 1 es trazabilidad y
+//    analítica; en Fase 3 es exactamente lo que viajará por WebSocket.
+//
+// 4. `User` existe pero no se usa: la experiencia principal es de invitado sin cuenta.
+
+generator client {
+  provider      = "prisma-client-js"
+  // "rhel-openssl-3.0.x" hace falta para ejecutar en Vercel/Coolify (Linux).
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum QuestionType {
+  MULTIPLE_CHOICE
+  TRUE_FALSE
+  WHO_IS_IT
+  IMPOSTOR
+  ORDER_CHAOS
+  FINAL_BET
+}
+
+enum QuestionStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+enum GameStatus {
+  IN_PROGRESS
+  FINISHED
+  ABANDONED
+}
+
+enum GameMode {
+  SOLO
+  PARTY // reservado para Fase 3
+}
+
+model Question {
+  id               String         @id @default(cuid())
+  status           QuestionStatus @default(ACTIVE)
+  type             QuestionType
+  prompt           String
+  explanation      String?
+  /// Escala interna 1-10.
+  difficulty       Int
+  category         String
+  season           Int?
+  episode          Int?
+  characters       String[]       @default([])
+  tags             String[]       @default([])
+  /// { kind: 'image' | 'audio' | 'video', placeholder: string, src?: string, alt?: string }
+  media            Json?
+  /// Datos propios del tipo de prueba. Validado con Zod al leer/escribir.
+  payload          Json
+  basePoints       Int            @default(1000)
+  timeLimitSeconds Int
+  sourceNote       String?
+  verified         Boolean        @default(false)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+
+  stat    QuestionStat?
+  answers GameAnswer[]
+
+  @@index([status, type])
+  @@index([status, category])
+  @@index([status, difficulty])
+  @@index([status, verified])
+}
+
+/// Analítica del banco de preguntas: permite recalibrar dificultades más adelante.
+model QuestionStat {
+  questionId          String   @id
+  question            Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  timesShown          Int      @default(0)
+  timesAnswered       Int      @default(0)
+  timesCorrect        Int      @default(0)
+  /// Mostradas y no respondidas (tiempo agotado o abandono).
+  timesAbandoned      Int      @default(0)
+  totalResponseMs     Int      @default(0)
+  totalPoints         Int      @default(0)
+  /// Dificultad 1-10 derivada de la tasa de acierto real (null hasta tener muestras).
+  estimatedDifficulty Float?
+  updatedAt           DateTime @updatedAt
+}
+
+/// Jugador anónimo identificado por cookie. No requiere registro.
+model GuestPlayer {
+  id          String   @id @default(cuid())
+  /// Identificador anónimo del navegador (cookie ahqv_guest).
+  publicId    String   @unique
+  displayName String?
+  createdAt   DateTime @default(now())
+  lastSeenAt  DateTime @updatedAt
+
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  games Game[]
+
+  @@index([userId])
+}
+
+/// Cuentas opcionales. Reservado para Fase 2/3; la experiencia principal no las exige.
+model User {
+  id          String        @id @default(cuid())
+  email       String        @unique
+  displayName String?
+  createdAt   DateTime      @default(now())
+  guests      GuestPlayer[]
+}
+
+model Game {
+  id                 String      @id @default(cuid())
+  guestId            String
+  guest              GuestPlayer @relation(fields: [guestId], references: [id], onDelete: Cascade)
+  status             GameStatus  @default(IN_PROGRESS)
+  mode               GameMode    @default(SOLO)
+  formatId           String
+  difficultyId       String
+  categoryId         String
+  adaptiveDifficulty Boolean     @default(true)
+  /// Semilla del RNG: la misma configuración + semilla reproduce la misma partida.
+  seed               String
+  /// GameConfig completo (validado con Zod).
+  config             Json
+  /// Banco reducido con el que juega esta partida. Permite recargar la página sin perderla.
+  poolIds            String[]    @default([])
+  /// GameSummary al finalizar (null mientras esté en curso).
+  summary            Json?
+  totalScore         Int         @default(0)
+  createdAt          DateTime    @default(now())
+  finishedAt         DateTime?
+
+  answers GameAnswer[]
+  events  GameEventLog[]
+
+  @@index([guestId, createdAt])
+  @@index([status])
+}
+
+model GameAnswer {
+  id           String   @id @default(cuid())
+  gameId       String
+  game         Game     @relation(fields: [gameId], references: [id], onDelete: Cascade)
+  questionId   String
+  question     Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  roundId      String
+  indexInGame  Int
+  /// false = tiempo agotado / abandonada.
+  answered     Boolean  @default(true)
+  correct      Boolean  @default(false)
+  /// 0..1 (permite acierto parcial en ORDER_CHAOS).
+  accuracy     Float    @default(0)
+  responseMs   Int      @default(0)
+  pointsAwarded Int     @default(0)
+  basePoints   Int      @default(0)
+  timeBonus    Int      @default(0)
+  streakBonus  Int      @default(0)
+  multiplier   Float    @default(1)
+  streakAfter  Int      @default(0)
+  difficulty   Int      @default(5)
+  /// Apuesta de la ronda final, si aplica.
+  wager        Int?
+  /// Máximo teórico de esta pregunta con sus modificadores: base del índice de rendimiento.
+  maxPoints    Int      @default(0)
+  powerUpsUsed String[] @default([])
+  /// Respuesta enviada por el jugador (para revisiones y analítica).
+  submitted    Json?
+  createdAt    DateTime @default(now())
+
+  @@unique([gameId, questionId])
+  @@index([gameId, indexInGame])
+}
+
+/// Stream de eventos del motor. En Fase 3 este mismo contrato viaja por WebSocket.
+model GameEventLog {
+  id        Int      @id @default(autoincrement())
+  gameId    String
+  game      Game     @relation(fields: [gameId], references: [id], onDelete: Cascade)
+  seq       Int
+  type      String
+  payload   Json
+  createdAt DateTime @default(now())
+
+  @@unique([gameId, seq])
+  @@index([gameId, seq])
+}

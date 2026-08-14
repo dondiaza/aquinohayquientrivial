@@ -1,0 +1,65 @@
+name: Deploy a Vercel (prebuilt)
+
+# Por qué se construye aquí y no en Vercel ni en local:
+#   · La cuenta del equipo NO tiene autorizados los builds en la nube de Vercel.
+#   · `vercel build` en Windows genera una salida defectuosa (deduplica funciones y pierde
+#     los manifiestos de cliente, así que toda página con componentes de cliente da 500).
+# Solución: construir en Ubuntu con GitHub Actions y subir el resultado con `--prebuilt`.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # Si el repositorio todavía no tiene los secretos configurados, no falla: se salta.
+    if: ${{ github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main' }}
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Cliente de Prisma
+        run: npx prisma generate
+
+      - name: Comprobaciones
+        run: |
+          npm run typecheck
+          npm run lint
+          npm test
+
+      - name: Migraciones en la base de datos de producción
+        if: ${{ secrets.DATABASE_URL_UNPOOLED != '' || secrets.DATABASE_URL != '' }}
+        run: npx prisma migrate deploy
+        env:
+          # Las migraciones deben ir por la conexión DIRECTA, no por el pooler.
+          DATABASE_URL: ${{ secrets.DATABASE_URL_UNPOOLED || secrets.DATABASE_URL }}
+
+      - name: Configuración del proyecto de Vercel
+        if: ${{ secrets.VERCEL_TOKEN != '' }}
+        run: npx vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build (Build Output API)
+        if: ${{ secrets.VERCEL_TOKEN != '' }}
+        run: npx vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Deploy prebuilt a producción
+        if: ${{ secrets.VERCEL_TOKEN != '' }}
+        run: npx vercel deploy --prebuilt --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
