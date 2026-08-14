@@ -49,7 +49,9 @@ describe('rachas', () => {
     expect(currentMilestone(1)).toBeUndefined();
     expect(currentMilestone(4)?.at).toBe(3);
     expect(currentMilestone(6)?.at).toBe(5);
-    expect(currentMilestone(100)?.at).toBe(10);
+    // El último hito es el más alto del catálogo, sea cual sea.
+    const ultimo = STREAK_MILESTONES[STREAK_MILESTONES.length - 1];
+    expect(currentMilestone(100)?.at).toBe(ultimo?.at);
   });
 
   it('un acierto parcial no alarga la racha (lo decide quien llama)', () => {

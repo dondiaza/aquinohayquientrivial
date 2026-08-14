@@ -28,6 +28,7 @@ import {
 export const optionSchema = z.object({
   id: z.string().min(1).max(40),
   text: z.string().min(1, 'El texto no puede estar vacío').max(280),
+  icon: z.string().max(40).optional(),
 });
 
 export const mediaSchema = z.object({
@@ -114,6 +115,99 @@ const finalBetPayloadSchema = z
   })
   .superRefine((value, ctx) => refineCorrectId(value.options, value.correctOptionId, 'correctOptionId', ctx));
 
+const memoryGridPayloadSchema = z
+  .object({
+    items: z
+      .array(optionSchema)
+      .min(4, 'Memoria de vecino necesita al menos 4 objetos')
+      .max(8, 'Como máximo 8 objetos'),
+    studySeconds: z.number().int().min(2).max(15).default(5),
+    question: z.string().min(8).max(240),
+    options: z.array(optionSchema).length(4, 'Necesita 4 opciones de respuesta'),
+    correctOptionId: z.string().min(1),
+  })
+  .superRefine((value, ctx) => {
+    refineCorrectId(value.options, value.correctOptionId, 'correctOptionId', ctx);
+    if (!uniqueIds(value.items)) {
+      ctx.addIssue({ code: 'custom', message: 'Hay objetos repetidos', path: ['items'] });
+    }
+  });
+
+const missingItemPayloadSchema = z
+  .object({
+    sceneLabel: z.string().min(4).max(160),
+    present: z
+      .array(optionSchema)
+      .min(3, 'La composición necesita al menos 3 objetos')
+      .max(9, 'Como máximo 9 objetos'),
+    options: z.array(optionSchema).length(4, 'Necesita 4 opciones'),
+    correctOptionId: z.string().min(1),
+  })
+  .superRefine((value, ctx) => {
+    refineCorrectId(value.options, value.correctOptionId, 'correctOptionId', ctx);
+    // La respuesta correcta es el objeto AUSENTE: no puede estar en la composición.
+    const correcta = value.options.find((option) => option.id === value.correctOptionId);
+    if (correcta && value.present.some((objeto) => objeto.text === correcta.text)) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'El objeto que falta no puede estar en la composición',
+        path: ['present'],
+      });
+    }
+  });
+
+const decisionPayloadSchema = z
+  .object({
+    situation: z.string().min(10).max(400),
+    options: z
+      .array(
+        optionSchema.extend({
+          weight: z.number().min(0).max(1),
+          outcome: z.string().min(4).max(280),
+        }),
+      )
+      .min(3, 'La junta necesita al menos 3 decisiones')
+      .max(4, 'Como máximo 4 decisiones'),
+    bestOptionId: z.string().min(1),
+  })
+  .superRefine((value, ctx) => {
+    refineCorrectId(value.options, value.bestOptionId, 'bestOptionId', ctx);
+    const mejor = value.options.find((option) => option.id === value.bestOptionId);
+    if (mejor && mejor.weight !== 1) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'La mejor decisión debe tener peso 1',
+        path: ['bestOptionId'],
+      });
+    }
+  });
+
+const sequencePayloadSchema = z
+  .object({
+    pads: z
+      .array(optionSchema)
+      .min(4, 'El portero automático necesita al menos 4 botones')
+      .max(6, 'Como máximo 6 botones'),
+    sequence: z
+      .array(z.string().min(1).max(40))
+      .min(3, 'La secuencia necesita al menos 3 pasos')
+      .max(6, 'Como máximo 6 pasos'),
+    stepMs: z.number().int().min(300).max(1500).default(650),
+  })
+  .superRefine((value, ctx) => {
+    if (!uniqueIds(value.pads)) {
+      ctx.addIssue({ code: 'custom', message: 'Hay botones repetidos', path: ['pads'] });
+    }
+    const idsValidos = new Set(value.pads.map((pad) => pad.id));
+    if (value.sequence.some((paso) => !idsValidos.has(paso))) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'La secuencia usa botones que no existen',
+        path: ['sequence'],
+      });
+    }
+  });
+
 export const PAYLOAD_SCHEMAS = {
   MULTIPLE_CHOICE: multipleChoicePayloadSchema,
   TRUE_FALSE: trueFalsePayloadSchema,
@@ -121,6 +215,10 @@ export const PAYLOAD_SCHEMAS = {
   IMPOSTOR: impostorPayloadSchema,
   ORDER_CHAOS: orderChaosPayloadSchema,
   FINAL_BET: finalBetPayloadSchema,
+  MEMORY_GRID: memoryGridPayloadSchema,
+  MISSING_ITEM: missingItemPayloadSchema,
+  DECISION: decisionPayloadSchema,
+  SEQUENCE: sequencePayloadSchema,
 } as const;
 
 // ── Campos comunes ──────────────────────────────────────────────────────────────
@@ -140,6 +238,7 @@ const baseInputShape = {
   timeLimitSeconds: z.number().int().min(5).max(120),
   sourceNote: z.string().max(300).optional(),
   verified: z.boolean().default(false),
+  featured: z.boolean().default(false),
 } as const;
 
 const persistedShape = {
@@ -156,6 +255,10 @@ export const questionInputSchema = z.discriminatedUnion('type', [
   z.object({ ...baseInputShape, type: z.literal('IMPOSTOR'), payload: impostorPayloadSchema }),
   z.object({ ...baseInputShape, type: z.literal('ORDER_CHAOS'), payload: orderChaosPayloadSchema }),
   z.object({ ...baseInputShape, type: z.literal('FINAL_BET'), payload: finalBetPayloadSchema }),
+  z.object({ ...baseInputShape, type: z.literal('MEMORY_GRID'), payload: memoryGridPayloadSchema }),
+  z.object({ ...baseInputShape, type: z.literal('MISSING_ITEM'), payload: missingItemPayloadSchema }),
+  z.object({ ...baseInputShape, type: z.literal('DECISION'), payload: decisionPayloadSchema }),
+  z.object({ ...baseInputShape, type: z.literal('SEQUENCE'), payload: sequencePayloadSchema }),
 ]);
 
 export type QuestionInput = z.infer<typeof questionInputSchema>;
@@ -168,6 +271,10 @@ export const questionRecordSchema = z.discriminatedUnion('type', [
   z.object({ ...baseInputShape, ...persistedShape, type: z.literal('IMPOSTOR'), payload: impostorPayloadSchema }),
   z.object({ ...baseInputShape, ...persistedShape, type: z.literal('ORDER_CHAOS'), payload: orderChaosPayloadSchema }),
   z.object({ ...baseInputShape, ...persistedShape, type: z.literal('FINAL_BET'), payload: finalBetPayloadSchema }),
+  z.object({ ...baseInputShape, ...persistedShape, type: z.literal('MEMORY_GRID'), payload: memoryGridPayloadSchema }),
+  z.object({ ...baseInputShape, ...persistedShape, type: z.literal('MISSING_ITEM'), payload: missingItemPayloadSchema }),
+  z.object({ ...baseInputShape, ...persistedShape, type: z.literal('DECISION'), payload: decisionPayloadSchema }),
+  z.object({ ...baseInputShape, ...persistedShape, type: z.literal('SEQUENCE'), payload: sequencePayloadSchema }),
 ]);
 
 export type QuestionRecord = z.infer<typeof questionRecordSchema>;
@@ -196,6 +303,14 @@ export function assembleQuestion(record: QuestionRecord): Question {
       return { ...common, type, ...payload };
     case 'FINAL_BET':
       return { ...common, type, ...payload };
+    case 'MEMORY_GRID':
+      return { ...common, type, ...payload };
+    case 'MISSING_ITEM':
+      return { ...common, type, ...payload };
+    case 'DECISION':
+      return { ...common, type, ...payload };
+    case 'SEQUENCE':
+      return { ...common, type, ...payload };
   }
 }
 
@@ -217,6 +332,7 @@ export function splitQuestion(question: Question): QuestionRecord {
     timeLimitSeconds: question.timeLimitSeconds,
     sourceNote: question.sourceNote,
     verified: question.verified,
+    featured: question.featured ?? false,
     createdAt: question.createdAt,
     updatedAt: question.updatedAt,
   };
@@ -268,6 +384,49 @@ export function splitQuestion(question: Question): QuestionRecord {
           options: question.options,
           correctOptionId: question.correctOptionId,
           maxWagerRatio: question.maxWagerRatio,
+        },
+      };
+    case 'MEMORY_GRID':
+      return {
+        ...common,
+        type: question.type,
+        payload: {
+          items: question.items,
+          studySeconds: question.studySeconds,
+          question: question.question,
+          options: question.options,
+          correctOptionId: question.correctOptionId,
+        },
+      };
+    case 'MISSING_ITEM':
+      return {
+        ...common,
+        type: question.type,
+        payload: {
+          sceneLabel: question.sceneLabel,
+          present: question.present,
+          options: question.options,
+          correctOptionId: question.correctOptionId,
+        },
+      };
+    case 'DECISION':
+      return {
+        ...common,
+        type: question.type,
+        payload: {
+          situation: question.situation,
+          options: question.options,
+          bestOptionId: question.bestOptionId,
+        },
+      };
+    case 'SEQUENCE':
+      return {
+        ...common,
+        type: question.type,
+        payload: {
+          pads: question.pads,
+          sequence: question.sequence,
+          stepMs: question.stepMs,
         },
       };
   }

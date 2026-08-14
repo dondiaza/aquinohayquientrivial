@@ -1,12 +1,12 @@
 /**
- * Registro de tipos de prueba.
+ * Registro de tipos de prueba — las 10 familias jugables.
  *
  * Un único sitio donde se declara qué es cada tipo: cómo se llama en pantalla, qué
  * instrucción se le da al jugador, cuánto tiempo pide por defecto y qué power-ups
  * admite. La UI y el admin leen de aquí; no hay condicionales repartidos por la app.
  *
- * Añadir un tipo en Fase 2 = añadir su payload en types.ts, su schema en schemas.ts,
- * su entrada aquí y su vista en components/game/questions.
+ * Añadir un tipo = payload en types.ts + schema en schemas.ts + entrada aquí + vista en
+ * components/game/views. Nada más.
  */
 
 import type { QuestionType } from './types';
@@ -27,8 +27,10 @@ export type QuestionTypeMeta = {
   supportsOptionElimination: boolean;
   /** ¿Admite acierto parcial? */
   supportsPartialCredit: boolean;
+  /** ¿Muestra algo antes de poder responder (memoria)? */
+  hasStudyPhase: boolean;
   /** Marca de acento en la UI. */
-  accent: 'verde' | 'rojo' | 'azul' | 'mostaza' | 'morado' | 'tinta';
+  accent: 'verde' | 'rojo' | 'azul' | 'mostaza' | 'morado' | 'tinta' | 'naranja' | 'granate';
   icon: string;
 };
 
@@ -42,6 +44,7 @@ export const QUESTION_TYPE_META: Record<QuestionType, QuestionTypeMeta> = {
     defaultBasePoints: 1000,
     supportsOptionElimination: true,
     supportsPartialCredit: false,
+    hasStudyPhase: false,
     accent: 'verde',
     icon: '🔢',
   },
@@ -54,6 +57,7 @@ export const QUESTION_TYPE_META: Record<QuestionType, QuestionTypeMeta> = {
     defaultBasePoints: 700,
     supportsOptionElimination: false,
     supportsPartialCredit: false,
+    hasStudyPhase: false,
     accent: 'rojo',
     icon: '⚖️',
   },
@@ -66,6 +70,7 @@ export const QUESTION_TYPE_META: Record<QuestionType, QuestionTypeMeta> = {
     defaultBasePoints: 1000,
     supportsOptionElimination: true,
     supportsPartialCredit: false,
+    hasStudyPhase: false,
     accent: 'azul',
     icon: '🕵️',
   },
@@ -78,6 +83,7 @@ export const QUESTION_TYPE_META: Record<QuestionType, QuestionTypeMeta> = {
     defaultBasePoints: 1000,
     supportsOptionElimination: false,
     supportsPartialCredit: false,
+    hasStudyPhase: false,
     accent: 'mostaza',
     icon: '🚨',
   },
@@ -90,20 +96,74 @@ export const QUESTION_TYPE_META: Record<QuestionType, QuestionTypeMeta> = {
     defaultBasePoints: 1200,
     supportsOptionElimination: false,
     supportsPartialCredit: true,
+    hasStudyPhase: false,
     accent: 'morado',
     icon: '🔀',
   },
   FINAL_BET: {
     type: 'FINAL_BET',
-    label: 'Apuesta final',
+    label: 'La derrama',
     short: 'Apuesta',
     instruction: 'Apuesta parte de tus puntos y juégatela',
     defaultTimeLimitSeconds: 30,
     defaultBasePoints: 1000,
     supportsOptionElimination: true,
     supportsPartialCredit: false,
+    hasStudyPhase: false,
     accent: 'tinta',
     icon: '🎲',
+  },
+  MEMORY_GRID: {
+    type: 'MEMORY_GRID',
+    label: 'Memoria de vecino',
+    short: 'Memoria',
+    instruction: 'Mira bien: lo que ves ahora te lo preguntan después',
+    defaultTimeLimitSeconds: 18,
+    defaultBasePoints: 1100,
+    supportsOptionElimination: true,
+    supportsPartialCredit: false,
+    hasStudyPhase: true,
+    accent: 'naranja',
+    icon: '🧠',
+  },
+  MISSING_ITEM: {
+    type: 'MISSING_ITEM',
+    label: '¿Qué falta aquí?',
+    short: 'Qué falta',
+    instruction: 'Mira la escena y di qué NO está',
+    defaultTimeLimitSeconds: 22,
+    defaultBasePoints: 1100,
+    supportsOptionElimination: true,
+    supportsPartialCredit: false,
+    hasStudyPhase: false,
+    accent: 'azul',
+    icon: '🔍',
+  },
+  DECISION: {
+    type: 'DECISION',
+    label: 'La junta',
+    short: 'Junta',
+    instruction: 'Decide como presidente: hay opciones mejores y peores',
+    defaultTimeLimitSeconds: 30,
+    defaultBasePoints: 1200,
+    supportsOptionElimination: false,
+    supportsPartialCredit: true,
+    hasStudyPhase: false,
+    accent: 'granate',
+    icon: '🗳️',
+  },
+  SEQUENCE: {
+    type: 'SEQUENCE',
+    label: 'Portero automático',
+    short: 'Secuencia',
+    instruction: 'Repite la secuencia de timbres',
+    defaultTimeLimitSeconds: 20,
+    defaultBasePoints: 1100,
+    supportsOptionElimination: false,
+    supportsPartialCredit: true,
+    hasStudyPhase: true,
+    accent: 'naranja',
+    icon: '🔔',
   },
 };
 

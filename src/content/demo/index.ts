@@ -12,6 +12,7 @@ import { questionRecordSchema, type QuestionRecord } from '@/domain/questions/sc
 import { assembleQuestion } from '@/domain/questions/schemas';
 import type { Question } from '@/domain/questions/types';
 
+import { FASE2_QUESTIONS } from './fase2';
 import { GENERAL_QUESTIONS } from './general';
 import { LUGARES_QUESTIONS } from './lugares';
 import { PERSONAJES_QUESTIONS } from './personajes';
@@ -26,6 +27,8 @@ export const DEMO_QUESTION_RECORDS: QuestionRecord[] = [
   ...SITUACIONES_QUESTIONS,
   ...TRAMAS_QUESTIONS,
   ...TEMPORADAS_QUESTIONS,
+  // Fase 2: memoria, ¿qué falta?, la junta y portero automático
+  ...FASE2_QUESTIONS,
 ];
 
 /** Valida el banco entero. Si algo está mal formado, el seed falla en vez de sembrar basura. */

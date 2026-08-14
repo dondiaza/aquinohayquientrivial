@@ -1,23 +1,17 @@
 @import 'tailwindcss';
 
 /*
-  EL TRIVIAL DE LA COMUNIDAD — base visual (Fase 1)
+  EL TRIVIAL DE LA COMUNIDAD — sistema visual «Comunidad» (Fase 2)
 
-  La referencia NO es un dashboard: es un portal español de principios de los 2000.
-  Pared de gotelé, tablón de anuncios con notas pegadas, placas de puerta atornilladas,
-  sellos de registro y papel administrativo. Todo con CSS: cero imágenes de terceros,
-  cero fuentes propietarias, cero material protegido.
+  El edificio es el sistema operativo: portal, telefonillo, ascensor, tablón, puertas,
+  buzones y una tele de los 2000. Todo hecho con CSS y SVG propios: ni un asset, fuente
+  o sonido de terceros sin licencia.
 
-  Reglas de la casa:
-   · Radios pequeños (2-6 px). Nada de tarjetas con 24 px de redondeo.
-   · Sombras duras y desplazadas (como papel sobre pared), no difusas tipo SaaS.
-   · Tipografía condensada en mayúsculas para cartelería; papel para el cuerpo.
-   · Los estados nunca dependen solo del color (icono + texto + forma).
-   · Fase 2 añadirá movimiento: los bloques de `prefers-reduced-motion` ya están puestos.
+  Documentación: docs/DESIGN-SYSTEM.md
 */
 
 @theme {
-  /* Paleta */
+  /* ── Paleta ───────────────────────────────────────────────────────────────── */
   --color-gotele: #e7e0d2;
   --color-gotele-oscuro: #d6cdba;
   --color-papel: #f7f2e6;
@@ -28,32 +22,55 @@
   --color-verde-portal: #1e4b3e;
   --color-verde-claro: #2f6d59;
   --color-verde-azulejo: #7fa89a;
+  --color-granate: #6d2233;
   --color-rojo-buzon: #a6301e;
   --color-rojo-claro: #c94a34;
+  --color-naranja-timbre: #e0662b;
   --color-mostaza: #e0a32b;
   --color-mostaza-claro: #f2cd76;
-  --color-azul-telefonillo: #23557e;
+  --color-azul-impreso: #23557e;
   --color-azul-claro: #4d84ad;
   --color-morado-junta: #55385f;
   --color-madera: #6b4429;
+  --color-madera-clara: #a3703f;
+  --color-metal: #9aa0a6;
+  --color-metal-claro: #d3d7db;
+  --color-crt: #0d1b12;
+  --color-crt-verde: #6ef3a5;
   --color-linea: rgba(35, 32, 27, 0.16);
   --color-linea-fuerte: rgba(35, 32, 27, 0.32);
 
-  /* Tipografía: solo fuentes de sistema (sustituibles en Fase 2) */
-  --font-cartel: 'Arial Narrow', 'Helvetica Neue Condensed', 'Liberation Sans Narrow', ui-sans-serif,
-    system-ui, sans-serif;
-  --font-cuerpo: ui-sans-serif, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-sello: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', Consolas, monospace;
+  /* ── Tipografía (variables inyectadas por next/font en el layout) ─────────── */
+  --font-cartel: var(--fuente-cartel), 'Arial Narrow', ui-sans-serif, system-ui, sans-serif;
+  --font-cuerpo: var(--fuente-cuerpo), ui-sans-serif, system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-sello: var(--fuente-sello), ui-monospace, Consolas, monospace;
+  --font-mano: var(--fuente-mano), 'Segoe Script', cursive;
 
-  /* Radios contenidos a propósito */
+  /* ── Radios contenidos ───────────────────────────────────────────────────── */
   --radius-nada: 0px;
   --radius-poco: 2px;
   --radius-normal: 4px;
   --radius-algo: 6px;
 
+  /* ── Sombras de papel sobre pared ────────────────────────────────────────── */
   --shadow-papel: 2px 3px 0 rgba(35, 32, 27, 0.18);
   --shadow-papel-alto: 4px 6px 0 rgba(35, 32, 27, 0.22);
   --shadow-hundido: inset 0 2px 4px rgba(35, 32, 27, 0.25);
+
+  /* ── Motion: cuatro velocidades y dos curvas ─────────────────────────────── */
+  --dur-instantanea: 90ms;
+  --dur-rapida: 200ms;
+  --dur-media: 350ms;
+  --dur-dramatica: 700ms;
+  --dur-cartela: 1400ms;
+  --ease-salida: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-golpe: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Rareza ──────────────────────────────────────────────────────────────── */
+  --color-rareza-comun: #9aa0a6;
+  --color-rareza-curioso: #23557e;
+  --color-rareza-raro: #55385f;
+  --color-rareza-legendario: #e0a32b;
 }
 
 @layer base {
@@ -82,20 +99,21 @@
     font-size: 16px;
     line-height: 1.5;
     min-height: 100dvh;
+    overflow-x: hidden;
   }
 
   h1,
   h2,
   h3 {
     font-family: var(--font-cartel);
-    letter-spacing: 0.02em;
-    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1;
     text-transform: uppercase;
   }
 
-  /* Foco visible y grueso: se ve sobre papel, sobre placa y sobre azulejo */
   :focus-visible {
-    outline: 3px solid var(--color-azul-telefonillo);
+    outline: 3px solid var(--color-azul-impreso);
     outline-offset: 2px;
   }
 
@@ -106,6 +124,12 @@
 
   button:disabled {
     cursor: not-allowed;
+  }
+
+  /* Tamaño táctil mínimo cómodo en móvil */
+  button,
+  [role='button'] {
+    touch-action: manipulation;
   }
 }
 
@@ -118,18 +142,18 @@
     cursor: pointer;
     display: inline-flex;
     font-family: var(--font-cartel);
-    font-weight: 700;
+    font-weight: 400;
     gap: 0.5rem;
     justify-content: center;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     line-height: 1;
-    padding: 0.75rem 1.1rem;
+    padding: 0.8rem 1.1rem;
     text-align: center;
     text-transform: uppercase;
     transition:
-      transform 90ms ease-out,
-      box-shadow 90ms ease-out,
-      background-color 90ms ease-out;
+      transform var(--dur-instantanea) var(--ease-salida),
+      box-shadow var(--dur-instantanea) var(--ease-salida),
+      background-color var(--dur-instantanea) var(--ease-salida);
     user-select: none;
   }
 
@@ -160,6 +184,15 @@
   }
   .btn-rojo:hover:not(:disabled) {
     background: var(--color-rojo-claro);
+  }
+
+  .btn-naranja {
+    background: var(--color-naranja-timbre);
+    box-shadow: 0 4px 0 var(--color-tinta);
+    color: #fff8f0;
+  }
+  .btn-naranja:hover:not(:disabled) {
+    filter: brightness(1.08);
   }
 
   .btn-mostaza {
@@ -196,11 +229,11 @@
   }
 
   .btn-xl {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     padding: 1.15rem 1.75rem;
   }
   .btn-lg {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     padding: 0.95rem 1.4rem;
   }
   .btn-sm {
@@ -232,16 +265,16 @@
   .nota-papel {
     background-color: var(--color-papel);
   }
-
   .nota-azul {
     background-color: #cfe0ec;
   }
-
   .nota-verde {
     background-color: #cfe0d6;
   }
+  .nota-rosa {
+    background-color: #efd3d3;
+  }
 
-  /* Cinta adhesiva en la esquina superior */
   .con-cinta::before {
     background: rgba(255, 255, 255, 0.55);
     border-left: 1px solid rgba(35, 32, 27, 0.08);
@@ -255,7 +288,6 @@
     width: 4.5rem;
   }
 
-  /* Chincheta */
   .con-chincheta::after {
     background: radial-gradient(circle at 35% 35%, #e8604a, #8f2415 70%);
     border-radius: 999px;
@@ -276,6 +308,12 @@
     transform: rotate(0.8deg);
   }
 
+  .escrito-a-mano {
+    font-family: var(--font-mano);
+    font-size: 1.15em;
+    line-height: 1.25;
+  }
+
   /* ── Placa de puerta ─────────────────────────────────────────────────────── */
   .placa {
     background: linear-gradient(165deg, #2a5a4b 0%, var(--color-verde-portal) 55%, #163a30 100%);
@@ -288,7 +326,6 @@
     position: relative;
   }
 
-  /* Tornillos en las esquinas */
   .placa::before,
   .placa::after {
     background: radial-gradient(circle at 40% 35%, #dcd6c4, #7c7566 75%);
@@ -308,13 +345,20 @@
   }
 
   .placa-azul {
-    background: linear-gradient(165deg, #2f6592 0%, var(--color-azul-telefonillo) 55%, #17405f 100%);
+    background: linear-gradient(165deg, #2f6592 0%, var(--color-azul-impreso) 55%, #17405f 100%);
     border-color: #12324a;
   }
-
   .placa-roja {
     background: linear-gradient(165deg, #bf4230 0%, var(--color-rojo-buzon) 55%, #7b220f 100%);
     border-color: #641a0c;
+  }
+  .placa-morada {
+    background: linear-gradient(165deg, #6f4a7c 0%, var(--color-morado-junta) 55%, #3a2342 100%);
+    border-color: #2c1a33;
+  }
+  .placa-granate {
+    background: linear-gradient(165deg, #8b3247 0%, var(--color-granate) 55%, #4a1622 100%);
+    border-color: #37101a;
   }
 
   /* ── Tablón de anuncios ──────────────────────────────────────────────────── */
@@ -336,7 +380,7 @@
       var(--shadow-papel-alto);
   }
 
-  /* ── Azulejo del portal (cabeceras y HUD) ────────────────────────────────── */
+  /* ── Azulejo del zaguán ──────────────────────────────────────────────────── */
   .azulejo {
     background-color: var(--color-verde-azulejo);
     background-image: linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px),
@@ -345,7 +389,239 @@
     border-bottom: 3px solid var(--color-verde-portal);
   }
 
-  /* ── Sello de registro ───────────────────────────────────────────────────── */
+  /* ── Metal (telefonillo, ascensor, buzones) ──────────────────────────────── */
+  .metal {
+    background: linear-gradient(160deg, #e6e9ec 0%, var(--color-metal-claro) 35%, #8f959b 100%);
+    border: 2px solid #6c7276;
+    border-radius: var(--radius-normal);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.7),
+      var(--shadow-papel);
+  }
+
+  .boton-ascensor {
+    align-items: center;
+    background: radial-gradient(circle at 35% 30%, #f2f4f6, #b9bfc4 70%, #8b9196);
+    border: 2px solid #6c7276;
+    border-radius: 999px;
+    box-shadow:
+      inset 0 1px 2px rgba(255, 255, 255, 0.8),
+      0 2px 0 rgba(35, 32, 27, 0.35);
+    color: var(--color-tinta);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: var(--font-sello);
+    font-size: 0.9rem;
+    font-weight: 700;
+    height: 2.75rem;
+    justify-content: center;
+    transition:
+      transform var(--dur-instantanea) var(--ease-salida),
+      box-shadow var(--dur-instantanea) var(--ease-salida);
+    width: 2.75rem;
+  }
+
+  .boton-ascensor:hover:not(:disabled) {
+    filter: brightness(1.06);
+  }
+
+  .boton-ascensor:active:not(:disabled) {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+    transform: translateY(2px);
+  }
+
+  .boton-ascensor-encendido {
+    background: radial-gradient(circle at 35% 30%, #ffe9a8, var(--color-mostaza) 70%, #b57f14);
+    box-shadow:
+      inset 0 1px 2px rgba(255, 255, 255, 0.8),
+      0 0 12px rgba(224, 163, 43, 0.7),
+      0 2px 0 rgba(35, 32, 27, 0.35);
+  }
+
+  /* ── Buzón ───────────────────────────────────────────────────────────────── */
+  .buzon {
+    background: linear-gradient(165deg, #c2503a 0%, var(--color-rojo-buzon) 60%, #7b220f 100%);
+    border: 2px solid #5f1a0c;
+    border-radius: var(--radius-poco);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.25),
+      var(--shadow-papel);
+    color: #ffeede;
+    cursor: pointer;
+    position: relative;
+    transition: transform var(--dur-rapida) var(--ease-golpe);
+  }
+
+  .buzon::after {
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 1px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
+    content: '';
+    height: 0.28rem;
+    left: 50%;
+    position: absolute;
+    top: 28%;
+    transform: translateX(-50%);
+    width: 62%;
+  }
+
+  .buzon-abierto {
+    background: linear-gradient(165deg, #4a3428 0%, #2d1f17 100%);
+    border-color: #1a120d;
+    color: var(--color-mostaza-claro);
+  }
+
+  /* ── Ticket / recibo ─────────────────────────────────────────────────────── */
+  .ticket {
+    background: var(--color-papel-viejo);
+    border: 1px dashed var(--color-linea-fuerte);
+    border-radius: var(--radius-poco);
+    box-shadow: var(--shadow-papel);
+    font-family: var(--font-sello);
+    position: relative;
+  }
+
+  .ticket::before,
+  .ticket::after {
+    background: var(--color-gotele);
+    border-radius: 999px;
+    content: '';
+    height: 0.75rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.75rem;
+  }
+  .ticket::before {
+    left: -0.4rem;
+  }
+  .ticket::after {
+    right: -0.4rem;
+  }
+
+  /* ── Cartel pegado ───────────────────────────────────────────────────────── */
+  .cartel {
+    background: var(--color-papel);
+    border: 2px solid var(--color-tinta);
+    box-shadow: var(--shadow-papel-alto);
+    font-family: var(--font-cartel);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  /* ── Pantalla CRT ────────────────────────────────────────────────────────── */
+  .crt {
+    background:
+      radial-gradient(120% 90% at 50% 40%, rgba(110, 243, 165, 0.12), transparent 70%),
+      var(--color-crt);
+    border: 3px solid #1b2b21;
+    border-radius: var(--radius-algo);
+    box-shadow:
+      inset 0 0 40px rgba(0, 0, 0, 0.8),
+      var(--shadow-papel);
+    color: var(--color-crt-verde);
+    font-family: var(--font-sello);
+    overflow: hidden;
+    position: relative;
+    text-shadow: 0 0 6px rgba(110, 243, 165, 0.55);
+  }
+
+  /* Scanlines + viñeta: solo con pseudoelementos, sin coste de repintado */
+  .crt::before {
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0 2px,
+      rgba(0, 0, 0, 0.28) 2px 3px
+    );
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .crt::after {
+    background: radial-gradient(120% 100% at 50% 50%, transparent 55%, rgba(0, 0, 0, 0.55) 100%);
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  /* ── Marco de televisión ─────────────────────────────────────────────────── */
+  .tv {
+    background: linear-gradient(165deg, #6f5a44 0%, #4a3a2c 60%, #2e241b 100%);
+    border-radius: var(--radius-algo);
+    box-shadow:
+      inset 0 2px 0 rgba(255, 255, 255, 0.15),
+      var(--shadow-papel-alto);
+    padding: 0.75rem;
+    position: relative;
+  }
+
+  /* ── Puerta ──────────────────────────────────────────────────────────────── */
+  .puerta {
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.18) 0 3%, transparent 3% 97%, rgba(0, 0, 0, 0.18) 97%),
+      linear-gradient(165deg, #2d6353 0%, var(--color-verde-portal) 60%, #143529 100%);
+    border: 3px solid #10281f;
+    border-radius: var(--radius-poco) var(--radius-poco) 0 0;
+    box-shadow:
+      inset 0 0 0 6px rgba(255, 255, 255, 0.06),
+      var(--shadow-papel-alto);
+    color: #eee7d5;
+    cursor: pointer;
+    position: relative;
+    transition:
+      transform var(--dur-media) var(--ease-golpe),
+      box-shadow var(--dur-media) var(--ease-salida),
+      filter var(--dur-rapida) var(--ease-salida);
+  }
+
+  .puerta:hover:not([aria-disabled='true']) {
+    filter: brightness(1.1);
+    transform: translateY(-3px);
+  }
+
+  .puerta:active:not([aria-disabled='true']) {
+    transform: translateY(1px);
+  }
+
+  .puerta[aria-disabled='true'] {
+    filter: grayscale(0.5) brightness(0.85);
+    cursor: not-allowed;
+  }
+
+  /* Cuarterones y mirilla */
+  .puerta-panel {
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    border-radius: 1px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+
+  .mirilla {
+    background: radial-gradient(circle at 40% 35%, #f0eadc, #8a8474 60%, #3a352c);
+    border: 2px solid #1a1610;
+    border-radius: 999px;
+    height: 0.9rem;
+    width: 0.9rem;
+  }
+
+  /* ── Chips y sellos ──────────────────────────────────────────────────────── */
+  .chip {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid var(--color-linea-fuerte);
+    border-radius: var(--radius-poco);
+    display: inline-flex;
+    font-family: var(--font-sello);
+    font-size: 0.68rem;
+    gap: 0.3rem;
+    letter-spacing: 0.04em;
+    padding: 0.15rem 0.4rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
   .sello {
     border: 2px solid currentColor;
     border-radius: var(--radius-poco);
@@ -367,23 +643,44 @@
     color: var(--color-verde-portal);
   }
 
-  /* ── Chips / etiquetas ───────────────────────────────────────────────────── */
-  .chip {
+  /* Sello grande de registro, para logros y récords */
+  .sello-grande {
     align-items: center;
-    background: rgba(255, 255, 255, 0.55);
-    border: 1px solid var(--color-linea-fuerte);
-    border-radius: var(--radius-poco);
+    border: 3px double currentColor;
+    border-radius: 999px;
     display: inline-flex;
+    flex-direction: column;
     font-family: var(--font-sello);
-    font-size: 0.68rem;
-    gap: 0.3rem;
-    letter-spacing: 0.04em;
-    padding: 0.15rem 0.4rem;
+    justify-content: center;
+    letter-spacing: 0.08em;
+    padding: 0.75rem;
+    text-align: center;
     text-transform: uppercase;
-    white-space: nowrap;
+    transform: rotate(-8deg);
   }
 
-  /* ── Campos de formulario (papeleo) ──────────────────────────────────────── */
+  /* ── Rareza ──────────────────────────────────────────────────────────────── */
+  .rareza-comun {
+    border-color: var(--color-rareza-comun);
+    color: var(--color-rareza-comun);
+  }
+  .rareza-curioso {
+    border-color: var(--color-rareza-curioso);
+    color: var(--color-rareza-curioso);
+  }
+  .rareza-raro {
+    border-color: var(--color-rareza-raro);
+    color: var(--color-rareza-raro);
+  }
+  .rareza-legendario {
+    border-color: var(--color-rareza-legendario);
+    border-style: double;
+    border-width: 3px;
+    box-shadow: 0 0 10px rgba(224, 163, 43, 0.45);
+    color: #8a6413;
+  }
+
+  /* ── Campos de formulario ────────────────────────────────────────────────── */
   .campo {
     background: #fffdf7;
     border: 2px solid var(--color-linea-fuerte);
@@ -423,18 +720,20 @@
     cursor: pointer;
     display: flex;
     gap: 0.75rem;
-    min-height: 4rem;
+    min-height: 4.25rem;
     padding: 0.85rem 1rem;
     text-align: left;
     transition:
-      transform 90ms ease-out,
-      box-shadow 90ms ease-out,
-      background-color 90ms ease-out;
+      transform var(--dur-instantanea) var(--ease-salida),
+      box-shadow var(--dur-instantanea) var(--ease-salida),
+      background-color var(--dur-rapida) var(--ease-salida),
+      color var(--dur-rapida) var(--ease-salida);
     width: 100%;
   }
 
   .respuesta:hover:not(:disabled) {
     background: #fffdf6;
+    transform: translateY(-1px);
   }
 
   .respuesta:active:not(:disabled) {
@@ -448,11 +747,13 @@
   }
 
   .respuesta-correcta {
+    animation: sello-acierto var(--dur-dramatica) var(--ease-golpe) both;
     background: var(--color-verde-claro);
     color: #fff;
   }
 
   .respuesta-fallo {
+    animation: temblor var(--dur-media) ease-in-out both;
     background: var(--color-rojo-claro);
     color: #fff;
   }
@@ -481,18 +782,17 @@
     display: flex;
     flex: 0 0 auto;
     font-family: var(--font-cartel);
-    font-size: 1.1rem;
-    font-weight: 700;
-    height: 2rem;
+    font-size: 1.15rem;
+    height: 2.1rem;
     justify-content: center;
-    width: 2rem;
+    width: 2.1rem;
   }
 
   /* ── Marcador y barras ───────────────────────────────────────────────────── */
   .marcador {
     font-family: var(--font-cartel);
     font-variant-numeric: tabular-nums;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
   }
 
   .barra-tiempo {
@@ -501,6 +801,7 @@
     border-radius: var(--radius-poco);
     height: 0.9rem;
     overflow: hidden;
+    position: relative;
   }
 
   .barra-tiempo > span {
@@ -508,11 +809,234 @@
     height: 100%;
     transition: width 120ms linear;
   }
+
+  /* Tensión del temporizador: tres niveles, sin parpadeos agresivos */
+  .tiempo-aviso {
+    animation: latido-suave 1.1s ease-in-out infinite;
+  }
+
+  .tiempo-urgente {
+    animation: latido-fuerte 0.55s ease-in-out infinite;
+  }
+
+  /* ── Ticker de Radio Patio ───────────────────────────────────────────────── */
+  .ticker {
+    background: var(--color-granate);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.35);
+    border-top: 2px solid rgba(0, 0, 0, 0.35);
+    color: #ffeede;
+    font-family: var(--font-sello);
+    letter-spacing: 0.06em;
+    overflow: hidden;
+    position: relative;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .ticker-pista {
+    animation: desfile 22s linear infinite;
+    display: inline-block;
+    padding-left: 100%;
+  }
+
+  /* ── Combo ───────────────────────────────────────────────────────────────── */
+  .combo-2 {
+    color: var(--color-mostaza);
+  }
+  .combo-3 {
+    color: var(--color-naranja-timbre);
+  }
+  .combo-5 {
+    animation: latido-suave 1s ease-in-out infinite;
+    color: var(--color-rojo-buzon);
+  }
+  .combo-8 {
+    animation: latido-fuerte 0.7s ease-in-out infinite;
+    color: var(--color-rojo-buzon);
+    text-shadow: 0 0 10px rgba(224, 102, 43, 0.8);
+  }
+
+  /* ── Overlay de evento ───────────────────────────────────────────────────── */
+  .overlay-evento {
+    animation: telon var(--dur-dramatica) var(--ease-salida) both;
+    backdrop-filter: blur(2px);
+    background: rgba(35, 32, 27, 0.72);
+    inset: 0;
+    position: fixed;
+    z-index: 50;
+  }
+}
+
+/* ── Animaciones ───────────────────────────────────────────────────────────── */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes aparecer-escala {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes entrar-izquierda {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes temblor {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes sello-acierto {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.035);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes latido-suave {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes latido-fuerte {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+}
+
+@keyframes subir-y-desvanecer {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.9);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-42px) scale(1);
+  }
+}
+
+@keyframes sellar {
+  0% {
+    opacity: 0;
+    transform: rotate(-8deg) scale(2.2);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(-8deg) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-8deg) scale(1);
+  }
+}
+
+@keyframes telon {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes desfile {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes puerta-abre {
+  from {
+    transform: perspective(800px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(800px) rotateY(-32deg);
+  }
+}
+
+@keyframes chispa {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx, 0), var(--dy, -30px)) scale(0.4);
+  }
+}
+
+@keyframes parpadeo-luz {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.35;
+  }
+  55% {
+    opacity: 0.9;
+  }
 }
 
 @utility texto-cartel {
   font-family: var(--font-cartel);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
@@ -523,7 +1047,26 @@
   text-transform: uppercase;
 }
 
-/* Fase 2 llevará el movimiento mucho más lejos; el respeto ya está preparado. */
+@utility anim-aparecer {
+  animation: aparecer var(--dur-media) var(--ease-salida) both;
+}
+
+@utility anim-aparecer-escala {
+  animation: aparecer-escala var(--dur-media) var(--ease-golpe) both;
+}
+
+@utility anim-entrar-izquierda {
+  animation: entrar-izquierda var(--dur-media) var(--ease-salida) both;
+}
+
+@utility anim-sellar {
+  animation: sellar var(--dur-dramatica) var(--ease-golpe) both;
+}
+
+/*
+  Movimiento reducido: se desactiva TODO el movimiento y los giros decorativos.
+  El estado nunca depende de la animación, así que aquí no se pierde información.
+*/
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -531,11 +1074,18 @@
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 
   .girada-izq,
   .girada-der,
-  .sello {
+  .sello,
+  .sello-grande {
     transform: none;
+  }
+
+  .ticker-pista {
+    animation: none;
+    padding-left: 0;
   }
 }

@@ -22,7 +22,12 @@ type FormAction = (state: SaveState, formData: FormData) => Promise<SaveState>;
 /** Valores iniciales derivados de una pregunta existente (o vacíos si es nueva). */
 function initialFor(question?: Question) {
   const options =
-    question && (question.type === 'MULTIPLE_CHOICE' || question.type === 'WHO_IS_IT' || question.type === 'FINAL_BET')
+    question &&
+    (question.type === 'MULTIPLE_CHOICE' ||
+      question.type === 'WHO_IS_IT' ||
+      question.type === 'FINAL_BET' ||
+      question.type === 'MEMORY_GRID' ||
+      question.type === 'MISSING_ITEM')
       ? question.options
       : undefined;
   const items = question?.type === 'IMPOSTOR' ? question.items : undefined;
@@ -35,6 +40,27 @@ function initialFor(question?: Question) {
     impostorItemId: question?.type === 'IMPOSTOR' ? question.impostorItemId : 'a',
     clues: question?.type === 'WHO_IS_IT' ? question.clues.join('\n') : '',
     steps: question?.type === 'ORDER_CHAOS' ? question.steps.map((step) => step.text).join('\n') : '',
+    items:
+      question?.type === 'MEMORY_GRID'
+        ? question.items.map((item) => `${item.icon ?? 'caja'}:${item.text}`).join('\n')
+        : '',
+    present:
+      question?.type === 'MISSING_ITEM'
+        ? question.present.map((item) => `${item.icon ?? 'caja'}:${item.text}`).join('\n')
+        : '',
+    decisiones:
+      question?.type === 'DECISION'
+        ? question.options
+            .map((opcion) => `${opcion.weight} | ${opcion.text} | ${opcion.outcome}`)
+            .join('\n')
+        : '',
+    pads: question?.type === 'SEQUENCE' ? question.pads.map((pad) => pad.text).join('\n') : '',
+    secuencia:
+      question?.type === 'SEQUENCE'
+        ? question.sequence
+            .map((id) => question.pads.findIndex((pad) => pad.id === id) + 1)
+            .join(', ')
+        : '',
   };
 }
 
@@ -68,10 +94,20 @@ export function QuestionForm({
   );
   const [clues, setClues] = useState(initial.clues);
   const [steps, setSteps] = useState(initial.steps);
+  const [items, setItems] = useState(initial.items);
+  const [present, setPresent] = useState(initial.present);
+  const [decisiones, setDecisiones] = useState(initial.decisiones);
+  const [pads, setPads] = useState(initial.pads);
+  const [secuencia, setSecuencia] = useState(initial.secuencia);
 
   const meta = questionTypeMeta(type);
   const errorFor = (key: string) => state.errors?.[key];
-  const usesOptions = type === 'MULTIPLE_CHOICE' || type === 'WHO_IS_IT' || type === 'FINAL_BET';
+  const usesOptions =
+    type === 'MULTIPLE_CHOICE' ||
+    type === 'WHO_IS_IT' ||
+    type === 'FINAL_BET' ||
+    type === 'MEMORY_GRID' ||
+    type === 'MISSING_ITEM';
 
   const setOption = (index: number, value: string) =>
     setOptionTexts((current) => current.map((text, position) => (position === index ? value : text)));
@@ -307,6 +343,149 @@ export function QuestionForm({
             </>
           ) : null}
 
+          {type === 'MEMORY_GRID' ? (
+            <>
+              <Field
+                label="Objetos que se muestran (uno por linea, «icono:Texto»)"
+                htmlFor="items"
+                error={errorFor('payload.items')}
+                hint="Iconos: buzon, felpudo, extintor, maceta, bombilla, escoba, cubo, silla, paraguas, llave, sobre, periodico, taza, radio, telefonillo, reloj, bicicleta, bolsa, caja, contador, papelera, gato"
+              >
+                <Textarea
+                  id="items"
+                  name="items"
+                  rows={5}
+                  value={items}
+                  onChange={(event) => setItems(event.target.value)}
+                />
+              </Field>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <Field label="Segundos de memorizacion" htmlFor="studySeconds">
+                  <TextInput
+                    id="studySeconds"
+                    name="studySeconds"
+                    type="number"
+                    min={2}
+                    max={15}
+                    defaultValue={question?.type === 'MEMORY_GRID' ? question.studySeconds : 5}
+                  />
+                </Field>
+                <Field
+                  label="Pregunta posterior"
+                  htmlFor="question"
+                  error={errorFor('payload.question')}
+                >
+                  <TextInput
+                    id="question"
+                    name="question"
+                    defaultValue={question?.type === 'MEMORY_GRID' ? question.question : ''}
+                  />
+                </Field>
+              </div>
+            </>
+          ) : null}
+
+          {type === 'MISSING_ITEM' ? (
+            <>
+              <Field label="Escena" htmlFor="sceneLabel" error={errorFor('payload.sceneLabel')}>
+                <TextInput
+                  id="sceneLabel"
+                  name="sceneLabel"
+                  defaultValue={question?.type === 'MISSING_ITEM' ? question.sceneLabel : ''}
+                  placeholder="El portal un lunes por la manana"
+                />
+              </Field>
+              <Field
+                label="Objetos presentes (uno por linea, «icono:Texto»)"
+                htmlFor="present"
+                error={errorFor('payload.present')}
+                hint="El objeto que falta NO debe estar en esta lista"
+              >
+                <Textarea
+                  id="present"
+                  name="present"
+                  rows={5}
+                  value={present}
+                  onChange={(event) => setPresent(event.target.value)}
+                />
+              </Field>
+              <p className="text-xs text-tinta-suave">
+                En las cuatro opciones puedes usar tambien «icono:Texto» para que salga dibujado.
+              </p>
+            </>
+          ) : null}
+
+          {type === 'DECISION' ? (
+            <>
+              <Field label="Situacion" htmlFor="situation" error={errorFor('payload.situation')}>
+                <Textarea
+                  id="situation"
+                  name="situation"
+                  rows={3}
+                  defaultValue={question?.type === 'DECISION' ? question.situation : ''}
+                />
+              </Field>
+              <Field
+                label="Decisiones (una por linea: peso | texto | consecuencia)"
+                htmlFor="decisiones"
+                error={errorFor('payload.options')}
+                hint="El peso va de 0 a 1 y la mejor decision debe valer exactamente 1"
+              >
+                <Textarea
+                  id="decisiones"
+                  name="decisiones"
+                  rows={5}
+                  value={decisiones}
+                  onChange={(event) => setDecisiones(event.target.value)}
+                />
+              </Field>
+            </>
+          ) : null}
+
+          {type === 'SEQUENCE' ? (
+            <>
+              <Field
+                label="Botones del portero (uno por linea)"
+                htmlFor="pads"
+                error={errorFor('payload.pads')}
+              >
+                <Textarea
+                  id="pads"
+                  name="pads"
+                  rows={4}
+                  value={pads}
+                  onChange={(event) => setPads(event.target.value)}
+                />
+              </Field>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <Field
+                  label="Secuencia (numeros de boton separados por comas)"
+                  htmlFor="secuencia"
+                  error={errorFor('payload.sequence')}
+                  hint="Ejemplo: 1, 3, 2 - se pueden repetir"
+                >
+                  <TextInput
+                    id="secuencia"
+                    name="secuencia"
+                    value={secuencia}
+                    onChange={(event) => setSecuencia(event.target.value)}
+                  />
+                </Field>
+                <Field label="Milisegundos por paso" htmlFor="stepMs">
+                  <TextInput
+                    id="stepMs"
+                    name="stepMs"
+                    type="number"
+                    min={300}
+                    max={1500}
+                    step={50}
+                    defaultValue={question?.type === 'SEQUENCE' ? question.stepMs : 650}
+                  />
+                </Field>
+              </div>
+            </>
+          ) : null}
+
           {type === 'FINAL_BET' ? (
             <Field
               label="Fracción máxima del marcador que se puede apostar (0.1 - 1)"
@@ -449,12 +628,27 @@ export function QuestionForm({
             <TextInput id="sourceNote" name="sourceNote" defaultValue={question?.sourceNote ?? ''} />
           </Field>
 
-          <Checkbox
-            name="verified"
-            label="Verificada con fuente fiable"
-            hint="Si no está marcada, el juego la muestra con el sello de contenido demo."
-            defaultChecked={question?.verified ?? false}
-          />
+          <div className="grid gap-3 sm:grid-cols-2">
+            <Checkbox
+              name="verified"
+              label="Verificada con fuente fiable"
+              hint="Si no está marcada, el juego la muestra con el sello de contenido demo."
+              defaultChecked={question?.verified ?? false}
+            />
+            <Checkbox
+              name="featured"
+              label="Destacada"
+              hint="Para las preguntas que quieres que salgan más a menudo."
+              defaultChecked={question?.featured ?? false}
+            />
+          </div>
+
+          {/* Compatibilidad: la declara el registro de tipos, no se escribe a mano */}
+          <p className="texto-sello text-tinta-tenue">
+            {meta.supportsOptionElimination ? 'Admite descarte de opción' : 'Sin descarte de opción'}
+            {meta.supportsPartialCredit ? ' · admite acierto parcial' : ''}
+            {meta.hasStudyPhase ? ' · tiene fase de memoria' : ''}
+          </p>
         </Papel>
 
         <button type="submit" className="btn btn-verde btn-lg" disabled={pending}>
@@ -529,6 +723,54 @@ export function QuestionForm({
                 );
               })}
             </ul>
+          ) : null}
+
+          {type === 'DECISION' && decisiones.trim().length > 0 ? (
+            <ul className="space-y-1 text-sm">
+              {decisiones
+                .split('\n')
+                .filter((linea) => linea.trim().length > 0)
+                .map((linea, index) => {
+                  const partes = linea.split('|').map((parte) => parte.trim());
+                  const esMejor = partes[0] === '1';
+                  return (
+                    <li
+                      key={`${index}-${linea}`}
+                      className={`border-2 p-2 ${esMejor ? 'border-verde-portal bg-verde-azulejo/40' : 'border-linea-fuerte'}`}
+                    >
+                      <span className="block">{partes[1] ?? '-'}</span>
+                      <span className="block text-xs text-tinta-suave">
+                        peso {partes[0] ?? '0'} · {partes[2] ?? ''}
+                      </span>
+                    </li>
+                  );
+                })}
+            </ul>
+          ) : null}
+
+          {type === 'SEQUENCE' && pads.trim().length > 0 ? (
+            <div className="text-sm">
+              <p className="texto-sello text-tinta-tenue">Botones</p>
+              <p>{pads.split('\n').filter(Boolean).join(' · ')}</p>
+              <p className="texto-sello mt-2 text-tinta-tenue">Secuencia</p>
+              <p>{secuencia || '-'}</p>
+            </div>
+          ) : null}
+
+          {(type === 'MEMORY_GRID' || type === 'MISSING_ITEM') &&
+          (items.trim().length > 0 || present.trim().length > 0) ? (
+            <div className="text-sm">
+              <p className="texto-sello text-tinta-tenue">
+                {type === 'MEMORY_GRID' ? 'Objetos que se muestran' : 'Objetos de la escena'}
+              </p>
+              <p>
+                {(type === 'MEMORY_GRID' ? items : present)
+                  .split('\n')
+                  .filter(Boolean)
+                  .map((linea) => linea.split(':').pop())
+                  .join(' · ')}
+              </p>
+            </div>
           ) : null}
 
           {type === 'ORDER_CHAOS' && steps.trim().length > 0 ? (

@@ -19,11 +19,14 @@ export function RevealPanel({
   onNext,
   secondsLeft,
   isLast,
+  anuncio,
 }: {
   reveal: RevealSummary;
   onNext: () => void;
   secondsLeft: number;
   isLast: boolean;
+  /** Frase del presentador (la voz del edificio). */
+  anuncio?: string;
 }) {
   const { grade, breakdown } = reveal;
   const tone = grade.isCorrect ? 'verde' : grade.accuracy > 0 ? 'mostaza' : 'papel';
@@ -37,7 +40,7 @@ export function RevealPanel({
 
   return (
     <div className="space-y-3" role="status" aria-live="polite">
-      <Nota tone={tone} className="p-4">
+      <Nota tone={tone} className="anim-aparecer-escala p-4">
         <div className="flex items-start justify-between gap-3">
           <div>
             <p className="texto-cartel text-2xl">
@@ -47,6 +50,9 @@ export function RevealPanel({
               {heading}
             </p>
             <p className="mt-1 text-sm text-tinta-suave">{reveal.line}</p>
+            {anuncio ? (
+              <p className="escrito-a-mano mt-1 text-lg text-granate">{anuncio}</p>
+            ) : null}
           </div>
           <p
             className={`marcador flex-none text-3xl ${

@@ -38,5 +38,12 @@ export default async function GamePage({ params }: { params: Promise<{ gameId: s
     );
   }
 
-  return <GameShell gameId={game.gameId} config={game.config} pool={game.pool} />;
+  return (
+    <GameShell
+      gameId={game.gameId}
+      config={game.config}
+      pool={game.pool}
+      ghost={game.ghost ?? undefined}
+    />
+  );
 }

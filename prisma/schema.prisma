@@ -37,6 +37,11 @@ enum QuestionType {
   IMPOSTOR
   ORDER_CHAOS
   FINAL_BET
+  // Fase 2: las cuatro familias nuevas
+  MEMORY_GRID
+  MISSING_ITEM
+  DECISION
+  SEQUENCE
 }
 
 enum QuestionStatus {
@@ -77,6 +82,8 @@ model Question {
   timeLimitSeconds Int
   sourceNote       String?
   verified         Boolean        @default(false)
+  /// Destacada por el equipo: el director de partida la prioriza.
+  featured         Boolean        @default(false)
   createdAt        DateTime       @default(now())
   updatedAt        DateTime       @updatedAt
 
@@ -87,6 +94,7 @@ model Question {
   @@index([status, category])
   @@index([status, difficulty])
   @@index([status, verified])
+  @@index([status, featured])
 }
 
 /// Analítica del banco de preguntas: permite recalibrar dificultades más adelante.
@@ -117,7 +125,10 @@ model GuestPlayer {
   userId String?
   user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
 
-  games Game[]
+  games        Game[]
+  profile      PlayerProfile?
+  bests        PersonalBest[]
+  dailyResults DailyResult[]
 
   @@index([userId])
 }
@@ -150,6 +161,14 @@ model Game {
   /// GameSummary al finalizar (null mientras esté en curso).
   summary            Json?
   totalScore         Int         @default(0)
+  /// LIBRE | RETO_DIARIO | DESAFIO
+  origin             String      @default("LIBRE")
+  /// Etiqueta legible del desafío compartible, tipo «#21DESENGANO».
+  seedLabel          String?
+  /// Día del reto diario (YYYY-MM-DD) si aplica.
+  dailyKey           String?
+  /// Puntuación acumulada tras cada pregunta: es lo que persigue el modo fantasma.
+  ghostTrail         Int[]       @default([])
   createdAt          DateTime    @default(now())
   finishedAt         DateTime?
 
@@ -157,38 +176,40 @@ model Game {
   events  GameEventLog[]
 
   @@index([guestId, createdAt])
+  @@index([guestId, formatId, difficultyId])
+  @@index([dailyKey])
   @@index([status])
 }
 
 model GameAnswer {
-  id           String   @id @default(cuid())
-  gameId       String
-  game         Game     @relation(fields: [gameId], references: [id], onDelete: Cascade)
-  questionId   String
-  question     Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
-  roundId      String
-  indexInGame  Int
+  id            String   @id @default(cuid())
+  gameId        String
+  game          Game     @relation(fields: [gameId], references: [id], onDelete: Cascade)
+  questionId    String
+  question      Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  roundId       String
+  indexInGame   Int
   /// false = tiempo agotado / abandonada.
-  answered     Boolean  @default(true)
-  correct      Boolean  @default(false)
+  answered      Boolean  @default(true)
+  correct       Boolean  @default(false)
   /// 0..1 (permite acierto parcial en ORDER_CHAOS).
-  accuracy     Float    @default(0)
-  responseMs   Int      @default(0)
-  pointsAwarded Int     @default(0)
-  basePoints   Int      @default(0)
-  timeBonus    Int      @default(0)
-  streakBonus  Int      @default(0)
-  multiplier   Float    @default(1)
-  streakAfter  Int      @default(0)
-  difficulty   Int      @default(5)
+  accuracy      Float    @default(0)
+  responseMs    Int      @default(0)
+  pointsAwarded Int      @default(0)
+  basePoints    Int      @default(0)
+  timeBonus     Int      @default(0)
+  streakBonus   Int      @default(0)
+  multiplier    Float    @default(1)
+  streakAfter   Int      @default(0)
+  difficulty    Int      @default(5)
   /// Apuesta de la ronda final, si aplica.
-  wager        Int?
+  wager         Int?
   /// Máximo teórico de esta pregunta con sus modificadores: base del índice de rendimiento.
-  maxPoints    Int      @default(0)
-  powerUpsUsed String[] @default([])
+  maxPoints     Int      @default(0)
+  powerUpsUsed  String[] @default([])
   /// Respuesta enviada por el jugador (para revisiones y analítica).
-  submitted    Json?
-  createdAt    DateTime @default(now())
+  submitted     Json?
+  createdAt     DateTime @default(now())
 
   @@unique([gameId, questionId])
   @@index([gameId, indexInGame])
@@ -206,4 +227,78 @@ model GameEventLog {
 
   @@unique([gameId, seq])
   @@index([gameId, seq])
+}
+
+// ── Perfil, progresión y logros (Fase 2) ─────────────────────────────────────
+//
+// Se guardan en la base de datos y no en el navegador porque son el historial del
+// jugador: sobreviven a limpiar la caché y en Fase 3 alimentan las clasificaciones.
+// Siguen atados a la cookie anónima: nada de esto exige cuenta.
+
+model PlayerProfile {
+  id            String      @id @default(cuid())
+  guestId       String      @unique
+  guest         GuestPlayer @relation(fields: [guestId], references: [id], onDelete: Cascade)
+  displayName   String?
+  /// Ids del catálogo de src/domain/players/avatar.ts
+  arquetipo     String      @default("presidente")
+  colorAvatar   String      @default("verde")
+  marco         String      @default("ninguno")
+  xp            Int         @default(0)
+  gamesFinished Int         @default(0)
+  bestScore     Int         @default(0)
+  bestStreak    Int         @default(0)
+  totalCorrect  Int         @default(0)
+  totalAnswers  Int         @default(0)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  achievements PlayerAchievement[]
+}
+
+model PlayerAchievement {
+  id            Int           @id @default(autoincrement())
+  profileId     String
+  profile       PlayerProfile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  /// Id del catálogo de src/domain/achievements/achievements.ts
+  achievementId String
+  gameId        String?
+  unlockedAt    DateTime      @default(now())
+
+  @@unique([profileId, achievementId])
+  @@index([profileId])
+}
+
+/// Mejor marca por formato y dificultad: es el fantasma contra el que se compite.
+model PersonalBest {
+  id           String      @id @default(cuid())
+  guestId      String
+  guest        GuestPlayer @relation(fields: [guestId], references: [id], onDelete: Cascade)
+  formatId     String
+  difficultyId String
+  score        Int
+  accuracy     Float       @default(0)
+  bestStreak   Int         @default(0)
+  gameId       String
+  /// Curva de puntuación de la partida récord.
+  trail        Int[]       @default([])
+  updatedAt    DateTime    @updatedAt
+
+  @@unique([guestId, formatId, difficultyId])
+}
+
+/// Resultado del reto del día. Un intento por jugador y día.
+model DailyResult {
+  id         String      @id @default(cuid())
+  guestId    String
+  guest      GuestPlayer @relation(fields: [guestId], references: [id], onDelete: Cascade)
+  dailyKey   String
+  gameId     String
+  score      Int
+  accuracy   Float       @default(0)
+  durationMs Int         @default(0)
+  createdAt  DateTime    @default(now())
+
+  @@unique([guestId, dailyKey])
+  @@index([dailyKey, score])
 }

@@ -16,7 +16,7 @@
  *
  *   INTRO ──START_GAME──▶ ROUND_INTRO ──NEXT──▶ QUESTION ──SUBMIT/TIME_UP──▶ ANSWER_LOCKED
  *                                │                                                │
- *                                │ (ronda final)                              REVEAL
+ *                                │ (ronda con apuesta)                        REVEAL
  *                                ▼                                                │
  *                          FINAL_ROUND ──PLACE_BET──▶ QUESTION            ┌───────┴────────┐
  *                                                                        ▼                ▼
@@ -29,11 +29,11 @@
 
 import { createAdaptiveState, targetDifficulty, updateAdaptiveState } from '../difficulty/adaptive';
 import { getDifficultyLevel } from '../difficulty/levels';
+import { dirigirSuceso } from '../events/director';
 import {
   eventModifiers,
   eventTimeScale,
   getGameEvent,
-  rollGameEvent,
   type GameEventDefinition,
 } from '../events/game-events';
 import {
@@ -44,22 +44,31 @@ import {
   pickLine,
 } from '../copy/feedback';
 import { allowsPartialCredit, extendsStreak, gradeAnswer } from '../questions/grading';
-import { canUsePowerUp, createInventory, getPowerUp, spendCharge, type PowerUpId } from '../powerups/powerups';
+import {
+  canUsePowerUp,
+  createInventory,
+  getPowerUp,
+  grantCharge,
+  spendCharge,
+  type PowerUpId,
+} from '../powerups/powerups';
 import { clampWager, maxPointsFor, scoreAnswer, type ScoreModifier } from '../scoring/scoring';
 import { createRng, shuffle, type Rng } from '../rng';
 import { getGameFormat, type RoundDefinition } from '../rounds/formats';
 import { applyStreak, createStreakState } from '../streaks/streaks';
 import { buildSummary } from '../results/summary';
 import { selectQuestion } from '../selection/select';
-import type { AnswerSubmission, Question } from '../questions/types';
+import { studyMsFor, type AnswerSubmission, type Question } from '../questions/types';
 import type { DistributiveOmit } from '../types';
 import type { EngineEvent } from './engine-events';
 import type { GameAction } from './actions';
-import type {
-  ActiveQuestion,
-  GameConfig,
-  GameState,
-  RoundProgress,
+import {
+  comboLevel,
+  recentAccuracy,
+  type ActiveQuestion,
+  type GameConfig,
+  type GameState,
+  type RoundProgress,
 } from './state';
 
 export type EngineDeps = {
@@ -90,11 +99,12 @@ export function createGameState(input: {
     roundId: round.id,
     roundIndex: index,
     title: round.title,
-    subtitle: round.subtitle,
     questionCount: round.questionCount,
     answered: 0,
     correct: 0,
     points: 0,
+    floor: 0,
+    stalled: false,
   }));
 
   return {
@@ -111,6 +121,9 @@ export function createGameState(input: {
     usedQuestionIds: [],
     rounds,
     answers: [],
+    scoreTrail: [],
+    seenEvents: [],
+    questionsSinceEvent: 99,
     rngCursor: 0,
     eventSeq: 0,
     notices: [],
@@ -136,6 +149,13 @@ function presentationOrder(question: Question, rng: Rng): string[] {
     case 'MULTIPLE_CHOICE':
     case 'WHO_IS_IT':
     case 'FINAL_BET':
+    case 'MEMORY_GRID':
+    case 'MISSING_ITEM':
+      return shuffle(
+        question.options.map((option) => option.id),
+        rng,
+      );
+    case 'DECISION':
       return shuffle(
         question.options.map((option) => option.id),
         rng,
@@ -145,6 +165,8 @@ function presentationOrder(question: Question, rng: Rng): string[] {
         question.items.map((item) => item.id),
         rng,
       );
+    case 'SEQUENCE':
+      return question.pads.map((pad) => pad.id);
     case 'ORDER_CHAOS': {
       const correct = question.steps.map((step) => step.id);
       const shuffled = shuffle(correct, rng);
@@ -195,6 +217,8 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
       bestStreak: next.streak.best,
       startedAt: next.startedAt,
       finishedAt: action.at,
+      scoreTrail: next.scoreTrail,
+      ...(next.config.origin === 'RETO_DIARIO' ? { esRetoDiario: true } : {}),
     });
     next = { ...next, phase: 'GAME_RESULTS', finishedAt: action.at, summary, currentQuestion: undefined };
     emit({
@@ -219,6 +243,51 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
     }
   };
 
+  /**
+   * Construye la pregunta activa aplicando nivel, ronda, suceso y fase de estudio.
+   * `swapDe` permite reemplazar la pregunta actual (power-up CAMBIO DE PRESIDENTE).
+   */
+  const buildActiveQuestion = (
+    round: RoundDefinition,
+    question: Question,
+    activeEvent: GameEventDefinition | undefined,
+    at: number,
+  ): ActiveQuestion => {
+    const level = getDifficultyLevel(next.config.difficultyId);
+    const timeLimitSeconds = Math.max(
+      5,
+      Math.round(
+        question.timeLimitSeconds *
+          level.timeScale *
+          (round.timeScale ?? 1) *
+          eventTimeScale(activeEvent),
+      ),
+    );
+
+    const modifiers: ScoreModifier[] = [...(round.modifiers ?? []), ...eventModifiers(activeEvent)];
+    const study = studyMsFor(question);
+
+    return {
+      question,
+      roundId: round.id,
+      indexInGame: next.questionIndex,
+      timeLimitSeconds,
+      optionOrder: presentationOrder(question, nextRng()),
+      modifiers,
+      eliminatedOptionIds: [],
+      cluesRevealed: question.type === 'WHO_IS_IT' ? (round.presentation === 'buzones' ? 0 : 1) : 0,
+      powerUpsUsed: [],
+      wager: 0,
+      wagerProtection: 0,
+      riskMode: false,
+      ...(activeEvent ? { eventId: activeEvent.id } : {}),
+      powerUpsBlocked: activeEvent?.effect.blockPowerUps === true,
+      timeBonusDisabled: activeEvent?.effect.noTimeBonus === true,
+      startedAt: at,
+      studyUntil: at + study,
+    };
+  };
+
   /** Selecciona y arranca la siguiente pregunta de la ronda en curso. */
   const startQuestion = (): void => {
     const round = roundDefinition(next);
@@ -228,8 +297,15 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
     }
 
     const level = getDifficultyLevel(next.config.difficultyId);
+    const activeEvent: GameEventDefinition | undefined =
+      next.pendingEvent && next.pendingEvent.appliesToQuestionIndex === next.questionIndex
+        ? getGameEvent(next.pendingEvent.id)
+        : undefined;
+
     const target = clamp(
-      targetDifficulty(next.adaptive, level) + (round.difficultyOffset ?? 0),
+      targetDifficulty(next.adaptive, level) +
+        (round.difficultyOffset ?? 0) +
+        (activeEvent?.effect.difficultyOffset ?? 0),
       1,
       10,
     );
@@ -256,50 +332,19 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
     }
 
     const question = selection.question;
-    const activeEvent: GameEventDefinition | undefined =
-      next.pendingEvent && next.pendingEvent.appliesToQuestionIndex === next.questionIndex
-        ? getGameEvent(next.pendingEvent.id)
-        : undefined;
-
-    const timeLimitSeconds = Math.max(
-      5,
-      Math.round(
-        question.timeLimitSeconds *
-          level.timeScale *
-          (round.timeScale ?? 1) *
-          eventTimeScale(activeEvent),
-      ),
-    );
-
-    const modifiers: ScoreModifier[] = [...(round.modifiers ?? []), ...eventModifiers(activeEvent)];
-
-    const active: ActiveQuestion = {
-      question,
-      roundId: round.id,
-      indexInGame: next.questionIndex,
-      timeLimitSeconds,
-      optionOrder: presentationOrder(question, nextRng()),
-      modifiers,
-      eliminatedOptionIds: [],
-      cluesRevealed: question.type === 'WHO_IS_IT' ? 1 : 0,
-      powerUpsUsed: [],
-      wager: 0,
-      ...(activeEvent ? { eventId: activeEvent.id } : {}),
-      startedAt: action.at,
-    };
-
-    const isFinal = round.isFinal === true;
+    const active = buildActiveQuestion(round, question, activeEvent, action.at);
+    const conApuesta = round.isFinal === true || round.hasWager === true;
 
     next = {
       ...next,
-      phase: isFinal ? 'FINAL_ROUND' : 'QUESTION',
+      phase: conApuesta ? 'FINAL_ROUND' : 'QUESTION',
       currentQuestion: active,
       pendingSubmission: undefined,
       lastReveal: undefined,
       usedQuestionIds: [...next.usedQuestionIds, question.id],
     };
 
-    if (!isFinal) {
+    if (!conApuesta) {
       emit({
         type: 'QUESTION_STARTED',
         questionId: question.id,
@@ -307,7 +352,7 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
         roundId: round.id,
         indexInGame: active.indexInGame,
         difficulty: question.difficulty,
-        timeLimitSeconds,
+        timeLimitSeconds: active.timeLimitSeconds,
       });
     }
   };
@@ -316,9 +361,9 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
     const active = next.currentQuestion;
     if (!active) return;
     const limitMs = active.timeLimitSeconds * 1000;
-    const responseMs = timedOut
-      ? limitMs
-      : clamp(action.at - active.startedAt, 0, limitMs);
+    // El tiempo empieza a contar cuando acaba la fase de estudio (memoria/secuencia).
+    const inicioEfectivo = Math.max(active.startedAt, active.studyUntil);
+    const responseMs = timedOut ? limitMs : clamp(action.at - inicioEfectivo, 0, limitMs);
 
     next = {
       ...next,
@@ -357,6 +402,8 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
       modifiers: active.modifiers,
       ...(totalClues ? { cluesRevealed: active.cluesRevealed, totalClues } : {}),
       wager: active.wager,
+      wagerProtection: active.wagerProtection,
+      disableTimeBonus: active.timeBonusDisabled,
     });
 
     const streakUpdate = applyStreak(next.streak, extendsStreak(grade));
@@ -395,6 +442,9 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
             answered: progress.answered + 1,
             correct: progress.correct + (grade.isCorrect ? 1 : 0),
             points: progress.points + netPoints,
+            // Minijuego del ascensor: sube una planta por acierto, se para al fallar.
+            floor: grade.isCorrect ? progress.floor + 1 : progress.floor,
+            stalled: !grade.isCorrect,
           }
         : progress,
     );
@@ -408,6 +458,8 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
       rounds,
       questionIndex: next.questionIndex + 1,
       questionInRound: next.questionInRound + 1,
+      questionsSinceEvent: next.questionsSinceEvent + 1,
+      scoreTrail: [...next.scoreTrail, scoreAfter],
       pendingSubmission: undefined,
       pendingEvent: undefined,
       answers: [
@@ -418,6 +470,7 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
           indexInGame: active.indexInGame,
           type: question.type,
           difficulty: question.difficulty,
+          category: question.category,
           answered: !pending.timedOut,
           correct: grade.isCorrect,
           accuracy,
@@ -426,7 +479,8 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
           basePoints: breakdown.base,
           timeBonus: breakdown.timeBonus,
           streakBonus: breakdown.streakBonus,
-          multiplier: breakdown.difficultyMultiplier * breakdown.modifierMultiplier * breakdown.clueMultiplier,
+          multiplier:
+            breakdown.difficultyMultiplier * breakdown.modifierMultiplier * breakdown.clueMultiplier,
           streakAfter: streakUpdate.state.current,
           wager: active.wager,
           powerUpsUsed: active.powerUpsUsed,
@@ -460,6 +514,7 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
         line,
         adaptiveDelta: adaptiveUpdate.delta,
         cluesRevealed: active.cluesRevealed,
+        comboLevel: comboLevel(streakUpdate.state.current),
       },
     };
 
@@ -474,7 +529,7 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
     });
   };
 
-  /** Avance tras el revelado: evento intermedio, siguiente pregunta o fin de ronda. */
+  /** Avance tras el revelado: suceso intermedio, siguiente pregunta o fin de ronda. */
   const advanceAfterReveal = (): void => {
     const round = roundDefinition(next);
     if (!round) {
@@ -487,23 +542,39 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
       return;
     }
 
-    const shouldTriggerEvent = round.eventChance > 0 && nextRng().next() < round.eventChance;
-    if (shouldTriggerEvent) {
-      const event = rollGameEvent(nextRng());
-      if (event) {
-        next = {
-          ...next,
-          phase: 'EVENT',
-          currentQuestion: undefined,
-          pendingEvent: { id: event.id, appliesToQuestionIndex: next.questionIndex },
-        };
-        emit({
-          type: 'EVENT_TRIGGERED',
-          eventId: event.id,
-          appliesToQuestionIndex: next.questionIndex,
-        });
-        return;
-      }
+    // El DIRECTOR decide si toca suceso, no un dado suelto.
+    const decision = dirigirSuceso(
+      {
+        questionIndex: next.questionIndex,
+        roundEventChance: round.eventChance,
+        isFinalRound: round.isFinal === true,
+        questionsSinceEvent: next.questionsSinceEvent,
+        streak: next.streak.current,
+        recentAccuracy: recentAccuracy(next.answers),
+        seenEvents: next.seenEvents,
+      },
+      nextRng(),
+    );
+
+    if (decision.suceso) {
+      const suceso = decision.suceso;
+      const regalo = suceso.effect.grantPowerUp;
+      next = {
+        ...next,
+        phase: 'EVENT',
+        currentQuestion: undefined,
+        pendingEvent: { id: suceso.id, appliesToQuestionIndex: next.questionIndex },
+        seenEvents: [...next.seenEvents, suceso.id],
+        questionsSinceEvent: 0,
+        // Los sucesos que regalan comodín lo dan en el momento: la cartela lo anuncia.
+        inventory: regalo ? grantCharge(next.inventory, regalo) : next.inventory,
+      };
+      emit({
+        type: 'EVENT_TRIGGERED',
+        eventId: suceso.id,
+        appliesToQuestionIndex: next.questionIndex,
+      });
+      return;
     }
 
     startQuestion();
@@ -608,7 +679,12 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
       next = {
         ...next,
         phase: 'QUESTION',
-        currentQuestion: { ...active, wager, startedAt: action.at },
+        currentQuestion: {
+          ...active,
+          wager,
+          startedAt: action.at,
+          studyUntil: action.at + studyMsFor(active.question),
+        },
       };
       emit({ type: 'BET_PLACED', questionId: active.question.id, wager });
       emit({
@@ -625,12 +701,16 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
 
     case 'USE_POWER_UP': {
       const active = next.currentQuestion;
-      if (next.phase !== 'QUESTION' || !active) break;
+      if ((next.phase !== 'QUESTION' && next.phase !== 'FINAL_ROUND') || !active) break;
 
       const context = {
         question: active.question,
         eliminatedOptionIds: active.eliminatedOptionIds,
         answerLocked: false,
+        usedThisQuestion: active.powerUpsUsed,
+        cluesRevealed: active.cluesRevealed,
+        hasWager: active.wager > 0 || next.phase === 'FINAL_ROUND',
+        powerUpsBlocked: active.powerUpsBlocked,
       };
       const availability = canUsePowerUp(action.powerUpId, next.inventory, context);
       if (!availability.ok) break;
@@ -643,12 +723,14 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
         powerUpsUsed: [...active.powerUpsUsed, action.powerUpId],
       };
       let detail = '';
+      let reemplazada = false;
 
       switch (effect.kind) {
         case 'ADD_TIME':
           updated = { ...updated, timeLimitSeconds: updated.timeLimitSeconds + effect.seconds };
           detail = `+${effect.seconds}s`;
           break;
+
         case 'ELIMINATE_OPTION':
           updated = {
             ...updated,
@@ -656,6 +738,70 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
           };
           detail = 'Opción descartada';
           break;
+
+        case 'REVEAL_CLUE':
+          updated = { ...updated, cluesRevealed: updated.cluesRevealed + 1 };
+          detail = 'Pista revelada';
+          break;
+
+        case 'ADD_MULTIPLIER':
+          updated = {
+            ...updated,
+            modifiers: [
+              ...updated.modifiers,
+              { id: effect.id, label: effect.label, multiplier: effect.multiplier },
+            ],
+          };
+          detail = `×${effect.multiplier}`;
+          break;
+
+        case 'RISK_MODE':
+          updated = {
+            ...updated,
+            riskMode: true,
+            modifiers: [
+              ...updated.modifiers,
+              { id: 'SE_HA_IDO_LA_LUZ', label: 'A oscuras', multiplier: effect.multiplier },
+            ],
+          };
+          detail = `A ciegas ×${effect.multiplier}`;
+          break;
+
+        case 'PROTECT_WAGER':
+          updated = { ...updated, wagerProtection: effect.ratio };
+          detail = `Protegido ${Math.round(effect.ratio * 100)} %`;
+          break;
+
+        case 'SWAP_QUESTION': {
+          const round = roundDefinition(next);
+          if (!round) break;
+          const selection = selectQuestion(
+            deps.pool,
+            {
+              targetDifficulty: active.question.difficulty,
+              allowedTypes: round.allowedTypes,
+              category: next.config.category,
+              excludeIds: new Set(next.usedQuestionIds),
+            },
+            nextRng(),
+          );
+          if (!selection) {
+            detail = 'No queda otra pregunta';
+            break;
+          }
+          const activeEvent = active.eventId ? getGameEvent(active.eventId) : undefined;
+          const nueva = buildActiveQuestion(round, selection.question, activeEvent, action.at);
+          updated = {
+            ...nueva,
+            wager: active.wager,
+            wagerProtection: active.wagerProtection,
+            powerUpsUsed: [...active.powerUpsUsed, action.powerUpId],
+          };
+          next = { ...next, usedQuestionIds: [...next.usedQuestionIds, selection.question.id] };
+          detail = 'Pregunta cambiada';
+          reemplazada = true;
+          break;
+        }
       }
 
       next = {
@@ -670,6 +816,18 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
         powerUpId: action.powerUpId,
         detail,
       });
+
+      if (reemplazada) {
+        emit({
+          type: 'QUESTION_STARTED',
+          questionId: updated.question.id,
+          questionType: updated.question.type,
+          roundId: updated.roundId,
+          indexInGame: updated.indexInGame,
+          difficulty: updated.question.difficulty,
+          timeLimitSeconds: updated.timeLimitSeconds,
+        });
+      }
       break;
     }
 
@@ -684,7 +842,15 @@ export function applyAction(state: GameState, action: GameAction, deps: EngineDe
         // Se agotó el tiempo de decidir la apuesta: se juega sin apostar.
         const active = next.currentQuestion;
         if (!active) break;
-        next = { ...next, phase: 'QUESTION', currentQuestion: { ...active, startedAt: action.at } };
+        next = {
+          ...next,
+          phase: 'QUESTION',
+          currentQuestion: {
+            ...active,
+            startedAt: action.at,
+            studyUntil: action.at + studyMsFor(active.question),
+          },
+        };
         emit({
           type: 'QUESTION_STARTED',
           questionId: active.question.id,

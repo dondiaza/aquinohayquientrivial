@@ -28,8 +28,15 @@ import { POWER_UP_IDS, type PowerUpId } from '@/domain/powerups/powerups';
 import { QUESTION_TYPES, type Question, type QuestionType } from '@/domain/questions/types';
 import { answerSubmissionSchema } from '@/domain/engine/wire';
 import type { FinishGameRequest, ReportAnswerRequest } from '@/domain/engine/wire';
+import { obtenerFantasma, registrarFinDePartida, type ResultadoProgresion } from '../players/service';
 import type { GameSetup } from '@/domain/engine/config';
-import type { AnsweredQuestion, GameConfig, RoundProgress } from '@/domain/engine/state';
+import type {
+  AnsweredQuestion,
+  GameConfig,
+  GameOrigin,
+  GhostRun,
+  RoundProgress,
+} from '@/domain/engine/state';
 
 /** Cuántas preguntas de reserva se envían por cada una que se va a jugar. */
 const POOL_OVERSHOOT = 2.2;
@@ -48,6 +55,8 @@ export type GameForPlay = {
   config: GameConfig;
   pool: Question[];
   status: 'IN_PROGRESS' | 'FINISHED' | 'ABANDONED';
+  /** Récord anterior con el que competir (modo fantasma). */
+  ghost: GhostRun | null;
 };
 
 /**
@@ -104,11 +113,23 @@ export function buildGamePool(all: readonly Question[], config: GameConfig): Que
   return [...picked.values()];
 }
 
-export async function createSoloGame(setup: GameSetup, guestPublicId: string): Promise<CreatedGame> {
+export type OpcionesPartida = {
+  /** Semilla fija (reto del día o desafío compartido). Si falta, se genera una. */
+  seed?: string;
+  origin?: GameOrigin;
+  seedLabel?: string;
+  dailyKey?: string;
+};
+
+export async function createSoloGame(
+  setup: GameSetup,
+  guestPublicId: string,
+  opciones: OpcionesPartida = {},
+): Promise<CreatedGame> {
   const guestId = await ensureGuestPlayer(guestPublicId, setup.playerName);
   const all = await loadPlayableQuestions();
 
-  const seed = newSeed({ random: () => Math.random(), now: () => Date.now() });
+  const seed = opciones.seed ?? newSeed({ random: () => Math.random(), now: () => Date.now() });
   const config: GameConfig = {
     mode: 'SOLO',
     formatId: setup.formatId,
@@ -117,6 +138,9 @@ export async function createSoloGame(setup: GameSetup, guestPublicId: string): P
     adaptiveDifficulty: setup.adaptiveDifficulty,
     ...(setup.playerName ? { playerName: setup.playerName } : {}),
     seed,
+    origin: opciones.origin ?? 'LIBRE',
+    ...(opciones.seedLabel ? { seedLabel: opciones.seedLabel } : {}),
+    ...(opciones.dailyKey ? { dailyKey: opciones.dailyKey } : {}),
   };
 
   const pool = buildGamePool(all, config);
@@ -133,6 +157,9 @@ export async function createSoloGame(setup: GameSetup, guestPublicId: string): P
       seed,
       config: config as unknown as Prisma.InputJsonValue,
       poolIds: pool.map((question) => question.id),
+      origin: config.origin ?? 'LIBRE',
+      ...(config.seedLabel ? { seedLabel: config.seedLabel } : {}),
+      ...(config.dailyKey ? { dailyKey: config.dailyKey } : {}),
     },
     select: { id: true },
   });
@@ -164,11 +191,14 @@ export async function loadGameForPlay(
     .map((id) => byId.get(id))
     .filter((question): question is Question => question !== undefined);
 
+  const ghost = await obtenerFantasma(game.guestId, game.formatId, game.difficultyId);
+
   return {
     gameId: game.id,
     config: parsedConfig.data,
     pool,
     status: game.status,
+    ghost,
   };
 }
 
@@ -274,15 +304,18 @@ export function rebuildRounds(formatId: string, answers: readonly AnsweredQuesti
   const format = getGameFormat(formatId);
   return format.rounds.map((round, index) => {
     const forRound = answers.filter((answer) => answer.roundId === round.id);
+    const aciertos = forRound.filter((answer) => answer.correct).length;
     return {
       roundId: round.id,
       roundIndex: index,
       title: round.title,
-      subtitle: round.subtitle,
       questionCount: round.questionCount,
       answered: forRound.length,
-      correct: forRound.filter((answer) => answer.correct).length,
+      correct: aciertos,
       points: forRound.reduce((sum, answer) => sum + answer.pointsAwarded, 0),
+      // Reconstrucción del minijuego del ascensor: plantas = aciertos seguidos al final.
+      floor: forRound.reduce((planta, answer) => (answer.correct ? planta + 1 : planta), 0),
+      stalled: forRound.length > 0 ? forRound[forRound.length - 1]?.correct !== true : false,
     };
   });
 }
@@ -291,14 +324,17 @@ export async function finishGame(
   gameId: string,
   guestPublicId: string,
   request: FinishGameRequest,
-): Promise<{ ok: true; summary: GameSummary } | { ok: false; reason: 'NOT_FOUND' }> {
+): Promise<
+  | { ok: true; summary: GameSummary; progresion: ResultadoProgresion }
+  | { ok: false; reason: 'NOT_FOUND' }
+> {
   const game = await prisma.game.findUnique({
     where: { id: gameId },
     include: {
       guest: { select: { publicId: true } },
       answers: {
         orderBy: { indexInGame: 'asc' },
-        include: { question: { select: { type: true } } },
+        include: { question: { select: { type: true, category: true } } },
       },
     },
   });
@@ -313,6 +349,7 @@ export async function finishGame(
       indexInGame: row.indexInGame,
       type: row.question.type,
       difficulty: row.difficulty,
+      category: row.question.category,
       answered: row.answered,
       correct: row.correct,
       accuracy: row.accuracy,
@@ -339,6 +376,8 @@ export async function finishGame(
     bestStreak: request.bestStreak,
     ...(request.startedAt ? { startedAt: request.startedAt } : {}),
     finishedAt: Date.now(),
+    scoreTrail: request.scoreTrail,
+    ...(game.origin === 'RETO_DIARIO' ? { esRetoDiario: true } : {}),
   });
 
   await prisma.game.update({
@@ -348,7 +387,21 @@ export async function finishGame(
       finishedAt: new Date(),
       totalScore: request.totalScore,
       summary: summary as unknown as Prisma.InputJsonValue,
+      ghostTrail: request.scoreTrail,
     },
+  });
+
+  // Progresión, récord personal y logros: reglas puras del dominio, filas aquí.
+  const progresion = await registrarFinDePartida({
+    guestId: game.guestId,
+    gameId,
+    formatId: game.formatId,
+    difficultyId: game.difficultyId,
+    origin: game.origin,
+    dailyKey: game.dailyKey,
+    summary,
+    answers,
+    scoreTrail: request.scoreTrail,
   });
 
   if (request.events.length > 0) {
@@ -363,7 +416,7 @@ export async function finishGame(
     });
   }
 
-  return { ok: true, summary };
+  return { ok: true, summary, progresion };
 }
 
 export async function getFinishedGame(gameId: string): Promise<{
@@ -377,6 +430,11 @@ export async function getFinishedGame(gameId: string): Promise<{
   summary: GameSummary | null;
   createdAt: Date;
   questionsAsked: number;
+  origin: string;
+  seedLabel: string | null;
+  dailyKey: string | null;
+  ghostTrail: number[];
+  guestId: string;
 } | null> {
   const game = await prisma.game.findUnique({
     where: { id: gameId },
@@ -395,6 +453,11 @@ export async function getFinishedGame(gameId: string): Promise<{
     summary: (game.summary as GameSummary | null) ?? null,
     createdAt: game.createdAt,
     questionsAsked: game._count.answers,
+    origin: game.origin,
+    seedLabel: game.seedLabel,
+    dailyKey: game.dailyKey,
+    ghostTrail: game.ghostTrail,
+    guestId: game.guestId,
   };
 }
 

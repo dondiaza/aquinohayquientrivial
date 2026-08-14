@@ -23,26 +23,37 @@ Puntos que ya se han dejado preparados para lo que viene, con coste cero hoy:
 | `prefers-reduced-motion` | `globals.css` | Las animaciones de Fase 2 nacen accesibles |
 | `rankId` en el resumen (no el texto) | `domain/results/summary.ts` | Reescribir los rangos no obliga a migrar partidas |
 
-## Fase 2 — dirección artística, animación y sonido
+## Fase 2 — hecha
 
-Lo natural de retomar, en orden de valor:
+Identidad propia, sensaciones y contenido:
 
-1. **Game feel**: animación de entrada de la pregunta, contador con tensión, aparición de
-   puntos (`+1300` volando al marcador), sacudida en el fallo, sello de acierto. Los ganchos
-   ya existen: `RevealSummary` trae el desglose completo y `EngineEvent` marca cada momento.
-2. **Sonido**: telefonillo, portazo, ascensor, timbre de junta. Con interruptor y respeto a
-   `prefers-reduced-motion` / silencio por defecto.
-3. **Dirección artística avanzada**: ilustración original del portal, tipografía propia con
-   licencia clara (sustituyendo los tokens `--font-*`), texturas y estados de escena por
-   ronda.
-4. **Más mecánicas**: minijuegos entre rondas, tipos de prueba nuevos (imagen, audio,
-   emparejar, rellenar), power-ups nuevos (cambiar de pregunta, doblar puntos, congelar
-   tiempo), rachas con recompensas.
-5. **Recalibración del banco** con la analítica que ya se está guardando: `QuestionStat`
+* Sistema de diseño «Comunidad» documentado (docs/DESIGN-SYSTEM.md), tipografías libres y
+  cuatro velocidades de motion con `prefers-reduced-motion` respetado.
+* Audio original **sintetizado** con Web Audio: 19 efectos, cero ficheros, preferencias
+  persistentes y ningún sonido antes de la primera interacción.
+* Home cinemática: fachada SVG y planta baja interactiva (puerta, telefonillo, tablón,
+  ascensor, buzones).
+* Cuatro familias de prueba nuevas hasta diez: memoria de vecino, ¿qué falta aquí?, la junta
+  y portero automático. Dos minijuegos integrados como presentación de ronda (buzones y
+  ascensor).
+* Seis comodines con rareza y tope de dos por pregunta; siete sucesos gobernados por un
+  director que evita monotonía y no castiga a quien va mal.
+* Progresión con experiencia, siete rangos, quince logros, avatar personalizable con marcos
+  desbloqueables, reto del día determinista, desafíos con etiqueta compartible y modo
+  fantasma contra tu propio récord.
+* Ceremonia de resultados con tarjeta compartible generada en canvas, PWA instalable y
+  estados de error temáticos (404, 500 y sin conexión).
+
+### Lo que quedó fuera de Fase 2 (por orden de valor)
+
+1. **Ilustración propia** en los `placeholder` de `media` (hoy el marco existe y está vacío)
+   y música de fondo (hoy solo hay efectos y un ambiente muy suave).
+2. **Más familias**: emparejar, rellenar huecos, audio y imagen.
+3. **Recalibración del banco** con la analítica que ya se está guardando: `QuestionStat`
    acumula veces mostrada, tasa de acierto, tiempo medio, abandonos y dificultad estimada;
    `calibrationDrift()` ya señala las preguntas mal etiquetadas.
-6. **Cuentas opcionales** sobre el modelo `User`, sin romper la experiencia de invitado.
-7. **Persistencia de partida en curso en servidor** (hoy es `sessionStorage`), para retomar
+4. **Cuentas opcionales** sobre el modelo `User`, sin romper la experiencia de invitado.
+5. **Persistencia de partida en curso en servidor** (hoy es `sessionStorage`), para retomar
    desde otro dispositivo.
 
 ## Fase 3 — salas online y multijugador
@@ -75,5 +86,7 @@ El plan que la arquitectura ya soporta:
   inherente a tener el motor en el cliente en Fase 1; se resuelve en Fase 3.
 * `loadPlayableQuestions()` trae todo el banco activo a memoria. Perfecto con cientos de
   preguntas; con decenas de miles habría que muestrear en SQL (está anotado en el código).
-* Sin tests de componentes de React: la lógica está en el dominio (140 tests) y la interfaz
-  se ha verificado con navegador real. Fase 2, con animaciones, pedirá tests de UI.
+* Sin tests de componentes de React: la lógica está en el dominio (170 tests) y la interfaz
+  se ha verificado con navegador real (móvil y escritorio, desarrollo y producción).
+* La tarjeta compartible se dibuja con las tipografías del sistema, no con Anton: el canvas
+  no espera a `document.fonts`. Es un detalle visual, no funcional.

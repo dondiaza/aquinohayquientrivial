@@ -56,12 +56,14 @@ export function Papel({
   return <div className={`papel ${TILT_CLASS[tilt]} ${className}`}>{children}</div>;
 }
 
-export type PlacaTone = 'verde' | 'azul' | 'roja';
+export type PlacaTone = 'verde' | 'azul' | 'roja' | 'morada' | 'granate';
 
 const PLACA_TONE_CLASS: Record<PlacaTone, string> = {
   verde: '',
   azul: 'placa-azul',
   roja: 'placa-roja',
+  morada: 'placa-morada',
+  granate: 'placa-granate',
 };
 
 /** Placa de puerta atornillada: la usamos para títulos de sección. */

@@ -1,50 +1,94 @@
 import type { Metadata } from 'next';
 
+import { startDailyChallenge } from '@/app/jugar/actions';
 import { LinkButton } from '@/components/ui/Button';
-import { Nota, Papel, Placa } from '@/components/ui/Surfaces';
+import {
+  ApartmentPlaque,
+  DoorCard,
+  IntercomPanel,
+  PaperNotice,
+} from '@/components/portal/Estructuras';
 import { MODES } from '@/domain/copy/ui';
+import { claveDelDia, configuracionDelReto } from '@/domain/challenges/daily';
+import { ENGINE_EVENT_TYPES } from '@/domain/engine/engine-events';
 
 export const metadata: Metadata = { title: 'Elegir modo' };
 
-/** MODE_SELECT: dos modos, uno jugable hoy y otro reservado para Fase 3. */
+/** MODE_SELECT: las puertas del portal. Cada una es un modo de juego. */
 export default function ModeSelectPage() {
+  const reto = configuracionDelReto(claveDelDia(new Date()));
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">
-      <Placa className="px-5 py-5 pt-7">
-        <h1 className="text-3xl sm:text-4xl">{MODES.title}</h1>
-      </Placa>
+      <ApartmentPlaque vivienda="Planta baja" titulo={MODES.title} />
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        <Papel className="flex flex-col p-5">
-          <p className="texto-cartel text-2xl">{MODES.solo.title}</p>
-          <p className="mt-2 flex-1 text-sm text-tinta-suave">{MODES.solo.text}</p>
-          <div className="mt-4">
-            <LinkButton href="/jugar/solo" size="lg" className="w-full">
-              {MODES.solo.cta}
-            </LinkButton>
-          </div>
-        </Papel>
+      <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        <DoorCard
+          numero="1"
+          titulo={MODES.solo.title}
+          descripcion={MODES.solo.text}
+          href="/jugar/solo"
+        />
 
-        <Papel className="flex flex-col p-5">
-          <p className="texto-cartel text-2xl text-tinta-tenue">{MODES.party.title}</p>
-          <p className="mt-2 flex-1 text-sm text-tinta-suave">{MODES.party.text}</p>
-          <div className="mt-4">
-            <button type="button" className="btn btn-papel w-full" disabled aria-disabled>
-              {MODES.party.cta}
-            </button>
-          </div>
-          <Nota tone="azul" className="mt-3 p-3 text-xs">
-            Las rutas <code>/unirse</code>, <code>/sala/[code]</code> y <code>/host/[code]</code> ya
-            existen como reserva: el motor de juego no habrá que reescribirlo.
-          </Nota>
-        </Papel>
+        <DoorCard
+          numero="2"
+          titulo="Reto del día"
+          descripcion={reto.titular}
+          etiqueta={reto.seedLabel}
+          href="/reto"
+          tono="granate"
+        />
+
+        <DoorCard
+          numero="3"
+          titulo="Desafío compartido"
+          descripcion="Una etiqueta, dos personas, la misma partida"
+          href="/desafio"
+        />
+
+        <DoorCard
+          numero="4"
+          titulo="Tu ficha"
+          descripcion="Avatar, rango, logros y récords"
+          href="/perfil"
+        />
       </div>
 
-      <p className="mt-6">
+      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+        <IntercomPanel
+          titulo={MODES.party.title}
+          descripcion={MODES.party.text}
+          etiqueta={MODES.party.cta}
+          href="/unirse"
+        />
+
+        <PaperNotice tono="azul" className="p-3 text-xs">
+          <p className="texto-sello">Preparado para Fase 3</p>
+          <p className="mt-1 text-tinta-suave">
+            Las rutas <code>/unirse</code>, <code>/sala/[code]</code> y <code>/host/[code]</code> ya
+            existen, y el motor emite estos eventos tipados que viajarán por WebSocket:
+          </p>
+          <p className="mt-2 flex flex-wrap gap-1">
+            {ENGINE_EVENT_TYPES.slice(0, 6).map((tipo) => (
+              <span key={tipo} className="chip">
+                {tipo}
+              </span>
+            ))}
+            <span className="chip">…</span>
+          </p>
+        </PaperNotice>
+      </div>
+
+      <div className="mt-6 flex flex-wrap gap-2">
+        <form action={startDailyChallenge}>
+          <button type="submit" className="btn btn-rojo">
+            ▶ Jugar el reto de hoy
+          </button>
+        </form>
         <LinkButton href="/" tone="fantasma" size="sm">
           ← Volver al portal
         </LinkButton>
-      </p>
+      </div>
     </div>
   );
 }

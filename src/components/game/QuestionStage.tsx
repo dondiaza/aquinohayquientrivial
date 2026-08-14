@@ -1,20 +1,26 @@
 'use client';
 
 import { Chip, Sello } from '@/components/ui/Surfaces';
+import { RarityBadge } from '@/components/portal/Espectaculo';
 import { difficultyValueLabel } from '@/domain/difficulty/levels';
 import { questionTypeMeta } from '@/domain/questions/registry';
 import type { AnswerSubmission, Question, QuestionMedia } from '@/domain/questions/types';
+import type { RoundPresentation } from '@/domain/rounds/formats';
 import type { ActiveQuestion, RevealSummary } from '@/domain/engine/state';
 
+import { DecisionView } from './views/DecisionView';
 import { ImpostorView } from './views/ImpostorView';
+import { MemoryGridView } from './views/MemoryGridView';
+import { MissingItemView } from './views/MissingItemView';
 import { MultipleChoiceView, OptionGrid } from './views/MultipleChoiceView';
 import { OrderChaosView } from './views/OrderChaosView';
+import { SequenceView } from './views/SequenceView';
 import { TrueFalseView } from './views/TrueFalseView';
 import { WhoIsItView } from './views/WhoIsItView';
 
 /**
- * Hueco reservado para un asset propio. En Fase 1 no se usa material protegido de
- * terceros: si una pregunta declara media, se muestra este marco sustituible.
+ * Hueco reservado para un asset propio. No se usa material protegido de terceros: si una
+ * pregunta declara media, se muestra este marco sustituible hasta que exista el asset.
  */
 function MediaPlaceholder({ media }: { media: QuestionMedia }) {
   if (media.src) {
@@ -52,6 +58,8 @@ export function QuestionStage({
   phase,
   reveal,
   submitted,
+  studyRemainingMs = 0,
+  presentation,
   onSubmit,
   onRevealClue,
 }: {
@@ -59,13 +67,24 @@ export function QuestionStage({
   phase: 'QUESTION' | 'ANSWER_LOCKED' | 'REVEAL' | 'FINAL_ROUND';
   reveal?: RevealSummary | undefined;
   submitted?: AnswerSubmission | undefined;
+  studyRemainingMs?: number;
+  presentation?: RoundPresentation;
   onSubmit: (submission: AnswerSubmission) => void;
   onRevealClue?: (() => void) | undefined;
 }) {
   const question: Question = active.question;
   const meta = questionTypeMeta(question.type);
   const locked = phase !== 'QUESTION';
-  const viewProps = { active, locked, reveal, submitted, onSubmit, onRevealClue };
+  const viewProps = {
+    active,
+    locked,
+    reveal,
+    submitted,
+    studyRemainingMs,
+    presentation,
+    onSubmit,
+    onRevealClue,
+  };
 
   const answerArea = (() => {
     switch (question.type) {
@@ -81,8 +100,19 @@ export function QuestionStage({
         return <OrderChaosView question={question} {...viewProps} />;
       case 'FINAL_BET':
         return <OptionGrid question={question} {...viewProps} />;
+      case 'MEMORY_GRID':
+        return <MemoryGridView question={question} {...viewProps} />;
+      case 'MISSING_ITEM':
+        return <MissingItemView question={question} {...viewProps} />;
+      case 'DECISION':
+        return <DecisionView question={question} {...viewProps} />;
+      case 'SEQUENCE':
+        return <SequenceView question={question} {...viewProps} />;
     }
   })();
+
+  // En memoria y secuencia el enunciado se lee ANTES; en el resto acompaña siempre.
+  const ocultarEnunciado = meta.hasStudyPhase && studyRemainingMs <= 0;
 
   return (
     <div className="space-y-4">
@@ -94,21 +124,32 @@ export function QuestionStage({
           {difficultyValueLabel(question.difficulty)}
         </Chip>
         {active.modifiers.map((modifier) => (
-          <Chip key={modifier.id} className="border-rojo-buzon text-rojo-buzon">
+          <RarityBadge key={modifier.id} rareza={modifier.multiplier >= 1.5 ? 'raro' : 'curioso'}>
             {modifier.label} ×{modifier.multiplier}
-          </Chip>
+          </RarityBadge>
         ))}
         {active.wager > 0 ? (
           <Chip className="border-morado-junta text-morado-junta">Apostados {active.wager}</Chip>
         ) : null}
+        {active.riskMode ? (
+          <Chip className="border-rojo-buzon text-rojo-buzon">A oscuras</Chip>
+        ) : null}
+        {active.powerUpsBlocked ? <Chip>Sin comodines</Chip> : null}
         {!question.verified ? <Sello>Demo</Sello> : <Sello tone="ok">Verificada</Sello>}
       </div>
 
-      <h2 className="text-2xl leading-tight normal-case sm:text-3xl" style={{ fontFamily: 'var(--font-cuerpo)' }}>
-        {question.prompt}
-      </h2>
+      {!ocultarEnunciado ? (
+        <h2
+          className="anim-aparecer text-[clamp(1.25rem,5.5vw,2rem)] leading-tight normal-case"
+          style={{ fontFamily: 'var(--font-cuerpo)', fontWeight: 600 }}
+        >
+          {question.prompt}
+        </h2>
+      ) : null}
 
-      <p className="texto-sello text-tinta-tenue">{meta.instruction}</p>
+      {!meta.hasStudyPhase ? (
+        <p className="texto-sello text-tinta-tenue">{meta.instruction}</p>
+      ) : null}
 
       {question.media ? <MediaPlaceholder media={question.media} /> : null}
 

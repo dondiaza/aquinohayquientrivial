@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { applyAction, createGameState, type EngineDeps } from './machine';
 import { GAME_EVENTS } from '../events/game-events';
 import { getGameFormat, totalQuestions } from '../rounds/formats';
-import { EXTRA_TIME_SECONDS } from '../powerups/powerups';
+import { EXTRA_TIME_SECONDS, POWER_UPS } from '../powerups/powerups';
 import {
   correctSubmissionFor,
   makeConfig,
@@ -139,7 +139,9 @@ describe('comodines', () => {
       deps,
     );
     expect(result.state.currentQuestion?.timeLimitSeconds).toBe(before + EXTRA_TIME_SECONDS);
-    expect(result.state.inventory.UN_POQUITO_DE_POR_FAVOR).toBe(1);
+    expect(result.state.inventory.UN_POQUITO_DE_POR_FAVOR).toBe(
+      POWER_UPS.UN_POQUITO_DE_POR_FAVOR.defaultCharges - 1,
+    );
     expect(result.state.currentQuestion?.powerUpsUsed).toEqual(['UN_POQUITO_DE_POR_FAVOR']);
     expect(result.events.at(-1)?.type).toBe('POWERUP_USED');
   });

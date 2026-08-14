@@ -69,6 +69,8 @@ export const finishGameRequestSchema = z.object({
   totalScore: z.number().int().min(0).max(10000000),
   bestStreak: z.number().int().min(0).max(500),
   startedAt: z.number().int().min(0).optional(),
+  /** Puntuación acumulada tras cada pregunta: alimenta el modo fantasma. */
+  scoreTrail: z.array(z.number().int().min(0).max(10000000)).max(200).default([]),
   events: z.array(engineEventEnvelopeSchema).max(40).default([]),
 });
 

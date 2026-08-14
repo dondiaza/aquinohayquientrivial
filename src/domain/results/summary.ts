@@ -3,11 +3,16 @@
  *
  * Función pura: entra el estado, sale el resumen. Se guarda tal cual en `Game.summary`
  * y es lo que pinta /resultados/[gameId] sin recalcular nada.
+ *
+ * Fase 2 añade lo que necesita la ceremonia de resultados (§33): categoría favorita y
+ * la más difícil, velocidad, curva de puntuación para el modo fantasma y la experiencia
+ * ganada.
  */
 
 import { performanceIndex, rankForIndex } from '../ranks/ranks';
 import { POWER_UP_IDS, type PowerUpId } from '../powerups/powerups';
 import { QUESTION_TYPES, type QuestionType } from '../questions/types';
+import { xpForGame } from '../progression/progression';
 import type { AnsweredQuestion, RoundProgress } from '../engine/state';
 
 export type TypeBreakdown = {
@@ -15,6 +20,13 @@ export type TypeBreakdown = {
   asked: number;
   correct: number;
   points: number;
+};
+
+export type CategoryBreakdown = {
+  category: string;
+  asked: number;
+  correct: number;
+  accuracyPercent: number;
 };
 
 export type GameSummary = {
@@ -29,10 +41,12 @@ export type GameSummary = {
   accuracyPercent: number;
   bestStreak: number;
   averageResponseMs: number;
+  /** La respuesta correcta más rápida de la partida. */
+  fastestCorrectMs: number | null;
   averageDifficulty: number;
   /** Puntos que vinieron de bonus (tiempo + racha), no del acierto base. */
   bonusPoints: number;
-  /** Saldo neto de la apuesta final. */
+  /** Saldo neto de las apuestas. */
   wagerDelta: number;
   powerUpsUsed: Record<PowerUpId, number>;
   totalPowerUpsUsed: number;
@@ -46,6 +60,16 @@ export type GameSummary = {
   rankId: string;
   rounds: RoundProgress[];
   byType: TypeBreakdown[];
+  byCategory: CategoryBreakdown[];
+  /** Categoría con mejor y peor acierto (mínimo 2 preguntas para contar). */
+  favouriteCategory: string | null;
+  hardestCategory: string | null;
+  /** Puntuación acumulada tras cada pregunta (modo fantasma y gráficas). */
+  scoreTrail: number[];
+  /** Familias de prueba distintas jugadas. */
+  distinctTypes: number;
+  /** Experiencia ganada con esta partida. */
+  xpEarned: number;
   durationMs: number;
 };
 
@@ -61,6 +85,8 @@ export function buildSummary(input: {
   bestStreak: number;
   startedAt?: number;
   finishedAt: number;
+  scoreTrail?: readonly number[];
+  esRetoDiario?: boolean;
 }): GameSummary {
   const answers = [...input.answers];
   const answered = answers.filter((answer) => answer.answered);
@@ -85,6 +111,26 @@ export function buildSummary(input: {
     };
   }).filter((entry) => entry.asked > 0);
 
+  const categorias = [...new Set(answers.map((answer) => answer.category))];
+  const byCategory: CategoryBreakdown[] = categorias
+    .map((category) => {
+      const forCategory = answers.filter((answer) => answer.category === category);
+      const aciertos = forCategory.filter((answer) => answer.correct).length;
+      return {
+        category,
+        asked: forCategory.length,
+        correct: aciertos,
+        accuracyPercent:
+          forCategory.length === 0 ? 0 : Math.round((aciertos / forCategory.length) * 1000) / 10,
+      };
+    })
+    .sort((a, b) => b.accuracyPercent - a.accuracyPercent);
+
+  const conMuestra = byCategory.filter((entry) => entry.asked >= 2);
+  const favourite = conMuestra[0]?.accuracyPercent ? (conMuestra[0]?.category ?? null) : null;
+  const hardest =
+    conMuestra.length > 1 ? (conMuestra[conMuestra.length - 1]?.category ?? null) : null;
+
   const maxPossibleScore = answers.reduce((sum, answer) => sum + answer.maxPoints, 0);
   const index = performanceIndex({
     correctAnswers: correct.length,
@@ -94,6 +140,10 @@ export function buildSummary(input: {
   });
   const rank = rankForIndex(index);
 
+  const tiemposCorrectos = correct.filter((answer) => answer.answered).map((answer) => answer.responseMs);
+  const accuracyRatio = answers.length === 0 ? 0 : correct.length / answers.length;
+  const averageDifficulty = Math.round(average(answers.map((answer) => answer.difficulty)) * 10) / 10;
+
   return {
     totalScore: input.totalScore,
     totalQuestions: answers.length,
@@ -101,11 +151,11 @@ export function buildSummary(input: {
     correctAnswers: correct.length,
     wrongAnswers: answered.length - correct.length,
     timeouts: timeouts.length,
-    accuracyPercent:
-      answers.length === 0 ? 0 : Math.round((correct.length / answers.length) * 1000) / 10,
+    accuracyPercent: Math.round(accuracyRatio * 1000) / 10,
     bestStreak: input.bestStreak,
     averageResponseMs: Math.round(average(answered.map((answer) => answer.responseMs))),
-    averageDifficulty: Math.round(average(answers.map((answer) => answer.difficulty)) * 10) / 10,
+    fastestCorrectMs: tiemposCorrectos.length > 0 ? Math.min(...tiemposCorrectos) : null,
+    averageDifficulty,
     bonusPoints: answers.reduce((sum, answer) => sum + answer.timeBonus + answer.streakBonus, 0),
     wagerDelta: answers.reduce(
       (sum, answer) => sum + (answer.wager > 0 ? (answer.correct ? answer.wager : -answer.wager) : 0),
@@ -118,6 +168,21 @@ export function buildSummary(input: {
     rankId: rank.id,
     rounds: [...input.rounds],
     byType,
+    byCategory,
+    favouriteCategory: favourite,
+    hardestCategory: hardest,
+    scoreTrail: [...(input.scoreTrail ?? [])],
+    distinctTypes: byType.length,
+    xpEarned: xpForGame({
+      correctAnswers: correct.length,
+      totalQuestions: answers.length,
+      accuracyRatio,
+      averageDifficulty,
+      bestStreak: input.bestStreak,
+      distinctTypes: byType.length,
+      finished: true,
+      ...(input.esRetoDiario ? { esRetoDiario: true } : {}),
+    }),
     durationMs: input.startedAt ? Math.max(0, input.finishedAt - input.startedAt) : 0,
   };
 }

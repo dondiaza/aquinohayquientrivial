@@ -1,26 +1,40 @@
 import { LinkButton } from '@/components/ui/Button';
-import { Nota, Placa } from '@/components/ui/Surfaces';
+import { ApartmentPlaque, DoorCard, PaperNotice } from '@/components/portal/Estructuras';
 
+/** 404 — «puerta equivocada»: primero se explica qué ha pasado, después el chiste. */
 export default function NotFound() {
   return (
-    <div className="mx-auto max-w-xl px-4 py-16 text-center">
-      <Placa tone="roja" className="px-5 py-6 pt-8">
-        <h1 className="text-3xl sm:text-4xl">Aquí no vive nadie</h1>
-      </Placa>
-      <Nota tone="papel" className="mt-4 p-4 text-left">
+    <div className="mx-auto max-w-2xl px-4 py-12">
+      <ApartmentPlaque
+        vivienda="Error 404"
+        titulo="Puerta equivocada"
+        subtitulo="Esta página no existe"
+        tono="roja"
+      />
+
+      <PaperNotice tono="papel" giro="izq" sujecion="cinta" className="mt-4 p-4">
         <p className="text-sm text-tinta-suave">
-          Has llamado a una puerta que no existe. Puede que la partida se haya cerrado o que el
-          enlace esté mal copiado.
+          Has llamado a una puerta que no está en el portal. Puede que la partida se haya cerrado,
+          que el enlace esté mal copiado o que esa sección todavía no exista.
         </p>
-      </Nota>
-      <div className="mt-5 flex flex-wrap justify-center gap-2">
-        <LinkButton href="/" tone="verde">
-          Volver al portal
-        </LinkButton>
-        <LinkButton href="/jugar/solo" tone="papel">
-          Jugar una partida
-        </LinkButton>
+      </PaperNotice>
+
+      <div className="mt-5 grid gap-3 sm:grid-cols-2">
+        <DoorCard numero="1" titulo="Volver al portal" descripcion="La portada" href="/" />
+        <DoorCard
+          numero="2"
+          titulo="Jugar una partida"
+          descripcion="Directo al setup"
+          href="/jugar/solo"
+          tono="granate"
+        />
       </div>
+
+      <p className="mt-5">
+        <LinkButton href="/como-jugar" tone="fantasma" size="sm">
+          Cómo jugar
+        </LinkButton>
+      </p>
     </div>
   );
 }

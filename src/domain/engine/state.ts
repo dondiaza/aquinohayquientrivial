@@ -40,6 +40,9 @@ export type GamePhase = (typeof GAME_PHASES)[number];
 
 export type GameMode = 'SOLO' | 'PARTY';
 
+/** De dónde viene la partida: normal, reto del día o desafío con semilla compartida. */
+export type GameOrigin = 'LIBRE' | 'RETO_DIARIO' | 'DESAFIO';
+
 export type GameConfig = {
   mode: GameMode;
   formatId: string;
@@ -49,6 +52,19 @@ export type GameConfig = {
   playerName?: string;
   /** Semilla del RNG. La misma semilla + mismo banco = misma partida. */
   seed: string;
+  origin?: GameOrigin;
+  /** Etiqueta legible del desafío, tipo «#21DESENGAÑO». */
+  seedLabel?: string;
+  /** Día del reto (YYYY-MM-DD) si es el reto diario. */
+  dailyKey?: string;
+};
+
+/** Marca de una partida anterior con la que compararse (modo fantasma). */
+export type GhostRun = {
+  label: string;
+  /** Puntuación acumulada tras cada pregunta. */
+  trail: number[];
+  totalScore: number;
 };
 
 /** La pregunta en juego, con todo lo que la partida le ha hecho encima. */
@@ -56,19 +72,32 @@ export type ActiveQuestion = {
   question: Question;
   roundId: string;
   indexInGame: number;
-  /** Tiempo efectivo tras aplicar nivel, ronda, evento y power-ups. */
+  /** Tiempo efectivo tras aplicar nivel, ronda, suceso y power-ups. */
   timeLimitSeconds: number;
   /** Orden en el que la UI presenta opciones/pasos (ids). */
   optionOrder: string[];
-  /** Multiplicadores activos (ronda + evento). */
+  /** Multiplicadores activos (ronda + suceso + comodines). */
   modifiers: ScoreModifier[];
   eliminatedOptionIds: string[];
   cluesRevealed: number;
   powerUpsUsed: PowerUpId[];
   wager: number;
+  /** Fracción del apostado protegida por FONDO DE RESERVA. */
+  wagerProtection: number;
+  /** SE HA IDO LA LUZ: se responde sin ver los textos. */
+  riskMode: boolean;
   eventId?: GameEventId;
+  /** El suceso activo impide usar comodines. */
+  powerUpsBlocked: boolean;
+  /** El suceso activo anula el bonus por tiempo. */
+  timeBonusDisabled: boolean;
   /** Epoch ms en que empezó a contar el tiempo. */
   startedAt: number;
+  /**
+   * Epoch ms hasta el que hay fase de estudio (memoria / secuencia). El tiempo de
+   * respuesta empieza a contar DESPUÉS.
+   */
+  studyUntil: number;
 };
 
 export type PendingSubmission = {
@@ -84,7 +113,7 @@ export type RevealSummary = {
   submitted: AnswerSubmission;
   grade: Grade;
   breakdown: ScoreBreakdown;
-  /** Penalización del evento (ascensor averiado), en negativo. */
+  /** Penalización del suceso (ascensor averiado), en negativo. */
   eventPenalty: number;
   /** Puntos de celebración por hito de racha. */
   milestoneBonus: number;
@@ -102,6 +131,8 @@ export type RevealSummary = {
   line: string;
   adaptiveDelta: number;
   cluesRevealed: number;
+  /** Nivel de combo alcanzado (0-4), para la intensidad de los efectos. */
+  comboLevel: number;
 };
 
 export type AnsweredQuestion = {
@@ -110,6 +141,7 @@ export type AnsweredQuestion = {
   indexInGame: number;
   type: QuestionType;
   difficulty: number;
+  category: string;
   answered: boolean;
   correct: boolean;
   accuracy: number;
@@ -131,11 +163,14 @@ export type RoundProgress = {
   roundId: string;
   roundIndex: number;
   title: string;
-  subtitle: string;
   questionCount: number;
   answered: number;
   correct: number;
   points: number;
+  /** Plantas subidas en el minijuego del ascensor (aciertos seguidos en la ronda). */
+  floor: number;
+  /** El ascensor se ha parado por un fallo. */
+  stalled: boolean;
 };
 
 export type GameState = {
@@ -157,6 +192,12 @@ export type GameState = {
   rounds: RoundProgress[];
   answers: AnsweredQuestion[];
   summary?: GameSummary;
+  /** Puntuación acumulada tras cada pregunta (para el modo fantasma y las gráficas). */
+  scoreTrail: number[];
+  /** Sucesos ya vistos: el director evita repetirlos. */
+  seenEvents: GameEventId[];
+  /** Preguntas desde el último suceso (enfriamiento del director). */
+  questionsSinceEvent: number;
   /** Cursor del RNG: hace reproducible la partida y serializable el azar. */
   rngCursor: number;
   /** Secuencia del último evento emitido. */
@@ -173,4 +214,24 @@ export function isPlayablePhase(phase: GamePhase): boolean {
 
 export function isTerminalPhase(phase: GamePhase): boolean {
   return phase === 'GAME_RESULTS';
+}
+
+/**
+ * Nivel de combo (0-4) según la racha. Escala la intensidad de los efectos: 2 racha,
+ * 3 destacada, 5 modo caliente, 8 momento extraordinario (§18).
+ */
+export function comboLevel(streak: number): number {
+  if (streak >= 8) return 4;
+  if (streak >= 5) return 3;
+  if (streak >= 3) return 2;
+  if (streak >= 2) return 1;
+  return 0;
+}
+
+/** Tasa de acierto de las últimas `ventana` respuestas (para el director). */
+export function recentAccuracy(answers: readonly AnsweredQuestion[], ventana = 5): number {
+  if (answers.length === 0) return 1;
+  const ultimas = answers.slice(-ventana);
+  const aciertos = ultimas.filter((answer) => answer.correct).length;
+  return aciertos / ultimas.length;
 }

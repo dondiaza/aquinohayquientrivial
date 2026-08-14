@@ -2,15 +2,29 @@
 
 import { useEffect } from 'react';
 
-import { AnswerButton, type AnswerState } from '../AnswerButton';
-import { inPresentationOrder, letterFor, type QuestionViewProps } from './types';
-import type { MultipleChoiceQuestion, FinalBetQuestion, WhoIsItQuestion } from '@/domain/questions/types';
+import { PortalIcon } from '@/components/portal/icons';
 
-type OptionQuestion = MultipleChoiceQuestion | WhoIsItQuestion | FinalBetQuestion;
+import { AnswerButton, type AnswerState } from '../AnswerButton';
+import { inPresentationOrder, letterFor, TEXTO_A_OSCURAS, type QuestionViewProps } from './types';
+import type {
+  FinalBetQuestion,
+  MemoryGridQuestion,
+  MissingItemQuestion,
+  MultipleChoiceQuestion,
+  WhoIsItQuestion,
+} from '@/domain/questions/types';
+
+type OptionQuestion =
+  | MultipleChoiceQuestion
+  | WhoIsItQuestion
+  | FinalBetQuestion
+  | MemoryGridQuestion
+  | MissingItemQuestion;
 
 /**
- * Vista compartida por los tipos que se responden eligiendo una opción
- * (elección múltiple, ¿quién es? y apuesta final). Incluye atajos de teclado 1-4.
+ * Vista compartida por los tipos que se responden eligiendo una opción.
+ * Incluye atajos de teclado 1-4 y el modo «se ha ido la luz», que oculta los textos
+ * pero mantiene la información accesible para lectores de pantalla.
  */
 export function OptionGrid({
   question,
@@ -22,6 +36,7 @@ export function OptionGrid({
 }: QuestionViewProps<OptionQuestion>) {
   const options = inPresentationOrder(question.options, active.optionOrder);
   const chosenId = submitted?.kind === 'OPTION' ? submitted.optionId : undefined;
+  const aOscuras = active.riskMode && !reveal;
 
   useEffect(() => {
     if (locked) return;
@@ -56,7 +71,17 @@ export function OptionGrid({
           shortcut={`${index + 1}`}
           onClick={() => onSubmit({ kind: 'OPTION', optionId: option.id })}
         >
-          {option.text}
+          <span className="flex items-center gap-2">
+            {option.icon && !aOscuras ? <PortalIcon id={option.icon} tamano={26} /> : null}
+            <span aria-hidden={aOscuras ? true : undefined}>
+              {aOscuras ? TEXTO_A_OSCURAS : option.text}
+            </span>
+            {aOscuras ? (
+              <span className="sr-only">
+                Opción {letterFor(index)}: texto oculto porque se ha ido la luz
+              </span>
+            ) : null}
+          </span>
         </AnswerButton>
       ))}
     </div>

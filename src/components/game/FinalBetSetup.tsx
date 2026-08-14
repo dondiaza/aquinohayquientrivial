@@ -19,10 +19,13 @@ const QUICK_FRACTIONS = [0.25, 0.5, 1] as const;
 export function FinalBetSetup({
   active,
   score,
+  esFinal = true,
   onPlaceBet,
 }: {
   active: ActiveQuestion;
   score: number;
+  /** true en «presidente por un día»; false en la derrama intermedia. */
+  esFinal?: boolean;
   onPlaceBet: (wager: number) => void;
 }) {
   const ratio = active.question.type === 'FINAL_BET' ? active.question.maxWagerRatio : 0.5;
@@ -31,11 +34,16 @@ export function FinalBetSetup({
 
   return (
     <div className="space-y-4">
-      <Placa tone="roja" className="px-5 py-5 pt-7 text-center">
+      <Placa tone={esFinal ? 'roja' : 'morada'} className="px-5 py-5 pt-7 text-center">
         <p aria-hidden className="text-4xl">
-          🎲
+          {esFinal ? '🏛️' : '💸'}
         </p>
-        <h2 className="mt-1 text-3xl sm:text-4xl">{GAME.betTitle}</h2>
+        <h2 className="mt-1 text-3xl sm:text-4xl">
+          {esFinal ? 'Presidente por un día' : 'La derrama'}
+        </h2>
+        <p className="texto-sello mt-2 normal-case">
+          {esFinal ? GAME.betTitle : 'Apuesta antes de ver la pregunta'}
+        </p>
       </Placa>
 
       <Nota tone="papel" className="p-4">

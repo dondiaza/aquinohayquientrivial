@@ -190,7 +190,13 @@ export function correctSubmissionFor(question: Question): AnswerSubmission {
     case 'MULTIPLE_CHOICE':
     case 'WHO_IS_IT':
     case 'FINAL_BET':
+    case 'MEMORY_GRID':
+    case 'MISSING_ITEM':
       return { kind: 'OPTION', optionId: question.correctOptionId };
+    case 'DECISION':
+      return { kind: 'OPTION', optionId: question.bestOptionId };
+    case 'SEQUENCE':
+      return { kind: 'ORDER', orderedIds: [...question.sequence] };
     case 'TRUE_FALSE':
       return { kind: 'BOOLEAN', value: question.correctValue };
     case 'IMPOSTOR':
@@ -205,10 +211,18 @@ export function wrongSubmissionFor(question: Question): AnswerSubmission {
   switch (question.type) {
     case 'MULTIPLE_CHOICE':
     case 'WHO_IS_IT':
-    case 'FINAL_BET': {
+    case 'FINAL_BET':
+    case 'MEMORY_GRID':
+    case 'MISSING_ITEM': {
       const wrong = question.options.find((option) => option.id !== question.correctOptionId);
       return { kind: 'OPTION', optionId: wrong?.id ?? 'zzz' };
     }
+    case 'DECISION': {
+      const peor = [...question.options].sort((a, b) => a.weight - b.weight)[0];
+      return { kind: 'OPTION', optionId: peor?.id ?? 'zzz' };
+    }
+    case 'SEQUENCE':
+      return { kind: 'ORDER', orderedIds: [...question.sequence].reverse() };
     case 'TRUE_FALSE':
       return { kind: 'BOOLEAN', value: !question.correctValue };
     case 'IMPOSTOR': {

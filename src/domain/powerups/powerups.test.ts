@@ -9,6 +9,8 @@ import {
   createInventory,
   getPowerUp,
   spendCharge,
+  POWER_UP_LIST,
+  type PowerUpId,
 } from './powerups';
 import {
   makeImpostor,
@@ -24,13 +26,19 @@ const contextFor = (question: Question, eliminated: string[] = []) => ({
   question,
   eliminatedOptionIds: eliminated,
   answerLocked: false,
+  usedThisQuestion: [] as PowerUpId[],
+  cluesRevealed: 0,
 });
 
 describe('inventario', () => {
   it('arranca con las cargas por defecto de cada power-up', () => {
     const inventory = createInventory();
-    expect(chargesOf(inventory, 'UN_POQUITO_DE_POR_FAVOR')).toBe(2);
-    expect(chargesOf(inventory, 'RADIO_PATIO')).toBe(2);
+    for (const definicion of POWER_UP_LIST) {
+      expect(chargesOf(inventory, definicion.id)).toBe(definicion.defaultCharges);
+    }
+    // Los raros vienen con una sola carga; los comunes, con varias.
+    expect(chargesOf(inventory, 'UN_POQUITO_DE_POR_FAVOR')).toBeGreaterThan(1);
+    expect(chargesOf(inventory, 'CAMBIO_DE_PRESIDENTE')).toBe(1);
   });
 
   it('acepta cargas personalizadas', () => {

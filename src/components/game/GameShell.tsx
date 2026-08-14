@@ -5,12 +5,22 @@ import { useRouter } from 'next/navigation';
 
 import { Aviso, Cargando, ErrorNote } from '@/components/ui/Feedback';
 import { Papel } from '@/components/ui/Surfaces';
+import {
+  EventOverlay,
+  FloatingPoints,
+  GossipTicker,
+  ReactionBurst,
+} from '@/components/portal/Espectaculo';
 import { GAME } from '@/domain/copy/ui';
+import { RUMORES_TICKER, anunciar } from '@/domain/copy/announcer';
 import { applyAction, createGameState, type EngineDeps } from '@/domain/engine/machine';
 import { toEnvelope, type EngineEvent } from '@/domain/engine/engine-events';
 import { getGameFormat } from '@/domain/rounds/formats';
+import { createRng } from '@/domain/rng';
+import { useAudio } from '@/lib/audio/AudioProvider';
+import { DUR, REVEAL, VIBRACION, useReducedMotion, vibrar } from '@/lib/motion';
 import type { GameAction, GameActionInput } from '@/domain/engine/actions';
-import type { GameConfig, GameState } from '@/domain/engine/state';
+import type { GameConfig, GameState, GhostRun } from '@/domain/engine/state';
 import type { AnswerSubmission, Question } from '@/domain/questions/types';
 import type { PowerUpId } from '@/domain/powerups/powerups';
 
@@ -22,11 +32,7 @@ import { QuestionStage } from './QuestionStage';
 import { RevealPanel } from './RevealPanel';
 import { TimeBar } from './TimeBar';
 
-/** Tiempo que se muestra el "respuesta registrada" antes de revelar. */
-const LOCK_TO_REVEAL_MS = 550;
-/** Auto-avance del revelado (el botón siempre está disponible para ir antes). */
-const REVEAL_AUTO_SECONDS = 7;
-const STORAGE_VERSION = 2;
+const STORAGE_VERSION = 3;
 
 type StoredGame = { v: number; gameId: string; state: GameState };
 
@@ -36,7 +42,8 @@ type StoredGame = { v: number; gameId: string; state: GameState };
  * Aquí NO hay reglas de juego: todas las decisiones las toma `applyAction` (dominio
  * puro). Este componente se limita a:
  *   · despachar acciones con la hora actual,
- *   · llevar temporizadores y auto-avances,
+ *   · llevar temporizadores, fases de estudio y auto-avances,
+ *   · traducir los eventos del motor en sonido, vibración y efectos,
  *   · guardar la partida en sessionStorage (recargar no la pierde),
  *   · sincronizar con el servidor (registro de respuestas y cierre).
  *
@@ -47,12 +54,16 @@ export function GameShell({
   gameId,
   config,
   pool,
+  ghost,
 }: {
   gameId: string;
   config: GameConfig;
   pool: Question[];
+  ghost?: GhostRun | undefined;
 }) {
   const router = useRouter();
+  const { sonar } = useAudio();
+  const reducido = useReducedMotion();
   const deps = useMemo<EngineDeps>(() => ({ pool }), [pool]);
   const storageKey = `ahqv:partida:${gameId}`;
 
@@ -63,10 +74,14 @@ export function GameShell({
   const [closing, setClosing] = useState<'idle' | 'saving' | 'error'>('idle');
   const [now, setNow] = useState(() => Date.now());
   const [revealSecondsLeft, setRevealSecondsLeft] = useState(0);
+  const [burst, setBurst] = useState<{ clave: number; intensidad: number; tono: 'verde' | 'mostaza' | 'rojo' } | null>(
+    null,
+  );
 
   const postedRef = useRef<Set<string>>(new Set());
   const finishRef = useRef(false);
   const timeUpRef = useRef(-1);
+  const ticRef = useRef(-1);
 
   // ── Sincronización con el servidor ────────────────────────────────────────────
 
@@ -106,6 +121,7 @@ export function GameShell({
             totalScore: next.score,
             bestStreak: next.streak.best,
             startedAt: next.startedAt,
+            scoreTrail: next.scoreTrail,
             events: events.map(toEnvelope),
           }),
         });
@@ -116,7 +132,7 @@ export function GameShell({
         try {
           sessionStorage.removeItem(storageKey);
         } catch {
-          /* almacenamiento no disponible: da igual, la partida ya está cerrada */
+          /* almacenamiento no disponible: la partida ya está cerrada */
         }
         router.replace(`/resultados/${gameId}`);
       } catch {
@@ -124,6 +140,75 @@ export function GameShell({
       }
     },
     [gameId, router, storageKey],
+  );
+
+  // ── Traducción de eventos del motor a sensaciones ────────────────────────────
+
+  const reaccionar = useCallback(
+    (next: GameState, events: EngineEvent[]) => {
+      for (const evento of events) {
+        switch (evento.type) {
+          case 'ANSWER_SUBMITTED':
+            sonar('seleccion');
+            break;
+          case 'CLUE_REVEALED':
+            sonar('papel');
+            break;
+          case 'BET_PLACED':
+            sonar('sello');
+            break;
+          case 'POWERUP_USED':
+            sonar('comodin');
+            vibrar(VIBRACION.toque);
+            break;
+          case 'EVENT_TRIGGERED':
+            sonar('evento');
+            vibrar(VIBRACION.evento);
+            break;
+          case 'ROUND_STARTED':
+            sonar('ronda');
+            break;
+          case 'QUESTION_STARTED':
+            sonar('papel');
+            break;
+          case 'ANSWER_REVEALED': {
+            const reveal = next.lastReveal;
+            const intensidad = Math.max(1, reveal?.comboLevel ?? 1);
+            if (evento.correct) {
+              sonar('acierto');
+              if ((reveal?.comboLevel ?? 0) >= 2) sonar('combo', intensidad);
+              if (reveal?.milestoneBonus) sonar('bonus');
+              vibrar(VIBRACION.acierto);
+              setBurst({ clave: Date.now(), intensidad, tono: intensidad >= 3 ? 'mostaza' : 'verde' });
+            } else if (reveal?.timedOut) {
+              sonar('tiempo');
+              vibrar(VIBRACION.fallo);
+            } else {
+              sonar(reveal && reveal.grade.accuracy > 0 ? 'parcial' : 'fallo');
+              vibrar(VIBRACION.fallo);
+              if (reveal && reveal.grade.accuracy === 0) {
+                setBurst({ clave: Date.now(), intensidad: 1, tono: 'rojo' });
+              }
+            }
+            // Ascensor: si la ronda lo usa y hemos subido planta, suena el «ding».
+            const ronda = next.rounds[next.roundIndex];
+            const definicion = getGameFormat(next.config.formatId).rounds[next.roundIndex];
+            if (definicion?.progressStyle === 'ascensor' && evento.correct && ronda) {
+              sonar('ascensor');
+            }
+            break;
+          }
+          case 'GAME_FINISHED': {
+            const indice = next.summary?.performanceIndex ?? 0;
+            sonar(indice >= 0.5 ? 'victoria' : 'derrota');
+            break;
+          }
+          default:
+            break;
+        }
+      }
+    },
+    [sonar],
   );
 
   // ── Despacho ─────────────────────────────────────────────────────────────────
@@ -135,6 +220,7 @@ export function GameShell({
 
       stateRef.current = result.state;
       setState(result.state);
+      reaccionar(result.state, result.events);
 
       if (result.events.some((event) => event.type === 'ANSWER_REVEALED')) {
         void postAnswer(result.state, result.events);
@@ -144,7 +230,7 @@ export function GameShell({
         void postFinish(result.state, result.events);
       }
     },
-    [deps, postAnswer, postFinish],
+    [deps, postAnswer, postFinish, reaccionar],
   );
 
   /** Despacha una acción poniéndole la hora actual: el motor nunca lee el reloj. */
@@ -187,31 +273,47 @@ export function GameShell({
 
   // ── Reloj ────────────────────────────────────────────────────────────────────
 
+  const active = state.currentQuestion;
+  const enEstudio = active ? Math.max(0, active.studyUntil - now) : 0;
+
   useEffect(() => {
-    if (state.phase !== 'QUESTION') return;
+    if (state.phase !== 'QUESTION' && state.phase !== 'FINAL_ROUND') return;
     setNow(Date.now());
-    const id = setInterval(() => setNow(Date.now()), 200);
+    const id = setInterval(() => setNow(Date.now()), 100);
     return () => clearInterval(id);
   }, [state.phase, state.questionIndex]);
 
-  const active = state.currentQuestion;
   const totalMs = active ? active.timeLimitSeconds * 1000 : 0;
+  const inicioEfectivo = active ? Math.max(active.startedAt, active.studyUntil) : 0;
   const remainingMs =
-    active && state.phase === 'QUESTION' ? Math.max(0, active.startedAt + totalMs - now) : totalMs;
+    active && state.phase === 'QUESTION'
+      ? Math.max(0, inicioEfectivo + totalMs - now)
+      : totalMs;
+
+  // Tensión del temporizador: un tic por segundo en los últimos tres.
+  useEffect(() => {
+    if (state.phase !== 'QUESTION' || enEstudio > 0) return;
+    const segundos = Math.ceil(remainingMs / 1000);
+    if (segundos > 3 || segundos <= 0) return;
+    if (ticRef.current === segundos) return;
+    ticRef.current = segundos;
+    sonar('tic');
+  }, [remainingMs, state.phase, enEstudio, sonar]);
 
   useEffect(() => {
     if (state.phase !== 'QUESTION' || !active) return;
+    if (enEstudio > 0) return;
     if (remainingMs > 0) return;
     if (timeUpRef.current === state.questionIndex) return;
     timeUpRef.current = state.questionIndex;
     act({ type: 'TIME_UP' });
-  }, [remainingMs, state.phase, state.questionIndex, active, act]);
+  }, [remainingMs, enEstudio, state.phase, state.questionIndex, active, act]);
 
   // ── Bloqueo → revelado ──────────────────────────────────────────────────────
 
   useEffect(() => {
     if (state.phase !== 'ANSWER_LOCKED') return;
-    const id = setTimeout(() => act({ type: 'REVEAL' }), LOCK_TO_REVEAL_MS);
+    const id = setTimeout(() => act({ type: 'REVEAL' }), REVEAL.pausaAntesDeMarcar);
     return () => clearTimeout(id);
   }, [state.phase, state.questionIndex, act]);
 
@@ -222,7 +324,7 @@ export function GameShell({
       setRevealSecondsLeft(0);
       return;
     }
-    let left = REVEAL_AUTO_SECONDS;
+    let left = REVEAL.autoAvanceSegundos;
     setRevealSecondsLeft(left);
     const id = setInterval(() => {
       left -= 1;
@@ -235,25 +337,35 @@ export function GameShell({
     return () => clearInterval(id);
   }, [state.phase, state.questionIndex, act]);
 
-  // ── Pistas automáticas de ¿QUIÉN ES? ────────────────────────────────────────
+  // ── Pistas automáticas de ¿QUIÉN ES? (salvo en la ronda de buzones) ─────────
+
+  const format = getGameFormat(state.config.formatId);
+  const roundDefinition = format.rounds[state.roundIndex];
 
   useEffect(() => {
     if (state.phase !== 'QUESTION' || !active) return;
     if (active.question.type !== 'WHO_IS_IT') return;
+    if (roundDefinition?.presentation === 'buzones') return;
     if (active.cluesRevealed >= active.question.clues.length) return;
     const id = setTimeout(
       () => act({ type: 'REVEAL_CLUE' }),
       active.question.clueIntervalSeconds * 1000,
     );
     return () => clearTimeout(id);
-  }, [state.phase, active, act]);
+  }, [state.phase, active, act, roundDefinition]);
+
+  // ── Limpieza de las chispas ─────────────────────────────────────────────────
+
+  useEffect(() => {
+    if (!burst) return;
+    const id = setTimeout(() => setBurst(null), DUR.dramatica + 200);
+    return () => clearTimeout(id);
+  }, [burst]);
 
   // ── Render ───────────────────────────────────────────────────────────────────
 
   if (!ready) return <Cargando />;
 
-  const format = getGameFormat(state.config.formatId);
-  const roundDefinition = format.rounds[state.roundIndex];
   const roundProgress = state.rounds[state.roundIndex];
   const isLastRound = state.roundIndex >= format.rounds.length - 1;
   const isLastQuestion =
@@ -268,11 +380,21 @@ export function GameShell({
       : null;
   const playingPhase = stagePhase !== null;
 
+  // Anuncio del presentador, determinista con la semilla y la pregunta.
+  const rollAnuncio = createRng(state.config.seed, 5000 + state.questionIndex).next();
+
   return (
     <div className="pb-10">
-      {playingPhase || state.phase === 'FINAL_ROUND' ? <Hud state={state} /> : null}
+      {playingPhase || state.phase === 'FINAL_ROUND' ? <Hud state={state} ghost={ghost} /> : null}
 
-      <div className="mx-auto max-w-3xl px-4 py-5">
+      {/* Radio Patio: rumores decorativos, nunca información de reglas */}
+      {playingPhase ? <GossipTicker mensajes={RUMORES_TICKER.slice(0, 5)} /> : null}
+
+      <div className="relative mx-auto max-w-3xl px-4 py-5">
+        {burst ? (
+          <ReactionBurst activo intensidad={burst.intensidad} tono={burst.tono} />
+        ) : null}
+
         {syncFailed ? (
           <Aviso className="mb-4">
             <strong>Aviso:</strong> {GAME.syncError}
@@ -292,18 +414,16 @@ export function GameShell({
             round={roundDefinition}
             roundIndex={state.roundIndex}
             totalRounds={format.rounds.length}
+            anuncio={anunciar('RONDA', rollAnuncio)}
             onStart={() => act({ type: 'NEXT' })}
           />
-        ) : null}
-
-        {state.phase === 'EVENT' && state.pendingEvent ? (
-          <EventCartela eventId={state.pendingEvent.id} onContinue={() => act({ type: 'NEXT' })} />
         ) : null}
 
         {state.phase === 'FINAL_ROUND' && active ? (
           <FinalBetSetup
             active={active}
             score={state.score}
+            esFinal={roundDefinition?.isFinal === true}
             onPlaceBet={(wager) => act({ type: 'PLACE_BET', wager })}
           />
         ) : null}
@@ -311,30 +431,39 @@ export function GameShell({
         {stagePhase && active ? (
           <div className="space-y-4">
             <TimeBar
-              remainingMs={remainingMs}
+              remainingMs={enEstudio > 0 ? totalMs : remainingMs}
               totalMs={totalMs}
-              paused={state.phase !== 'QUESTION'}
+              paused={state.phase !== 'QUESTION' || enEstudio > 0}
+              etiquetaPausa={enEstudio > 0 ? 'memoriza' : undefined}
             />
 
             {state.phase === 'ANSWER_LOCKED' ? (
               <p
-                className="texto-cartel border-2 border-tinta bg-azul-claro px-3 py-2 text-center text-white"
+                className="texto-cartel anim-aparecer-escala border-2 border-tinta bg-azul-claro px-3 py-2 text-center text-white"
                 role="status"
               >
                 ✓ {GAME.lockedNotice}
               </p>
             ) : null}
 
-            <QuestionStage
-              active={active}
-              phase={stagePhase}
-              reveal={state.phase === 'REVEAL' ? state.lastReveal : undefined}
-              submitted={state.pendingSubmission?.submission ?? state.lastReveal?.submitted}
-              onSubmit={onSubmit}
-              onRevealClue={() => act({ type: 'REVEAL_CLUE' })}
-            />
+            <div className="relative">
+              {state.phase === 'REVEAL' && state.lastReveal && !reducido ? (
+                <FloatingPoints puntos={state.lastReveal.netPoints} clave={state.questionIndex} />
+              ) : null}
 
-            {state.phase === 'QUESTION' ? (
+              <QuestionStage
+                active={active}
+                phase={stagePhase}
+                reveal={state.phase === 'REVEAL' ? state.lastReveal : undefined}
+                submitted={state.pendingSubmission?.submission ?? state.lastReveal?.submitted}
+                studyRemainingMs={state.phase === 'QUESTION' ? enEstudio : 0}
+                presentation={roundDefinition?.presentation}
+                onSubmit={onSubmit}
+                onRevealClue={() => act({ type: 'REVEAL_CLUE' })}
+              />
+            </div>
+
+            {state.phase === 'QUESTION' && enEstudio <= 0 ? (
               <PowerUpBar state={state} active={active} onUse={onUsePowerUp} />
             ) : null}
 
@@ -344,6 +473,16 @@ export function GameShell({
                 onNext={() => act({ type: 'NEXT' })}
                 secondsLeft={revealSecondsLeft}
                 isLast={isLastQuestion}
+                anuncio={anunciar(
+                  state.lastReveal.grade.isCorrect
+                    ? state.lastReveal.comboLevel >= 3
+                      ? 'COMBO_ALTO'
+                      : state.lastReveal.comboLevel >= 1
+                        ? 'COMBO'
+                        : 'ACIERTO'
+                    : 'FALLO',
+                  rollAnuncio,
+                )}
               />
             ) : null}
           </div>
@@ -398,6 +537,17 @@ export function GameShell({
           </p>
         ) : null}
       </div>
+
+      {/* Cartela de suceso a pantalla completa: es un momento, no una fila más */}
+      <EventOverlay abierto={state.phase === 'EVENT' && !!state.pendingEvent} etiqueta="Suceso del portal">
+        {state.pendingEvent ? (
+          <EventCartela
+            eventId={state.pendingEvent.id}
+            anuncio={anunciar('EVENTO', rollAnuncio)}
+            onContinue={() => act({ type: 'NEXT' })}
+          />
+        ) : null}
+      </EventOverlay>
     </div>
   );
 }

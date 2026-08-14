@@ -70,6 +70,16 @@ export type ScoreInput = {
   totalClues?: number;
   /** APUESTA FINAL: puntos apostados. */
   wager?: number;
+  /**
+   * Fracción del apostado que la comunidad cubre si se falla (power-up FONDO DE RESERVA).
+   * 0 = sin protección, 0.5 = te devuelven la mitad.
+   */
+  wagerProtection?: number;
+  /**
+   * Anula el bonus por tiempo (suceso OBRAS EN EL SEGUNDO: con ese ruido no hay prisa,
+   * pero la pregunta paga el doble).
+   */
+  disableTimeBonus?: boolean;
 };
 
 export type ScorePart = {
@@ -147,7 +157,8 @@ export function scoreAnswer(input: ScoreInput): ScoreBreakdown {
 
   const scored = accuracy > 0;
   const base = scored ? Math.round(input.basePoints * accuracy) : 0;
-  const time = scored ? timeBonus(input.responseMs, input.timeLimitSeconds) : 0;
+  const time =
+    scored && !input.disableTimeBonus ? timeBonus(input.responseMs, input.timeLimitSeconds) : 0;
   const streak = scored ? streakBonus(input.streakBefore) : 0;
 
   const difficultyFactor = difficultyMultiplier(input.difficulty);
@@ -158,7 +169,9 @@ export function scoreAnswer(input: ScoreInput): ScoreBreakdown {
     ? Math.round((base + time + streak) * difficultyFactor * clueFactor * modifierFactor)
     : 0;
 
-  const wagerDelta = wager === 0 ? 0 : input.isCorrect ? wager : -wager;
+  const proteccion = Math.max(0, Math.min(1, input.wagerProtection ?? 0));
+  const wagerDelta =
+    wager === 0 ? 0 : input.isCorrect ? wager : -Math.round(wager * (1 - proteccion));
 
   const parts: ScorePart[] = [];
   if (base > 0) parts.push({ label: accuracy < 1 ? 'Acierto parcial' : 'Acierto', points: base });

@@ -9,7 +9,10 @@
 import { questionInputSchema, type QuestionInput } from '@/domain/questions/schemas';
 import type { QuestionType } from '@/domain/questions/types';
 
+/** Las opciones fijas son siempre cuatro. */
 const LETTERS = ['a', 'b', 'c', 'd'] as const;
+/** Listas variables (objetos, decisiones, botones): hasta nueve elementos. */
+const LETTERS_EXT = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'] as const;
 
 function text(formData: FormData, key: string): string {
   const value = formData.get(key);
@@ -46,6 +49,50 @@ function fourOptions(formData: FormData, prefix: string) {
   return LETTERS.map((letter) => ({ id: letter, text: text(formData, `${prefix}-${letter}`) }));
 }
 
+/**
+ * Lista de objetos con icono, una por línea y en formato «icono:Texto».
+ * Es un formulario interno: este atajo evita construir un selector de iconos por fila.
+ */
+function iconList(formData: FormData, key: string) {
+  return lines(formData, key).map((linea, index) => {
+    const [posibleIcono, ...resto] = linea.split(':');
+    const conIcono = resto.length > 0;
+    return {
+      id: LETTERS_EXT[index] ?? `o${index}`,
+      text: (conIcono ? resto.join(':') : linea).trim(),
+      ...(conIcono ? { icon: (posibleIcono ?? '').trim() } : {}),
+    };
+  });
+}
+
+/** Cuatro opciones que pueden llevar icono: «icono:Texto» en el propio campo. */
+function fourOptionsMaybeIcon(formData: FormData, prefix: string) {
+  return LETTERS.map((letter, index) => {
+    const bruto = text(formData, `${prefix}-${letter}`);
+    const [posibleIcono, ...resto] = bruto.split(':');
+    const conIcono = resto.length > 0;
+    return {
+      id: LETTERS[index] ?? letter,
+      text: (conIcono ? resto.join(':') : bruto).trim(),
+      ...(conIcono ? { icon: (posibleIcono ?? '').trim() } : {}),
+    };
+  });
+}
+
+/** Decisiones de LA JUNTA: una por línea, «peso | texto | consecuencia». */
+function decisionList(formData: FormData, key: string) {
+  return lines(formData, key).map((linea, index) => {
+    const partes = linea.split('|').map((parte) => parte.trim());
+    const peso = Number.parseFloat(partes[0] ?? '0');
+    return {
+      id: LETTERS_EXT[index] ?? `o${index}`,
+      text: partes[1] ?? '',
+      weight: Number.isFinite(peso) ? Math.max(0, Math.min(1, peso)) : 0,
+      outcome: partes[2] ?? '',
+    };
+  });
+}
+
 function payloadFor(type: QuestionType, formData: FormData): unknown {
   switch (type) {
     case 'MULTIPLE_CHOICE':
@@ -80,6 +127,46 @@ function payloadFor(type: QuestionType, formData: FormData): unknown {
         correctOptionId: text(formData, 'correctOptionId') || 'a',
         maxWagerRatio: number(formData, 'maxWagerRatio') ?? 0.5,
       };
+    case 'MEMORY_GRID':
+      return {
+        items: iconList(formData, 'items'),
+        studySeconds: number(formData, 'studySeconds') ?? 5,
+        question: text(formData, 'question'),
+        options: fourOptions(formData, 'option'),
+        correctOptionId: text(formData, 'correctOptionId') || 'a',
+      };
+    case 'MISSING_ITEM':
+      return {
+        sceneLabel: text(formData, 'sceneLabel'),
+        present: iconList(formData, 'present'),
+        options: fourOptionsMaybeIcon(formData, 'option'),
+        correctOptionId: text(formData, 'correctOptionId') || 'a',
+      };
+    case 'DECISION': {
+      const opciones = decisionList(formData, 'decisiones');
+      const mejor = opciones.find((opcion) => opcion.weight === 1) ?? opciones[0];
+      return {
+        situation: text(formData, 'situation'),
+        options: opciones,
+        bestOptionId: mejor?.id ?? 'a',
+      };
+    }
+    case 'SEQUENCE': {
+      const pads = lines(formData, 'pads').map((texto, index) => ({
+        id: LETTERS_EXT[index] ?? `o${index}`,
+        text: texto,
+      }));
+      const secuencia = text(formData, 'secuencia')
+        .split(/[\s,]+/)
+        .map((parte) => Number.parseInt(parte, 10))
+        .filter((numero) => Number.isFinite(numero))
+        .map((numero) => pads[numero - 1]?.id ?? 'a');
+      return {
+        pads,
+        sequence: secuencia,
+        stepMs: number(formData, 'stepMs') ?? 650,
+      };
+    }
   }
 }
 
@@ -113,6 +200,7 @@ export function parseQuestionForm(formData: FormData): FormParseResult {
     timeLimitSeconds: number(formData, 'timeLimitSeconds') ?? 20,
     sourceNote: optionalText(formData, 'sourceNote'),
     verified: formData.get('verified') !== null,
+    featured: formData.get('featured') !== null,
     payload: payloadFor(type, formData),
   };
 

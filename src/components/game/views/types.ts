@@ -6,6 +6,7 @@
  * un único switch exhaustivo y delega.
  */
 
+import type { RoundPresentation } from '@/domain/rounds/formats';
 import type { ActiveQuestion, RevealSummary } from '@/domain/engine/state';
 import type { AnswerSubmission, Question } from '@/domain/questions/types';
 
@@ -18,6 +19,10 @@ export type QuestionViewProps<T extends Question = Question> = {
   submitted?: AnswerSubmission | undefined;
   /** Presente solo en la fase REVEAL. */
   reveal?: RevealSummary | undefined;
+  /** Milisegundos que quedan de fase de estudio (0 = ya se puede responder). */
+  studyRemainingMs?: number;
+  /** Cómo presenta la ronda esta pregunta (buzones, telefonillo, junta…). */
+  presentation?: RoundPresentation;
   onSubmit: (submission: AnswerSubmission) => void;
   onRevealClue?: (() => void) | undefined;
 };
@@ -40,3 +45,6 @@ export const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'] as const;
 export function letterFor(index: number): string {
   return LETTERS[index] ?? String(index + 1);
 }
+
+/** Texto que se muestra cuando se ha ido la luz (power-up de riesgo). */
+export const TEXTO_A_OSCURAS = '▮▮▮▮▮▮▮▮';

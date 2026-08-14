@@ -32,6 +32,8 @@ export type CommonInput = {
   status?: QuestionStatus;
   /** true solo para contenido comprobado contra una fuente fiable. */
   verified?: boolean;
+  /** Destacada: el panel la marca y el director de partida la prioriza. */
+  featured?: boolean;
   sourceNote?: string;
 };
 
@@ -51,6 +53,7 @@ function base(input: CommonInput, defaultTime: number, defaultPoints: number) {
     timeLimitSeconds: input.time ?? defaultTime,
     sourceNote: input.sourceNote ?? DEMO_SOURCE_NOTE,
     verified: input.verified ?? false,
+    featured: input.featured ?? false,
     createdAt: SEED_DATE,
     updatedAt: SEED_DATE,
   };
@@ -60,6 +63,18 @@ const LETTERS = ['a', 'b', 'c', 'd', 'e', 'f'] as const;
 
 function toOptions(texts: readonly string[]) {
   return texts.map((text, index) => ({ id: LETTERS[index] ?? `o${index}`, text }));
+}
+
+/** Opciones con icono del portal: «buzon:Buzón» → { icon: 'buzon', text: 'Buzón' }. */
+function toOptionsConIcono(entradas: readonly string[]) {
+  return entradas.map((entrada, index) => {
+    const [icono, texto] = entrada.includes(':') ? entrada.split(':') : [undefined, entrada];
+    return {
+      id: LETTERS[index] ?? `o${index}`,
+      text: (texto ?? entrada).trim(),
+      ...(icono ? { icon: icono.trim() } : {}),
+    };
+  });
 }
 
 function optionId(index: number): string {
@@ -163,6 +178,96 @@ export function bet(
       options: toOptions(input.options),
       correctOptionId: optionId(input.correct),
       maxWagerRatio: input.maxWagerRatio ?? 0.5,
+    },
+  };
+}
+
+/** 7. Memoria de vecino. `items` admite «icono:Texto». */
+export function mem(
+  input: CommonInput & {
+    items: readonly string[];
+    question: string;
+    options: readonly [string, string, string, string];
+    correct: 0 | 1 | 2 | 3;
+    studySeconds?: number;
+  },
+): QuestionRecord {
+  return {
+    ...base(input, 18, 1100),
+    type: 'MEMORY_GRID',
+    payload: {
+      items: toOptionsConIcono(input.items),
+      studySeconds: input.studySeconds ?? 5,
+      question: input.question,
+      options: toOptions(input.options),
+      correctOptionId: optionId(input.correct),
+    },
+  };
+}
+
+/** 8. ¿Qué falta aquí? `present` y `options` admiten «icono:Texto». */
+export function falta(
+  input: CommonInput & {
+    sceneLabel: string;
+    present: readonly string[];
+    options: readonly [string, string, string, string];
+    correct: 0 | 1 | 2 | 3;
+  },
+): QuestionRecord {
+  return {
+    ...base(input, 22, 1100),
+    type: 'MISSING_ITEM',
+    payload: {
+      sceneLabel: input.sceneLabel,
+      present: toOptionsConIcono(input.present),
+      options: toOptionsConIcono(input.options),
+      correctOptionId: optionId(input.correct),
+    },
+  };
+}
+
+/** 9. La junta: decisiones con peso y consecuencia. La primera es la mejor (peso 1). */
+export function junta(
+  input: CommonInput & {
+    situation: string;
+    decisiones: readonly { texto: string; peso: number; consecuencia: string }[];
+  },
+): QuestionRecord {
+  const options = input.decisiones.map((decision, index) => ({
+    id: optionId(index),
+    text: decision.texto,
+    weight: decision.peso,
+    outcome: decision.consecuencia,
+  }));
+  const mejor = options.find((option) => option.weight === 1) ?? options[0];
+  return {
+    ...base(input, 30, 1200),
+    type: 'DECISION',
+    payload: {
+      situation: input.situation,
+      options,
+      bestOptionId: mejor ? mejor.id : 'a',
+    },
+  };
+}
+
+/** 10. Portero automático: secuencia de timbres (índices de `pads`). */
+export function timbres(
+  input: CommonInput & {
+    pads: readonly string[];
+    /** Índices de `pads`, en orden. */
+    secuencia: readonly number[];
+    stepMs?: number;
+  },
+): QuestionRecord {
+  const pads = toOptions(input.pads);
+  return {
+    ...base(input, 20, 1100),
+    type: 'SEQUENCE',
+    payload: {
+      pads,
+      sequence: input.secuencia.map((indice) => pads[indice]?.id ?? 'a'),
+      stepMs: input.stepMs ?? 650,
     },
   };
 }

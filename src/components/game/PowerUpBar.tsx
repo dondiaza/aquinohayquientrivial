@@ -33,7 +33,11 @@ export function PowerUpBar({
             ? canUsePowerUp(powerUp.id, state.inventory, {
                 question: active.question,
                 eliminatedOptionIds: active.eliminatedOptionIds,
-                answerLocked: state.phase !== 'QUESTION',
+                answerLocked: state.phase !== 'QUESTION' && state.phase !== 'FINAL_ROUND',
+                usedThisQuestion: active.powerUpsUsed,
+                cluesRevealed: active.cluesRevealed,
+                hasWager: active.wager > 0 || state.phase === 'FINAL_ROUND',
+                powerUpsBlocked: active.powerUpsBlocked,
               })
             : ({ ok: false, reason: 'ANSWER_LOCKED' } as const);
 

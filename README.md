@@ -1,8 +1,16 @@
-# EL TRIVIAL DE LA COMUNIDAD — Fase 1
+# EL TRIVIAL DE LA COMUNIDAD — Fases 1 y 2
 
 Trivial / party-game con la personalidad de una comunidad de vecinos española caótica de
 principios de los 2000: junta, derramas, Radio Patio, ascensor averiado y una apuesta
-final. **Fase 1 completa y jugable de principio a fin en modo solitario.**
+final.
+
+* **Fase 1 (completa):** arquitectura, motor de juego, contenido, navegación y producto
+  funcional en modo solitario.
+* **Fase 2 (completa):** identidad propia. Sistema de diseño «Comunidad», sonido original
+  sintetizado, home cinemática donde el portal ES el menú, 10 familias de prueba,
+  6 comodines con rareza, director de partida, combos, progresión con logros y rangos,
+  reto del día, desafíos con semilla, modo fantasma, ceremonia de resultados y PWA.
+* Fase 3 (pendiente): salas online, WebSockets y móviles como mandos.
 
 > **Identidad propia.** El juego está inspirado en el *género* de comedias de comunidad de
 > vecinos, pero no usa ni imita marcas, logotipos, fotogramas, clips, audios ni fuentes de
@@ -43,7 +51,7 @@ Si prefieres tu propio PostgreSQL, olvida `db:up` y apunta `DATABASE_URL` a tu s
 | `npm run dev` | Servidor de desarrollo en el puerto 3210 |
 | `npm run build` | `prisma generate` + build de producción |
 | `npm start` | Servidor de producción |
-| `npm test` | Tests de dominio con Vitest (140 tests) |
+| `npm test` | Tests de dominio con Vitest (170 tests) |
 | `npm run test:watch` | Vitest en modo watch |
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run lint` | ESLint (flat config + typescript-eslint + react-hooks) |
@@ -56,7 +64,25 @@ Si prefieres tu propio PostgreSQL, olvida `db:up` y apunta `DATABASE_URL` a tu s
 
 ---
 
-## 2. Arquitectura
+## 2. Identidad y sensaciones (Fase 2)
+
+* **Sistema de diseño documentado** en [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md):
+  paleta, tipografías libres (Anton, Inter, Courier Prime, Caveat), catálogo de formas
+  (placa, papel, nota, puerta, botón de ascensor, ticket, cartel, CRT, buzón) y cuatro
+  velocidades de motion.
+* **Sonido original sintetizado** con Web Audio (`src/lib/audio/`): 19 efectos generados en
+  el navegador, cero ficheros de audio, cero licencias que revisar. Volumen, silencio y
+  ambiente persistentes; nunca suena nada antes de la primera interacción.
+* **Home cinemática**: fachada en SVG y planta baja interactiva — puerta = jugar,
+  telefonillo = salas, tablón = cómo jugar, ascensor = perfil, buzones = logros.
+* **Game feel**: combos escalados, tensión del temporizador en tres niveles, revelado
+  coreografiado con desglose de puntos, cartelas de ronda, cartela de suceso a pantalla
+  completa, números flotantes, chispas, sellos y vibración donde el dispositivo la soporta.
+* **Accesibilidad**: `prefers-reduced-motion` desactiva movimiento y giros sin perder
+  información, todos los estados llevan icono y texto además de color, el modo «a oscuras»
+  mantiene la información para lectores de pantalla y el temporizador se anuncia.
+
+## 3. Arquitectura
 
 La regla que manda: **la UI no contiene reglas de juego**. El motor es un reducer puro que
 no sabe nada de React, de la red ni de la base de datos.
@@ -74,16 +100,22 @@ src/
 │  ├─ rounds/                 formatos de partida = DATOS (express / normal / maratón)
 │  ├─ ranks/                  rangos e índice de rendimiento
 │  ├─ results/                resumen de partida
-│  ├─ copy/                   TODOS los textos de sabor (rachas, feedback, UI)
+│  ├─ copy/                   TODOS los textos: rachas, feedback, UI y el PRESENTADOR
+│  ├─ progression/            experiencia y rangos de vecindad
+│  ├─ achievements/           catálogo de logros y su evaluación
+│  ├─ challenges/             reto del día y desafíos con semilla
+│  ├─ players/                catálogo de avatares (arquetipos, colores, marcos)
 │  ├─ rng.ts                  azar determinista con semilla
 │  └─ engine/                 estado, acciones, máquina de estados, eventos, contrato de red
 ├─ server/                    ← ACCESO A DATOS. Prisma y nada más.
 │  ├─ questions/              repositorio (Postgres ⇄ dominio, validando con Zod)
 │  ├─ games/                  crear partida, registrar respuestas, cerrar y resumir
+│  ├─ players/                perfil, progresión, logros, récords y fantasma
 │  ├─ guest.ts                cookie anónima de invitado
 │  └─ admin.ts                puerta del panel
-├─ content/                   ← BANCO DEMO. Constructores + 156 preguntas + "biblia" del portal
-├─ components/                ← UI. ui/ (primitivas), game/ (partida), admin/, layout/
+├─ lib/                       ← audio sintetizado y sistema de motion
+├─ content/                   ← BANCO DEMO. Constructores + 184 preguntas + "biblia" del portal
+├─ components/                ← UI. ui/ · portal/ (identidad) · game/ · admin/ · layout/
 └─ app/                       ← RUTAS (App Router)
 ```
 
@@ -108,13 +140,13 @@ ROUND_RESULTS → … → GAME_RESULTS`, más `FINAL_ROUND` para la apuesta. `HO
 
 | Concepto | Dónde | Qué es |
 | --- | --- | --- |
-| `GameEvent` | `domain/events/` | Suceso de juego: derrama extraordinaria, junta urgente, ascensor averiado |
+| `GameEvent` | `domain/events/` | Suceso de juego: derrama, junta urgente, obras, inspección… Los dirige `domain/events/director.ts` |
 | `EngineEvent` | `domain/engine/engine-events.ts` | Mensaje tipado del motor: `QUESTION_STARTED`, `ANSWER_SUBMITTED`… |
 
 Los `EngineEvent` se persisten hoy en `GameEventLog` (trazabilidad y analítica) y en Fase 3
 son exactamente lo que viajará por WebSocket.
 
-### Reparto cliente / servidor en Fase 1
+### Reparto cliente / servidor
 
 El motor corre en el cliente y el servidor **registra**: cada respuesta se persiste con su
 desglose y **el resumen final lo recalcula el servidor** a partir de lo persistido (con la
@@ -123,7 +155,7 @@ En Fase 3 se invierte el reparto sin tocar el motor ni el modelo de datos.
 
 ---
 
-## 3. Rutas
+## 4. Rutas
 
 | Ruta | Qué es |
 | --- | --- |
@@ -133,6 +165,9 @@ En Fase 3 se invierte el reparto sin tocar el motor ni el modelo de datos.
 | `/partida/[gameId]` | La partida (motor en el cliente) |
 | `/resultados/[gameId]` | Acta de la partida: estadísticas, rango, por rondas y por tipo |
 | `/como-jugar` | Reglas **generadas desde el dominio** (nunca se desactualizan) |
+| `/reto` | Reto del día + tablón de resultados |
+| `/desafio` | Desafíos con etiqueta compartible |
+| `/perfil` | Ficha de vecino: avatar, rango, logros y récords |
 | `/admin` | Portería: estado del banco y del juego |
 | `/admin/preguntas` | Listado con búsqueda y filtros (tipo, categoría, estado, temporada, verificada) |
 | `/admin/preguntas/nueva` | Crear pregunta con previsualización en vivo |
@@ -147,7 +182,7 @@ que el formulario funciona incluso sin JavaScript.
 
 ---
 
-## 4. Modelo de datos
+## 5. Modelo de datos
 
 | Modelo | Para qué |
 | --- | --- |
@@ -168,11 +203,20 @@ Dos decisiones que conviene conocer:
 
 ---
 
-## 5. Mecánicas disponibles
+## 6. Mecánicas disponibles
 
-**Seis tipos de prueba**: elección múltiple · verdadero/falso · ¿quién es? (pistas
-progresivas; cuantas menos gastes, más multiplica) · el infiltrado · ordena el desastre
-(arrastrando **o** con flechas, con acierto parcial) · apuesta final.
+**Diez familias de prueba**: elección múltiple · verdadero/falso (Radio Patio) ·
+¿quién es? (pistas progresivas, presentadas en buzones que decides abrir) · el infiltrado ·
+ordena el desastre (arrastrando **o** con flechas, con acierto parcial) · la derrama
+(apuesta) · memoria de vecino (objetos que desaparecen) · ¿qué falta aquí? (composición
+visual con iconos propios) · la junta (decisiones con peso y consecuencia) · portero
+automático (secuencia de timbres).
+
+**Rondas con identidad**: calentando la junta, Radio Patio, ¿quién vive aquí?, memoria de
+vecino, ¿qué falta aquí?, la junta, llamada al telefonillo (ultrarrápida), caos en el
+portal, lectura del acta, apagón relámpago, la derrama y presidente por un día. Dos de
+ellas incorporan minijuego: **buzones** (pistas ocultas) y **ascensor** (el progreso sube
+plantas y se para al fallar).
 
 **Puntuación** (`domain/scoring/scoring.ts`, con tests):
 
@@ -187,27 +231,38 @@ puntos = (base × precisión + bonus de tiempo + bonus de racha)
 * Dificultad: ×0.7 … ×1.35 sobre la escala interna 1-10.
 * Fallo: 0. La apuesta final suma o resta lo apostado. El marcador nunca baja de cero.
 
-**Rachas** con hitos y textos centralizados · **dificultad adaptativa** (±0.5 / −0.7 tras
-dos aciertos o dos fallos, acotada al nivel, desactivable) · **comodines** «Un poquito de
-por favor» (+10 s) y «Radio Patio» (descarta una incorrecta, nunca deja una sola opción
-viable) · **sucesos**: derrama extraordinaria (×1.5), junta urgente (menos tiempo, ×1.35),
-ascensor averiado (×1.25 y −250 si fallas) · **rangos** de Visitante a Leyenda de Radio
-Patio según un índice que pesa 65 % precisión y 35 % puntos.
+**Combos y rachas** con hitos en 2/3/5/8 y efectos que escalan · **dificultad adaptativa**
+(±0.5 / −0.7 tras dos aciertos o dos fallos, acotada al nivel, desactivable).
+
+**Seis comodines con rareza**: un poquito de por favor (+5 s) · Radio Patio (descarta una
+incorrecta o adelanta una pista) · junta extraordinaria (×2) · se ha ido la luz (a ciegas
+×3) · cambio de presidente (cambia la pregunta) · fondo de reserva (protege la mitad de la
+apuesta). Máximo dos por pregunta, y cada uno declara dónde tiene sentido.
+
+**Siete sucesos** dirigidos por un **director de partida** que mira ronda, racha,
+rendimiento y sequía: nunca en las dos primeras preguntas, nunca dos seguidos y los que
+castigan solo aparecen si vas bien (si vas mal, aparecen los que ayudan).
+
+**Progresión ligera**: experiencia por terminar, precisión, dificultad y variedad, con
+siete rangos de Visitante a Leyenda del portal, 15 logros con rareza y marcos de avatar
+que se desbloquean. **Reto del día** determinista (misma partida para todos, sin cuenta),
+**desafíos con etiqueta compartible** tipo `#21DESENGANO` y **modo fantasma** contra tu
+propio récord.
 
 **Tres formatos** (datos, no código de UI): Express 12 preguntas (~5 min), Normal 28
 (~12-15 min), Maratón 45 (~20-25 min), todos con ronda final de apuesta.
 
 ---
 
-## 6. Calidad y verificación
+## 7. Calidad y verificación
 
 Todo lo siguiente está ejecutado y en verde en este repositorio:
 
 ```
 npm run typecheck   ✓ TypeScript estricto, sin `any`
 npm run lint        ✓ 0 problemas
-npm test            ✓ 140 tests en 10 ficheros
-npm run build       ✓ build de producción (17 rutas)
+npm test            ✓ 170 tests en 12 ficheros
+npm run build       ✓ build de producción (21 rutas)
 ```
 
 Los tests cubren: puntuación (tramos de tiempo, topes, parciales, apuesta), rachas e hitos,
@@ -226,7 +281,7 @@ Verificación manual hecha con navegador real (Chromium):
 
 ---
 
-## 7. Accesibilidad y responsive
+## 8. Accesibilidad y responsive
 
 Mobile-first, probado a 390 px y 1440 px. HTML semántico, enlace de salto al contenido,
 foco visible de 3 px, objetivos táctiles grandes, estados que **nunca** dependen solo del
@@ -236,7 +291,7 @@ color (icono + texto + `sr-only`), avisos con `aria-live`, temporizador que anun
 
 ---
 
-## 8. Despliegue
+## 9. Despliegue
 
 El proyecto está listo para Vercel, con dos avisos del terreno conocido del equipo:
 
@@ -248,12 +303,13 @@ El proyecto está listo para Vercel, con dos avisos del terreno conocido del equ
 
 ---
 
-## 9. Qué queda para las fases siguientes
+## 10. Qué queda para las fases siguientes
 
 Resumido; el detalle está en [docs/FASES.md](docs/FASES.md).
 
-* **Fase 2** — dirección artística avanzada, animaciones y sonido, minijuegos, más tipos de
-  prueba y power-ups, assets propios en los `placeholder` de `media`, cuentas opcionales.
+* **Fase 2** — hecha. Queda pendiente para más adelante: ilustración propia en los
+  `placeholder` de `media`, música (hoy solo hay efectos y ambiente), más minijuegos y
+  cuentas opcionales sobre el modelo `User`.
 * **Fase 3** — salas online, WebSockets, móviles como mandos, equipos. El motor y los
   contratos ya están hechos para eso: reducer puro y determinista, eventos tipados con
   número de secuencia y rutas `/unirse`, `/sala/[code]`, `/host/[code]` reservadas.

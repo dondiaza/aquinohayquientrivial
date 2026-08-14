@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="El Trivial de la Comunidad">
+  <title>El Trivial de la Comunidad</title>
+  <!-- Versión maskable: el dibujo vive dentro del 80 % central -->
+  <rect width="64" height="64" fill="#1e4b3e" />
+  <rect x="14" y="14" width="36" height="36" rx="2" fill="#2d6353" stroke="#123329" stroke-width="1.5" />
+  <text
+    x="32"
+    y="42"
+    text-anchor="middle"
+    font-family="Arial Narrow, Arial, sans-serif"
+    font-size="22"
+    font-weight="bold"
+    fill="#f2cd76"
+  >13</text>
+</svg>
