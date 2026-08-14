@@ -22,3 +22,6 @@ next-env.d.ts
 .DS_Store
 coverage/
 tsconfig.tsbuildinfo
+
+# credenciales locales de cualquier tipo
+*.local
