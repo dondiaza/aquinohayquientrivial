@@ -252,6 +252,10 @@ model PlayerProfile {
   arquetipo     String      @default("presidente")
   colorAvatar   String      @default("verde")
   marco         String      @default("ninguno")
+  /// El vecino dibujado, igual que en UserProfile. Está aquí también para que un INVITADO
+  /// pueda crear su personaje antes de registrarse: al migrar a cuenta se copia y no se
+  /// pierde el rato que pasó eligiendo el bigote.
+  avatarConfig  Json?
   xp            Int         @default(0)
   gamesFinished Int         @default(0)
   bestScore     Int         @default(0)
@@ -741,6 +745,13 @@ model UserProfile {
   colorAvatar String  @default("verde")
   marco       String  @default("ninguno")
   fondo       String  @default("ninguno")
+
+  /// Vecino dibujado por el jugador: la CONFIGURACIÓN de piezas, no una imagen.
+  /// Se guarda como Json porque el catálogo de piezas va a crecer y no queremos una
+  /// migración por cada gorra nueva. Se valida con Zod al entrar y al salir
+  /// (`sanearAvatar`), así que un Json inválido en base nunca llega a la pantalla.
+  /// Nulo = todavía no ha pasado por el creador; se pinta el avatar de arquetipo.
+  avatarConfig Json?
 
   /// Suma cacheada del libro mayor. La verdad está en `XpTransaction`.
   xp    Int @default(0)

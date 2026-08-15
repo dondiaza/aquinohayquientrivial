@@ -6,6 +6,9 @@ import { Field, Select, TextInput } from '@/components/ui/Form';
 import { Chip } from '@/components/ui/Surfaces';
 import { ApartmentPlaque, PaperNotice } from '@/components/portal/Estructuras';
 import { NeighbourAvatar } from '@/components/portal/Avatar';
+import { Vecino } from '@/components/avatar/Vecino';
+import { avatarDeInvitado, avatarDeUsuario } from '@/server/avatar/service';
+import { idUsuarioActual } from '@/server/cuentas/sesion';
 import { CommunityStamp } from '@/components/portal/Estructuras';
 import { RarityBadge } from '@/components/portal/Espectaculo';
 import { LOGROS } from '@/domain/achievements/achievements';
@@ -61,6 +64,10 @@ export default async function ProfilePage() {
   }
 
   const perfil = await obtenerPerfil(guestId);
+  // El vecino dibujado manda sobre el avatar de arquetipo: si alguien se lo ha hecho, es
+  // porque quiere que se le vea así.
+  const userId = await idUsuarioActual();
+  const vecino = (userId ? await avatarDeUsuario(userId) : null) ?? (await avatarDeInvitado(guestId));
   const rango = rangoPorId(perfil.rangoId);
   const siguiente = siguienteRango(perfil.xp);
   const progreso = progresoDeRango(perfil.xp);
@@ -87,14 +94,23 @@ export default async function ProfilePage() {
       {/* ── Avatar y progreso ────────────────────────────────────────────────── */}
       <section className="mt-5 grid gap-4 sm:grid-cols-[auto_1fr]">
         <div className="flex flex-col items-center gap-2">
-          <NeighbourAvatar
-            arquetipo={perfil.arquetipo}
-            color={perfil.colorAvatar}
-            marco={perfil.marco}
-            tamano={120}
-            etiqueta={`Avatar: ${getArquetipo(perfil.arquetipo).label}`}
-          />
-          <p className="texto-sello text-tinta-tenue">{getArquetipo(perfil.arquetipo).label}</p>
+          {vecino ? (
+            <Vecino config={vecino} tamano={120} titulo="Tu vecino" />
+          ) : (
+            <NeighbourAvatar
+              arquetipo={perfil.arquetipo}
+              color={perfil.colorAvatar}
+              marco={perfil.marco}
+              tamano={120}
+              etiqueta={`Avatar: ${getArquetipo(perfil.arquetipo).label}`}
+            />
+          )}
+          <p className="texto-sello text-tinta-tenue">
+            {vecino ? 'Tu vecino' : getArquetipo(perfil.arquetipo).label}
+          </p>
+          <LinkButton href="/vecino" tone="mostaza" size="sm">
+            {vecino ? '✎ Cambiarlo' : '＋ Crear mi vecino'}
+          </LinkButton>
         </div>
 
         <PaperNotice tono="papel" className="p-4">

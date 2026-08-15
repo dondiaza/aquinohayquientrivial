@@ -14,6 +14,7 @@ import {
 import { MailboxWall } from '@/components/portal/MailboxWall';
 import { GossipTicker } from '@/components/portal/Espectaculo';
 import { NeighbourAvatar } from '@/components/portal/Avatar';
+import { Vecino } from '@/components/avatar/Vecino';
 import { PortalFacade } from '@/components/portal/PortalScene';
 import { Retrato } from '@/components/serie/Retrato';
 import { Foto } from '@/components/serie/Foto';
@@ -32,6 +33,9 @@ import { countQuestions } from '@/server/questions/repository';
 import { recentGames } from '@/server/games/service';
 import { obtenerPerfil, resultadoDelDia } from '@/server/players/service';
 import { currentGuestPlayerId, readGuestId } from '@/server/guest';
+import { avatarDeInvitado, avatarDeUsuario } from '@/server/avatar/service';
+import { idUsuarioActual } from '@/server/cuentas/sesion';
+import { avatarAleatorio } from '@/domain/avatar/config';
 
 export const dynamic = 'force-dynamic';
 
@@ -40,12 +44,21 @@ export default async function HomePage() {
   const dailyKey = claveDelDia(new Date());
   const reto = configuracionDelReto(dailyKey);
 
-  const [bank, previous, perfil, retoHecho] = await Promise.all([
+  const userId = await idUsuarioActual();
+
+  const [bank, previous, perfil, retoHecho, avatarCuenta, avatarInvitado] = await Promise.all([
     countQuestions(),
     guestPublicId ? recentGames(guestPublicId, 3) : Promise.resolve([]),
     guestId ? obtenerPerfil(guestId) : Promise.resolve(null),
     guestId ? resultadoDelDia(guestId, dailyKey) : Promise.resolve(null),
+    userId ? avatarDeUsuario(userId) : Promise.resolve(null),
+    guestId ? avatarDeInvitado(guestId) : Promise.resolve(null),
   ]);
+
+  const miVecino = avatarCuenta ?? avatarInvitado;
+  // Un vecino de muestra, siempre el mismo, para el que todavía no tiene el suyo: enseña qué
+  // se va a encontrar mejor que cualquier icono genérico.
+  const vecinoDeMuestra = avatarAleatorio(0.42);
 
   const rango = perfil ? rangoPorId(perfil.rangoId) : null;
   const imagenes = resumenDeImagenes();
@@ -133,10 +146,46 @@ export default async function HomePage() {
             />
           </div>
 
+          {/* Las dos plantas nuevas: quién eres y quién manda. Van juntas y a la vista
+              porque son las dos cosas que hacen volver al día siguiente. */}
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <Link
+              href="/vecino"
+              className="papel flex items-center gap-3 p-3 text-left hover:brightness-[1.03]"
+            >
+              <Vecino config={miVecino ?? vecinoDeMuestra} tamano={64} />
+              <span className="min-w-0">
+                <span className="texto-cartel block text-lg">
+                  {miVecino ? 'Tu vecino' : 'Crea tu vecino'}
+                </span>
+                <span className="texto-sello block text-tinta-tenue">
+                  {miVecino
+                    ? 'Cámbiale el pelo, la bata o el fondo'
+                    : 'Cara, pelo, ropa y trastos. Treinta segundos.'}
+                </span>
+              </span>
+            </Link>
+
+            <Link
+              href="/ranking"
+              className="tablon flex items-center gap-3 p-3 text-left hover:brightness-110"
+            >
+              <span aria-hidden className="text-4xl">🥇</span>
+              <span className="min-w-0">
+                <span className="texto-cartel block text-lg text-papel">
+                  Clasificación de la comunidad
+                </span>
+                <span className="texto-sello block text-papel/75">
+                  Quién manda esta semana en el portal
+                </span>
+              </span>
+            </Link>
+          </div>
+
           <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <IntercomPanel
               titulo="Telefonillo"
-              descripcion="Salas con los móviles como mandos. Llega en la Fase 3."
+              descripcion="Abre una sala y que entren con el código desde su móvil."
               etiqueta={HOME.secondary.partyBadge}
               href="/unirse"
             />
@@ -144,7 +193,9 @@ export default async function HomePage() {
             <Link href="/perfil" className="metal block p-3 text-left hover:brightness-105">
               <p className="texto-sello text-tinta">Ascensor · tu progreso</p>
               <div className="mt-2 flex items-center gap-3">
-                {perfil ? (
+                {miVecino ? (
+                  <Vecino config={miVecino} tamano={56} />
+                ) : perfil ? (
                   <NeighbourAvatar
                     arquetipo={perfil.arquetipo}
                     color={perfil.colorAvatar}

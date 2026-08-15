@@ -22,6 +22,7 @@ import { comoArquetipo, comoColor } from './avatar';
 import { MENSAJE_ERROR, type VistaSala } from '@/domain/party/protocolo';
 import { almacen, useSala } from '@/lib/sala/useSala';
 
+import { BotonCompartir } from './Compartir';
 import { EstadoConexionPunto } from './EstadoConexion';
 import { NubeDeReacciones } from './NubeDeReacciones';
 
@@ -140,6 +141,18 @@ function Lobby({
             o escanea el código con el móvil
           </p>
           <p className="texto-sello mt-1 break-all text-tinta-tenue">{urlUnion}</p>
+
+          {/* Convocar por mensaje. En la tele lo normal es que el anfitrión tenga el móvil en
+              la mano, pero si se abre la sala desde un portátil este botón es la forma más
+              rápida de meter a alguien que no está en el salón. */}
+          <p className="mt-4">
+            <BotonCompartir
+              url={urlUnion}
+              code={code}
+              jugadores={jugadores.length}
+              modo={sala.formatoLabel}
+            />
+          </p>
 
           <div className="mt-6 flex flex-wrap gap-2">
             <Chip>{sala.formatoLabel}</Chip>

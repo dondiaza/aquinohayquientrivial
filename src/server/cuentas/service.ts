@@ -19,6 +19,7 @@
 import type { Prisma } from '@prisma/client';
 
 import { prisma } from '../db';
+import { heredarAvatarDeInvitado } from '../avatar/service';
 import {
   ENFRIAMIENTO_USERNAME_DIAS,
   generarFriendCode,
@@ -145,6 +146,8 @@ export async function migrarInvitado(
   if (invitado.userId && invitado.userId !== userId) return null;
 
   await prisma.guestPlayer.update({ where: { id: invitado.id }, data: { userId } });
+  // Y el vecino que se dibujó antes de registrarse: se lo lleva a la cuenta.
+  await heredarAvatarDeInvitado(userId, invitado.id);
   const resumen = await recalcularPerfil(userId);
 
   return {

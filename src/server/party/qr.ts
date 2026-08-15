@@ -12,10 +12,15 @@
 
 import QRCode from 'qrcode';
 
-/** URL absoluta a la que apunta el QR. Debe llevar al join directo, no a la portada. */
+/**
+ * URL absoluta a la que apunta el QR y que se comparte por mensaje.
+ *
+ * Va a `/join/<code>`, que es un alias corto de `/unirse/<code>`: se lee mejor en una tele,
+ * se teclea antes y ocupa menos en un mensaje. La ruta larga sigue funcionando.
+ */
 export function urlDeUnion(base: string, code: string): string {
   const limpia = base.replace(/\/+$/, '');
-  return `${limpia}/unirse/${code}`;
+  return `${limpia}/join/${code}`;
 }
 
 export async function qrSvg(url: string): Promise<string> {

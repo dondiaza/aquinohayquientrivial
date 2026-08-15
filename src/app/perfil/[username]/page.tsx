@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 
 import { ApartmentPlaque, PaperNotice } from '@/components/portal/Estructuras';
 import { NeighbourAvatar } from '@/components/portal/Avatar';
+import { Vecino } from '@/components/avatar/Vecino';
 import { LinkButton } from '@/components/ui/Button';
 import { Chip } from '@/components/ui/Surfaces';
 import { comoArquetipo, comoColor } from '@/components/sala/avatar';
@@ -10,6 +11,7 @@ import { puedeVer } from '@/domain/cuentas/identidad';
 import { rangoPorId } from '@/domain/progression/progression';
 import { cuentaPorUsername, relacionEntre, visibilidad } from '@/server/cuentas/service';
 import { usuarioActual } from '@/server/cuentas/sesion';
+import { avatarDeUsuario } from '@/server/avatar/service';
 
 export const dynamic = 'force-dynamic';
 
@@ -58,6 +60,7 @@ export default async function PerfilPublicoPage({
 
   const veEstadisticas = puedeVer(visibilidad(cuenta.settings?.estadisticasVisibles), relacion);
   const perfil = cuenta.profile;
+  const vecino = await avatarDeUsuario(cuenta.id);
   const rango = rangoPorId(perfil?.rango ?? 'visitante');
   const precision =
     perfil && perfil.respuestas > 0 ? Math.round((perfil.aciertos / perfil.respuestas) * 100) : 0;
@@ -65,12 +68,16 @@ export default async function PerfilPublicoPage({
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
       <div className="papel flex flex-wrap items-center gap-4 p-5">
-        <NeighbourAvatar
-          arquetipo={comoArquetipo(perfil?.arquetipo ?? 'presidente')}
-          color={comoColor(perfil?.colorAvatar ?? 'verde')}
-          marco="ninguno"
-          tamano={88}
-        />
+        {vecino ? (
+          <Vecino config={vecino} tamano={88} titulo={`Vecino de ${cuenta.username}`} />
+        ) : (
+          <NeighbourAvatar
+            arquetipo={comoArquetipo(perfil?.arquetipo ?? 'presidente')}
+            color={comoColor(perfil?.colorAvatar ?? 'verde')}
+            marco="ninguno"
+            tamano={88}
+          />
+        )}
         <div className="min-w-0 flex-1">
           <h1 className="texto-cartel text-2xl">{cuenta.username}</h1>
           <p className="texto-sello text-tinta-tenue">
