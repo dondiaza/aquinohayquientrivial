@@ -20,10 +20,10 @@
     "explanation": "La emisión original comenzó en Antena 3 en septiembre de 2003.",
     "tags": "historia,fechas",
     "options": [
-      "una comunidad de vecinos",
       "7 de septiembre de 2003",
       "6 de julio de 2006",
-      "Desengaño 21"
+      "Desengaño 21",
+      "una comunidad de vecinos"
     ]
   },
   {
@@ -58,9 +58,9 @@
     "explanation": "La emisión original terminó en julio de 2006.",
     "tags": "historia,fechas",
     "options": [
+      "7 de septiembre de 2003",
       "6 de julio de 2006",
       "una comunidad de vecinos",
-      "7 de septiembre de 2003",
       "Desengaño 21"
     ]
   },
@@ -96,10 +96,10 @@
     "explanation": "Antena 3 fue la cadena de estreno.",
     "tags": "cadena",
     "options": [
-      "Antena 3",
+      "7 de septiembre de 2003",
       "una comunidad de vecinos",
-      "Desengaño 21",
-      "7 de septiembre de 2003"
+      "Antena 3",
+      "Desengaño 21"
     ]
   },
   {
@@ -134,8 +134,8 @@
     "explanation": "El edificio ficticio se encuentra en la calle Desengaño, 21.",
     "tags": "lugar",
     "options": [
-      "una comunidad de vecinos",
       "6 de julio de 2006",
+      "una comunidad de vecinos",
       "Antena 3",
       "Desengaño 21"
     ]
@@ -173,9 +173,9 @@
     "tags": "premisa",
     "options": [
       "una comunidad de vecinos",
-      "6 de julio de 2006",
       "Antena 3",
-      "Desengaño 21"
+      "Desengaño 21",
+      "6 de julio de 2006"
     ]
   },
   {
@@ -210,10 +210,10 @@
     "explanation": "Miramón Mendi produjo la serie.",
     "tags": "produccion",
     "options": [
-      "Vocal Factory",
-      "Terra Mítica",
       "Iñaki Ariztimuño",
-      "Miramón Mendi"
+      "Miramón Mendi",
+      "Vocal Factory",
+      "Terra Mítica"
     ]
   },
   {
@@ -248,10 +248,10 @@
     "explanation": "José Luis Moreno ejerció como productor ejecutivo.",
     "tags": "produccion",
     "options": [
-      "Miramón Mendi",
       "Terra Mítica",
-      "Alberto Caballero",
-      "José Luis Moreno"
+      "Miramón Mendi",
+      "José Luis Moreno",
+      "Alberto Caballero"
     ]
   },
   {
@@ -286,10 +286,10 @@
     "explanation": "Alberto Caballero figura entre los creadores principales.",
     "tags": "creadores",
     "options": [
-      "Miramón Mendi",
       "Vocal Factory",
-      "Alberto Caballero",
-      "Laura Caballero"
+      "Laura Caballero",
+      "Miramón Mendi",
+      "Alberto Caballero"
     ]
   },
   {
@@ -324,10 +324,10 @@
     "explanation": "Iñaki Ariztimuño figura como cocreador.",
     "tags": "creadores",
     "options": [
-      "Miramón Mendi",
       "Iñaki Ariztimuño",
       "Vocal Factory",
-      "multicámara"
+      "multicámara",
+      "Miramón Mendi"
     ]
   },
   {
@@ -362,10 +362,10 @@
     "explanation": "Laura Caballero dirigió gran parte de la serie.",
     "tags": "direccion",
     "options": [
-      "Alberto Caballero",
       "Terra Mítica",
-      "multicámara",
-      "Laura Caballero"
+      "Laura Caballero",
+      "Alberto Caballero",
+      "multicámara"
     ]
   },
   {
@@ -400,10 +400,10 @@
     "explanation": "La música vocal a capela fue una seña de identidad.",
     "tags": "musica",
     "options": [
-      "Vocal Factory",
-      "Miramón Mendi",
       "Laura Caballero",
-      "Alberto Caballero"
+      "Alberto Caballero",
+      "Vocal Factory",
+      "Miramón Mendi"
     ]
   },
   {
@@ -438,10 +438,10 @@
     "explanation": "La serie se rodaba con configuración multicámara.",
     "tags": "rodaje",
     "options": [
-      "multicámara",
-      "Miramón Mendi",
       "Laura Caballero",
-      "Gran Hotel Bali"
+      "Gran Hotel Bali",
+      "Miramón Mendi",
+      "multicámara"
     ]
   },
   {
@@ -476,10 +476,10 @@
     "explanation": "Algunos episodios se rodaron fuera de plató, incluida Terra Mítica.",
     "tags": "rodaje,exteriores",
     "options": [
-      "Alberto Caballero",
+      "Terra Mítica",
       "Gran Hotel Bali",
-      "multicámara",
-      "Terra Mítica"
+      "Alberto Caballero",
+      "multicámara"
     ]
   },
   {
@@ -514,10 +514,10 @@
     "explanation": "El Gran Hotel Bali aparece entre las localizaciones exteriores documentadas.",
     "tags": "rodaje,exteriores",
     "options": [
-      "Alberto Caballero",
-      "Laura Caballero",
+      "multicámara",
       "Gran Hotel Bali",
-      "multicámara"
+      "Alberto Caballero",
+      "Laura Caballero"
     ]
   },
   {
@@ -552,10 +552,10 @@
     "explanation": "Se cita como el capítulo con mayor audiencia, por encima de ocho millones de espectadores.",
     "tags": "audiencias,episodios",
     "options": [
-      "Érase un famoso",
+      "la familia Heredia",
       "Paloma Urban Fashion",
-      "la Hierbas",
-      "la familia Heredia"
+      "Érase un famoso",
+      "la Hierbas"
     ]
   },
   {
@@ -590,10 +590,10 @@
     "explanation": "José Luis Gil dio vida a Juan Cuesta.",
     "tags": "actor,personaje",
     "options": [
+      "Mariví Bilbao",
       "Guillermo Ortega",
       "María Adánez",
-      "José Luis Gil",
-      "Mariví Bilbao"
+      "José Luis Gil"
     ]
   },
   {
@@ -628,10 +628,10 @@
     "explanation": "Fernando Tejero dio vida a Emilio Delgado.",
     "tags": "actor,personaje",
     "options": [
-      "Juan Díaz",
-      "Gemma Cuervo",
       "Fernando Tejero",
-      "Ricardo Arroyo"
+      "Gemma Cuervo",
+      "Ricardo Arroyo",
+      "Juan Díaz"
     ]
   },
   {
@@ -666,10 +666,10 @@
     "explanation": "Malena Alterio dio vida a Belén López Vázquez.",
     "tags": "actor,personaje",
     "options": [
-      "Isabel Ordaz",
-      "Denise Maestre",
+      "Nicolás Dueñas",
       "Malena Alterio",
-      "Nicolás Dueñas"
+      "Isabel Ordaz",
+      "Denise Maestre"
     ]
   },
   {
@@ -704,9 +704,9 @@
     "explanation": "Luis Merlo dio vida a Mauri Hidalgo.",
     "tags": "actor,personaje",
     "options": [
+      "Nicolás Dueñas",
       "Carmen Balagué",
       "Luis Merlo",
-      "Nicolás Dueñas",
       "Emma Ozores"
     ]
   },
@@ -742,10 +742,10 @@
     "explanation": "Mariví Bilbao dio vida a Marisa Benito.",
     "tags": "actor,personaje",
     "options": [
-      "Eduardo García",
       "Juan Díaz",
-      "Mariví Bilbao",
-      "Elio González"
+      "Elio González",
+      "Eduardo García",
+      "Mariví Bilbao"
     ]
   },
   {
@@ -780,9 +780,9 @@
     "explanation": "Gemma Cuervo dio vida a Vicenta Benito.",
     "tags": "actor,personaje",
     "options": [
-      "Santiago Ramos",
       "Gemma Cuervo",
       "Diego Martín",
+      "Santiago Ramos",
       "Elena Lombao"
     ]
   },
@@ -818,10 +818,10 @@
     "explanation": "Emma Penella dio vida a Concha.",
     "tags": "actor,personaje",
     "options": [
-      "Elio González",
       "Eva Isanta",
       "Emma Penella",
-      "Eduardo García"
+      "Eduardo García",
+      "Elio González"
     ]
   },
   {
@@ -856,10 +856,10 @@
     "explanation": "María Adánez dio vida a Lucía Álvarez.",
     "tags": "actor,personaje",
     "options": [
-      "Diego Martín",
-      "Ricardo Arroyo",
       "Laura Pamplona",
-      "María Adánez"
+      "Diego Martín",
+      "María Adánez",
+      "Ricardo Arroyo"
     ]
   },
   {
@@ -894,10 +894,10 @@
     "explanation": "Daniel Guzmán dio vida a Roberto Alonso.",
     "tags": "actor,personaje",
     "options": [
-      "Llum Barrera",
       "Diego Martín",
-      "Daniel Guzmán",
-      "Elena Lombao"
+      "Elena Lombao",
+      "Llum Barrera",
+      "Daniel Guzmán"
     ]
   },
   {
@@ -932,10 +932,10 @@
     "explanation": "Adrià Collado dio vida a Fernando Navarro.",
     "tags": "actor,personaje",
     "options": [
-      "Sofía Nieto",
-      "Mariví Bilbao",
+      "Adrià Collado",
       "Santiago Ramos",
-      "Adrià Collado"
+      "Sofía Nieto",
+      "Mariví Bilbao"
     ]
   },
   {
@@ -970,9 +970,9 @@
     "explanation": "Laura Pamplona dio vida a Alicia Sanz.",
     "tags": "actor,personaje",
     "options": [
-      "José Luis Gil",
-      "Laura Pamplona",
       "Beatriz Carvajal",
+      "Laura Pamplona",
+      "José Luis Gil",
       "Elena Lombao"
     ]
   },
@@ -1008,10 +1008,10 @@
     "explanation": "Loles León dio vida a Paloma Hurtado.",
     "tags": "actor,personaje",
     "options": [
-      "Loles León",
-      "Malena Alterio",
       "Sofía Nieto",
-      "Elio González"
+      "Elio González",
+      "Loles León",
+      "Malena Alterio"
     ]
   },
   {
@@ -1046,8 +1046,8 @@
     "explanation": "Eduardo Gómez dio vida a Mariano Delgado.",
     "tags": "actor,personaje",
     "options": [
-      "Diego Martín",
       "Nicolás Dueñas",
+      "Diego Martín",
       "Loles León",
       "Eduardo Gómez"
     ]
@@ -1084,10 +1084,10 @@
     "explanation": "Guillermo Ortega dio vida a Paco.",
     "tags": "actor,personaje",
     "options": [
-      "Elio González",
       "Guillermo Ortega",
       "Gemma Cuervo",
-      "Nicolás Dueñas"
+      "Nicolás Dueñas",
+      "Elio González"
     ]
   },
   {
@@ -1122,10 +1122,10 @@
     "explanation": "Eduardo García dio vida a José Miguel Cuesta.",
     "tags": "actor,personaje",
     "options": [
+      "Elena Lombao",
       "Eduardo García",
       "Juan Díaz",
-      "María Adánez",
-      "Elena Lombao"
+      "María Adánez"
     ]
   },
   {
@@ -1160,10 +1160,10 @@
     "explanation": "Sofía Nieto dio vida a Natalia Cuesta.",
     "tags": "actor,personaje",
     "options": [
-      "Elio González",
       "Vanesa Romero",
-      "Nicolás Dueñas",
-      "Sofía Nieto"
+      "Elio González",
+      "Sofía Nieto",
+      "Nicolás Dueñas"
     ]
   },
   {
@@ -1198,10 +1198,10 @@
     "explanation": "Isabel Ordaz dio vida a Isabel Ruiz.",
     "tags": "actor,personaje",
     "options": [
+      "Elio González",
       "María Adánez",
       "Loles León",
-      "Isabel Ordaz",
-      "Elio González"
+      "Isabel Ordaz"
     ]
   },
   {
@@ -1236,10 +1236,10 @@
     "explanation": "Santiago Ramos dio vida a Andrés Guerra.",
     "tags": "actor,personaje",
     "options": [
-      "Ricardo Arroyo",
-      "Denise Maestre",
       "Santiago Ramos",
-      "Nicolás Dueñas"
+      "Denise Maestre",
+      "Nicolás Dueñas",
+      "Ricardo Arroyo"
     ]
   },
   {
@@ -1274,10 +1274,10 @@
     "explanation": "Elio González dio vida a Pablo Guerra.",
     "tags": "actor,personaje",
     "options": [
-      "Guillermo Ortega",
-      "Emma Ozores",
+      "Juan Díaz",
       "Elio González",
-      "Juan Díaz"
+      "Guillermo Ortega",
+      "Emma Ozores"
     ]
   },
   {
@@ -1312,10 +1312,10 @@
     "explanation": "Juan Díaz dio vida a Álex Guerra.",
     "tags": "actor,personaje",
     "options": [
-      "Loles León",
       "Eva Isanta",
       "Carmen Balagué",
-      "Juan Díaz"
+      "Juan Díaz",
+      "Loles León"
     ]
   },
   {
@@ -1350,10 +1350,10 @@
     "explanation": "Carmen Balagué dio vida a Nieves Cuesta.",
     "tags": "actor,personaje",
     "options": [
-      "Fernando Tejero",
       "Laura Pamplona",
-      "Carmen Balagué",
-      "Daniel Guzmán"
+      "Fernando Tejero",
+      "Daniel Guzmán",
+      "Carmen Balagué"
     ]
   },
   {
@@ -1388,10 +1388,10 @@
     "explanation": "Eva Isanta dio vida a Bea Villarejo.",
     "tags": "actor,personaje",
     "options": [
-      "Vanesa Romero",
+      "Eva Isanta",
       "Beatriz Carvajal",
       "Roberto San Martín",
-      "Eva Isanta"
+      "Vanesa Romero"
     ]
   },
   {
@@ -1426,10 +1426,10 @@
     "explanation": "Diego Martín dio vida a Carlos de Haro.",
     "tags": "actor,personaje",
     "options": [
-      "Vanesa Romero",
-      "Eva Isanta",
       "Laura Pamplona",
-      "Diego Martín"
+      "Diego Martín",
+      "Vanesa Romero",
+      "Eva Isanta"
     ]
   },
   {
@@ -1464,10 +1464,10 @@
     "explanation": "Llum Barrera dio vida a Carmen Villanueva.",
     "tags": "actor,personaje",
     "options": [
+      "Fernando Tejero",
       "Diego Martín",
       "Llum Barrera",
-      "Nicolás Dueñas",
-      "Fernando Tejero"
+      "Nicolás Dueñas"
     ]
   },
   {
@@ -1502,10 +1502,10 @@
     "explanation": "Vanesa Romero dio vida a Ana.",
     "tags": "actor,personaje",
     "options": [
-      "Vanesa Romero",
-      "Carmen Balagué",
       "Juan Díaz",
-      "Emma Ozores"
+      "Carmen Balagué",
+      "Emma Ozores",
+      "Vanesa Romero"
     ]
   },
   {
@@ -1540,10 +1540,10 @@
     "explanation": "Beatriz Carvajal dio vida a María Jesús Vázquez.",
     "tags": "actor,personaje",
     "options": [
-      "Emma Penella",
+      "Beatriz Carvajal",
       "Isabel Ordaz",
-      "José Luis Gil",
-      "Beatriz Carvajal"
+      "Emma Penella",
+      "José Luis Gil"
     ]
   },
   {
@@ -1578,9 +1578,9 @@
     "explanation": "Roberto San Martín dio vida a Yago.",
     "tags": "actor,personaje",
     "options": [
-      "Denise Maestre",
       "Vanesa Romero",
       "Roberto San Martín",
+      "Denise Maestre",
       "Gemma Cuervo"
     ]
   },
@@ -1616,9 +1616,9 @@
     "explanation": "Ricardo Arroyo dio vida a Higinio Heredia.",
     "tags": "actor,personaje",
     "options": [
-      "Ricardo Arroyo",
-      "Santiago Ramos",
       "Eduardo Gómez",
+      "Santiago Ramos",
+      "Ricardo Arroyo",
       "Fernando Tejero"
     ]
   },
@@ -1654,9 +1654,9 @@
     "explanation": "Emma Ozores dio vida a Mamen.",
     "tags": "actor,personaje",
     "options": [
-      "Isabel Ordaz",
       "Luis Merlo",
       "Eva Isanta",
+      "Isabel Ordaz",
       "Emma Ozores"
     ]
   },
@@ -1692,10 +1692,10 @@
     "explanation": "Denise Maestre dio vida a Candela.",
     "tags": "actor,personaje",
     "options": [
-      "Roberto San Martín",
-      "Eduardo Gómez",
+      "Denise Maestre",
       "Laura Pamplona",
-      "Denise Maestre"
+      "Roberto San Martín",
+      "Eduardo Gómez"
     ]
   },
   {
@@ -1730,10 +1730,10 @@
     "explanation": "Elena Lombao dio vida a Raquel.",
     "tags": "actor,personaje",
     "options": [
-      "Carmen Balagué",
       "Guillermo Ortega",
       "Elena Lombao",
-      "Emma Ozores"
+      "Emma Ozores",
+      "Carmen Balagué"
     ]
   },
   {
@@ -1768,10 +1768,10 @@
     "explanation": "Nicolás Dueñas dio vida a Rafael Álvarez.",
     "tags": "actor,personaje",
     "options": [
+      "Daniel Guzmán",
       "María Adánez",
       "Nicolás Dueñas",
-      "Eduardo García",
-      "Daniel Guzmán"
+      "Eduardo García"
     ]
   },
   {
@@ -1806,10 +1806,10 @@
     "explanation": "Juan Cuesta: es conocido por ser presidente de la comunidad.",
     "tags": "presidencia,comunidad",
     "options": [
-      "padre de Emilio",
       "pareja de Mauri durante buena parte de la serie",
-      "presidente de la comunidad",
-      "madre de Ezequiel"
+      "madre de Ezequiel",
+      "padre de Emilio",
+      "presidente de la comunidad"
     ]
   },
   {
@@ -1844,9 +1844,9 @@
     "explanation": "Emilio Delgado: trabaja principalmente como portero del edificio.",
     "tags": "profesion,porteria",
     "options": [
-      "el videoclub",
       "portero del edificio",
       "amigas y compañeras de piso durante una etapa",
+      "el videoclub",
       "padre de Emilio"
     ]
   },
@@ -1882,10 +1882,10 @@
     "explanation": "Paco: trabaja en el videoclub.",
     "tags": "profesion,videoclub",
     "options": [
-      "abogado",
-      "el videoclub",
       "madre de Ezequiel",
-      "amiga y compañera inseparable de Marisa y Vicenta"
+      "el videoclub",
+      "amiga y compañera inseparable de Marisa y Vicenta",
+      "abogado"
     ]
   },
   {
@@ -1920,10 +1920,10 @@
     "explanation": "Juan Cuesta: trabaja como profesor.",
     "tags": "profesion",
     "options": [
-      "profesor",
-      "Radio Patio",
       "la Pija",
-      "padre de Lucía"
+      "padre de Lucía",
+      "profesor",
+      "Radio Patio"
     ]
   },
   {
@@ -1958,10 +1958,10 @@
     "explanation": "Mauri Hidalgo: trabaja como periodista.",
     "tags": "profesion",
     "options": [
-      "madre de Ezequiel",
-      "periodista",
       "la Pija",
-      "la Hierbas"
+      "madre de Ezequiel",
+      "la Hierbas",
+      "periodista"
     ]
   },
   {
@@ -1996,10 +1996,10 @@
     "explanation": "Fernando Navarro: trabaja como abogado.",
     "tags": "profesion",
     "options": [
-      "padre de Lucía",
       "abogado",
       "madre de Pablo y Álex",
-      "padre de Emilio"
+      "padre de Emilio",
+      "padre de Lucía"
     ]
   },
   {
@@ -2034,9 +2034,9 @@
     "explanation": "Roberto Alonso: es arquitecto.",
     "tags": "profesion",
     "options": [
-      "padre de Pablo y Álex",
-      "arquitecto",
       "madre de Pablo y Álex",
+      "arquitecto",
+      "padre de Pablo y Álex",
       "ecologista cubano"
     ]
   },
@@ -2072,10 +2072,10 @@
     "explanation": "Lucía Álvarez: es apodada la Pija.",
     "tags": "apodo",
     "options": [
-      "amiga y compañera inseparable de Marisa y Vicenta",
-      "hermanas",
       "la Chunga",
-      "la Pija"
+      "amiga y compañera inseparable de Marisa y Vicenta",
+      "la Pija",
+      "hermanas"
     ]
   },
   {
@@ -2110,10 +2110,10 @@
     "explanation": "Isabel Ruiz: es apodada la Hierbas.",
     "tags": "apodo",
     "options": [
-      "la Hierbas",
+      "amigas y compañeras de piso durante una etapa",
       "amiga y compañera inseparable de Marisa y Vicenta",
       "padre de Emilio",
-      "amigas y compañeras de piso durante una etapa"
+      "la Hierbas"
     ]
   },
   {
@@ -2149,8 +2149,8 @@
     "tags": "apodo",
     "options": [
       "la Chunga",
-      "Radio Patio",
       "arquitecto",
+      "Radio Patio",
       "amiga y compañera inseparable de Marisa y Vicenta"
     ]
   },
@@ -2186,10 +2186,10 @@
     "explanation": "Marisa y Vicenta: son hermanas.",
     "tags": "familia",
     "options": [
-      "hermanas",
-      "hijos de Juan y Paloma",
       "amiga y compañera inseparable de Marisa y Vicenta",
-      "padre de Lucía"
+      "hermanas",
+      "padre de Lucía",
+      "hijos de Juan y Paloma"
     ]
   },
   {
@@ -2224,10 +2224,10 @@
     "explanation": "Concha: es amiga y compañera inseparable de Marisa y Vicenta.",
     "tags": "radio-patio,amistad",
     "options": [
-      "padre de Emilio",
       "padre de Pablo y Álex",
+      "arquitecto",
       "amiga y compañera inseparable de Marisa y Vicenta",
-      "arquitecto"
+      "padre de Emilio"
     ]
   },
   {
@@ -2262,8 +2262,8 @@
     "explanation": "Marisa, Vicenta y Concha: forman el núcleo conocido como Radio Patio.",
     "tags": "radio-patio",
     "options": [
-      "hermanas",
       "la Chunga",
+      "hermanas",
       "padre de Ezequiel",
       "Radio Patio"
     ]
@@ -2300,10 +2300,10 @@
     "explanation": "Mariano Delgado: es padre de Emilio.",
     "tags": "familia",
     "options": [
-      "arquitecto",
-      "presidente de la comunidad",
       "padre de Emilio",
-      "hijos de Juan y Paloma"
+      "hijos de Juan y Paloma",
+      "arquitecto",
+      "presidente de la comunidad"
     ]
   },
   {
@@ -2338,10 +2338,10 @@
     "explanation": "Natalia y José Miguel: son hijos de Juan y Paloma.",
     "tags": "familia",
     "options": [
-      "padre de Lucía",
-      "periodista",
       "hermana de Juan Cuesta",
-      "hijos de Juan y Paloma"
+      "hijos de Juan y Paloma",
+      "padre de Lucía",
+      "periodista"
     ]
   },
   {
@@ -2376,10 +2376,10 @@
     "explanation": "Nieves Cuesta: es hermana de Juan Cuesta.",
     "tags": "familia",
     "options": [
-      "la Hierbas",
       "padre de Emilio",
-      "esposa de Juan Cuesta durante las primeras temporadas",
-      "hermana de Juan Cuesta"
+      "la Hierbas",
+      "hermana de Juan Cuesta",
+      "esposa de Juan Cuesta durante las primeras temporadas"
     ]
   },
   {
@@ -2414,8 +2414,8 @@
     "explanation": "Fernando Navarro: es pareja de Mauri durante buena parte de la serie.",
     "tags": "parejas",
     "options": [
-      "periodista",
       "Radio Patio",
+      "periodista",
       "presidente de la comunidad",
       "pareja de Mauri durante buena parte de la serie"
     ]
@@ -2452,10 +2452,10 @@
     "explanation": "Bea Villarejo: es madre de Ezequiel.",
     "tags": "familia",
     "options": [
-      "la Hierbas",
+      "madre de Ezequiel",
       "profesor",
-      "hijos de Juan y Paloma",
-      "madre de Ezequiel"
+      "la Hierbas",
+      "hijos de Juan y Paloma"
     ]
   },
   {
@@ -2490,10 +2490,10 @@
     "explanation": "Mauri Hidalgo: es padre de Ezequiel.",
     "tags": "familia",
     "options": [
-      "padre de Lucía",
+      "presidente de la comunidad",
       "padre de Ezequiel",
-      "hermanas",
-      "presidente de la comunidad"
+      "padre de Lucía",
+      "hermanas"
     ]
   },
   {
@@ -2528,10 +2528,10 @@
     "explanation": "Yago: es ecologista cubano.",
     "tags": "personaje",
     "options": [
-      "abogado",
       "padre de Ezequiel",
+      "Radio Patio",
       "ecologista cubano",
-      "Radio Patio"
+      "abogado"
     ]
   },
   {
@@ -2566,10 +2566,10 @@
     "explanation": "Rafael Álvarez: es padre de Lucía.",
     "tags": "familia",
     "options": [
-      "Radio Patio",
       "presidente de la comunidad",
-      "padre de Lucía",
-      "hermanas"
+      "hermanas",
+      "Radio Patio",
+      "padre de Lucía"
     ]
   },
   {
@@ -2604,10 +2604,10 @@
     "explanation": "Belén y Alicia: son amigas y compañeras de piso durante una etapa.",
     "tags": "amistad,piso",
     "options": [
-      "padre de Emilio",
-      "abogado",
       "amigas y compañeras de piso durante una etapa",
-      "profesor"
+      "profesor",
+      "padre de Emilio",
+      "abogado"
     ]
   },
   {
@@ -2642,10 +2642,10 @@
     "explanation": "Andrés Guerra: es padre de Pablo y Álex.",
     "tags": "familia",
     "options": [
-      "amigas y compañeras de piso durante una etapa",
-      "el videoclub",
+      "profesor",
       "padre de Pablo y Álex",
-      "profesor"
+      "amigas y compañeras de piso durante una etapa",
+      "el videoclub"
     ]
   },
   {
@@ -2680,10 +2680,10 @@
     "explanation": "Isabel Ruiz: es madre de Pablo y Álex.",
     "tags": "familia",
     "options": [
-      "madre de Pablo y Álex",
-      "hermanas",
       "hermana de Juan Cuesta",
-      "ecologista cubano"
+      "ecologista cubano",
+      "madre de Pablo y Álex",
+      "hermanas"
     ]
   },
   {
@@ -2718,8 +2718,8 @@
     "explanation": "Paloma Hurtado: es esposa de Juan Cuesta durante las primeras temporadas.",
     "tags": "parejas",
     "options": [
-      "abogado",
       "la Pija",
+      "abogado",
       "padre de Emilio",
       "esposa de Juan Cuesta durante las primeras temporadas"
     ]
@@ -2756,10 +2756,10 @@
     "explanation": "El edificio: dispone de tres plantas principales, ático, portería y local.",
     "tags": "edificio",
     "options": [
-      "1.º B",
+      "tres plantas principales, ático, portería y local",
       "se casan",
       "Puerto Banús",
-      "tres plantas principales, ático, portería y local"
+      "1.º B"
     ]
   },
   {
@@ -2794,10 +2794,10 @@
     "explanation": "El local contiguo: alberga durante gran parte de la serie el videoclub.",
     "tags": "lugar,videoclub",
     "options": [
-      "el videoclub",
-      "1.º A",
       "2.º A",
-      "Estados Unidos"
+      "el videoclub",
+      "Estados Unidos",
+      "1.º A"
     ]
   },
   {
@@ -2832,10 +2832,10 @@
     "explanation": "Emilio y Mariano: viven en la portería.",
     "tags": "lugar,porteria",
     "options": [
+      "3.º A",
       "Belén",
-      "Puerto Banús",
       "la portería",
-      "3.º A"
+      "Puerto Banús"
     ]
   },
   {
@@ -2870,10 +2870,10 @@
     "explanation": "Mauri y Fernando: viven durante buena parte de la serie en 1.º B.",
     "tags": "piso",
     "options": [
-      "1.º B",
+      "Bea",
       "en coma",
       "en la quinta temporada",
-      "Bea"
+      "1.º B"
     ]
   },
   {
@@ -2909,9 +2909,9 @@
     "tags": "piso",
     "options": [
       "1.º A",
-      "la familia Heredia",
       "África como misionera",
-      "Belén"
+      "Belén",
+      "la familia Heredia"
     ]
   },
   {
@@ -2946,10 +2946,10 @@
     "explanation": "Juan y su familia: viven durante buena parte de la serie en 2.º A.",
     "tags": "piso",
     "options": [
-      "Estados Unidos",
       "termitas que afectan a la estructura",
+      "2.º A",
       "Belén",
-      "2.º A"
+      "Estados Unidos"
     ]
   },
   {
@@ -2984,10 +2984,10 @@
     "explanation": "Lucía: vive durante buena parte de la serie en 3.º A.",
     "tags": "piso",
     "options": [
-      "Puerto Banús",
-      "Belén",
       "en coma",
-      "3.º A"
+      "Puerto Banús",
+      "3.º A",
+      "Belén"
     ]
   },
   {
@@ -3022,10 +3022,10 @@
     "explanation": "Belén: vive durante buena parte de la serie en 3.º B.",
     "tags": "piso",
     "options": [
-      "el ascensor del edificio",
-      "3.º B",
       "1.º B",
-      "una clínica psiquiátrica"
+      "una clínica psiquiátrica",
+      "el ascensor del edificio",
+      "3.º B"
     ]
   },
   {
@@ -3060,9 +3060,9 @@
     "explanation": "En la quinta temporada: se instala en el 2.º B la familia Heredia.",
     "tags": "temporada5",
     "options": [
-      "2.º A",
-      "Bea",
       "la familia Heredia",
+      "Bea",
+      "2.º A",
       "se marchan a un apartotel en Benidorm"
     ]
   },
@@ -3098,10 +3098,10 @@
     "explanation": "El final de la serie: obliga al desalojo por termitas que afectan a la estructura.",
     "tags": "final,spoiler",
     "options": [
-      "en coma",
       "en la quinta temporada",
+      "termitas que afectan a la estructura",
       "en la noche de bodas",
-      "termitas que afectan a la estructura"
+      "en coma"
     ]
   },
   {
@@ -3136,10 +3136,10 @@
     "explanation": "Tras el desalojo: Marisa, Vicenta y Concha se marchan a un apartotel en Benidorm.",
     "tags": "final,spoiler",
     "options": [
-      "Yago",
-      "Diego, hermano de Lucía",
       "2.º A",
-      "se marchan a un apartotel en Benidorm"
+      "Yago",
+      "se marchan a un apartotel en Benidorm",
+      "Diego, hermano de Lucía"
     ]
   },
   {
@@ -3174,10 +3174,10 @@
     "explanation": "Tras el desalojo: Paco y Emilio se van en caravana por Europa.",
     "tags": "final,spoiler",
     "options": [
-      "el videoclub",
       "Estados Unidos",
-      "se van en caravana por Europa",
-      "3.º B"
+      "el videoclub",
+      "3.º B",
+      "se van en caravana por Europa"
     ]
   },
   {
@@ -3212,10 +3212,10 @@
     "explanation": "En la quinta temporada: Mauri y Fernando se casan.",
     "tags": "temporada5,parejas",
     "options": [
-      "en coma",
-      "Belén",
       "se casan",
-      "el videoclub"
+      "Belén",
+      "el videoclub",
+      "en coma"
     ]
   },
   {
@@ -3250,10 +3250,10 @@
     "explanation": "Natalia: da a luz a Yamiley.",
     "tags": "temporada5,familia",
     "options": [
-      "se marchan a un apartotel en Benidorm",
       "la familia Heredia",
+      "Yamiley",
       "África como misionera",
-      "Yamiley"
+      "se marchan a un apartotel en Benidorm"
     ]
   },
   {
@@ -3288,10 +3288,10 @@
     "explanation": "Yamiley: nace en el ascensor del edificio.",
     "tags": "temporada5",
     "options": [
-      "en la noche de bodas",
       "la portería",
-      "se marchan a un apartotel en Benidorm",
-      "el ascensor del edificio"
+      "en la noche de bodas",
+      "el ascensor del edificio",
+      "se marchan a un apartotel en Benidorm"
     ]
   },
   {
@@ -3326,10 +3326,10 @@
     "explanation": "Lucía: se marcha al inicio de la quinta temporada a África como misionera.",
     "tags": "temporada5",
     "options": [
-      "se van en caravana por Europa",
       "en coma",
-      "África como misionera",
-      "Puerto Banús"
+      "se van en caravana por Europa",
+      "Puerto Banús",
+      "África como misionera"
     ]
   },
   {
@@ -3364,10 +3364,10 @@
     "explanation": "Carlos: abandona el edificio para ingresar en una clínica psiquiátrica.",
     "tags": "temporada5",
     "options": [
-      "Lourdes",
+      "una clínica psiquiátrica",
       "termitas que afectan a la estructura",
       "en la quinta temporada",
-      "una clínica psiquiátrica"
+      "Lourdes"
     ]
   },
   {
@@ -3402,10 +3402,10 @@
     "explanation": "Roberto: se marcha a Puerto Banús.",
     "tags": "temporada5",
     "options": [
+      "en la noche de bodas",
       "Puerto Banús",
       "3.º B",
-      "la portería",
-      "en la noche de bodas"
+      "la portería"
     ]
   },
   {
@@ -3440,9 +3440,9 @@
     "explanation": "Pedro: se casa con Belén.",
     "tags": "temporada4",
     "options": [
+      "la familia Heredia",
       "1.º A",
       "Belén",
-      "la familia Heredia",
       "tres plantas principales, ático, portería y local"
     ]
   },
@@ -3478,10 +3478,10 @@
     "explanation": "Pedro: muere en la noche de bodas.",
     "tags": "temporada4,spoiler",
     "options": [
-      "en la noche de bodas",
+      "Lourdes",
       "3.º A",
       "se van en caravana por Europa",
-      "Lourdes"
+      "en la noche de bodas"
     ]
   },
   {
@@ -3517,8 +3517,8 @@
     "tags": "temporada4",
     "options": [
       "Lourdes",
-      "en la quinta temporada",
       "tres plantas principales, ático, portería y local",
+      "en la quinta temporada",
       "la portería"
     ]
   },
@@ -3554,10 +3554,10 @@
     "explanation": "Andrés: sufre una caída con el ascensor y pierde la memoria.",
     "tags": "temporada4",
     "options": [
-      "en coma",
-      "es su marido",
       "el videoclub",
-      "una caída con el ascensor y pierde la memoria"
+      "una caída con el ascensor y pierde la memoria",
+      "en coma",
+      "es su marido"
     ]
   },
   {
@@ -3592,10 +3592,10 @@
     "explanation": "Vicenta: aprovecha la amnesia de Andrés para hacerle creer que es su marido.",
     "tags": "temporada4",
     "options": [
-      "el videoclub",
       "el ascensor del edificio",
       "tres plantas principales, ático, portería y local",
-      "es su marido"
+      "es su marido",
+      "el videoclub"
     ]
   },
   {
@@ -3630,10 +3630,10 @@
     "explanation": "Ana: mantiene una relación con Bea.",
     "tags": "temporada4,parejas",
     "options": [
+      "el videoclub",
       "2.º A",
       "es su marido",
-      "Bea",
-      "el videoclub"
+      "Bea"
     ]
   },
   {
@@ -3668,10 +3668,10 @@
     "explanation": "Lucía: mantiene una relación con Yago.",
     "tags": "temporada4,parejas",
     "options": [
-      "3.º B",
-      "Bea",
       "Yago",
-      "tres plantas principales, ático, portería y local"
+      "tres plantas principales, ático, portería y local",
+      "3.º B",
+      "Bea"
     ]
   },
   {
@@ -3706,10 +3706,10 @@
     "explanation": "Mauri: mantiene una relación con Diego, hermano de Lucía.",
     "tags": "temporada3,parejas",
     "options": [
+      "la familia Heredia",
       "Diego, hermano de Lucía",
       "Yago",
-      "Lourdes",
-      "la familia Heredia"
+      "Lourdes"
     ]
   },
   {
@@ -3744,10 +3744,10 @@
     "explanation": "Alicia: termina marchándose a Estados Unidos.",
     "tags": "temporada3",
     "options": [
+      "2.º A",
       "Yamiley",
       "Estados Unidos",
-      "1.º B",
-      "2.º A"
+      "1.º B"
     ]
   },
   {
@@ -3782,10 +3782,10 @@
     "explanation": "Paloma: permanece durante una larga etapa en coma.",
     "tags": "trama,spoiler",
     "options": [
-      "2.º A",
-      "en coma",
       "una clínica psiquiátrica",
-      "Belén"
+      "2.º A",
+      "Belén",
+      "en coma"
     ]
   },
   {
@@ -3820,10 +3820,10 @@
     "explanation": "Paloma: muere en la quinta temporada.",
     "tags": "temporada5,spoiler",
     "options": [
-      "Yamiley",
+      "en la quinta temporada",
       "se casan",
       "la portería",
-      "en la quinta temporada"
+      "Yamiley"
     ]
   },
   {
@@ -3858,10 +3858,10 @@
     "explanation": "Es una de las expresiones más recordadas del personaje.",
     "tags": "frase,cultura-pop",
     "options": [
-      "Sofía Nieto",
-      "una clínica psiquiátrica",
       "Yago",
-      "Emilio"
+      "Emilio",
+      "Sofía Nieto",
+      "una clínica psiquiátrica"
     ]
   },
   {
@@ -3896,10 +3896,10 @@
     "explanation": "Es una de las frases más recordadas vinculadas a Marisa.",
     "tags": "frase,cultura-pop",
     "options": [
+      "1.º B",
       "Radio Patio",
       "Marisa",
-      "profesor",
-      "1.º B"
+      "profesor"
     ]
   },
   {
@@ -3934,10 +3934,10 @@
     "explanation": "Paloma crea la firma PUF en una de sus tramas.",
     "tags": "puf,moda",
     "options": [
-      "tres años consecutivos",
       "adaptaciones internacionales en varios países",
-      "Paloma Urban Fashion",
-      "13 años"
+      "13 años",
+      "tres años consecutivos",
+      "Paloma Urban Fashion"
     ]
   },
   {
@@ -3972,10 +3972,10 @@
     "explanation": "Antena 3 ha recordado que el reparto dio las Campanadas caracterizado como sus personajes durante tres años.",
     "tags": "campanadas",
     "options": [
-      "La que se avecina",
-      "adaptaciones internacionales en varios países",
+      "tres años consecutivos",
       "13 años",
-      "tres años consecutivos"
+      "La que se avecina",
+      "adaptaciones internacionales en varios países"
     ]
   },
   {
@@ -4010,10 +4010,10 @@
     "explanation": "Antena 3 lo señala como el presentador más joven de sus Campanadas.",
     "tags": "campanadas,josemi",
     "options": [
-      "13 años",
-      "Paloma Urban Fashion",
       "adaptaciones internacionales en varios países",
-      "La que se avecina"
+      "13 años",
+      "La que se avecina",
+      "Paloma Urban Fashion"
     ]
   },
   {
@@ -4048,9 +4048,9 @@
     "explanation": "El formato fue adaptado fuera de España.",
     "tags": "adaptaciones",
     "options": [
+      "Paloma Urban Fashion",
       "13 años",
       "adaptaciones internacionales en varios países",
-      "Paloma Urban Fashion",
       "tres años consecutivos"
     ]
   },
@@ -4086,10 +4086,10 @@
     "explanation": "Compartió gran parte de intérpretes y equipo creativo.",
     "tags": "lqsa",
     "options": [
-      "13 años",
       "adaptaciones internacionales en varios países",
-      "La que se avecina",
-      "Paloma Urban Fashion"
+      "13 años",
+      "Paloma Urban Fashion",
+      "La que se avecina"
     ]
   },
   {
@@ -4304,22 +4304,22 @@
   {
     "id": "Q0343",
     "type": "respuesta_corta",
-    "question": "¿Qué personaje interpreta Beatriz Carvajal?",
-    "answer": "María Jesús Vázquez",
+    "question": "¿En qué parte del portal vive María Jesús Vázquez?",
+    "answer": "3.º B",
     "difficulty": 3,
-    "category": "Reparto",
-    "explanation": "Beatriz Carvajal interpreta a la madre de Belén.",
+    "category": "Lugares",
+    "explanation": "María Jesús Vázquez vive en 3.º B de Desengaño 21.",
     "tags": "actor",
     "options": []
   },
   {
     "id": "Q0344",
     "type": "respuesta_corta",
-    "question": "¿Qué personaje interpreta Vanesa Romero?",
-    "answer": "Ana",
+    "question": "¿En qué parte del portal vive Ana?",
+    "answer": "3.º B",
     "difficulty": 2,
-    "category": "Reparto",
-    "explanation": "Vanesa Romero interpreta a Ana.",
+    "category": "Lugares",
+    "explanation": "Ana vive en 3.º B de Desengaño 21.",
     "tags": "actor",
     "options": []
   },
@@ -4491,9 +4491,9 @@
     ],
     "options": [
       "José Luis Gil",
+      "Malena Alterio",
       "Eva Isanta",
-      "Juan Díaz",
-      "Malena Alterio"
+      "Juan Díaz"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -4512,10 +4512,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Belén López Vázquez",
-      "Pablo Guerra",
       "Natalia Cuesta",
-      "Juan Cuesta"
+      "Juan Cuesta",
+      "Belén López Vázquez",
+      "Pablo Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -4551,10 +4551,10 @@
       "tema:rol"
     ],
     "options": [
-      "hija de Juan y Paloma",
       "La Hierbas",
       "padre de Lucía y empresario",
-      "presidente de la comunidad y profesor"
+      "presidente de la comunidad y profesor",
+      "hija de Juan y Paloma"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -4590,10 +4590,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Eduardo García",
       "Carmen Balagué",
-      "Loles León",
-      "Luis Merlo"
+      "Luis Merlo",
+      "Eduardo García",
+      "Loles León"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -4612,10 +4612,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Alicia Sanz",
-      "Mariano Delgado",
+      "Paloma Hurtado",
       "María Jesús Vázquez",
-      "Paloma Hurtado"
+      "Alicia Sanz",
+      "Mariano Delgado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -4651,10 +4651,10 @@
       "tema:rol"
     ],
     "options": [
-      "madre de Belén",
       "vecina veterana y miembro de Radio Patio",
-      "hija de Juan y Paloma",
-      "esposa de Juan e impulsora de PUF"
+      "esposa de Juan e impulsora de PUF",
+      "madre de Belén",
+      "hija de Juan y Paloma"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -4690,9 +4690,9 @@
       "tema:reparto"
     ],
     "options": [
+      "Emma Penella",
       "María Adánez",
       "Sofía Nieto",
-      "Emma Penella",
       "Beatriz Carvajal"
     ],
     "spoiler": "none",
@@ -4712,9 +4712,9 @@
       "tema:reparto"
     ],
     "options": [
+      "Rafael Álvarez",
       "Concha",
       "Andrés Guerra",
-      "Rafael Álvarez",
       "Natalia Cuesta"
     ],
     "spoiler": "none",
@@ -4751,10 +4751,10 @@
       "tema:rol"
     ],
     "options": [
-      "hijo de Juan y Paloma; miembro del Consejo de Sabios",
-      "compañera de piso de Belén",
       "hija de Juan y Paloma",
-      "periodista"
+      "compañera de piso de Belén",
+      "periodista",
+      "hijo de Juan y Paloma; miembro del Consejo de Sabios"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -4790,10 +4790,10 @@
       "tema:reparto"
     ],
     "options": [
+      "Roberto San Martín",
       "Eduardo García",
       "Eduardo Gómez",
-      "José Luis Gil",
-      "Roberto San Martín"
+      "José Luis Gil"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -4812,10 +4812,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Pablo Guerra",
       "Marisa Benito",
       "Juan Cuesta",
-      "José Miguel Cuesta"
+      "José Miguel Cuesta",
+      "Pablo Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -4851,10 +4851,10 @@
       "tema:rol"
     ],
     "options": [
-      "hijo de Juan y Paloma; miembro del Consejo de Sabios",
-      "modelo y compañera de piso",
       "abogado",
-      "hija de Juan y Paloma"
+      "modelo y compañera de piso",
+      "hija de Juan y Paloma",
+      "hijo de Juan y Paloma; miembro del Consejo de Sabios"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -4890,10 +4890,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Daniel Guzmán",
       "Fernando Tejero",
       "Mariví Bilbao",
-      "Eduardo Gómez"
+      "Eduardo Gómez",
+      "Daniel Guzmán"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -4912,10 +4912,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Fernando Navarro",
       "Andrés Guerra",
       "Emilio Delgado",
-      "Nieves Cuesta"
+      "Nieves Cuesta",
+      "Fernando Navarro"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -4951,10 +4951,10 @@
       "tema:rol"
     ],
     "options": [
-      "abogado",
-      "modelo y compañera de piso",
       "arquitecto",
-      "portero del edificio"
+      "abogado",
+      "portero del edificio",
+      "modelo y compañera de piso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -4990,10 +4990,10 @@
       "tema:reparto"
     ],
     "options": [
+      "Isabel Ordaz",
       "Fernando Tejero",
       "Malena Alterio",
-      "Eduardo Gómez",
-      "Isabel Ordaz"
+      "Eduardo Gómez"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5013,9 +5013,9 @@
     ],
     "options": [
       "Mariano Delgado",
+      "Roberto Alonso",
       "María Jesús Vázquez",
-      "Alicia Sanz",
-      "Roberto Alonso"
+      "Alicia Sanz"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5051,9 +5051,9 @@
       "tema:rol"
     ],
     "options": [
-      "modelo y compañera de piso",
-      "padre de Emilio y buscavidas",
       "vecina acomodada",
+      "padre de Emilio y buscavidas",
+      "modelo y compañera de piso",
       "presidente de la comunidad y profesor"
     ],
     "spoiler": "none",
@@ -5090,9 +5090,9 @@
       "tema:reparto"
     ],
     "options": [
-      "Malena Alterio",
-      "Guillermo Ortega",
       "Nicolás Dueñas",
+      "Guillermo Ortega",
+      "Malena Alterio",
       "Laura Pamplona"
     ],
     "spoiler": "none",
@@ -5112,10 +5112,10 @@
       "tema:reparto"
     ],
     "options": [
+      "María Jesús Vázquez",
       "Vicenta Benito",
-      "Belén López Vázquez",
       "Lucía Álvarez",
-      "María Jesús Vázquez"
+      "Belén López Vázquez"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5152,9 +5152,9 @@
     ],
     "options": [
       "vecina con numerosos trabajos",
+      "esposa de Juan e impulsora de PUF",
       "abogado",
-      "hermana de Juan",
-      "esposa de Juan e impulsora de PUF"
+      "hermana de Juan"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5190,9 +5190,9 @@
       "tema:reparto"
     ],
     "options": [
-      "Daniel Guzmán",
       "Gemma Cuervo",
       "Laura Pamplona",
+      "Daniel Guzmán",
       "Eduardo García"
     ],
     "spoiler": "none",
@@ -5212,10 +5212,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Roberto Alonso",
-      "Vicenta Benito",
       "Nieves Cuesta",
-      "Alicia Sanz"
+      "Roberto Alonso",
+      "Alicia Sanz",
+      "Vicenta Benito"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5251,10 +5251,10 @@
       "tema:rol"
     ],
     "options": [
-      "compañera de piso de Belén",
+      "madre de Belén",
       "hijo de Juan y Paloma; miembro del Consejo de Sabios",
       "vecina con numerosos trabajos",
-      "madre de Belén"
+      "compañera de piso de Belén"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5290,10 +5290,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Luis Merlo",
-      "Juan Díaz",
       "María Adánez",
-      "Laura Pamplona"
+      "Laura Pamplona",
+      "Luis Merlo",
+      "Juan Díaz"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5312,10 +5312,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Álex Guerra",
-      "Lucía Álvarez",
       "María Jesús Vázquez",
-      "Pablo Guerra"
+      "Lucía Álvarez",
+      "Pablo Guerra",
+      "Álex Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5351,8 +5351,8 @@
       "tema:rol"
     ],
     "options": [
-      "arquitecto",
       "vecina con numerosos trabajos",
+      "arquitecto",
       "vecina acomodada",
       "vecina veterana y miembro de Radio Patio"
     ],
@@ -5390,10 +5390,10 @@
       "tema:reparto"
     ],
     "options": [
-      "María Adánez",
       "Isabel Ordaz",
-      "Daniel Guzmán",
-      "Santiago Ramos"
+      "Santiago Ramos",
+      "María Adánez",
+      "Daniel Guzmán"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5413,8 +5413,8 @@
     ],
     "options": [
       "Roberto Alonso",
-      "Paco",
       "Álex Guerra",
+      "Paco",
       "Mariano Delgado"
     ],
     "spoiler": "none",
@@ -5451,10 +5451,10 @@
       "tema:rol"
     ],
     "options": [
-      "esposa de Juan e impulsora de PUF",
       "La Hierbas",
       "arquitecto",
-      "hija de Juan y Paloma"
+      "hija de Juan y Paloma",
+      "esposa de Juan e impulsora de PUF"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5490,10 +5490,10 @@
       "tema:reparto"
     ],
     "options": [
+      "Mariví Bilbao",
       "Roberto San Martín",
-      "Santiago Ramos",
       "Luis Merlo",
-      "Mariví Bilbao"
+      "Santiago Ramos"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5512,8 +5512,8 @@
       "tema:reparto"
     ],
     "options": [
-      "Vicenta Benito",
       "Mariano Delgado",
+      "Vicenta Benito",
       "José Miguel Cuesta",
       "Mauri Hidalgo"
     ],
@@ -5552,9 +5552,9 @@
     ],
     "options": [
       "periodista",
+      "padre de Emilio y buscavidas",
       "hija de Juan y Paloma",
-      "compañera de piso de Belén",
-      "padre de Emilio y buscavidas"
+      "compañera de piso de Belén"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5590,10 +5590,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Juan Díaz",
       "Gemma Cuervo",
-      "Santiago Ramos",
-      "Adrià Collado"
+      "Adrià Collado",
+      "Juan Díaz",
+      "Santiago Ramos"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5612,10 +5612,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Paloma Hurtado",
       "Bea Villarejo",
       "Concha",
-      "Fernando Navarro"
+      "Fernando Navarro",
+      "Paloma Hurtado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5651,10 +5651,10 @@
       "tema:rol"
     ],
     "options": [
-      "vecina acomodada",
       "ecologista cubano",
-      "abogado",
-      "padre de Lucía y empresario"
+      "vecina acomodada",
+      "padre de Lucía y empresario",
+      "abogado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5690,10 +5690,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Gemma Cuervo",
+      "Mariví Bilbao",
       "Carmen Balagué",
       "Elio González",
-      "Mariví Bilbao"
+      "Gemma Cuervo"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5712,10 +5712,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Bea Villarejo",
-      "Marisa Benito",
       "Emilio Delgado",
-      "Álex Guerra"
+      "Marisa Benito",
+      "Álex Guerra",
+      "Bea Villarejo"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5751,10 +5751,10 @@
       "tema:rol"
     ],
     "options": [
+      "padre de Lucía y empresario",
       "compañera de piso de Belén",
       "miembro de Radio Patio",
-      "hija de Juan y Paloma",
-      "padre de Lucía y empresario"
+      "hija de Juan y Paloma"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5790,9 +5790,9 @@
       "tema:reparto"
     ],
     "options": [
-      "José Luis Gil",
       "Eduardo Gómez",
       "Emma Penella",
+      "José Luis Gil",
       "Gemma Cuervo"
     ],
     "spoiler": "none",
@@ -5813,8 +5813,8 @@
     ],
     "options": [
       "Vicenta Benito",
-      "Pablo Guerra",
       "Juan Cuesta",
+      "Pablo Guerra",
       "Bea Villarejo"
     ],
     "spoiler": "none",
@@ -5851,10 +5851,10 @@
       "tema:rol"
     ],
     "options": [
-      "miembro de Radio Patio",
-      "compañera de piso de Belén",
       "modelo y compañera de piso",
-      "vecina acomodada"
+      "miembro de Radio Patio",
+      "vecina acomodada",
+      "compañera de piso de Belén"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5890,10 +5890,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Santiago Ramos",
       "José Luis Gil",
+      "Guillermo Ortega",
       "Emma Penella",
-      "Guillermo Ortega"
+      "Santiago Ramos"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5912,8 +5912,8 @@
       "tema:reparto"
     ],
     "options": [
-      "Mauri Hidalgo",
       "Roberto Alonso",
+      "Mauri Hidalgo",
       "Vicenta Benito",
       "Concha"
     ],
@@ -5951,10 +5951,10 @@
       "tema:rol"
     ],
     "options": [
-      "hijo de Andrés e Isabel",
       "vecina veterana y miembro de Radio Patio",
       "padre de Lucía y empresario",
-      "empleado del videoclub"
+      "empleado del videoclub",
+      "hijo de Andrés e Isabel"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -5990,10 +5990,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Eva Isanta",
+      "Santiago Ramos",
       "Isabel Ordaz",
-      "Gemma Cuervo",
-      "Santiago Ramos"
+      "Eva Isanta",
+      "Gemma Cuervo"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6012,9 +6012,9 @@
       "tema:reparto"
     ],
     "options": [
-      "Isabel Ruiz",
-      "Yago",
       "Lucía Álvarez",
+      "Yago",
+      "Isabel Ruiz",
       "Mauri Hidalgo"
     ],
     "spoiler": "none",
@@ -6051,9 +6051,9 @@
       "tema:rol"
     ],
     "options": [
+      "periodista",
       "empleado del videoclub",
       "hijo de Andrés e Isabel",
-      "periodista",
       "La Hierbas"
     ],
     "spoiler": "none",
@@ -6090,10 +6090,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Mariví Bilbao",
       "Santiago Ramos",
-      "Carmen Balagué",
-      "Luis Merlo"
+      "Luis Merlo",
+      "Mariví Bilbao",
+      "Carmen Balagué"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6112,10 +6112,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Juan Cuesta",
       "Ana",
+      "Andrés Guerra",
       "Pablo Guerra",
-      "Andrés Guerra"
+      "Juan Cuesta"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6151,10 +6151,10 @@
       "tema:rol"
     ],
     "options": [
-      "vecina con numerosos trabajos",
-      "empresario",
       "ecologista cubano",
-      "presidente de la comunidad y profesor"
+      "presidente de la comunidad y profesor",
+      "empresario",
+      "vecina con numerosos trabajos"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6190,9 +6190,9 @@
       "tema:reparto"
     ],
     "options": [
-      "Carmen Balagué",
       "Malena Alterio",
       "Loles León",
+      "Carmen Balagué",
       "Elio González"
     ],
     "spoiler": "none",
@@ -6212,10 +6212,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Emilio Delgado",
-      "Belén López Vázquez",
+      "Pablo Guerra",
       "Paco",
-      "Pablo Guerra"
+      "Emilio Delgado",
+      "Belén López Vázquez"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6251,9 +6251,9 @@
       "tema:rol"
     ],
     "options": [
-      "madre de Belén",
-      "hijo de Andrés e Isabel",
       "compañera de piso de Belén",
+      "hijo de Andrés e Isabel",
+      "madre de Belén",
       "vecina veterana y miembro de Radio Patio"
     ],
     "spoiler": "none",
@@ -6290,10 +6290,10 @@
       "tema:reparto"
     ],
     "options": [
+      "Emma Penella",
       "Eduardo García",
       "Juan Díaz",
-      "Daniel Guzmán",
-      "Emma Penella"
+      "Daniel Guzmán"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6312,10 +6312,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Álex Guerra",
-      "Ana",
       "María Jesús Vázquez",
-      "Alicia Sanz"
+      "Alicia Sanz",
+      "Ana",
+      "Álex Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6351,10 +6351,10 @@
       "tema:rol"
     ],
     "options": [
-      "madre de Ezequiel",
+      "hijo de Andrés e Isabel",
       "modelo y compañera de piso",
       "abogado",
-      "hijo de Andrés e Isabel"
+      "madre de Ezequiel"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6390,10 +6390,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Luis Merlo",
-      "Eva Isanta",
       "Isabel Ordaz",
-      "Malena Alterio"
+      "Eva Isanta",
+      "Malena Alterio",
+      "Luis Merlo"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6412,10 +6412,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Alicia Sanz",
-      "Andrés Guerra",
       "Ana",
-      "Bea Villarejo"
+      "Alicia Sanz",
+      "Bea Villarejo",
+      "Andrés Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6451,10 +6451,10 @@
       "tema:rol"
     ],
     "options": [
-      "madre de Ezequiel",
+      "hijo de Juan y Paloma; miembro del Consejo de Sabios",
       "periodista",
       "miembro de Radio Patio",
-      "hijo de Juan y Paloma; miembro del Consejo de Sabios"
+      "madre de Ezequiel"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6490,10 +6490,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Elio González",
       "Guillermo Ortega",
-      "Emma Penella",
-      "Juan Díaz"
+      "Juan Díaz",
+      "Elio González",
+      "Emma Penella"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6512,10 +6512,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Lucía Álvarez",
-      "Yago",
       "Álex Guerra",
-      "Paco"
+      "Paco",
+      "Lucía Álvarez",
+      "Yago"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6551,10 +6551,10 @@
       "tema:rol"
     ],
     "options": [
+      "madre de Belén",
       "La Hierbas",
       "empleado del videoclub",
-      "madre de Ezequiel",
-      "madre de Belén"
+      "madre de Ezequiel"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6590,10 +6590,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Santiago Ramos",
       "Luis Merlo",
-      "Roberto San Martín",
-      "Laura Pamplona"
+      "Laura Pamplona",
+      "Santiago Ramos",
+      "Roberto San Martín"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6612,10 +6612,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Ana",
+      "Yago",
       "Concha",
       "Emilio Delgado",
-      "Yago"
+      "Ana"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6651,10 +6651,10 @@
       "tema:rol"
     ],
     "options": [
+      "dueño del videoclub",
+      "ecologista cubano",
       "portero del edificio",
-      "vecina veterana y miembro de Radio Patio",
-      "miembro de Radio Patio",
-      "ecologista cubano"
+      "vecina veterana de Radio Patio"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6690,8 +6690,8 @@
       "tema:reparto"
     ],
     "options": [
-      "Guillermo Ortega",
       "Santiago Ramos",
+      "Guillermo Ortega",
       "Beatriz Carvajal",
       "Isabel Ordaz"
     ],
@@ -6712,10 +6712,10 @@
       "tema:reparto"
     ],
     "options": [
+      "Paco",
       "José Miguel Cuesta",
       "Natalia Cuesta",
-      "María Jesús Vázquez",
-      "Paco"
+      "María Jesús Vázquez"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6751,9 +6751,9 @@
       "tema:rol"
     ],
     "options": [
-      "esposa de Juan e impulsora de PUF",
-      "vecina acomodada",
       "madre de Belén",
+      "vecina acomodada",
+      "esposa de Juan e impulsora de PUF",
       "abogado"
     ],
     "spoiler": "none",
@@ -6790,10 +6790,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Gemma Cuervo",
+      "Emma Penella",
       "Nicolás Dueñas",
-      "Santiago Ramos",
-      "Emma Penella"
+      "Gemma Cuervo",
+      "Santiago Ramos"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6812,10 +6812,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Emilio Delgado",
       "José Miguel Cuesta",
-      "Juan Cuesta",
-      "Rafael Álvarez"
+      "Emilio Delgado",
+      "Rafael Álvarez",
+      "Juan Cuesta"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6851,10 +6851,10 @@
       "tema:rol"
     ],
     "options": [
-      "arquitecto",
-      "padre de Lucía y empresario",
       "hijo de Andrés e Isabel",
-      "ecologista cubano"
+      "ecologista cubano",
+      "arquitecto",
+      "padre de Lucía y empresario"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6891,9 +6891,9 @@
     ],
     "options": [
       "Vanesa Romero",
-      "Emma Penella",
       "Elio González",
-      "Fernando Tejero"
+      "Fernando Tejero",
+      "Emma Penella"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6912,10 +6912,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Concha",
       "José Miguel Cuesta",
       "Ana",
-      "Mauri Hidalgo"
+      "Mauri Hidalgo",
+      "Concha"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6951,10 +6951,10 @@
       "tema:rol"
     ],
     "options": [
+      "compañera de piso de Belén",
       "abogado",
-      "vecina veterana y miembro de Radio Patio",
       "modelo y compañera de piso",
-      "compañera de piso de Belén"
+      "vecina veterana y miembro de Radio Patio"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -6990,10 +6990,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Vanesa Romero",
-      "Carmen Balagué",
       "Eduardo Gómez",
-      "Eva Isanta"
+      "Eva Isanta",
+      "Vanesa Romero",
+      "Carmen Balagué"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7012,10 +7012,10 @@
       "tema:reparto"
     ],
     "options": [
-      "Fernando Navarro",
+      "Nieves Cuesta",
       "Vicenta Benito",
-      "Roberto Alonso",
-      "Nieves Cuesta"
+      "Fernando Navarro",
+      "Roberto Alonso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7051,10 +7051,10 @@
       "tema:rol"
     ],
     "options": [
-      "hijo de Juan y Paloma; miembro del Consejo de Sabios",
       "vecina acomodada",
       "hermana de Juan",
-      "vecina con numerosos trabajos"
+      "vecina con numerosos trabajos",
+      "hijo de Juan y Paloma; miembro del Consejo de Sabios"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7091,10 +7091,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Belén López Vázquez",
-      "Concha",
       "Mauri Hidalgo",
-      "Paloma Hurtado"
+      "Belén López Vázquez",
+      "Paloma Hurtado",
+      "Concha"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7133,9 +7133,9 @@
       "tema:relaciones"
     ],
     "options": [
+      "Belén López Vázquez",
       "Nieves Cuesta",
       "Fernando Navarro",
-      "Belén López Vázquez",
       "Natalia Cuesta"
     ],
     "spoiler": "none",
@@ -7145,11 +7145,11 @@
   {
     "id": "Q0492",
     "type": "verdadero_falso",
-    "question": "Juan Cuesta y Natalia Cuesta aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Isabel Ruiz y Yago aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Juan Cuesta ↔ Natalia Cuesta está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Isabel Ruiz y Yago.",
     "tags": [
       "tema:relaciones"
     ],
@@ -7175,10 +7175,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Rafael Álvarez",
+      "José Miguel Cuesta",
       "Emilio Delgado",
-      "Álex Guerra",
-      "José Miguel Cuesta"
+      "Rafael Álvarez",
+      "Álex Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7217,10 +7217,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Mauri Hidalgo",
-      "Rafael Álvarez",
+      "Vicenta Benito",
       "Nieves Cuesta",
-      "Vicenta Benito"
+      "Mauri Hidalgo",
+      "Rafael Álvarez"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7229,11 +7229,11 @@
   {
     "id": "Q0496",
     "type": "verdadero_falso",
-    "question": "Juan Cuesta y Nieves Cuesta aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Juan Cuesta y Pablo Guerra aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Juan Cuesta ↔ Nieves Cuesta está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Juan Cuesta y Pablo Guerra.",
     "tags": [
       "tema:relaciones"
     ],
@@ -7259,8 +7259,8 @@
       "tema:relaciones"
     ],
     "options": [
-      "Mariano Delgado",
       "Emilio Delgado",
+      "Mariano Delgado",
       "Natalia Cuesta",
       "Fernando Navarro"
     ],
@@ -7301,9 +7301,9 @@
       "tema:relaciones"
     ],
     "options": [
+      "Emilio Delgado",
       "Concha",
       "Álex Guerra",
-      "Emilio Delgado",
       "José Miguel Cuesta"
     ],
     "spoiler": "none",
@@ -7313,11 +7313,11 @@
   {
     "id": "Q0500",
     "type": "verdadero_falso",
-    "question": "Paloma Hurtado y José Miguel Cuesta aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Belén López Vázquez y Juan Cuesta aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Paloma Hurtado ↔ José Miguel Cuesta está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Belén López Vázquez y Juan Cuesta.",
     "tags": [
       "tema:relaciones"
     ],
@@ -7343,10 +7343,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Lucía Álvarez",
-      "Álex Guerra",
+      "José Miguel Cuesta",
       "Mariano Delgado",
-      "José Miguel Cuesta"
+      "Lucía Álvarez",
+      "Álex Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7385,10 +7385,10 @@
       "tema:relaciones"
     ],
     "options": [
+      "Alicia Sanz",
       "Mariano Delgado",
       "José Miguel Cuesta",
-      "Pablo Guerra",
-      "Alicia Sanz"
+      "Pablo Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7397,11 +7397,11 @@
   {
     "id": "Q0504",
     "type": "verdadero_falso",
-    "question": "Emilio Delgado y Mariano Delgado aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Mariano Delgado y Paloma Hurtado aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Emilio Delgado ↔ Mariano Delgado está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Mariano Delgado y Paloma Hurtado.",
     "tags": [
       "tema:relaciones"
     ],
@@ -7427,10 +7427,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Alicia Sanz",
-      "Belén López Vázquez",
       "Vicenta Benito",
-      "Concha"
+      "Concha",
+      "Belén López Vázquez",
+      "Alicia Sanz"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7469,10 +7469,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Paloma Hurtado",
-      "Alicia Sanz",
       "Andrés Guerra",
-      "Rafael Álvarez"
+      "Rafael Álvarez",
+      "Paloma Hurtado",
+      "Alicia Sanz"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7481,11 +7481,11 @@
   {
     "id": "Q0508",
     "type": "verdadero_falso",
-    "question": "Belén López Vázquez y Alicia Sanz aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Alicia Sanz y Juan Cuesta aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Belén López Vázquez ↔ Alicia Sanz está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Alicia Sanz y Juan Cuesta.",
     "tags": [
       "tema:relaciones"
     ],
@@ -7511,10 +7511,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Mauri Hidalgo",
       "María Jesús Vázquez",
       "Yago",
-      "Natalia Cuesta"
+      "Natalia Cuesta",
+      "Mauri Hidalgo"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7553,10 +7553,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "José Miguel Cuesta",
-      "Rafael Álvarez",
       "Paloma Hurtado",
-      "Fernando Navarro"
+      "Rafael Álvarez",
+      "Fernando Navarro",
+      "José Miguel Cuesta"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7565,11 +7565,11 @@
   {
     "id": "Q0512",
     "type": "verdadero_falso",
-    "question": "Lucía Álvarez y Rafael Álvarez aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Alicia Sanz y Natalia Cuesta aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Lucía Álvarez ↔ Rafael Álvarez está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Alicia Sanz y Natalia Cuesta.",
     "tags": [
       "tema:relaciones"
     ],
@@ -7595,10 +7595,10 @@
       "tema:relaciones"
     ],
     "options": [
+      "Yago",
       "Andrés Guerra",
-      "Emilio Delgado",
       "Roberto Alonso",
-      "Yago"
+      "Emilio Delgado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7637,10 +7637,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Mariano Delgado",
       "Marisa Benito",
-      "Yago",
-      "Belén López Vázquez"
+      "Belén López Vázquez",
+      "Mariano Delgado",
+      "Yago"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7649,11 +7649,11 @@
   {
     "id": "Q0516",
     "type": "verdadero_falso",
-    "question": "Lucía Álvarez y Yago aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Paloma Hurtado y Roberto Alonso aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Lucía Álvarez ↔ Yago está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Paloma Hurtado y Roberto Alonso.",
     "tags": [
       "tema:relaciones"
     ],
@@ -7680,8 +7680,8 @@
     ],
     "options": [
       "Fernando Navarro",
-      "Vicenta Benito",
       "Yago",
+      "Vicenta Benito",
       "José Miguel Cuesta"
     ],
     "spoiler": "none",
@@ -7721,10 +7721,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Paco",
-      "Pablo Guerra",
       "Alicia Sanz",
-      "Bea Villarejo"
+      "Bea Villarejo",
+      "Paco",
+      "Pablo Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7733,11 +7733,11 @@
   {
     "id": "Q0520",
     "type": "verdadero_falso",
-    "question": "Mauri Hidalgo y Bea Villarejo aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Andrés Guerra y Roberto Alonso aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Mauri Hidalgo ↔ Bea Villarejo está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Andrés Guerra y Roberto Alonso.",
     "tags": [
       "tema:relaciones"
     ],
@@ -7763,10 +7763,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Vicenta Benito",
+      "Belén López Vázquez",
       "Marisa Benito",
-      "Lucía Álvarez",
-      "Belén López Vázquez"
+      "Vicenta Benito",
+      "Lucía Álvarez"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7805,10 +7805,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Pablo Guerra",
       "Roberto Alonso",
-      "Concha",
-      "María Jesús Vázquez"
+      "María Jesús Vázquez",
+      "Pablo Guerra",
+      "Concha"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7817,11 +7817,11 @@
   {
     "id": "Q0524",
     "type": "verdadero_falso",
-    "question": "Marisa Benito y Concha aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Alicia Sanz y María Jesús Vázquez aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Marisa Benito ↔ Concha está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Alicia Sanz y María Jesús Vázquez.",
     "tags": [
       "tema:relaciones"
     ],
@@ -7847,10 +7847,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Natalia Cuesta",
-      "Álex Guerra",
       "Concha",
-      "Isabel Ruiz"
+      "Isabel Ruiz",
+      "Natalia Cuesta",
+      "Álex Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7889,10 +7889,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Paloma Hurtado",
       "Roberto Alonso",
+      "Andrés Guerra",
       "Mariano Delgado",
-      "Andrés Guerra"
+      "Paloma Hurtado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7901,11 +7901,11 @@
   {
     "id": "Q0528",
     "type": "verdadero_falso",
-    "question": "Isabel Ruiz y Andrés Guerra aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Emilio Delgado y Paloma Hurtado aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Isabel Ruiz ↔ Andrés Guerra está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Emilio Delgado y Paloma Hurtado.",
     "tags": [
       "tema:relaciones"
     ],
@@ -7931,10 +7931,10 @@
       "tema:relaciones"
     ],
     "options": [
+      "Vicenta Benito",
       "Nieves Cuesta",
-      "Belén López Vázquez",
       "Pablo Guerra",
-      "Vicenta Benito"
+      "Belén López Vázquez"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7973,10 +7973,10 @@
       "tema:relaciones"
     ],
     "options": [
+      "Marisa Benito",
       "Andrés Guerra",
       "Juan Cuesta",
-      "Álex Guerra",
-      "Marisa Benito"
+      "Álex Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -7985,11 +7985,11 @@
   {
     "id": "Q0532",
     "type": "verdadero_falso",
-    "question": "Isabel Ruiz y Álex Guerra aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Yago y Juan Cuesta aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Isabel Ruiz ↔ Álex Guerra está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Yago y Juan Cuesta.",
     "tags": [
       "tema:relaciones"
     ],
@@ -8016,9 +8016,9 @@
     ],
     "options": [
       "Pablo Guerra",
+      "Lucía Álvarez",
       "Álex Guerra",
-      "Concha",
-      "Lucía Álvarez"
+      "Concha"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8057,9 +8057,9 @@
       "tema:relaciones"
     ],
     "options": [
+      "Mariano Delgado",
       "Álex Guerra",
       "Pablo Guerra",
-      "Mariano Delgado",
       "Concha"
     ],
     "spoiler": "none",
@@ -8069,11 +8069,11 @@
   {
     "id": "Q0536",
     "type": "verdadero_falso",
-    "question": "Andrés Guerra y Álex Guerra aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Emilio Delgado y Pablo Guerra aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Andrés Guerra ↔ Álex Guerra está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Emilio Delgado y Pablo Guerra.",
     "tags": [
       "tema:relaciones"
     ],
@@ -8099,10 +8099,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Álex Guerra",
+      "Paco",
       "Belén López Vázquez",
-      "Andrés Guerra",
-      "Paco"
+      "Álex Guerra",
+      "Andrés Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8141,8 +8141,8 @@
       "tema:relaciones"
     ],
     "options": [
-      "Vicenta Benito",
       "Isabel Ruiz",
+      "Vicenta Benito",
       "Belén López Vázquez",
       "Ana"
     ],
@@ -8153,11 +8153,11 @@
   {
     "id": "Q0540",
     "type": "verdadero_falso",
-    "question": "Bea Villarejo y Ana aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Roberto Alonso y Natalia Cuesta aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Bea Villarejo ↔ Ana está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Roberto Alonso y Natalia Cuesta.",
     "tags": [
       "tema:relaciones"
     ],
@@ -8183,10 +8183,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Roberto Alonso",
       "Emilio Delgado",
       "Lucía Álvarez",
-      "Alicia Sanz"
+      "Alicia Sanz",
+      "Roberto Alonso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8225,10 +8225,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "Vicenta Benito",
       "Andrés Guerra",
       "Natalia Cuesta",
-      "Ana"
+      "Ana",
+      "Vicenta Benito"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8237,11 +8237,11 @@
   {
     "id": "Q0544",
     "type": "verdadero_falso",
-    "question": "Yago y Natalia Cuesta aparecen vinculados como relación clave.",
-    "answer": "Verdadero",
+    "question": "Natalia Cuesta y Pablo Guerra aparecen vinculados como relación clave.",
+    "answer": "Falso",
     "difficulty": 2,
     "category": "Relaciones",
-    "explanation": "La relación Yago ↔ Natalia Cuesta está recogida explícitamente.",
+    "explanation": "El catálogo no recoge ningún vínculo directo entre Natalia Cuesta y Pablo Guerra.",
     "tags": [
       "tema:relaciones"
     ],
@@ -8265,10 +8265,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "hermanos",
-      "hijo y padre",
-      "pareja principal inicial",
-      "matrimonio"
+      "madre e hijo",
+      "amistad de toda la vida",
+      "matrimonio",
+      "padre e hija"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8303,9 +8303,9 @@
       "tema:relaciones"
     ],
     "options": [
-      "pareja principal inicial",
-      "pareja",
-      "matrimonio",
+      "padre e hija",
+      "madre e hijo",
+      "vecinos de rellano",
       "hermanos"
     ],
     "spoiler": "none",
@@ -8341,10 +8341,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "madre e hija",
-      "matrimonio",
       "hijo y padre",
-      "amistad y convivencia"
+      "madre e hijo",
+      "cuñados",
+      "amistad de toda la vida"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8379,10 +8379,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "amistad y convivencia",
+      "vecinos de rellano",
       "relación sentimental central e intermitente",
-      "hermanas",
-      "coparentalidad de Ezequiel"
+      "padre e hija",
+      "madre e hijo"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8417,10 +8417,10 @@
       "tema:relaciones"
     ],
     "options": [
+      "vecinos de rellano",
+      "padre e hija",
       "pareja",
-      "coparentalidad de Ezequiel",
-      "hijo y padre",
-      "matrimonio"
+      "amistad de toda la vida"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8455,10 +8455,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "pareja",
-      "coparentalidad de Ezequiel",
-      "pareja / matrimonio en crisis",
-      "hermanos"
+      "hermanos",
+      "padre e hija",
+      "compañeros de trabajo",
+      "coparentalidad de Ezequiel"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8494,9 +8494,9 @@
     ],
     "options": [
       "pareja",
-      "pareja principal inicial",
-      "amistad y convivencia",
-      "relación sentimental central e intermitente"
+      "amistad de toda la vida",
+      "padre e hija",
+      "vecinos de rellano"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8531,10 +8531,10 @@
       "tema:relaciones"
     ],
     "options": [
+      "madre e hijo",
       "hermanas",
-      "hija y padre",
-      "matrimonio",
-      "hermanos"
+      "vecinos de rellano",
+      "padre e hija"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8569,10 +8569,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "hermanos",
-      "pareja principal inicial",
-      "matrimonio",
-      "pareja / matrimonio en crisis"
+      "suegra y yerno",
+      "padre e hija",
+      "pareja / matrimonio en crisis",
+      "vecinos de rellano"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8607,10 +8607,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "hija y padre",
-      "hijo y padre",
-      "matrimonio",
-      "pareja / matrimonio en crisis"
+      "compañeros de trabajo",
+      "cuñados",
+      "madre e hijo",
+      "hija y padre"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8645,10 +8645,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "pareja",
       "pareja principal inicial",
-      "relación sentimental central e intermitente",
-      "amistad y convivencia"
+      "vecinos de rellano",
+      "amistad de toda la vida",
+      "jefe y empleado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8683,10 +8683,10 @@
       "tema:relaciones"
     ],
     "options": [
+      "madre e hijo",
       "amistad y convivencia",
-      "pareja / matrimonio en crisis",
-      "coparentalidad de Ezequiel",
-      "hija y padre"
+      "padre e hija",
+      "amistad de toda la vida"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8721,10 +8721,10 @@
       "tema:relaciones"
     ],
     "options": [
+      "compañeros de trabajo",
+      "jefe y empleado",
       "hija y madre",
-      "pareja principal inicial",
-      "madre e hija",
-      "amistad y convivencia"
+      "hermanos"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8759,10 +8759,10 @@
       "tema:relaciones"
     ],
     "options": [
-      "hija y madre",
-      "matrimonio",
-      "madre e hija",
-      "coparentalidad de Ezequiel"
+      "cuñados",
+      "hermanos",
+      "amistad de toda la vida",
+      "madre e hija"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8799,9 +8799,9 @@
     ],
     "options": [
       "Marisa, Vicenta y Concha en gran parte de la serie",
+      "Paco y personajes vinculados",
       "Belén y distintas compañeras de piso",
-      "habitantes temporales según temporada",
-      "Paco y personajes vinculados"
+      "habitantes temporales según temporada"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8854,10 +8854,10 @@
       "tema:mapa"
     ],
     "options": [
-      "habitantes temporales según temporada",
-      "Paco y personajes vinculados",
+      "Lucía y sus parejas en varias etapas",
       "Mauri y Fernando",
-      "Lucía y sus parejas en varias etapas"
+      "habitantes temporales según temporada",
+      "Paco y personajes vinculados"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -8910,8 +8910,8 @@
       "tema:mapa"
     ],
     "options": [
-      "Lucía y sus parejas en varias etapas",
       "Marisa, Vicenta y Concha en gran parte de la serie",
+      "Lucía y sus parejas en varias etapas",
       "familia Cuesta",
       "familia Guerra e Isabel en una etapa"
     ],
@@ -8966,10 +8966,10 @@
       "tema:mapa"
     ],
     "options": [
+      "Lucía y sus parejas en varias etapas",
       "Marisa, Vicenta y Concha en gran parte de la serie",
-      "familia Guerra e Isabel en una etapa",
       "Paco y personajes vinculados",
-      "Lucía y sus parejas en varias etapas"
+      "familia Guerra e Isabel en una etapa"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -9022,10 +9022,10 @@
       "tema:mapa"
     ],
     "options": [
-      "Paco y personajes vinculados",
+      "Lucía y sus parejas en varias etapas",
       "Mauri y Fernando",
       "Belén y distintas compañeras de piso",
-      "Lucía y sus parejas en varias etapas"
+      "Paco y personajes vinculados"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -9078,10 +9078,10 @@
       "tema:mapa"
     ],
     "options": [
-      "Marisa, Vicenta y Concha en gran parte de la serie",
       "habitantes temporales según temporada",
       "Belén y distintas compañeras de piso",
-      "familia Cuesta"
+      "familia Cuesta",
+      "Marisa, Vicenta y Concha en gran parte de la serie"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -9134,10 +9134,10 @@
       "tema:mapa"
     ],
     "options": [
-      "Emilio y Mariano",
-      "Marisa, Vicenta y Concha en gran parte de la serie",
       "familia Guerra e Isabel en una etapa",
-      "habitantes temporales según temporada"
+      "habitantes temporales según temporada",
+      "Emilio y Mariano",
+      "Marisa, Vicenta y Concha en gran parte de la serie"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -9190,10 +9190,10 @@
       "tema:mapa"
     ],
     "options": [
+      "Marisa, Vicenta y Concha en gran parte de la serie",
       "Mauri y Fernando",
-      "Paco y personajes vinculados",
       "familia Cuesta",
-      "Marisa, Vicenta y Concha en gran parte de la serie"
+      "Paco y personajes vinculados"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -9247,8 +9247,8 @@
     ],
     "options": [
       "habitantes temporales según temporada",
-      "familia Cuesta",
       "Marisa, Vicenta y Concha en gran parte de la serie",
+      "familia Cuesta",
       "Belén y distintas compañeras de piso"
     ],
     "spoiler": "none",
@@ -9302,10 +9302,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "4",
       "2",
+      "1",
       "3",
-      "1"
+      "4"
     ],
     "spoiler": "light",
     "confidence": "high",
@@ -9341,9 +9341,9 @@
       "tema:cronologia"
     ],
     "options": [
-      "1",
-      "5",
       "3",
+      "5",
+      "1",
       "2"
     ],
     "spoiler": "light",
@@ -9380,10 +9380,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "2",
       "5",
-      "1",
-      "3"
+      "3",
+      "2",
+      "1"
     ],
     "spoiler": "light",
     "confidence": "high",
@@ -9420,8 +9420,8 @@
     ],
     "options": [
       "1",
-      "5",
       "2",
+      "5",
       "4"
     ],
     "spoiler": "light",
@@ -9458,10 +9458,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "4",
       "5",
       "2",
-      "1"
+      "1",
+      "4"
     ],
     "spoiler": "light",
     "confidence": "high",
@@ -9497,10 +9497,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "4",
       "5",
+      "3",
       "2",
-      "3"
+      "4"
     ],
     "spoiler": "light",
     "confidence": "high",
@@ -9536,10 +9536,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "2",
-      "5",
       "3",
-      "1"
+      "5",
+      "1",
+      "2"
     ],
     "spoiler": "light",
     "confidence": "high",
@@ -9575,10 +9575,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "4",
       "2",
       "3",
-      "5"
+      "5",
+      "4"
     ],
     "spoiler": "light",
     "confidence": "high",
@@ -9614,9 +9614,9 @@
       "tema:cronologia"
     ],
     "options": [
-      "1",
-      "3",
       "5",
+      "3",
+      "1",
       "4"
     ],
     "spoiler": "light",
@@ -9653,10 +9653,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "4",
       "2",
-      "5",
-      "3"
+      "4",
+      "3",
+      "5"
     ],
     "spoiler": "light",
     "confidence": "high",
@@ -9692,10 +9692,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "3",
-      "1",
       "2",
-      "4"
+      "4",
+      "1",
+      "3"
     ],
     "spoiler": "light",
     "confidence": "high",
@@ -9731,10 +9731,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "1",
-      "2",
       "3",
-      "5"
+      "5",
+      "1",
+      "2"
     ],
     "spoiler": "light",
     "confidence": "high",
@@ -9770,9 +9770,9 @@
       "tema:cronologia"
     ],
     "options": [
-      "2",
       "3",
       "4",
+      "2",
       "5"
     ],
     "spoiler": "light",
@@ -9809,8 +9809,8 @@
       "tema:cronologia"
     ],
     "options": [
-      "2",
       "5",
+      "2",
       "4",
       "1"
     ],
@@ -9848,9 +9848,9 @@
       "tema:cronologia"
     ],
     "options": [
+      "2",
       "1",
       "5",
-      "2",
       "4"
     ],
     "spoiler": "light",
@@ -9888,9 +9888,9 @@
     ],
     "options": [
       "4",
+      "2",
       "1",
-      "5",
-      "2"
+      "5"
     ],
     "spoiler": "light",
     "confidence": "high",
@@ -9926,10 +9926,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "5",
-      "3",
+      "2",
       "4",
-      "2"
+      "5",
+      "3"
     ],
     "spoiler": "light",
     "confidence": "high",
@@ -9965,10 +9965,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "3",
-      "2",
       "1",
-      "5"
+      "3",
+      "5",
+      "2"
     ],
     "spoiler": "light",
     "confidence": "high",
@@ -10004,10 +10004,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "4",
       "1",
-      "5",
-      "3"
+      "3",
+      "4",
+      "5"
     ],
     "spoiler": "major",
     "confidence": "high",
@@ -10043,10 +10043,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "3",
-      "4",
       "5",
-      "2"
+      "4",
+      "2",
+      "3"
     ],
     "spoiler": "major",
     "confidence": "high",
@@ -10082,9 +10082,9 @@
       "tema:cronologia"
     ],
     "options": [
-      "3",
-      "5",
       "4",
+      "5",
+      "3",
       "1"
     ],
     "spoiler": "major",
@@ -10121,10 +10121,10 @@
       "tema:cronologia"
     ],
     "options": [
-      "5",
-      "3",
       "1",
-      "2"
+      "2",
+      "5",
+      "3"
     ],
     "spoiler": "major",
     "confidence": "high",
@@ -10245,9 +10245,9 @@
       "tipo:mcq"
     ],
     "options": [
-      "3.º A",
       "Valentín",
       "José Miguel, Ana y Mariano",
+      "3.º A",
       "Vocal Factory"
     ],
     "spoiler": "none",
@@ -10305,9 +10305,9 @@
     ],
     "options": [
       "16",
+      "Francia",
       "Doña Croqueta",
-      "13, Rue del Percebe",
-      "Francia"
+      "13, Rue del Percebe"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -10363,10 +10363,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "2.507.000 espectadores",
       "Doña Croqueta",
-      "40,3%",
-      "13, Rue del Percebe"
+      "13, Rue del Percebe",
+      "2.507.000 espectadores",
+      "40,3%"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -10422,9 +10422,9 @@
       "tipo:mcq"
     ],
     "options": [
-      "Valentín",
-      "20,9%",
       "Grecia",
+      "20,9%",
+      "Valentín",
       "Lucía, Juan Cuesta y Emilio"
     ],
     "spoiler": "none",
@@ -10481,8 +10481,8 @@
       "tipo:mcq"
     ],
     "options": [
-      "13, Rue del Percebe",
       "Francia",
+      "13, Rue del Percebe",
       "Vocal Factory",
       "Cook"
     ],
@@ -10541,9 +10541,9 @@
     ],
     "options": [
       "220 euros",
-      "restricciones televisivas sobre alcohol y tabaco",
       "3",
-      "2.507.000 espectadores"
+      "2.507.000 espectadores",
+      "restricciones televisivas sobre alcohol y tabaco"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -10599,9 +10599,9 @@
       "tipo:mcq"
     ],
     "options": [
-      "20,9%",
-      "Elsa Pataky",
       "Miramon Mendi",
+      "Elsa Pataky",
+      "20,9%",
       "Paco"
     ],
     "spoiler": "none",
@@ -10658,8 +10658,8 @@
       "tipo:mcq"
     ],
     "options": [
-      "Elsa Pataky",
       "María Asquerino",
+      "Elsa Pataky",
       "Laura Pamplona",
       "el portero Emilio"
     ],
@@ -10717,8 +10717,8 @@
       "tipo:mcq"
     ],
     "options": [
-      "Lucía, Juan Cuesta y Emilio",
       "16",
+      "Lucía, Juan Cuesta y Emilio",
       "un décimo de lotería",
       "Paco"
     ],
@@ -10776,10 +10776,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "13, Rue del Percebe",
-      "un décimo de lotería",
       "el portero Emilio",
-      "Vocal Factory"
+      "un décimo de lotería",
+      "Vocal Factory",
+      "13, Rue del Percebe"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -10835,10 +10835,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "Lucía, Juan Cuesta y Emilio",
       "Portugal",
-      "José Miguel, Ana y Mariano",
-      "María Asquerino"
+      "María Asquerino",
+      "Lucía, Juan Cuesta y Emilio",
+      "José Miguel, Ana y Mariano"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -10894,10 +10894,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "Eduardo Gómez",
       "Laura Pamplona",
-      "A tortas con la vida",
-      "al abuelo de Laura y Alberto Caballero"
+      "Eduardo Gómez",
+      "al abuelo de Laura y Alberto Caballero",
+      "A tortas con la vida"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -10953,8 +10953,8 @@
       "tipo:mcq"
     ],
     "options": [
-      "39",
       "Eduardo García",
+      "39",
       "40,3%",
       "Doña Croqueta"
     ],
@@ -11012,10 +11012,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "el videoclub",
-      "Eduardo Gómez",
+      "Emma Penella",
       "Laura Pamplona",
-      "Emma Penella"
+      "el videoclub",
+      "Eduardo Gómez"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -11071,10 +11071,10 @@
       "tipo:mcq"
     ],
     "options": [
+      "Portugal",
       "un décimo de lotería",
       "Francia",
-      "220 euros",
-      "Portugal"
+      "220 euros"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -11130,10 +11130,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "Paco",
       "Portugal",
+      "Cook",
       "3",
-      "Cook"
+      "Paco"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -11189,8 +11189,8 @@
       "tipo:mcq"
     ],
     "options": [
-      "Paco",
       "restricciones televisivas sobre alcohol y tabaco",
+      "Paco",
       "3",
       "Eduardo Gómez"
     ],
@@ -11248,10 +11248,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "Francia",
-      "José Miguel, Ana y Mariano",
       "Eduardo García",
-      "220 euros"
+      "220 euros",
+      "Francia",
+      "José Miguel, Ana y Mariano"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -11307,9 +11307,9 @@
       "tipo:mcq"
     ],
     "options": [
+      "39",
       "Lucía, Juan Cuesta y Emilio",
       "Cook",
-      "39",
       "A tortas con la vida"
     ],
     "spoiler": "none",
@@ -11366,10 +11366,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "220 euros",
-      "Belén, Mauri y Mariano",
       "20,9%",
-      "Laura Pamplona"
+      "Laura Pamplona",
+      "Belén, Mauri y Mariano",
+      "220 euros"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -11425,10 +11425,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "José Miguel, Ana y Mariano",
+      "Laura Pamplona",
       "Cook",
       "A tortas con la vida",
-      "Laura Pamplona"
+      "José Miguel, Ana y Mariano"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -11485,9 +11485,9 @@
     ],
     "options": [
       "Portugal",
+      "16",
       "Laura Pamplona",
-      "el portero Emilio",
-      "16"
+      "el portero Emilio"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -11543,9 +11543,9 @@
       "tipo:mcq"
     ],
     "options": [
-      "María Asquerino",
-      "Francia",
       "Portugal",
+      "Francia",
+      "María Asquerino",
       "13, Rue del Percebe"
     ],
     "spoiler": "none",
@@ -11602,10 +11602,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "restricciones televisivas sobre alcohol y tabaco",
-      "Grecia",
       "2.507.000 espectadores",
-      "Lucía, Juan Cuesta y Emilio"
+      "Lucía, Juan Cuesta y Emilio",
+      "Grecia",
+      "restricciones televisivas sobre alcohol y tabaco"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -11661,10 +11661,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "las sitcoms de 22 minutos frente a capítulos mucho más largos",
-      "Cook",
       "Vocal Factory",
-      "2.507.000 espectadores"
+      "Cook",
+      "2.507.000 espectadores",
+      "las sitcoms de 22 minutos frente a capítulos mucho más largos"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -11721,9 +11721,9 @@
     ],
     "options": [
       "restricciones televisivas sobre alcohol y tabaco",
+      "2.507.000 espectadores",
       "al abuelo de Laura y Alberto Caballero",
-      "las sitcoms de 22 minutos frente a capítulos mucho más largos",
-      "2.507.000 espectadores"
+      "las sitcoms de 22 minutos frente a capítulos mucho más largos"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -11779,9 +11779,9 @@
       "tipo:mcq"
     ],
     "options": [
-      "las sitcoms de 22 minutos frente a capítulos mucho más largos",
-      "A tortas con la vida",
       "40,3%",
+      "A tortas con la vida",
+      "las sitcoms de 22 minutos frente a capítulos mucho más largos",
       "Vocal Factory"
     ],
     "spoiler": "none",
@@ -11838,9 +11838,9 @@
       "tipo:mcq"
     ],
     "options": [
+      "20,9%",
       "José Miguel, Ana y Mariano",
       "39",
-      "20,9%",
       "Cook"
     ],
     "spoiler": "none",
@@ -11897,10 +11897,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "el videoclub",
       "A tortas con la vida",
-      "Miramon Mendi",
-      "Elsa Pataky"
+      "Elsa Pataky",
+      "el videoclub",
+      "Miramon Mendi"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -11956,10 +11956,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "Laura Pamplona",
-      "39",
       "Alberto y Laura Caballero",
-      "las sitcoms de 22 minutos frente a capítulos mucho más largos"
+      "las sitcoms de 22 minutos frente a capítulos mucho más largos",
+      "Laura Pamplona",
+      "39"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12015,10 +12015,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "José Miguel, Ana y Mariano",
       "el videoclub",
+      "2.507.000 espectadores",
       "Eduardo García",
-      "2.507.000 espectadores"
+      "José Miguel, Ana y Mariano"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12074,8 +12074,8 @@
       "tipo:mcq"
     ],
     "options": [
-      "Lucía, Juan Cuesta y Emilio",
       "2.507.000 espectadores",
+      "Lucía, Juan Cuesta y Emilio",
       "20,9%",
       "Miramon Mendi"
     ],
@@ -12133,9 +12133,9 @@
       "tipo:mcq"
     ],
     "options": [
+      "20,9%",
       "Portugal",
       "16",
-      "20,9%",
       "40,3%"
     ],
     "spoiler": "none",
@@ -12192,10 +12192,10 @@
       "tipo:mcq"
     ],
     "options": [
-      "220 euros",
+      "3.º A",
       "Miramon Mendi",
-      "Alberto y Laura Caballero",
-      "3.º A"
+      "220 euros",
+      "Alberto y Laura Caballero"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12251,9 +12251,9 @@
       "tipo:mcq"
     ],
     "options": [
-      "el portero Emilio",
-      "el videoclub",
       "40,3%",
+      "el videoclub",
+      "el portero Emilio",
       "Eduardo García"
     ],
     "spoiler": "none",
@@ -12310,10 +12310,10 @@
       "tema:rasgos"
     ],
     "options": [
-      "reservado",
       "creativo",
       "intensa",
-      "metódico"
+      "metódico",
+      "reservado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12349,10 +12349,10 @@
       "tema:rasgos"
     ],
     "options": [
-      "orgulloso",
       "fumadora",
-      "dominante",
-      "cambiante"
+      "cambiante",
+      "orgulloso",
+      "dominante"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12389,8 +12389,8 @@
     ],
     "options": [
       "joven",
-      "afectivo",
       "sentimental",
+      "afectivo",
       "perseverante"
     ],
     "spoiler": "none",
@@ -12427,10 +12427,10 @@
       "tema:rasgos"
     ],
     "options": [
-      "irónico",
-      "oportunista",
       "ingenioso",
-      "precoz"
+      "irónico",
+      "precoz",
+      "oportunista"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12466,10 +12466,10 @@
       "tema:rasgos"
     ],
     "options": [
+      "romántico",
       "controlador",
       "directo",
-      "autoritaria",
-      "romántico"
+      "autoritaria"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12505,9 +12505,9 @@
       "tema:rasgos"
     ],
     "options": [
-      "filósofo de bar",
       "joven",
       "ingenioso",
+      "filósofo de bar",
       "oportunista"
     ],
     "spoiler": "none",
@@ -12544,10 +12544,10 @@
       "tema:rasgos"
     ],
     "options": [
-      "intensa",
+      "sarcástica",
       "inmaduro",
-      "leal",
-      "sarcástica"
+      "intensa",
+      "leal"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12583,10 +12583,10 @@
       "tema:rasgos"
     ],
     "options": [
+      "mordaz",
       "segura",
       "cinéfilo",
-      "perseverante",
-      "mordaz"
+      "perseverante"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12622,9 +12622,9 @@
       "tema:rasgos"
     ],
     "options": [
+      "explosiva",
       "cambiante",
       "práctica",
-      "explosiva",
       "irónico"
     ],
     "spoiler": "none",
@@ -12661,10 +12661,10 @@
       "tema:rasgos"
     ],
     "options": [
-      "creativo",
+      "racional",
       "neurótico",
       "segura",
-      "racional"
+      "creativo"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12701,8 +12701,8 @@
     ],
     "options": [
       "neurótico",
-      "práctica",
       "deslenguada",
+      "práctica",
       "competitiva"
     ],
     "spoiler": "none",
@@ -12739,10 +12739,10 @@
       "tema:rasgos"
     ],
     "options": [
-      "aspiracional",
-      "ácida",
+      "idealista",
       "sereno",
-      "idealista"
+      "aspiracional",
+      "ácida"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12778,10 +12778,10 @@
       "tema:rasgos"
     ],
     "options": [
+      "ambiciosa",
       "elegante",
       "ácida",
-      "perseverante",
-      "ambiciosa"
+      "perseverante"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12817,8 +12817,8 @@
       "tema:rasgos"
     ],
     "options": [
-      "observador",
       "perseverante",
+      "observador",
       "elegante",
       "ingenua"
     ],
@@ -12857,9 +12857,9 @@
     ],
     "options": [
       "autoritaria",
+      "neurótico",
       "mordaz",
-      "sarcástica",
-      "neurótico"
+      "sarcástica"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12895,10 +12895,10 @@
       "tema:rasgos"
     ],
     "options": [
-      "directo",
       "cálida",
+      "alternativa",
       "competitiva",
-      "alternativa"
+      "directo"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12934,10 +12934,10 @@
       "tema:rasgos"
     ],
     "options": [
+      "mujeriego",
       "elegante",
       "pragmático",
-      "perseverante",
-      "mujeriego"
+      "perseverante"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -12973,9 +12973,9 @@
       "tema:rasgos"
     ],
     "options": [
+      "sarcástica",
       "obsesionado con la presidencia",
       "ecologista",
-      "sarcástica",
       "joven"
     ],
     "spoiler": "none",
@@ -13013,9 +13013,9 @@
     ],
     "options": [
       "joven",
+      "bondadosa",
       "cinéfilo",
-      "entrañable",
-      "bondadosa"
+      "entrañable"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13051,10 +13051,10 @@
       "tema:rasgos"
     ],
     "options": [
-      "ingenuo",
+      "orgulloso",
       "responsable",
-      "caótico",
-      "orgulloso"
+      "ingenuo",
+      "caótico"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13090,10 +13090,10 @@
       "tema:rasgos"
     ],
     "options": [
+      "perseverante",
       "segura",
-      "charlatán",
       "cinéfilo",
-      "perseverante"
+      "charlatán"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13129,10 +13129,10 @@
       "tema:rasgos"
     ],
     "options": [
+      "inseguro",
       "práctica",
-      "idealista",
       "competitiva",
-      "inseguro"
+      "idealista"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13168,10 +13168,10 @@
       "tema:rasgos"
     ],
     "options": [
-      "neurótico",
       "intensa",
-      "competitiva",
-      "reservado"
+      "reservado",
+      "neurótico",
+      "competitiva"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13207,9 +13207,9 @@
       "tema:rasgos"
     ],
     "options": [
+      "creativo",
       "controlador",
       "ecologista",
-      "creativo",
       "cálida"
     ],
     "spoiler": "none",
@@ -13246,10 +13246,10 @@
       "tema:rasgos"
     ],
     "options": [
-      "vital",
-      "creativo",
       "mordaz",
-      "joven"
+      "joven",
+      "vital",
+      "creativo"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13285,10 +13285,10 @@
       "tema:rasgos"
     ],
     "options": [
-      "competitiva",
-      "ácida",
       "obsesionado con la presidencia",
-      "inseguro"
+      "ácida",
+      "inseguro",
+      "competitiva"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13308,9 +13308,9 @@
     ],
     "options": [
       "Juan Cuesta + Paloma Hurtado",
+      "María Jesús Vázquez + Rafael Álvarez",
       "Belén López Vázquez + Alicia Sanz",
-      "Lucía Álvarez + Roberto Alonso",
-      "María Jesús Vázquez + Rafael Álvarez"
+      "Lucía Álvarez + Roberto Alonso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13329,10 +13329,10 @@
       "tipo:inferencia"
     ],
     "options": [
+      "Ana + Nieves Cuesta",
       "Paloma Hurtado + Natalia Cuesta",
       "Natalia Cuesta + José Miguel Cuesta",
-      "Mauri Hidalgo + Fernando Navarro",
-      "Ana + Nieves Cuesta"
+      "Mauri Hidalgo + Fernando Navarro"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13351,10 +13351,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Emilio Delgado + Mariano Delgado",
       "Lucía Álvarez + Roberto Alonso",
+      "Marisa Benito + Vicenta Benito",
       "Natalia Cuesta + José Miguel Cuesta",
-      "Marisa Benito + Vicenta Benito"
+      "Emilio Delgado + Mariano Delgado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13373,10 +13373,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Lucía Álvarez + Roberto Alonso",
-      "José Miguel Cuesta + Isabel Ruiz",
       "Natalia Cuesta + José Miguel Cuesta",
-      "Juan Cuesta + Paloma Hurtado"
+      "Lucía Álvarez + Roberto Alonso",
+      "Juan Cuesta + Paloma Hurtado",
+      "José Miguel Cuesta + Isabel Ruiz"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13395,10 +13395,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Ana + Nieves Cuesta",
+      "Emilio Delgado + Mariano Delgado",
       "Lucía Álvarez + Roberto Alonso",
-      "Andrés Guerra + Pablo Guerra",
-      "Emilio Delgado + Mariano Delgado"
+      "Ana + Nieves Cuesta",
+      "Andrés Guerra + Pablo Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13417,10 +13417,10 @@
       "tipo:inferencia"
     ],
     "options": [
+      "Natalia Cuesta + José Miguel Cuesta",
       "Mariano Delgado + Emilio Delgado",
       "Juan Cuesta + Paloma Hurtado",
-      "Paco + Yago",
-      "Natalia Cuesta + José Miguel Cuesta"
+      "Paco + Yago"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13439,10 +13439,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Mauri Hidalgo + Fernando Navarro",
-      "Belén López Vázquez + Alicia Sanz",
       "Andrés Guerra + Pablo Guerra",
-      "Ana + Nieves Cuesta"
+      "Ana + Nieves Cuesta",
+      "Belén López Vázquez + Alicia Sanz",
+      "Mauri Hidalgo + Fernando Navarro"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13461,10 +13461,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Alicia Sanz + María Jesús Vázquez",
+      "Emilio Delgado + Mariano Delgado",
       "Concha + Isabel Ruiz",
       "Ana + Nieves Cuesta",
-      "Emilio Delgado + Mariano Delgado"
+      "Alicia Sanz + María Jesús Vázquez"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13483,10 +13483,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Mauri Hidalgo + Fernando Navarro",
-      "Juan Cuesta + Paloma Hurtado",
       "María Jesús Vázquez + Ana",
-      "María Jesús Vázquez + Rafael Álvarez"
+      "María Jesús Vázquez + Rafael Álvarez",
+      "Mauri Hidalgo + Fernando Navarro",
+      "Juan Cuesta + Paloma Hurtado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13505,9 +13505,9 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Álex Guerra + Bea Villarejo",
       "Ana + Nieves Cuesta",
       "Ana + Belén López Vázquez",
+      "Álex Guerra + Bea Villarejo",
       "Emilio Delgado + Mariano Delgado"
     ],
     "spoiler": "none",
@@ -13527,10 +13527,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Natalia Cuesta + José Miguel Cuesta",
       "María Jesús Vázquez + Rafael Álvarez",
       "Marisa Benito + Vicenta Benito",
-      "Lucía Álvarez + Roberto Alonso"
+      "Lucía Álvarez + Roberto Alonso",
+      "Natalia Cuesta + José Miguel Cuesta"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13549,9 +13549,9 @@
       "tipo:inferencia"
     ],
     "options": [
+      "Juan Cuesta + Paloma Hurtado",
       "Concha + Isabel Ruiz",
       "Andrés Guerra + Pablo Guerra",
-      "Juan Cuesta + Paloma Hurtado",
       "Roberto Alonso + Rafael Álvarez"
     ],
     "spoiler": "none",
@@ -13571,9 +13571,9 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Natalia Cuesta + José Miguel Cuesta",
       "Rafael Álvarez + Lucía Álvarez",
       "Mauri Hidalgo + Fernando Navarro",
+      "Natalia Cuesta + José Miguel Cuesta",
       "Álex Guerra + Bea Villarejo"
     ],
     "spoiler": "none",
@@ -13593,9 +13593,9 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Concha + Isabel Ruiz",
-      "Mauri Hidalgo + Fernando Navarro",
       "Juan Cuesta + Paloma Hurtado",
+      "Mauri Hidalgo + Fernando Navarro",
+      "Concha + Isabel Ruiz",
       "Paco + Yago"
     ],
     "spoiler": "none",
@@ -13615,10 +13615,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Marisa Benito + Vicenta Benito",
       "Concha + Isabel Ruiz",
+      "Mauri Hidalgo + Fernando Navarro",
       "Fernando Navarro + Mauri Hidalgo",
-      "Mauri Hidalgo + Fernando Navarro"
+      "Marisa Benito + Vicenta Benito"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13637,10 +13637,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Concha + Isabel Ruiz",
       "Mauri Hidalgo + Fernando Navarro",
-      "Marisa Benito + Vicenta Benito",
-      "Emilio Delgado + Mariano Delgado"
+      "Emilio Delgado + Mariano Delgado",
+      "Concha + Isabel Ruiz",
+      "Marisa Benito + Vicenta Benito"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13659,10 +13659,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Lucía Álvarez + Roberto Alonso",
+      "Vicenta Benito + Concha",
       "Álex Guerra + Bea Villarejo",
-      "Paco + Yago",
-      "Vicenta Benito + Concha"
+      "Lucía Álvarez + Roberto Alonso",
+      "Paco + Yago"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13681,10 +13681,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Concha + Marisa Benito",
-      "Emilio Delgado + Mariano Delgado",
       "Juan Cuesta + Paloma Hurtado",
-      "Concha + Isabel Ruiz"
+      "Concha + Marisa Benito",
+      "Concha + Isabel Ruiz",
+      "Emilio Delgado + Mariano Delgado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13703,10 +13703,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Juan Cuesta + Paloma Hurtado",
       "Lucía Álvarez + Roberto Alonso",
-      "Belén López Vázquez + Alicia Sanz",
-      "Concha + Isabel Ruiz"
+      "Juan Cuesta + Paloma Hurtado",
+      "Concha + Isabel Ruiz",
+      "Belén López Vázquez + Alicia Sanz"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13725,9 +13725,9 @@
       "tipo:inferencia"
     ],
     "options": [
+      "Mauri Hidalgo + Fernando Navarro",
       "Belén López Vázquez + Alicia Sanz",
       "Paco + Yago",
-      "Mauri Hidalgo + Fernando Navarro",
       "Isabel Ruiz + Andrés Guerra"
     ],
     "spoiler": "none",
@@ -13748,8 +13748,8 @@
     ],
     "options": [
       "Andrés Guerra + Pablo Guerra",
-      "Álex Guerra + Bea Villarejo",
       "Mauri Hidalgo + Fernando Navarro",
+      "Álex Guerra + Bea Villarejo",
       "Lucía Álvarez + Roberto Alonso"
     ],
     "spoiler": "none",
@@ -13769,10 +13769,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Pablo Guerra + Álex Guerra",
-      "Natalia Cuesta + José Miguel Cuesta",
       "Álex Guerra + Bea Villarejo",
-      "Lucía Álvarez + Roberto Alonso"
+      "Pablo Guerra + Álex Guerra",
+      "Lucía Álvarez + Roberto Alonso",
+      "Natalia Cuesta + José Miguel Cuesta"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13791,10 +13791,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Natalia Cuesta + José Miguel Cuesta",
       "Mauri Hidalgo + Fernando Navarro",
-      "Lucía Álvarez + Roberto Alonso",
-      "Andrés Guerra + Pablo Guerra"
+      "Natalia Cuesta + José Miguel Cuesta",
+      "Andrés Guerra + Pablo Guerra",
+      "Lucía Álvarez + Roberto Alonso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13813,10 +13813,10 @@
       "tipo:inferencia"
     ],
     "options": [
+      "Andrés Guerra + Pablo Guerra",
       "Natalia Cuesta + José Miguel Cuesta",
-      "Pablo Guerra + Paco",
       "Paco + Yago",
-      "Andrés Guerra + Pablo Guerra"
+      "Pablo Guerra + Paco"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -13835,10 +13835,10 @@
       "tipo:inferencia"
     ],
     "options": [
-      "Paco + Yago",
       "Paco + Andrés Guerra",
       "Juan Cuesta + Paloma Hurtado",
-      "Belén López Vázquez + Alicia Sanz"
+      "Belén López Vázquez + Alicia Sanz",
+      "Paco + Yago"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14257,10 +14257,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Mauri Hidalgo",
-      "Juan Cuesta",
       "Belén López Vázquez",
-      "José Miguel Cuesta"
+      "Juan Cuesta",
+      "José Miguel Cuesta",
+      "Mauri Hidalgo"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14270,19 +14270,19 @@
     "id": "Q0851",
     "type": "intruso",
     "question": "Entre las relaciones clave de Juan Cuesta, ¿qué nombre sería el intruso?",
-    "answer": "Emilio Delgado",
+    "answer": "Mauri Hidalgo",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Emilio Delgado no figura entre las relaciones clave de Juan Cuesta en la biblia editorial.",
+    "explanation": "Mauri Hidalgo no figura entre las relaciones clave de Juan Cuesta (Paloma Hurtado, Natalia Cuesta, José Miguel Cuesta, Nieves Cuesta).",
     "tags": [
       "personaje:juan cuesta",
       "tipo:intruso"
     ],
     "options": [
-      "Emilio Delgado",
+      "José Miguel Cuesta",
       "Paloma Hurtado",
-      "Nieves Cuesta",
-      "José Miguel Cuesta"
+      "Mauri Hidalgo",
+      "Natalia Cuesta"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14301,10 +14301,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Isabel Ruiz",
       "Mariano Delgado",
-      "Paloma Hurtado",
-      "Alicia Sanz"
+      "Alicia Sanz",
+      "Isabel Ruiz",
+      "Paloma Hurtado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14314,19 +14314,19 @@
     "id": "Q0853",
     "type": "intruso",
     "question": "Entre las relaciones clave de Paloma Hurtado, ¿qué nombre sería el intruso?",
-    "answer": "Emilio Delgado",
+    "answer": "María Jesús Vázquez",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Emilio Delgado no figura entre las relaciones clave de Paloma Hurtado en la biblia editorial.",
+    "explanation": "María Jesús Vázquez no figura entre las relaciones clave de Paloma Hurtado (Juan Cuesta, Natalia Cuesta, José Miguel Cuesta).",
     "tags": [
       "personaje:paloma hurtado",
       "tipo:intruso"
     ],
     "options": [
+      "María Jesús Vázquez",
       "José Miguel Cuesta",
-      "Natalia Cuesta",
       "Juan Cuesta",
-      "Emilio Delgado"
+      "Natalia Cuesta"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14345,10 +14345,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Andrés Guerra",
       "Isabel Ruiz",
+      "Natalia Cuesta",
       "Marisa Benito",
-      "Natalia Cuesta"
+      "Andrés Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14358,18 +14358,18 @@
     "id": "Q0855",
     "type": "intruso",
     "question": "Entre las relaciones clave de Natalia Cuesta, ¿qué nombre sería el intruso?",
-    "answer": "Emilio Delgado",
+    "answer": "Belén López Vázquez",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Emilio Delgado no figura entre las relaciones clave de Natalia Cuesta en la biblia editorial.",
+    "explanation": "Belén López Vázquez no figura entre las relaciones clave de Natalia Cuesta (Juan Cuesta, Paloma Hurtado, José Miguel Cuesta, Yamiley).",
     "tags": [
       "personaje:natalia cuesta",
       "tipo:intruso"
     ],
     "options": [
-      "Yamiley",
       "Paloma Hurtado",
-      "Emilio Delgado",
+      "Juan Cuesta",
+      "Belén López Vázquez",
       "José Miguel Cuesta"
     ],
     "spoiler": "none",
@@ -14389,9 +14389,9 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Belén López Vázquez",
       "Rafael Álvarez",
       "Bea Villarejo",
+      "Belén López Vázquez",
       "José Miguel Cuesta"
     ],
     "spoiler": "none",
@@ -14405,16 +14405,16 @@
     "answer": "Emilio Delgado",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Emilio Delgado no figura entre las relaciones clave de José Miguel Cuesta en la biblia editorial.",
+    "explanation": "Emilio Delgado no figura entre las relaciones clave de José Miguel Cuesta (Juan Cuesta, Paloma Hurtado, Natalia Cuesta).",
     "tags": [
       "personaje:josé miguel cuesta",
       "tipo:intruso"
     ],
     "options": [
-      "Natalia Cuesta",
-      "Juan Cuesta",
+      "Emilio Delgado",
       "Paloma Hurtado",
-      "Emilio Delgado"
+      "Juan Cuesta",
+      "Natalia Cuesta"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14433,10 +14433,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Mariano Delgado",
-      "Alicia Sanz",
       "Fernando Navarro",
-      "Emilio Delgado"
+      "Emilio Delgado",
+      "Mariano Delgado",
+      "Alicia Sanz"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14444,20 +14444,19 @@
   },
   {
     "id": "Q0859",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Emilio Delgado, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "Juan Cuesta es una de las relaciones clave de Emilio Delgado.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Emilio Delgado en la biblia editorial.",
+    "explanation": "El catálogo recoge para Emilio Delgado: Mariano Delgado, Belén López Vázquez.",
     "tags": [
       "personaje:emilio delgado",
       "tipo:intruso"
     ],
     "options": [
-      "Juan Cuesta",
-      "Mariano Delgado",
-      "Belén López Vázquez"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14476,10 +14475,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "José Miguel Cuesta",
       "Rafael Álvarez",
+      "María Jesús Vázquez",
       "Mariano Delgado",
-      "María Jesús Vázquez"
+      "José Miguel Cuesta"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14487,19 +14486,19 @@
   },
   {
     "id": "Q0861",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Mariano Delgado, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "Isabel Ruiz es una de las relaciones clave de Mariano Delgado.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Mariano Delgado en la biblia editorial.",
+    "explanation": "El catálogo recoge para Mariano Delgado: Emilio Delgado.",
     "tags": [
       "personaje:mariano delgado",
       "tipo:intruso"
     ],
     "options": [
-      "Emilio Delgado",
-      "Juan Cuesta"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14518,10 +14517,10 @@
       "tipo:doble_pista"
     ],
     "options": [
+      "Paco",
       "Pablo Guerra",
-      "Belén López Vázquez",
       "Yago",
-      "Paco"
+      "Belén López Vázquez"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14531,19 +14530,19 @@
     "id": "Q0863",
     "type": "intruso",
     "question": "Entre las relaciones clave de Belén López Vázquez, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "answer": "José Miguel Cuesta",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Belén López Vázquez en la biblia editorial.",
+    "explanation": "José Miguel Cuesta no figura entre las relaciones clave de Belén López Vázquez (Alicia Sanz, Emilio Delgado, María Jesús Vázquez).",
     "tags": [
       "personaje:belén lópez vázquez",
       "tipo:intruso"
     ],
     "options": [
+      "José Miguel Cuesta",
+      "María Jesús Vázquez",
       "Alicia Sanz",
-      "Juan Cuesta",
-      "Emilio Delgado",
-      "María Jesús Vázquez"
+      "Emilio Delgado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14562,10 +14561,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Lucía Álvarez",
       "Pablo Guerra",
       "Alicia Sanz",
-      "Mariano Delgado"
+      "Mariano Delgado",
+      "Lucía Álvarez"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14573,19 +14572,19 @@
   },
   {
     "id": "Q0865",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Alicia Sanz, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "Bea Villarejo es una de las relaciones clave de Alicia Sanz.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Alicia Sanz en la biblia editorial.",
+    "explanation": "El catálogo recoge para Alicia Sanz: Belén López Vázquez.",
     "tags": [
       "personaje:alicia sanz",
       "tipo:intruso"
     ],
     "options": [
-      "Belén López Vázquez",
-      "Juan Cuesta"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14604,10 +14603,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Emilio Delgado",
       "Bea Villarejo",
-      "Mauri Hidalgo",
-      "Lucía Álvarez"
+      "Emilio Delgado",
+      "Lucía Álvarez",
+      "Mauri Hidalgo"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14617,19 +14616,19 @@
     "id": "Q0867",
     "type": "intruso",
     "question": "Entre las relaciones clave de Lucía Álvarez, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "answer": "Nieves Cuesta",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Lucía Álvarez en la biblia editorial.",
+    "explanation": "Nieves Cuesta no figura entre las relaciones clave de Lucía Álvarez (Rafael Álvarez, Roberto Alonso, Carlos, Yago).",
     "tags": [
       "personaje:lucía álvarez",
       "tipo:intruso"
     ],
     "options": [
-      "Yago",
+      "Carlos",
+      "Rafael Álvarez",
       "Roberto Alonso",
-      "Juan Cuesta",
-      "Carlos"
+      "Nieves Cuesta"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14648,10 +14647,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "María Jesús Vázquez",
       "Roberto Alonso",
-      "Paloma Hurtado",
-      "Lucía Álvarez"
+      "Lucía Álvarez",
+      "María Jesús Vázquez",
+      "Paloma Hurtado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14659,19 +14658,19 @@
   },
   {
     "id": "Q0869",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Roberto Alonso, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "Mariano Delgado es una de las relaciones clave de Roberto Alonso.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Roberto Alonso en la biblia editorial.",
+    "explanation": "El catálogo recoge para Roberto Alonso: Lucía Álvarez.",
     "tags": [
       "personaje:roberto alonso",
       "tipo:intruso"
     ],
     "options": [
-      "Lucía Álvarez",
-      "Juan Cuesta"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14690,10 +14689,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Belén López Vázquez",
       "Emilio Delgado",
-      "Nieves Cuesta",
-      "Mauri Hidalgo"
+      "Mauri Hidalgo",
+      "Belén López Vázquez",
+      "Nieves Cuesta"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14703,19 +14702,19 @@
     "id": "Q0871",
     "type": "intruso",
     "question": "Entre las relaciones clave de Mauri Hidalgo, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "answer": "Álex Guerra",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Mauri Hidalgo en la biblia editorial.",
+    "explanation": "Álex Guerra no figura entre las relaciones clave de Mauri Hidalgo (Fernando Navarro, Ezequiel, Bea Villarejo).",
     "tags": [
       "personaje:mauri hidalgo",
       "tipo:intruso"
     ],
     "options": [
-      "Ezequiel",
-      "Fernando Navarro",
       "Bea Villarejo",
-      "Juan Cuesta"
+      "Fernando Navarro",
+      "Álex Guerra",
+      "Ezequiel"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14734,9 +14733,9 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Alicia Sanz",
       "Paco",
       "Mauri Hidalgo",
+      "Alicia Sanz",
       "Fernando Navarro"
     ],
     "spoiler": "none",
@@ -14745,19 +14744,19 @@
   },
   {
     "id": "Q0873",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Fernando Navarro, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "Belén López Vázquez es una de las relaciones clave de Fernando Navarro.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Fernando Navarro en la biblia editorial.",
+    "explanation": "El catálogo recoge para Fernando Navarro: Mauri Hidalgo.",
     "tags": [
       "personaje:fernando navarro",
       "tipo:intruso"
     ],
     "options": [
-      "Juan Cuesta",
-      "Mauri Hidalgo"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14776,10 +14775,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Álex Guerra",
+      "Marisa Benito",
       "Alicia Sanz",
-      "Isabel Ruiz",
-      "Marisa Benito"
+      "Álex Guerra",
+      "Isabel Ruiz"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14787,20 +14786,19 @@
   },
   {
     "id": "Q0875",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Marisa Benito, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "Fernando Navarro es una de las relaciones clave de Marisa Benito.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Marisa Benito en la biblia editorial.",
+    "explanation": "El catálogo recoge para Marisa Benito: Vicenta Benito, Concha.",
     "tags": [
       "personaje:marisa benito",
       "tipo:intruso"
     ],
     "options": [
-      "Vicenta Benito",
-      "Concha",
-      "Juan Cuesta"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14819,10 +14817,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Emilio Delgado",
       "Rafael Álvarez",
       "Vicenta Benito",
-      "María Jesús Vázquez"
+      "María Jesús Vázquez",
+      "Emilio Delgado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14830,21 +14828,19 @@
   },
   {
     "id": "Q0877",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Vicenta Benito, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "Natalia Cuesta es una de las relaciones clave de Vicenta Benito.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Vicenta Benito en la biblia editorial.",
+    "explanation": "El catálogo recoge para Vicenta Benito: Marisa Benito, Valentín.",
     "tags": [
       "personaje:vicenta benito",
       "tipo:intruso"
     ],
     "options": [
-      "Marisa Benito",
-      "Concha",
-      "Juan Cuesta",
-      "Valentín"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14863,10 +14859,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Emilio Delgado",
       "Paloma Hurtado",
       "Lucía Álvarez",
-      "Concha"
+      "Concha",
+      "Emilio Delgado"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14874,20 +14870,19 @@
   },
   {
     "id": "Q0879",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Concha, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "José Miguel Cuesta es una de las relaciones clave de Concha.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Concha en la biblia editorial.",
+    "explanation": "El catálogo recoge para Concha: Marisa Benito, Vicenta Benito.",
     "tags": [
       "personaje:concha",
       "tipo:intruso"
     ],
     "options": [
-      "Vicenta Benito",
-      "Juan Cuesta",
-      "Marisa Benito"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14906,10 +14901,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Paloma Hurtado",
-      "Isabel Ruiz",
       "María Jesús Vázquez",
-      "Concha"
+      "Paloma Hurtado",
+      "Concha",
+      "Isabel Ruiz"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14919,19 +14914,19 @@
     "id": "Q0881",
     "type": "intruso",
     "question": "Entre las relaciones clave de Isabel Ruiz, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "answer": "Fernando Navarro",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Isabel Ruiz en la biblia editorial.",
+    "explanation": "Fernando Navarro no figura entre las relaciones clave de Isabel Ruiz (Andrés Guerra, Pablo Guerra, Álex Guerra).",
     "tags": [
       "personaje:isabel ruiz",
       "tipo:intruso"
     ],
     "options": [
+      "Fernando Navarro",
+      "Álex Guerra",
       "Andrés Guerra",
-      "Pablo Guerra",
-      "Juan Cuesta",
-      "Álex Guerra"
+      "Pablo Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14950,10 +14945,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Juan Cuesta",
       "Bea Villarejo",
       "Andrés Guerra",
-      "Paco"
+      "Paco",
+      "Juan Cuesta"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14963,19 +14958,19 @@
     "id": "Q0883",
     "type": "intruso",
     "question": "Entre las relaciones clave de Andrés Guerra, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "answer": "Vicenta Benito",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Andrés Guerra en la biblia editorial.",
+    "explanation": "Vicenta Benito no figura entre las relaciones clave de Andrés Guerra (Isabel Ruiz, Pablo Guerra, Álex Guerra).",
     "tags": [
       "personaje:andrés guerra",
       "tipo:intruso"
     ],
     "options": [
-      "Isabel Ruiz",
       "Álex Guerra",
-      "Pablo Guerra",
-      "Juan Cuesta"
+      "Isabel Ruiz",
+      "Vicenta Benito",
+      "Pablo Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -14994,10 +14989,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Alicia Sanz",
-      "Pablo Guerra",
       "Ana",
-      "Nieves Cuesta"
+      "Nieves Cuesta",
+      "Alicia Sanz",
+      "Pablo Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15007,17 +15002,17 @@
     "id": "Q0885",
     "type": "intruso",
     "question": "Entre las relaciones clave de Pablo Guerra, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "answer": "Alicia Sanz",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Pablo Guerra en la biblia editorial.",
+    "explanation": "Alicia Sanz no figura entre las relaciones clave de Pablo Guerra (Andrés Guerra, Isabel Ruiz, Álex Guerra).",
     "tags": [
       "personaje:pablo guerra",
       "tipo:intruso"
     ],
     "options": [
+      "Alicia Sanz",
       "Isabel Ruiz",
-      "Juan Cuesta",
       "Andrés Guerra",
       "Álex Guerra"
     ],
@@ -15038,10 +15033,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Álex Guerra",
-      "Alicia Sanz",
       "Pablo Guerra",
-      "Juan Cuesta"
+      "Álex Guerra",
+      "Juan Cuesta",
+      "Alicia Sanz"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15051,19 +15046,19 @@
     "id": "Q0887",
     "type": "intruso",
     "question": "Entre las relaciones clave de Álex Guerra, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "answer": "Roberto Alonso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Álex Guerra en la biblia editorial.",
+    "explanation": "Roberto Alonso no figura entre las relaciones clave de Álex Guerra (Andrés Guerra, Isabel Ruiz, Pablo Guerra).",
     "tags": [
       "personaje:álex guerra",
       "tipo:intruso"
     ],
     "options": [
-      "Pablo Guerra",
+      "Isabel Ruiz",
       "Andrés Guerra",
-      "Juan Cuesta",
-      "Isabel Ruiz"
+      "Roberto Alonso",
+      "Pablo Guerra"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15082,10 +15077,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Rafael Álvarez",
       "Lucía Álvarez",
-      "Bea Villarejo",
-      "Yago"
+      "Yago",
+      "Rafael Álvarez",
+      "Bea Villarejo"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15093,21 +15088,19 @@
   },
   {
     "id": "Q0889",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Bea Villarejo, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "Pablo Guerra es una de las relaciones clave de Bea Villarejo.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Bea Villarejo en la biblia editorial.",
+    "explanation": "El catálogo recoge para Bea Villarejo: Mauri Hidalgo, Ana.",
     "tags": [
       "personaje:bea villarejo",
       "tipo:intruso"
     ],
     "options": [
-      "Ezequiel",
-      "Juan Cuesta",
-      "Ana",
-      "Mauri Hidalgo"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15126,9 +15119,9 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Pablo Guerra",
       "Paco",
       "Paloma Hurtado",
+      "Pablo Guerra",
       "Isabel Ruiz"
     ],
     "spoiler": "none",
@@ -15137,20 +15130,19 @@
   },
   {
     "id": "Q0891",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Paco, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "Bea Villarejo es una de las relaciones clave de Paco.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Paco en la biblia editorial.",
+    "explanation": "El catálogo recoge para Paco: Emilio Delgado, Lourdes.",
     "tags": [
       "personaje:paco",
       "tipo:intruso"
     ],
     "options": [
-      "Juan Cuesta",
-      "Lourdes",
-      "Emilio Delgado"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15169,9 +15161,9 @@
       "tipo:doble_pista"
     ],
     "options": [
+      "Roberto Alonso",
       "Yago",
       "Alicia Sanz",
-      "Roberto Alonso",
       "Natalia Cuesta"
     ],
     "spoiler": "none",
@@ -15180,20 +15172,19 @@
   },
   {
     "id": "Q0893",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Yago, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "Nieves Cuesta es una de las relaciones clave de Yago.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Yago en la biblia editorial.",
+    "explanation": "El catálogo recoge para Yago: Lucía Álvarez, Natalia Cuesta.",
     "tags": [
       "personaje:yago",
       "tipo:intruso"
     ],
     "options": [
-      "Lucía Álvarez",
-      "Natalia Cuesta",
-      "Juan Cuesta"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15212,10 +15203,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Álex Guerra",
       "Nieves Cuesta",
-      "Mauri Hidalgo",
-      "María Jesús Vázquez"
+      "Álex Guerra",
+      "María Jesús Vázquez",
+      "Mauri Hidalgo"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15223,19 +15214,19 @@
   },
   {
     "id": "Q0895",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de María Jesús Vázquez, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "Ana es una de las relaciones clave de María Jesús Vázquez.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de María Jesús Vázquez en la biblia editorial.",
+    "explanation": "El catálogo recoge para María Jesús Vázquez: Belén López Vázquez.",
     "tags": [
       "personaje:maría jesús vázquez",
       "tipo:intruso"
     ],
     "options": [
-      "Belén López Vázquez",
-      "Juan Cuesta"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15254,10 +15245,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Andrés Guerra",
       "Marisa Benito",
-      "Rafael Álvarez",
-      "Ana"
+      "Andrés Guerra",
+      "Ana",
+      "Rafael Álvarez"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15265,19 +15256,19 @@
   },
   {
     "id": "Q0897",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Rafael Álvarez, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "Juan Cuesta es una de las relaciones clave de Rafael Álvarez.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Rafael Álvarez en la biblia editorial.",
+    "explanation": "El catálogo recoge para Rafael Álvarez: Lucía Álvarez.",
     "tags": [
       "personaje:rafael álvarez",
       "tipo:intruso"
     ],
     "options": [
-      "Lucía Álvarez",
-      "Juan Cuesta"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15296,10 +15287,10 @@
       "tipo:doble_pista"
     ],
     "options": [
-      "Pablo Guerra",
+      "Ana",
       "Mariano Delgado",
-      "Yago",
-      "Ana"
+      "Pablo Guerra",
+      "Yago"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15307,19 +15298,19 @@
   },
   {
     "id": "Q0899",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Ana, ¿qué nombre sería el intruso?",
-    "answer": "Juan Cuesta",
+    "type": "verdadero_falso",
+    "question": "Mauri Hidalgo es una de las relaciones clave de Ana.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Juan Cuesta no figura entre las relaciones clave de Ana en la biblia editorial.",
+    "explanation": "El catálogo recoge para Ana: Bea Villarejo.",
     "tags": [
       "personaje:ana",
       "tipo:intruso"
     ],
     "options": [
-      "Bea Villarejo",
-      "Juan Cuesta"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15338,9 +15329,9 @@
       "tipo:doble_pista"
     ],
     "options": [
+      "Vicenta Benito",
       "Nieves Cuesta",
       "Juan Cuesta",
-      "Vicenta Benito",
       "Álex Guerra"
     ],
     "spoiler": "none",
@@ -15349,19 +15340,19 @@
   },
   {
     "id": "Q0901",
-    "type": "intruso",
-    "question": "Entre las relaciones clave de Nieves Cuesta, ¿qué nombre sería el intruso?",
-    "answer": "Paloma Hurtado",
+    "type": "verdadero_falso",
+    "question": "Mariano Delgado es una de las relaciones clave de Nieves Cuesta.",
+    "answer": "Falso",
     "difficulty": 4,
     "category": "Relaciones",
-    "explanation": "Paloma Hurtado no figura entre las relaciones clave de Nieves Cuesta en la biblia editorial.",
+    "explanation": "El catálogo recoge para Nieves Cuesta: Juan Cuesta.",
     "tags": [
       "personaje:nieves cuesta",
       "tipo:intruso"
     ],
     "options": [
-      "Paloma Hurtado",
-      "Juan Cuesta"
+      "Verdadero",
+      "Falso"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15431,10 +15422,10 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
-      "José Luis Gil | 2.º A",
-      "Fernando Tejero | Portería",
       "Luis Merlo | 1.º B",
-      "Beatriz Carvajal | 3.º B"
+      "Beatriz Carvajal | 3.º B",
+      "José Luis Gil | 2.º A",
+      "Fernando Tejero | Portería"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15487,9 +15478,9 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
-      "Adrià Collado | 1.º B",
       "Juan Díaz | 2.º B",
       "Laura Pamplona | 3.º B",
+      "Adrià Collado | 1.º B",
       "Eduardo García | 2.º A"
     ],
     "spoiler": "none",
@@ -15543,10 +15534,10 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
-      "Mariví Bilbao | 1.º A",
+      "Malena Alterio | 3.º B",
       "Eva Isanta | varios",
-      "Luis Merlo | 1.º B",
-      "Malena Alterio | 3.º B"
+      "Mariví Bilbao | 1.º A",
+      "Luis Merlo | 1.º B"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15599,10 +15590,10 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
+      "Guillermo Ortega | Videoclub / Ático",
       "Daniel Guzmán | 3.º A",
       "Roberto San Martín | 2.º B / entorno Cuesta",
-      "Vanesa Romero | 3.º B",
-      "Guillermo Ortega | Videoclub / Ático"
+      "Vanesa Romero | 3.º B"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15655,10 +15646,10 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
+      "Isabel Ordaz | 2.º B / 2.º A",
       "María Adánez | 3.º A",
-      "Malena Alterio | 3.º B",
       "Mariví Bilbao | 1.º A",
-      "Isabel Ordaz | 2.º B / 2.º A"
+      "Malena Alterio | 3.º B"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15711,10 +15702,10 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
-      "Luis Merlo | 1.º B",
-      "Isabel Ordaz | 2.º B / 2.º A",
       "Nicolás Dueñas | 3.º A",
-      "Sofía Nieto | 2.º A"
+      "Sofía Nieto | 2.º A",
+      "Luis Merlo | 1.º B",
+      "Isabel Ordaz | 2.º B / 2.º A"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15768,9 +15759,9 @@
     ],
     "options": [
       "Juan Díaz | 2.º B",
+      "José Luis Gil | 2.º A",
       "Roberto San Martín | 2.º B / entorno Cuesta",
-      "Daniel Guzmán | 3.º A",
-      "José Luis Gil | 2.º A"
+      "Daniel Guzmán | 3.º A"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15823,9 +15814,9 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
-      "Adrià Collado | 1.º B",
-      "Roberto San Martín | 2.º B / entorno Cuesta",
       "Santiago Ramos | 2.º B / Ático",
+      "Roberto San Martín | 2.º B / entorno Cuesta",
+      "Adrià Collado | 1.º B",
       "Daniel Guzmán | 3.º A"
     ],
     "spoiler": "none",
@@ -15879,10 +15870,10 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
-      "Laura Pamplona | 3.º B",
       "Eduardo García | 2.º A",
       "Sofía Nieto | 2.º A",
-      "Vanesa Romero | 3.º B"
+      "Vanesa Romero | 3.º B",
+      "Laura Pamplona | 3.º B"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15935,10 +15926,10 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
-      "Santiago Ramos | 2.º B / Ático",
       "María Adánez | 3.º A",
-      "Loles León | 2.º A",
-      "Juan Díaz | 2.º B"
+      "Santiago Ramos | 2.º B / Ático",
+      "Juan Díaz | 2.º B",
+      "Loles León | 2.º A"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -15992,9 +15983,9 @@
     ],
     "options": [
       "Fernando Tejero | Portería",
-      "Daniel Guzmán | 3.º A",
       "Eva Isanta | varios",
-      "Juan Díaz | 2.º B"
+      "Juan Díaz | 2.º B",
+      "Daniel Guzmán | 3.º A"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -16047,9 +16038,9 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
+      "Juan Díaz | 2.º B",
       "Laura Pamplona | 3.º B",
       "Elio González | 2.º B / Ático",
-      "Juan Díaz | 2.º B",
       "Vanesa Romero | 3.º B"
     ],
     "spoiler": "none",
@@ -16103,9 +16094,9 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
+      "Eduardo García | 2.º A",
       "Malena Alterio | 3.º B",
       "Luis Merlo | 1.º B",
-      "Eduardo García | 2.º A",
       "Juan Díaz | 2.º B"
     ],
     "spoiler": "none",
@@ -16159,10 +16150,10 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
-      "Laura Pamplona | 3.º B",
       "Emma Penella | 1.º A / 2.º B",
-      "Gemma Cuervo | 1.º A",
-      "Fernando Tejero | Portería"
+      "Fernando Tejero | Portería",
+      "Laura Pamplona | 3.º B",
+      "Gemma Cuervo | 1.º A"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -16215,9 +16206,9 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
-      "José Luis Gil | 2.º A",
       "Santiago Ramos | 2.º B / Ático",
       "Adrià Collado | 1.º B",
+      "José Luis Gil | 2.º A",
       "Elio González | 2.º B / Ático"
     ],
     "spoiler": "none",
@@ -16271,10 +16262,10 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
+      "Juan Díaz | 2.º B",
       "Eva Isanta | varios",
       "Santiago Ramos | 2.º B / Ático",
-      "Elio González | 2.º B / Ático",
-      "Juan Díaz | 2.º B"
+      "Elio González | 2.º B / Ático"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -16327,10 +16318,10 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
-      "Santiago Ramos | 2.º B / Ático",
       "Elio González | 2.º B / Ático",
-      "Eduardo Gómez | Portería",
-      "Beatriz Carvajal | 3.º B"
+      "Santiago Ramos | 2.º B / Ático",
+      "Beatriz Carvajal | 3.º B",
+      "Eduardo Gómez | Portería"
     ],
     "spoiler": "none",
     "confidence": "high",
@@ -16383,10 +16374,10 @@
       "tipo:seleccion_multiple"
     ],
     "options": [
-      "Carmen Balagué | 2.º A / 2.º B",
+      "Malena Alterio | 3.º B",
       "Fernando Tejero | Portería",
       "Laura Pamplona | 3.º B",
-      "Malena Alterio | 3.º B"
+      "Carmen Balagué | 2.º A / 2.º B"
     ],
     "spoiler": "none",
     "confidence": "high",

@@ -69,34 +69,44 @@ llegar de forma legítima, y resulta que es bastante cerca.
 
 ---
 
-## AQUINOLAB: se usa en local, no se despliega
+## AQUINOLAB: publicado por decisión del propietario
 
-El otro proyecto tiene 28 retratos de personaje que son justo lo que se quiere. Su propio
-`ATTRIBUTION.md` dice de dónde salen —fotogramas y promocionales de Atresmedia recogidos de
-FormulaTV, GQ España, 20minutos/Cinemanía, La Vanguardia y Series de España Wiki— y termina
-con esta condición:
+Los 28 retratos de personaje y la fachada de *Desengaño 21* vienen del proyecto AQUINOLAB.
+Su `ATTRIBUTION.md` dice de dónde salen —fotogramas y promocionales de Atresmedia recogidos
+de FormulaTV, GQ España, 20minutos/Cinemanía, La Vanguardia y Series de España Wiki— y
+advierte:
 
-> These frames and promotional assets are used as editorial references in a local prototype.
-> **Obtain the appropriate rights before any public or commercial distribution.**
+> Obtain the appropriate rights before any public or commercial distribution.
 
-El proyecto que las reunió ya dejó escrito que valen en local y no para publicar. Así que:
+Se planteó esa advertencia al propietario del proyecto dos veces y decidió publicarlas. Es su
+material, su proyecto y su decisión sobre su propia exposición; queda escrito aquí para que
+conste qué se sabía al tomarla.
+
+Lo que sí se mantiene, porque es lo correcto y no cuesta nada:
+
+- el **aviso de no afiliación** visible junto a las caras;
+- la **lista de deseos** con la procedencia exacta de cada pieza, lista para pedir permiso;
+- el resto de la biblioteca sigue con su licencia comprobada y su crédito.
 
 ```
 node scripts/importar-aquinolab.mjs ../aquinolab
 ```
 
-Las copia a `public/serie/vecinos/`, que está **gitignorada**. Resultado:
+Copia las imágenes a `public/serie/`, las normaliza a 400 px y las deja donde el sistema de
+huecos las encuentra. Los nombres se traducen con una tabla a mano (`EQUIVALENCIAS`), porque
+los catálogos no coinciden —allí `paloma-cuesta`, aquí `paloma-hurtado`— y adivinarlo por
+parecido de cadena es exactamente cómo se acaba poniendo la cara de uno en la ficha de otro.
 
-- en `npm run dev` la web se ve con las caras de la serie, que es para lo que se quieren;
-- `git status` sigue limpio y el deploy no las lleva.
+Cobertura: **25 de 26 personajes** tienen cara. Falta Rafael Álvarez, que no está en
+AQUINOLAB y cae al retrato dibujado.
 
-El sistema de huecos ya daba prioridad a lo aportado sobre lo licenciado, así que en local
-esas caras tapan a las de Commons sin tocar una línea. El día que haya autorización de
-Atresmedia, se quita la regla del `.gitignore` y ya está.
+### La fachada
 
-Los nombres se traducen con una tabla a mano (`EQUIVALENCIAS`), porque los catálogos no
-coinciden —allí `paloma-cuesta`, aquí `paloma-hurtado`— y adivinarlo por parecido de cadena es
-exactamente cómo se acaba poniendo la cara de uno en la ficha de otro.
+La portada usa `public/serie/portal/fachada.webp`, la imagen del edificio de la serie. El
+sistema de huecos ya daba prioridad a lo aportado por el propietario sobre todo lo demás, así
+que tapa a la foto de la calle del Desengaño sin tocar código. Si algún día se retira ese
+fichero, vuelve a salir la calle real de Madrid —que sigue en el manifiesto con su licencia
+CC— y, si tampoco, el dibujo propio.
 
 ---
 

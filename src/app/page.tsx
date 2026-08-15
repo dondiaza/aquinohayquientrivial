@@ -72,15 +72,26 @@ export default async function HomePage() {
         {/* El edificio se ve entero: es la puerta de entrada al juego, no un adorno.
             Si alguien con licencia pone una imagen en public/serie/portal/, sustituye al
             dibujo sin tocar nada más (ver src/content/imagenes.ts). */}
-        {/* LA FACHADA.
-            El edificio de la serie no se puede fotografiar porque no existe: el rodaje fue en
-            una nave industrial de 2.000 m² en Moraleja de Enmedio y la fachada era decorado,
-            así que toda imagen de «Desengaño 21» es un fotograma de Atresmedia.
-            Pero la calle del Desengaño SÍ existe, en el centro de Madrid, y sus edificios son
-            decimonónicos con balcones y bajos comerciales igual que el de la ficción. España
-            tiene libertad de panorama (art. 35.2 LPI) y además el fotógrafo la publicó con
-            licencia CC. Así que la portada enseña la calle de verdad. */}
-        {fachada?.localPath ? (
+        {/* LA FACHADA, en tres niveles.
+            1. Lo que ha puesto el propietario en public/serie/portal/fachada.*: manda sobre
+               todo lo demás, que es la regla de toda la biblioteca de medios.
+            2. Si no hay nada, la calle del Desengaño real de Madrid. El edificio de la serie
+               no se puede fotografiar porque no existe —el rodaje fue en una nave industrial
+               de Moraleja de Enmedio y la fachada era decorado—, pero la calle sí existe y
+               sus edificios son decimonónicos con balcones y bajos comerciales igual que el
+               de la ficción. Libertad de panorama (art. 35.2 LPI) más licencia CC del
+               fotógrafo.
+            3. Y si tampoco, el dibujo propio. */}
+        {imagenDe('portal/fachada') ? (
+          <Foto
+            hueco="portal/fachada"
+            alt={`Fachada de ${SERIE.direccionFicticia}`}
+            proporcion="escena"
+            className="max-h-[26rem] w-full"
+          >
+            <PortalFacade className="h-44 w-full sm:h-64 lg:h-[26rem]" />
+          </Foto>
+        ) : fachada?.localPath ? (
           <figure className="relative m-0">
             <img
               src={fachada.localPath}
@@ -103,15 +114,6 @@ export default async function HomePage() {
               </figcaption>
             ) : null}
           </figure>
-        ) : imagenDe('portal/fachada') ? (
-          <Foto
-            hueco="portal/fachada"
-            alt={`Fachada de ${SERIE.direccionFicticia}`}
-            proporcion="escena"
-            className="max-h-[26rem] w-full"
-          >
-            <PortalFacade className="h-44 w-full sm:h-64 lg:h-[26rem]" />
-          </Foto>
         ) : (
           <PortalFacade className="h-44 w-full sm:h-64 lg:h-[26rem]" />
         )}

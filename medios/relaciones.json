@@ -1,0 +1,112 @@
+{
+  "Juan Cuesta": [
+    "Paloma Hurtado",
+    "Natalia Cuesta",
+    "José Miguel Cuesta",
+    "Nieves Cuesta"
+  ],
+  "Paloma Hurtado": [
+    "Juan Cuesta",
+    "Natalia Cuesta",
+    "José Miguel Cuesta"
+  ],
+  "Natalia Cuesta": [
+    "Juan Cuesta",
+    "Paloma Hurtado",
+    "José Miguel Cuesta",
+    "Yamiley"
+  ],
+  "José Miguel Cuesta": [
+    "Juan Cuesta",
+    "Paloma Hurtado",
+    "Natalia Cuesta"
+  ],
+  "Emilio Delgado": [
+    "Mariano Delgado",
+    "Belén López Vázquez"
+  ],
+  "Mariano Delgado": [
+    "Emilio Delgado"
+  ],
+  "Belén López Vázquez": [
+    "Alicia Sanz",
+    "Emilio Delgado",
+    "María Jesús Vázquez"
+  ],
+  "Alicia Sanz": [
+    "Belén López Vázquez"
+  ],
+  "Lucía Álvarez": [
+    "Rafael Álvarez",
+    "Roberto Alonso",
+    "Carlos",
+    "Yago"
+  ],
+  "Roberto Alonso": [
+    "Lucía Álvarez"
+  ],
+  "Mauri Hidalgo": [
+    "Fernando Navarro",
+    "Ezequiel",
+    "Bea Villarejo"
+  ],
+  "Fernando Navarro": [
+    "Mauri Hidalgo"
+  ],
+  "Marisa Benito": [
+    "Vicenta Benito",
+    "Concha"
+  ],
+  "Vicenta Benito": [
+    "Marisa Benito",
+    "Valentín"
+  ],
+  "Concha": [
+    "Marisa Benito",
+    "Vicenta Benito"
+  ],
+  "Isabel Ruiz": [
+    "Andrés Guerra",
+    "Pablo Guerra",
+    "Álex Guerra"
+  ],
+  "Andrés Guerra": [
+    "Isabel Ruiz",
+    "Pablo Guerra",
+    "Álex Guerra"
+  ],
+  "Pablo Guerra": [
+    "Andrés Guerra",
+    "Isabel Ruiz",
+    "Álex Guerra"
+  ],
+  "Álex Guerra": [
+    "Andrés Guerra",
+    "Isabel Ruiz",
+    "Pablo Guerra"
+  ],
+  "Bea Villarejo": [
+    "Mauri Hidalgo",
+    "Ana"
+  ],
+  "Paco": [
+    "Emilio Delgado",
+    "Lourdes"
+  ],
+  "Yago": [
+    "Lucía Álvarez",
+    "Natalia Cuesta"
+  ],
+  "María Jesús Vázquez": [
+    "Belén López Vázquez"
+  ],
+  "Rafael Álvarez": [
+    "Lucía Álvarez"
+  ],
+  "Ana": [
+    "Bea Villarejo"
+  ],
+  "Nieves Cuesta": [
+    "Juan Cuesta"
+  ]
+}

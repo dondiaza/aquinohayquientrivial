@@ -4,7 +4,7 @@
     "name": "¿Quién soy? · Fácil",
     "kind": "adivinanza",
     "level": "Fácil",
-    "instruction": "Recibe 3 pistas progresivas sobre un personaje y adivínalo antes de la tercera. con pistas muy directas.",
+    "instruction": "Recibe 3 pistas progresivas sobre un personaje y adivínalo antes de la tercera. Las pistas van muy claras.",
     "scoring": "3 puntos con una pista, 2 con dos, 1 con tres.",
     "tags": "personajes"
   },
@@ -13,7 +13,7 @@
     "name": "Vecino intruso · Fácil",
     "kind": "clasificacion",
     "level": "Fácil",
-    "instruction": "Se muestran cuatro nombres; tres comparten familia, piso, oficio o trama. Elige al intruso. con pistas muy directas.",
+    "instruction": "Se muestran cuatro nombres; tres comparten familia, piso, oficio o trama. Elige al intruso. Las pistas van muy claras.",
     "scoring": "1 punto por acierto; +1 si justificas el vínculo.",
     "tags": "relaciones"
   },
@@ -22,7 +22,7 @@
     "name": "Radio Patio · Fácil",
     "kind": "velocidad",
     "level": "Fácil",
-    "instruction": "Responde cinco preguntas rápidas de cotilleos, parejas y parentescos. con pistas muy directas.",
+    "instruction": "Responde cinco preguntas rápidas de cotilleos, parejas y parentescos. Las pistas van muy claras.",
     "scoring": "1 punto por respuesta en menos de 8 segundos.",
     "tags": "radio-patio"
   },
@@ -31,7 +31,7 @@
     "name": "Presidente de la comunidad · Fácil",
     "kind": "quiz",
     "level": "Fácil",
-    "instruction": "Ronda de 10 preguntas de dificultad ascendente sobre Juan, juntas y edificio. con pistas muy directas.",
+    "instruction": "Ronda de 10 preguntas de dificultad ascendente sobre Juan, juntas y edificio. Las pistas van muy claras.",
     "scoring": "Puntuación 1-2-3-4-5 por dificultad.",
     "tags": "juan-cuesta"
   },
@@ -40,7 +40,7 @@
     "name": "Un poquito de por favor · Fácil",
     "kind": "frases",
     "level": "Fácil",
-    "instruction": "Identifica el personaje asociado a una frase corta o coletilla. con pistas muy directas.",
+    "instruction": "Identifica el personaje asociado a una frase corta o coletilla. Las pistas van muy claras.",
     "scoring": "2 puntos por personaje; 1 extra si explicas el contexto general.",
     "tags": "frases"
   },
@@ -49,7 +49,7 @@
     "name": "Desengaño 21 · Fácil",
     "kind": "mapa",
     "level": "Fácil",
-    "instruction": "Coloca personajes en piso, portería, ático o local según la etapa indicada. con pistas muy directas.",
+    "instruction": "Coloca personajes en piso, portería, ático o local según la etapa indicada. Las pistas van muy claras.",
     "scoring": "1 punto por ubicación correcta.",
     "tags": "lugares"
   },
@@ -58,7 +58,7 @@
     "name": "¿Actor o personaje? · Fácil",
     "kind": "reparto",
     "level": "Fácil",
-    "instruction": "Clasifica nombres mezclados entre intérpretes y personajes. con pistas muy directas.",
+    "instruction": "Clasifica nombres mezclados entre intérpretes y personajes. Las pistas van muy claras.",
     "scoring": "1 punto por clasificación correcta.",
     "tags": "reparto"
   },
@@ -67,7 +67,7 @@
     "name": "Parejas imposibles · Fácil",
     "kind": "parejas",
     "level": "Fácil",
-    "instruction": "Decide si dos personajes fueron pareja, interés amoroso, familia o ninguna de las anteriores. con pistas muy directas.",
+    "instruction": "Decide si dos personajes fueron pareja, interés amoroso, familia o ninguna de las anteriores. Las pistas van muy claras.",
     "scoring": "2 puntos por categoría exacta.",
     "tags": "parejas"
   },
@@ -76,7 +76,7 @@
     "name": "Final de temporada · Fácil",
     "kind": "cronologia",
     "level": "Fácil",
-    "instruction": "Ordena cinco sucesos de una temporada. con pistas muy directas.",
+    "instruction": "Ordena cinco sucesos de una temporada. Las pistas van muy claras.",
     "scoring": "5 puntos si el orden es perfecto; 3 si solo hay una inversión.",
     "tags": "cronologia"
   },
@@ -85,7 +85,7 @@
     "name": "La derrama · Fácil",
     "kind": "apuesta",
     "level": "Fácil",
-    "instruction": "Cada jugador apuesta puntos antes de una pregunta de nivel experto. con pistas muy directas.",
+    "instruction": "Cada jugador apuesta puntos antes de una pregunta de nivel experto. Las pistas van muy claras.",
     "scoring": "Ganas o pierdes lo apostado.",
     "tags": "multijugador"
   },
@@ -94,7 +94,7 @@
     "name": "El videoclub · Fácil",
     "kind": "pelicula-falsa",
     "level": "Fácil",
-    "instruction": "Se mezclan títulos ficticios con elementos reales de la serie; detecta los inventados. con pistas muy directas.",
+    "instruction": "Se mezclan títulos ficticios con elementos reales de la serie; detecta los inventados. Las pistas van muy claras.",
     "scoring": "1 punto por detección.",
     "tags": "paco,videoclub"
   },
@@ -103,7 +103,7 @@
     "name": "La portería · Fácil",
     "kind": "supervivencia",
     "level": "Fácil",
-    "instruction": "Encadena respuestas sin fallar. Cada acierto desbloquea una más difícil. con pistas muy directas.",
+    "instruction": "Encadena respuestas sin fallar. Cada acierto desbloquea una más difícil. Las pistas van muy claras.",
     "scoring": "Racha máxima.",
     "tags": "emilio"
   },
@@ -112,7 +112,7 @@
     "name": "La junta · Fácil",
     "kind": "debate",
     "level": "Fácil",
-    "instruction": "Se plantea un conflicto de comunidad y hay que elegir qué personaje reaccionaría de cada forma. con pistas muy directas.",
+    "instruction": "Se plantea un conflicto de comunidad y hay que elegir qué personaje reaccionaría de cada forma. Las pistas van muy claras.",
     "scoring": "Puntos por coincidencia con la ficha de personaje.",
     "tags": "comunidad"
   },
@@ -121,7 +121,7 @@
     "name": "Spoiler controlado · Fácil",
     "kind": "tramas",
     "level": "Fácil",
-    "instruction": "Adivina el desenlace de una trama entre cuatro opciones, con aviso de spoiler. con pistas muy directas.",
+    "instruction": "Adivina el desenlace de una trama entre cuatro opciones, con aviso de spoiler. Las pistas van muy claras.",
     "scoring": "2 puntos por acierto.",
     "tags": "spoilers"
   },
@@ -130,7 +130,7 @@
     "name": "Antes o después · Fácil",
     "kind": "cronologia",
     "level": "Fácil",
-    "instruction": "Decide cuál de dos sucesos ocurre antes. con pistas muy directas.",
+    "instruction": "Decide cuál de dos sucesos ocurre antes. Las pistas van muy claras.",
     "scoring": "1 punto por pareja.",
     "tags": "cronologia"
   },
@@ -139,7 +139,7 @@
     "name": "Cadena de vecinos · Fácil",
     "kind": "relaciones",
     "level": "Fácil",
-    "instruction": "Une personaje A con B mediante relaciones reales: familia, pareja, convivencia o amistad. con pistas muy directas.",
+    "instruction": "Une personaje A con B mediante relaciones reales: familia, pareja, convivencia o amistad. Las pistas van muy claras.",
     "scoring": "1 punto por cada enlace válido.",
     "tags": "relaciones"
   },
@@ -148,7 +148,7 @@
     "name": "Nivel profesional · Fácil",
     "kind": "expert",
     "level": "Fácil",
-    "instruction": "Preguntas de actores secundarios, producción, localizaciones y audiencias. con pistas muy directas.",
+    "instruction": "Preguntas de actores secundarios, producción, localizaciones y audiencias. Las pistas van muy claras.",
     "scoring": "5 puntos por acierto.",
     "tags": "expert"
   },
@@ -157,7 +157,7 @@
     "name": "Campanadas · Fácil",
     "kind": "curiosidades",
     "level": "Fácil",
-    "instruction": "Ronda de cultura televisiva alrededor del fenómeno de la serie fuera de los episodios. con pistas muy directas.",
+    "instruction": "Ronda de cultura televisiva alrededor del fenómeno de la serie fuera de los episodios. Las pistas van muy claras.",
     "scoring": "3 puntos por acierto.",
     "tags": "curiosidades"
   },
@@ -166,7 +166,7 @@
     "name": "Termitas · Fácil",
     "kind": "eliminacion",
     "level": "Fácil",
-    "instruction": "Cada fallo “debilita” el edificio. Tres fallos eliminan al jugador. con pistas muy directas.",
+    "instruction": "Cada fallo “debilita” el edificio. Tres fallos eliminan al jugador. Las pistas van muy claras.",
     "scoring": "Sobrevive más rondas.",
     "tags": "final"
   },
@@ -175,7 +175,7 @@
     "name": "PUF · Fácil",
     "kind": "creativo",
     "level": "Fácil",
-    "instruction": "Dado un personaje y una situación, elige cuál de cuatro titulares de moda o negocio encaja mejor con su personalidad. con pistas muy directas.",
+    "instruction": "Dado un personaje y una situación, elige cuál de cuatro titulares de moda o negocio encaja mejor con su personalidad. Las pistas van muy claras.",
     "scoring": "Votación o clave editorial.",
     "tags": "paloma,puf"
   },
@@ -184,7 +184,7 @@
     "name": "¿Quién soy? · Medio",
     "kind": "adivinanza",
     "level": "Medio",
-    "instruction": "Recibe 3 pistas progresivas sobre un personaje y adivínalo antes de la tercera. con pistas menos obvias.",
+    "instruction": "Recibe 3 pistas progresivas sobre un personaje y adivínalo antes de la tercera. Las pistas van menos claras.",
     "scoring": "3 puntos con una pista, 2 con dos, 1 con tres.",
     "tags": "personajes"
   },
@@ -193,7 +193,7 @@
     "name": "Vecino intruso · Medio",
     "kind": "clasificacion",
     "level": "Medio",
-    "instruction": "Se muestran cuatro nombres; tres comparten familia, piso, oficio o trama. Elige al intruso. con pistas menos obvias.",
+    "instruction": "Se muestran cuatro nombres; tres comparten familia, piso, oficio o trama. Elige al intruso. Las pistas van menos claras.",
     "scoring": "1 punto por acierto; +1 si justificas el vínculo.",
     "tags": "relaciones"
   },
@@ -202,7 +202,7 @@
     "name": "Radio Patio · Medio",
     "kind": "velocidad",
     "level": "Medio",
-    "instruction": "Responde cinco preguntas rápidas de cotilleos, parejas y parentescos. con pistas menos obvias.",
+    "instruction": "Responde cinco preguntas rápidas de cotilleos, parejas y parentescos. Las pistas van menos claras.",
     "scoring": "1 punto por respuesta en menos de 8 segundos.",
     "tags": "radio-patio"
   },
@@ -211,7 +211,7 @@
     "name": "Presidente de la comunidad · Medio",
     "kind": "quiz",
     "level": "Medio",
-    "instruction": "Ronda de 10 preguntas de dificultad ascendente sobre Juan, juntas y edificio. con pistas menos obvias.",
+    "instruction": "Ronda de 10 preguntas de dificultad ascendente sobre Juan, juntas y edificio. Las pistas van menos claras.",
     "scoring": "Puntuación 1-2-3-4-5 por dificultad.",
     "tags": "juan-cuesta"
   },
@@ -220,7 +220,7 @@
     "name": "Un poquito de por favor · Medio",
     "kind": "frases",
     "level": "Medio",
-    "instruction": "Identifica el personaje asociado a una frase corta o coletilla. con pistas menos obvias.",
+    "instruction": "Identifica el personaje asociado a una frase corta o coletilla. Las pistas van menos claras.",
     "scoring": "2 puntos por personaje; 1 extra si explicas el contexto general.",
     "tags": "frases"
   },
@@ -229,7 +229,7 @@
     "name": "Desengaño 21 · Medio",
     "kind": "mapa",
     "level": "Medio",
-    "instruction": "Coloca personajes en piso, portería, ático o local según la etapa indicada. con pistas menos obvias.",
+    "instruction": "Coloca personajes en piso, portería, ático o local según la etapa indicada. Las pistas van menos claras.",
     "scoring": "1 punto por ubicación correcta.",
     "tags": "lugares"
   },
@@ -238,7 +238,7 @@
     "name": "¿Actor o personaje? · Medio",
     "kind": "reparto",
     "level": "Medio",
-    "instruction": "Clasifica nombres mezclados entre intérpretes y personajes. con pistas menos obvias.",
+    "instruction": "Clasifica nombres mezclados entre intérpretes y personajes. Las pistas van menos claras.",
     "scoring": "1 punto por clasificación correcta.",
     "tags": "reparto"
   },
@@ -247,7 +247,7 @@
     "name": "Parejas imposibles · Medio",
     "kind": "parejas",
     "level": "Medio",
-    "instruction": "Decide si dos personajes fueron pareja, interés amoroso, familia o ninguna de las anteriores. con pistas menos obvias.",
+    "instruction": "Decide si dos personajes fueron pareja, interés amoroso, familia o ninguna de las anteriores. Las pistas van menos claras.",
     "scoring": "2 puntos por categoría exacta.",
     "tags": "parejas"
   },
@@ -256,7 +256,7 @@
     "name": "Final de temporada · Medio",
     "kind": "cronologia",
     "level": "Medio",
-    "instruction": "Ordena cinco sucesos de una temporada. con pistas menos obvias.",
+    "instruction": "Ordena cinco sucesos de una temporada. Las pistas van menos claras.",
     "scoring": "5 puntos si el orden es perfecto; 3 si solo hay una inversión.",
     "tags": "cronologia"
   },
@@ -265,7 +265,7 @@
     "name": "La derrama · Medio",
     "kind": "apuesta",
     "level": "Medio",
-    "instruction": "Cada jugador apuesta puntos antes de una pregunta de nivel experto. con pistas menos obvias.",
+    "instruction": "Cada jugador apuesta puntos antes de una pregunta de nivel experto. Las pistas van menos claras.",
     "scoring": "Ganas o pierdes lo apostado.",
     "tags": "multijugador"
   },
@@ -274,7 +274,7 @@
     "name": "El videoclub · Medio",
     "kind": "pelicula-falsa",
     "level": "Medio",
-    "instruction": "Se mezclan títulos ficticios con elementos reales de la serie; detecta los inventados. con pistas menos obvias.",
+    "instruction": "Se mezclan títulos ficticios con elementos reales de la serie; detecta los inventados. Las pistas van menos claras.",
     "scoring": "1 punto por detección.",
     "tags": "paco,videoclub"
   },
@@ -283,7 +283,7 @@
     "name": "La portería · Medio",
     "kind": "supervivencia",
     "level": "Medio",
-    "instruction": "Encadena respuestas sin fallar. Cada acierto desbloquea una más difícil. con pistas menos obvias.",
+    "instruction": "Encadena respuestas sin fallar. Cada acierto desbloquea una más difícil. Las pistas van menos claras.",
     "scoring": "Racha máxima.",
     "tags": "emilio"
   },
@@ -292,7 +292,7 @@
     "name": "La junta · Medio",
     "kind": "debate",
     "level": "Medio",
-    "instruction": "Se plantea un conflicto de comunidad y hay que elegir qué personaje reaccionaría de cada forma. con pistas menos obvias.",
+    "instruction": "Se plantea un conflicto de comunidad y hay que elegir qué personaje reaccionaría de cada forma. Las pistas van menos claras.",
     "scoring": "Puntos por coincidencia con la ficha de personaje.",
     "tags": "comunidad"
   },
@@ -301,7 +301,7 @@
     "name": "Spoiler controlado · Medio",
     "kind": "tramas",
     "level": "Medio",
-    "instruction": "Adivina el desenlace de una trama entre cuatro opciones, con aviso de spoiler. con pistas menos obvias.",
+    "instruction": "Adivina el desenlace de una trama entre cuatro opciones, con aviso de spoiler. Las pistas van menos claras.",
     "scoring": "2 puntos por acierto.",
     "tags": "spoilers"
   },
@@ -310,7 +310,7 @@
     "name": "Antes o después · Medio",
     "kind": "cronologia",
     "level": "Medio",
-    "instruction": "Decide cuál de dos sucesos ocurre antes. con pistas menos obvias.",
+    "instruction": "Decide cuál de dos sucesos ocurre antes. Las pistas van menos claras.",
     "scoring": "1 punto por pareja.",
     "tags": "cronologia"
   },
@@ -319,7 +319,7 @@
     "name": "Cadena de vecinos · Medio",
     "kind": "relaciones",
     "level": "Medio",
-    "instruction": "Une personaje A con B mediante relaciones reales: familia, pareja, convivencia o amistad. con pistas menos obvias.",
+    "instruction": "Une personaje A con B mediante relaciones reales: familia, pareja, convivencia o amistad. Las pistas van menos claras.",
     "scoring": "1 punto por cada enlace válido.",
     "tags": "relaciones"
   },
@@ -328,7 +328,7 @@
     "name": "Nivel profesional · Medio",
     "kind": "expert",
     "level": "Medio",
-    "instruction": "Preguntas de actores secundarios, producción, localizaciones y audiencias. con pistas menos obvias.",
+    "instruction": "Preguntas de actores secundarios, producción, localizaciones y audiencias. Las pistas van menos claras.",
     "scoring": "5 puntos por acierto.",
     "tags": "expert"
   },
@@ -337,7 +337,7 @@
     "name": "Campanadas · Medio",
     "kind": "curiosidades",
     "level": "Medio",
-    "instruction": "Ronda de cultura televisiva alrededor del fenómeno de la serie fuera de los episodios. con pistas menos obvias.",
+    "instruction": "Ronda de cultura televisiva alrededor del fenómeno de la serie fuera de los episodios. Las pistas van menos claras.",
     "scoring": "3 puntos por acierto.",
     "tags": "curiosidades"
   },
@@ -346,7 +346,7 @@
     "name": "Termitas · Medio",
     "kind": "eliminacion",
     "level": "Medio",
-    "instruction": "Cada fallo “debilita” el edificio. Tres fallos eliminan al jugador. con pistas menos obvias.",
+    "instruction": "Cada fallo “debilita” el edificio. Tres fallos eliminan al jugador. Las pistas van menos claras.",
     "scoring": "Sobrevive más rondas.",
     "tags": "final"
   },
@@ -355,7 +355,7 @@
     "name": "PUF · Medio",
     "kind": "creativo",
     "level": "Medio",
-    "instruction": "Dado un personaje y una situación, elige cuál de cuatro titulares de moda o negocio encaja mejor con su personalidad. con pistas menos obvias.",
+    "instruction": "Dado un personaje y una situación, elige cuál de cuatro titulares de moda o negocio encaja mejor con su personalidad. Las pistas van menos claras.",
     "scoring": "Votación o clave editorial.",
     "tags": "paloma,puf"
   },
@@ -364,7 +364,7 @@
     "name": "¿Quién soy? · Difícil",
     "kind": "adivinanza",
     "level": "Difícil",
-    "instruction": "Recibe 3 pistas progresivas sobre un personaje y adivínalo antes de la tercera. con detalles de temporadas concretas.",
+    "instruction": "Recibe 3 pistas progresivas sobre un personaje y adivínalo antes de la tercera. Entra el detalle de temporadas concretas.",
     "scoring": "3 puntos con una pista, 2 con dos, 1 con tres.",
     "tags": "personajes"
   },
@@ -373,7 +373,7 @@
     "name": "Vecino intruso · Difícil",
     "kind": "clasificacion",
     "level": "Difícil",
-    "instruction": "Se muestran cuatro nombres; tres comparten familia, piso, oficio o trama. Elige al intruso. con detalles de temporadas concretas.",
+    "instruction": "Se muestran cuatro nombres; tres comparten familia, piso, oficio o trama. Elige al intruso. Entra el detalle de temporadas concretas.",
     "scoring": "1 punto por acierto; +1 si justificas el vínculo.",
     "tags": "relaciones"
   },
@@ -382,7 +382,7 @@
     "name": "Radio Patio · Difícil",
     "kind": "velocidad",
     "level": "Difícil",
-    "instruction": "Responde cinco preguntas rápidas de cotilleos, parejas y parentescos. con detalles de temporadas concretas.",
+    "instruction": "Responde cinco preguntas rápidas de cotilleos, parejas y parentescos. Entra el detalle de temporadas concretas.",
     "scoring": "1 punto por respuesta en menos de 8 segundos.",
     "tags": "radio-patio"
   },
@@ -391,7 +391,7 @@
     "name": "Presidente de la comunidad · Difícil",
     "kind": "quiz",
     "level": "Difícil",
-    "instruction": "Ronda de 10 preguntas de dificultad ascendente sobre Juan, juntas y edificio. con detalles de temporadas concretas.",
+    "instruction": "Ronda de 10 preguntas de dificultad ascendente sobre Juan, juntas y edificio. Entra el detalle de temporadas concretas.",
     "scoring": "Puntuación 1-2-3-4-5 por dificultad.",
     "tags": "juan-cuesta"
   },
@@ -400,7 +400,7 @@
     "name": "Un poquito de por favor · Difícil",
     "kind": "frases",
     "level": "Difícil",
-    "instruction": "Identifica el personaje asociado a una frase corta o coletilla. con detalles de temporadas concretas.",
+    "instruction": "Identifica el personaje asociado a una frase corta o coletilla. Entra el detalle de temporadas concretas.",
     "scoring": "2 puntos por personaje; 1 extra si explicas el contexto general.",
     "tags": "frases"
   },
@@ -409,7 +409,7 @@
     "name": "Desengaño 21 · Difícil",
     "kind": "mapa",
     "level": "Difícil",
-    "instruction": "Coloca personajes en piso, portería, ático o local según la etapa indicada. con detalles de temporadas concretas.",
+    "instruction": "Coloca personajes en piso, portería, ático o local según la etapa indicada. Entra el detalle de temporadas concretas.",
     "scoring": "1 punto por ubicación correcta.",
     "tags": "lugares"
   },
@@ -418,7 +418,7 @@
     "name": "¿Actor o personaje? · Difícil",
     "kind": "reparto",
     "level": "Difícil",
-    "instruction": "Clasifica nombres mezclados entre intérpretes y personajes. con detalles de temporadas concretas.",
+    "instruction": "Clasifica nombres mezclados entre intérpretes y personajes. Entra el detalle de temporadas concretas.",
     "scoring": "1 punto por clasificación correcta.",
     "tags": "reparto"
   },
@@ -427,7 +427,7 @@
     "name": "Parejas imposibles · Difícil",
     "kind": "parejas",
     "level": "Difícil",
-    "instruction": "Decide si dos personajes fueron pareja, interés amoroso, familia o ninguna de las anteriores. con detalles de temporadas concretas.",
+    "instruction": "Decide si dos personajes fueron pareja, interés amoroso, familia o ninguna de las anteriores. Entra el detalle de temporadas concretas.",
     "scoring": "2 puntos por categoría exacta.",
     "tags": "parejas"
   },
@@ -436,7 +436,7 @@
     "name": "Final de temporada · Difícil",
     "kind": "cronologia",
     "level": "Difícil",
-    "instruction": "Ordena cinco sucesos de una temporada. con detalles de temporadas concretas.",
+    "instruction": "Ordena cinco sucesos de una temporada. Entra el detalle de temporadas concretas.",
     "scoring": "5 puntos si el orden es perfecto; 3 si solo hay una inversión.",
     "tags": "cronologia"
   },
@@ -445,7 +445,7 @@
     "name": "La derrama · Difícil",
     "kind": "apuesta",
     "level": "Difícil",
-    "instruction": "Cada jugador apuesta puntos antes de una pregunta de nivel experto. con detalles de temporadas concretas.",
+    "instruction": "Cada jugador apuesta puntos antes de una pregunta de nivel experto. Entra el detalle de temporadas concretas.",
     "scoring": "Ganas o pierdes lo apostado.",
     "tags": "multijugador"
   },
@@ -454,7 +454,7 @@
     "name": "El videoclub · Difícil",
     "kind": "pelicula-falsa",
     "level": "Difícil",
-    "instruction": "Se mezclan títulos ficticios con elementos reales de la serie; detecta los inventados. con detalles de temporadas concretas.",
+    "instruction": "Se mezclan títulos ficticios con elementos reales de la serie; detecta los inventados. Entra el detalle de temporadas concretas.",
     "scoring": "1 punto por detección.",
     "tags": "paco,videoclub"
   },
@@ -463,7 +463,7 @@
     "name": "La portería · Difícil",
     "kind": "supervivencia",
     "level": "Difícil",
-    "instruction": "Encadena respuestas sin fallar. Cada acierto desbloquea una más difícil. con detalles de temporadas concretas.",
+    "instruction": "Encadena respuestas sin fallar. Cada acierto desbloquea una más difícil. Entra el detalle de temporadas concretas.",
     "scoring": "Racha máxima.",
     "tags": "emilio"
   },
@@ -472,7 +472,7 @@
     "name": "La junta · Difícil",
     "kind": "debate",
     "level": "Difícil",
-    "instruction": "Se plantea un conflicto de comunidad y hay que elegir qué personaje reaccionaría de cada forma. con detalles de temporadas concretas.",
+    "instruction": "Se plantea un conflicto de comunidad y hay que elegir qué personaje reaccionaría de cada forma. Entra el detalle de temporadas concretas.",
     "scoring": "Puntos por coincidencia con la ficha de personaje.",
     "tags": "comunidad"
   },
@@ -481,7 +481,7 @@
     "name": "Spoiler controlado · Difícil",
     "kind": "tramas",
     "level": "Difícil",
-    "instruction": "Adivina el desenlace de una trama entre cuatro opciones, con aviso de spoiler. con detalles de temporadas concretas.",
+    "instruction": "Adivina el desenlace de una trama entre cuatro opciones, con aviso de spoiler. Entra el detalle de temporadas concretas.",
     "scoring": "2 puntos por acierto.",
     "tags": "spoilers"
   },
@@ -490,7 +490,7 @@
     "name": "Antes o después · Difícil",
     "kind": "cronologia",
     "level": "Difícil",
-    "instruction": "Decide cuál de dos sucesos ocurre antes. con detalles de temporadas concretas.",
+    "instruction": "Decide cuál de dos sucesos ocurre antes. Entra el detalle de temporadas concretas.",
     "scoring": "1 punto por pareja.",
     "tags": "cronologia"
   },
@@ -499,7 +499,7 @@
     "name": "Cadena de vecinos · Difícil",
     "kind": "relaciones",
     "level": "Difícil",
-    "instruction": "Une personaje A con B mediante relaciones reales: familia, pareja, convivencia o amistad. con detalles de temporadas concretas.",
+    "instruction": "Une personaje A con B mediante relaciones reales: familia, pareja, convivencia o amistad. Entra el detalle de temporadas concretas.",
     "scoring": "1 punto por cada enlace válido.",
     "tags": "relaciones"
   },
@@ -508,7 +508,7 @@
     "name": "Nivel profesional · Difícil",
     "kind": "expert",
     "level": "Difícil",
-    "instruction": "Preguntas de actores secundarios, producción, localizaciones y audiencias. con detalles de temporadas concretas.",
+    "instruction": "Preguntas de actores secundarios, producción, localizaciones y audiencias. Entra el detalle de temporadas concretas.",
     "scoring": "5 puntos por acierto.",
     "tags": "expert"
   },
@@ -517,7 +517,7 @@
     "name": "Campanadas · Difícil",
     "kind": "curiosidades",
     "level": "Difícil",
-    "instruction": "Ronda de cultura televisiva alrededor del fenómeno de la serie fuera de los episodios. con detalles de temporadas concretas.",
+    "instruction": "Ronda de cultura televisiva alrededor del fenómeno de la serie fuera de los episodios. Entra el detalle de temporadas concretas.",
     "scoring": "3 puntos por acierto.",
     "tags": "curiosidades"
   },
@@ -526,7 +526,7 @@
     "name": "Termitas · Difícil",
     "kind": "eliminacion",
     "level": "Difícil",
-    "instruction": "Cada fallo “debilita” el edificio. Tres fallos eliminan al jugador. con detalles de temporadas concretas.",
+    "instruction": "Cada fallo “debilita” el edificio. Tres fallos eliminan al jugador. Entra el detalle de temporadas concretas.",
     "scoring": "Sobrevive más rondas.",
     "tags": "final"
   },
@@ -535,7 +535,7 @@
     "name": "PUF · Difícil",
     "kind": "creativo",
     "level": "Difícil",
-    "instruction": "Dado un personaje y una situación, elige cuál de cuatro titulares de moda o negocio encaja mejor con su personalidad. con detalles de temporadas concretas.",
+    "instruction": "Dado un personaje y una situación, elige cuál de cuatro titulares de moda o negocio encaja mejor con su personalidad. Entra el detalle de temporadas concretas.",
     "scoring": "Votación o clave editorial.",
     "tags": "paloma,puf"
   },
@@ -544,7 +544,7 @@
     "name": "¿Quién soy? · Experto",
     "kind": "adivinanza",
     "level": "Experto",
-    "instruction": "Recibe 3 pistas progresivas sobre un personaje y adivínalo antes de la tercera. con secundarios, producción y cronología fina.",
+    "instruction": "Recibe 3 pistas progresivas sobre un personaje y adivínalo antes de la tercera. Entran secundarios, producción y cronología fina.",
     "scoring": "3 puntos con una pista, 2 con dos, 1 con tres.",
     "tags": "personajes"
   },
@@ -553,7 +553,7 @@
     "name": "Vecino intruso · Experto",
     "kind": "clasificacion",
     "level": "Experto",
-    "instruction": "Se muestran cuatro nombres; tres comparten familia, piso, oficio o trama. Elige al intruso. con secundarios, producción y cronología fina.",
+    "instruction": "Se muestran cuatro nombres; tres comparten familia, piso, oficio o trama. Elige al intruso. Entran secundarios, producción y cronología fina.",
     "scoring": "1 punto por acierto; +1 si justificas el vínculo.",
     "tags": "relaciones"
   },
@@ -562,7 +562,7 @@
     "name": "Radio Patio · Experto",
     "kind": "velocidad",
     "level": "Experto",
-    "instruction": "Responde cinco preguntas rápidas de cotilleos, parejas y parentescos. con secundarios, producción y cronología fina.",
+    "instruction": "Responde cinco preguntas rápidas de cotilleos, parejas y parentescos. Entran secundarios, producción y cronología fina.",
     "scoring": "1 punto por respuesta en menos de 8 segundos.",
     "tags": "radio-patio"
   },
@@ -571,7 +571,7 @@
     "name": "Presidente de la comunidad · Experto",
     "kind": "quiz",
     "level": "Experto",
-    "instruction": "Ronda de 10 preguntas de dificultad ascendente sobre Juan, juntas y edificio. con secundarios, producción y cronología fina.",
+    "instruction": "Ronda de 10 preguntas de dificultad ascendente sobre Juan, juntas y edificio. Entran secundarios, producción y cronología fina.",
     "scoring": "Puntuación 1-2-3-4-5 por dificultad.",
     "tags": "juan-cuesta"
   },
@@ -580,7 +580,7 @@
     "name": "Un poquito de por favor · Experto",
     "kind": "frases",
     "level": "Experto",
-    "instruction": "Identifica el personaje asociado a una frase corta o coletilla. con secundarios, producción y cronología fina.",
+    "instruction": "Identifica el personaje asociado a una frase corta o coletilla. Entran secundarios, producción y cronología fina.",
     "scoring": "2 puntos por personaje; 1 extra si explicas el contexto general.",
     "tags": "frases"
   },
@@ -589,7 +589,7 @@
     "name": "Desengaño 21 · Experto",
     "kind": "mapa",
     "level": "Experto",
-    "instruction": "Coloca personajes en piso, portería, ático o local según la etapa indicada. con secundarios, producción y cronología fina.",
+    "instruction": "Coloca personajes en piso, portería, ático o local según la etapa indicada. Entran secundarios, producción y cronología fina.",
     "scoring": "1 punto por ubicación correcta.",
     "tags": "lugares"
   },
@@ -598,7 +598,7 @@
     "name": "¿Actor o personaje? · Experto",
     "kind": "reparto",
     "level": "Experto",
-    "instruction": "Clasifica nombres mezclados entre intérpretes y personajes. con secundarios, producción y cronología fina.",
+    "instruction": "Clasifica nombres mezclados entre intérpretes y personajes. Entran secundarios, producción y cronología fina.",
     "scoring": "1 punto por clasificación correcta.",
     "tags": "reparto"
   },
@@ -607,7 +607,7 @@
     "name": "Parejas imposibles · Experto",
     "kind": "parejas",
     "level": "Experto",
-    "instruction": "Decide si dos personajes fueron pareja, interés amoroso, familia o ninguna de las anteriores. con secundarios, producción y cronología fina.",
+    "instruction": "Decide si dos personajes fueron pareja, interés amoroso, familia o ninguna de las anteriores. Entran secundarios, producción y cronología fina.",
     "scoring": "2 puntos por categoría exacta.",
     "tags": "parejas"
   },
@@ -616,7 +616,7 @@
     "name": "Final de temporada · Experto",
     "kind": "cronologia",
     "level": "Experto",
-    "instruction": "Ordena cinco sucesos de una temporada. con secundarios, producción y cronología fina.",
+    "instruction": "Ordena cinco sucesos de una temporada. Entran secundarios, producción y cronología fina.",
     "scoring": "5 puntos si el orden es perfecto; 3 si solo hay una inversión.",
     "tags": "cronologia"
   },
@@ -625,7 +625,7 @@
     "name": "La derrama · Experto",
     "kind": "apuesta",
     "level": "Experto",
-    "instruction": "Cada jugador apuesta puntos antes de una pregunta de nivel experto. con secundarios, producción y cronología fina.",
+    "instruction": "Cada jugador apuesta puntos antes de una pregunta de nivel experto. Entran secundarios, producción y cronología fina.",
     "scoring": "Ganas o pierdes lo apostado.",
     "tags": "multijugador"
   },
@@ -634,7 +634,7 @@
     "name": "El videoclub · Experto",
     "kind": "pelicula-falsa",
     "level": "Experto",
-    "instruction": "Se mezclan títulos ficticios con elementos reales de la serie; detecta los inventados. con secundarios, producción y cronología fina.",
+    "instruction": "Se mezclan títulos ficticios con elementos reales de la serie; detecta los inventados. Entran secundarios, producción y cronología fina.",
     "scoring": "1 punto por detección.",
     "tags": "paco,videoclub"
   },
@@ -643,7 +643,7 @@
     "name": "La portería · Experto",
     "kind": "supervivencia",
     "level": "Experto",
-    "instruction": "Encadena respuestas sin fallar. Cada acierto desbloquea una más difícil. con secundarios, producción y cronología fina.",
+    "instruction": "Encadena respuestas sin fallar. Cada acierto desbloquea una más difícil. Entran secundarios, producción y cronología fina.",
     "scoring": "Racha máxima.",
     "tags": "emilio"
   },
@@ -652,7 +652,7 @@
     "name": "La junta · Experto",
     "kind": "debate",
     "level": "Experto",
-    "instruction": "Se plantea un conflicto de comunidad y hay que elegir qué personaje reaccionaría de cada forma. con secundarios, producción y cronología fina.",
+    "instruction": "Se plantea un conflicto de comunidad y hay que elegir qué personaje reaccionaría de cada forma. Entran secundarios, producción y cronología fina.",
     "scoring": "Puntos por coincidencia con la ficha de personaje.",
     "tags": "comunidad"
   },
@@ -661,7 +661,7 @@
     "name": "Spoiler controlado · Experto",
     "kind": "tramas",
     "level": "Experto",
-    "instruction": "Adivina el desenlace de una trama entre cuatro opciones, con aviso de spoiler. con secundarios, producción y cronología fina.",
+    "instruction": "Adivina el desenlace de una trama entre cuatro opciones, con aviso de spoiler. Entran secundarios, producción y cronología fina.",
     "scoring": "2 puntos por acierto.",
     "tags": "spoilers"
   },
@@ -670,7 +670,7 @@
     "name": "Antes o después · Experto",
     "kind": "cronologia",
     "level": "Experto",
-    "instruction": "Decide cuál de dos sucesos ocurre antes. con secundarios, producción y cronología fina.",
+    "instruction": "Decide cuál de dos sucesos ocurre antes. Entran secundarios, producción y cronología fina.",
     "scoring": "1 punto por pareja.",
     "tags": "cronologia"
   },
@@ -679,7 +679,7 @@
     "name": "Cadena de vecinos · Experto",
     "kind": "relaciones",
     "level": "Experto",
-    "instruction": "Une personaje A con B mediante relaciones reales: familia, pareja, convivencia o amistad. con secundarios, producción y cronología fina.",
+    "instruction": "Une personaje A con B mediante relaciones reales: familia, pareja, convivencia o amistad. Entran secundarios, producción y cronología fina.",
     "scoring": "1 punto por cada enlace válido.",
     "tags": "relaciones"
   },
@@ -688,7 +688,7 @@
     "name": "Nivel profesional · Experto",
     "kind": "expert",
     "level": "Experto",
-    "instruction": "Preguntas de actores secundarios, producción, localizaciones y audiencias. con secundarios, producción y cronología fina.",
+    "instruction": "Preguntas de actores secundarios, producción, localizaciones y audiencias. Entran secundarios, producción y cronología fina.",
     "scoring": "5 puntos por acierto.",
     "tags": "expert"
   },
@@ -697,7 +697,7 @@
     "name": "Campanadas · Experto",
     "kind": "curiosidades",
     "level": "Experto",
-    "instruction": "Ronda de cultura televisiva alrededor del fenómeno de la serie fuera de los episodios. con secundarios, producción y cronología fina.",
+    "instruction": "Ronda de cultura televisiva alrededor del fenómeno de la serie fuera de los episodios. Entran secundarios, producción y cronología fina.",
     "scoring": "3 puntos por acierto.",
     "tags": "curiosidades"
   },
@@ -706,7 +706,7 @@
     "name": "Termitas · Experto",
     "kind": "eliminacion",
     "level": "Experto",
-    "instruction": "Cada fallo “debilita” el edificio. Tres fallos eliminan al jugador. con secundarios, producción y cronología fina.",
+    "instruction": "Cada fallo “debilita” el edificio. Tres fallos eliminan al jugador. Entran secundarios, producción y cronología fina.",
     "scoring": "Sobrevive más rondas.",
     "tags": "final"
   },
@@ -715,7 +715,7 @@
     "name": "PUF · Experto",
     "kind": "creativo",
     "level": "Experto",
-    "instruction": "Dado un personaje y una situación, elige cuál de cuatro titulares de moda o negocio encaja mejor con su personalidad. con secundarios, producción y cronología fina.",
+    "instruction": "Dado un personaje y una situación, elige cuál de cuatro titulares de moda o negocio encaja mejor con su personalidad. Entran secundarios, producción y cronología fina.",
     "scoring": "Votación o clave editorial.",
     "tags": "paloma,puf"
   },
@@ -1041,7 +1041,7 @@
   },
   {
     "id": "P101",
-    "name": "Cadena de vecinos · Fácil",
+    "name": "Cadena de vecinos · Fácil (bis)",
     "kind": "relaciones",
     "level": "Fácil",
     "instruction": "Une personajes mediante relaciones válidas con el menor número de saltos. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
@@ -1057,7 +1057,7 @@
   },
   {
     "id": "P102",
-    "name": "Cadena de vecinos · Medio",
+    "name": "Cadena de vecinos · Medio (bis)",
     "kind": "relaciones",
     "level": "Medio",
     "instruction": "Une personajes mediante relaciones válidas con el menor número de saltos. Variante medio: menos pistas y distractores plausibles.",
@@ -1073,7 +1073,7 @@
   },
   {
     "id": "P103",
-    "name": "Cadena de vecinos · Difícil",
+    "name": "Cadena de vecinos · Difícil (bis)",
     "kind": "relaciones",
     "level": "Difícil",
     "instruction": "Une personajes mediante relaciones válidas con el menor número de saltos. Variante difícil: tiempo reducido, más categorías y penalización por error.",
@@ -1089,7 +1089,7 @@
   },
   {
     "id": "P104",
-    "name": "Cadena de vecinos · Experto",
+    "name": "Cadena de vecinos · Experto (bis)",
     "kind": "relaciones",
     "level": "Experto",
     "instruction": "Une personajes mediante relaciones válidas con el menor número de saltos. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
@@ -1489,7 +1489,7 @@
   },
   {
     "id": "P129",
-    "name": "Termitas · Fácil",
+    "name": "Termitas · Fácil (bis)",
     "kind": "eliminacion",
     "level": "Fácil",
     "instruction": "Cada fallo elimina una opción o “habitación”; sobrevive hasta el final. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
@@ -1505,7 +1505,7 @@
   },
   {
     "id": "P130",
-    "name": "Termitas · Medio",
+    "name": "Termitas · Medio (bis)",
     "kind": "eliminacion",
     "level": "Medio",
     "instruction": "Cada fallo elimina una opción o “habitación”; sobrevive hasta el final. Variante medio: menos pistas y distractores plausibles.",
@@ -1521,7 +1521,7 @@
   },
   {
     "id": "P131",
-    "name": "Termitas · Difícil",
+    "name": "Termitas · Difícil (bis)",
     "kind": "eliminacion",
     "level": "Difícil",
     "instruction": "Cada fallo elimina una opción o “habitación”; sobrevive hasta el final. Variante difícil: tiempo reducido, más categorías y penalización por error.",
@@ -1537,7 +1537,7 @@
   },
   {
     "id": "P132",
-    "name": "Termitas · Experto",
+    "name": "Termitas · Experto (bis)",
     "kind": "eliminacion",
     "level": "Experto",
     "instruction": "Cada fallo elimina una opción o “habitación”; sobrevive hasta el final. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",
@@ -2513,7 +2513,7 @@
   },
   {
     "id": "P193",
-    "name": "¿Actor o personaje? · Fácil",
+    "name": "¿Actor o personaje? · Fácil (bis)",
     "kind": "reparto",
     "level": "Fácil",
     "instruction": "Alterna nombres reales y ficticios y exige identificar su categoría. Variante fácil: pistas directas, tiempo generoso y opciones visibles.",
@@ -2529,7 +2529,7 @@
   },
   {
     "id": "P194",
-    "name": "¿Actor o personaje? · Medio",
+    "name": "¿Actor o personaje? · Medio (bis)",
     "kind": "reparto",
     "level": "Medio",
     "instruction": "Alterna nombres reales y ficticios y exige identificar su categoría. Variante medio: menos pistas y distractores plausibles.",
@@ -2545,7 +2545,7 @@
   },
   {
     "id": "P195",
-    "name": "¿Actor o personaje? · Difícil",
+    "name": "¿Actor o personaje? · Difícil (bis)",
     "kind": "reparto",
     "level": "Difícil",
     "instruction": "Alterna nombres reales y ficticios y exige identificar su categoría. Variante difícil: tiempo reducido, más categorías y penalización por error.",
@@ -2561,7 +2561,7 @@
   },
   {
     "id": "P196",
-    "name": "¿Actor o personaje? · Experto",
+    "name": "¿Actor o personaje? · Experto (bis)",
     "kind": "reparto",
     "level": "Experto",
     "instruction": "Alterna nombres reales y ficticios y exige identificar su categoría. Variante experto: sin ayudas, datos finos y cadenas de varias decisiones.",

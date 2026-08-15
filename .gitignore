@@ -25,13 +25,3 @@ tsconfig.tsbuildinfo
 
 # credenciales locales de cualquier tipo
 *.local
-
-# Material de la serie aportado en local (fotogramas, promocionales).
-# Se ve en `npm run dev` y NO se sube ni se despliega: son de Atresmedia y de la productora,
-# y el propio ATTRIBUTION.md de AQUINOLAB dice «obtain the appropriate rights before any
-# public or commercial distribution». Ver scripts/importar-aquinolab.mjs.
-public/serie/**/*.webp
-public/serie/**/*.avif
-public/serie/**/*.jpg
-public/serie/**/*.jpeg
-public/serie/**/*.png
