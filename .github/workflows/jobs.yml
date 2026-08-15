@@ -31,6 +31,13 @@ concurrency:
 jobs:
   disparar:
     runs-on: ubuntu-latest
+    # Ojo con la sintaxis, que ya nos mordió una vez en deploy.yml: `secrets` NO está
+    # disponible en un `if:` de paso. Se expone como variable de entorno del job y los pasos
+    # consultan `env`.
+    env:
+      BASE: ${{ vars.SITE_URL }}
+      SECRETO: ${{ secrets.JOBS_SECRET }}
+      CONFIGURADO: ${{ secrets.JOBS_SECRET != '' && vars.SITE_URL != '' }}
     steps:
       - name: Elegir qué toca según la hora
         id: elegir
@@ -51,10 +58,7 @@ jobs:
           esac
 
       - name: Ejecutar
-        if: ${{ secrets.JOBS_SECRET != '' && vars.SITE_URL != '' }}
-        env:
-          BASE: ${{ vars.SITE_URL }}
-          SECRETO: ${{ secrets.JOBS_SECRET }}
+        if: env.CONFIGURADO == 'true'
         run: |
           fallos=0
           for trabajo in ${{ steps.elegir.outputs.lista }}; do
@@ -71,7 +75,7 @@ jobs:
           exit $fallos
 
       - name: Sin configurar
-        if: ${{ secrets.JOBS_SECRET == '' || vars.SITE_URL == '' }}
+        if: env.CONFIGURADO != 'true'
         run: |
           echo "Faltan secrets.JOBS_SECRET o vars.SITE_URL: no se dispara nada."
           echo "Se configura en Settings → Secrets and variables → Actions."
