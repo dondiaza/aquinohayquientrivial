@@ -1,0 +1,77 @@
+name: Trabajos programados
+
+# Por qué el reloj está aquí y no en Vercel:
+#   · la cuenta del equipo no tiene autorizados los builds en la nube, y las cron functions
+#     de Vercel los necesitan;
+#   · Actions ya despliega este proyecto, así que no se añade infraestructura nueva;
+#   · se pueden lanzar a mano desde la pestaña de Actions cuando haga falta.
+#
+# Todos los trabajos son idempotentes: dispararlos de más no duplica recompensas ni avisos.
+
+on:
+  schedule:
+    # Las horas son UTC. En España son una o dos más según la época del año, y los propios
+    # trabajos respetan la zona horaria de cada usuario para decidir a quién avisan.
+    - cron: '15 3 * * *' # mantenimiento y borrados, de madrugada
+    - cron: '30 7 * * *' # reto diario disponible
+    - cron: '0 18 * * *' # racha en peligro, por la tarde
+    - cron: '0 9 * * 1' # resumen semanal, los lunes
+    - cron: '0 10 * * *' # avisos y cierre de liga
+  workflow_dispatch:
+    inputs:
+      job:
+        description: 'Trabajo concreto (vacío = todos)'
+        required: false
+        type: string
+
+concurrency:
+  group: jobs-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  disparar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Elegir qué toca según la hora
+        id: elegir
+        run: |
+          MANUAL="${{ inputs.job }}"
+          if [ -n "$MANUAL" ]; then
+            echo "lista=$MANUAL" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          case "${{ github.event.schedule }}" in
+            "15 3 * * *")  echo "lista=mantenimiento borrados" >> "$GITHUB_OUTPUT" ;;
+            "30 7 * * *")  echo "lista=reto-diario" >> "$GITHUB_OUTPUT" ;;
+            "0 18 * * *")  echo "lista=racha-en-peligro" >> "$GITHUB_OUTPUT" ;;
+            "0 9 * * 1")   echo "lista=resumen-semanal" >> "$GITHUB_OUTPUT" ;;
+            "0 10 * * *")  echo "lista=liga-aviso liga-cierre" >> "$GITHUB_OUTPUT" ;;
+            *)             echo "lista=mantenimiento" >> "$GITHUB_OUTPUT" ;;
+          esac
+
+      - name: Ejecutar
+        if: ${{ secrets.JOBS_SECRET != '' && vars.SITE_URL != '' }}
+        env:
+          BASE: ${{ vars.SITE_URL }}
+          SECRETO: ${{ secrets.JOBS_SECRET }}
+        run: |
+          fallos=0
+          for trabajo in ${{ steps.elegir.outputs.lista }}; do
+            echo "── $trabajo ─────────────────────────────"
+            codigo=$(curl -sS -o respuesta.json -w '%{http_code}' \
+              -X POST "$BASE/api/jobs?job=$trabajo" \
+              -H "x-jobs-secret: $SECRETO" \
+              --max-time 300)
+            echo "HTTP $codigo"
+            cat respuesta.json || true
+            echo ""
+            if [ "$codigo" != "200" ]; then fallos=$((fallos+1)); fi
+          done
+          exit $fallos
+
+      - name: Sin configurar
+        if: ${{ secrets.JOBS_SECRET == '' || vars.SITE_URL == '' }}
+        run: |
+          echo "Faltan secrets.JOBS_SECRET o vars.SITE_URL: no se dispara nada."
+          echo "Se configura en Settings → Secrets and variables → Actions."

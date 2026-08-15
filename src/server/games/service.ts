@@ -16,6 +16,7 @@
 import type { Prisma } from '@prisma/client';
 
 import { prisma } from '../db';
+import { alTerminarPartida, type ResumenProgresionCuenta } from '../progresion/service';
 import { ensureGuestPlayer } from '../guest';
 import { loadPlayableQuestions, toQuestion } from '../questions/repository';
 import { estimateDifficulty } from '@/domain/questions/analytics';
@@ -326,7 +327,13 @@ export async function finishGame(
   guestPublicId: string,
   request: FinishGameRequest,
 ): Promise<
-  | { ok: true; summary: GameSummary; progresion: ResultadoProgresion }
+  | {
+      ok: true;
+      summary: GameSummary;
+      progresion: ResultadoProgresion;
+      /** Progresión de cuenta. null si se está jugando como invitado. */
+      cuenta: ResumenProgresionCuenta;
+    }
   | { ok: false; reason: 'NOT_FOUND' }
 > {
   const game = await prisma.game.findUnique({
@@ -417,7 +424,35 @@ export async function finishGame(
     });
   }
 
-  return { ok: true, summary, progresion };
+  /*
+   * Progresión de CUENTA (Fase 4). Es aparte de la del invitado a propósito:
+   *
+   *   · si quien juega no tiene cuenta, no se ejecuta nada y la partida termina igual;
+   *   · si la tiene, el XP va al libro mayor con el gameId como origen, así que reenviar
+   *     el final de partida no concede el doble;
+   *   · la duración sale de las respuestas, no del cliente: es lo que impide que alguien
+   *     declare una partida de dos horas para saltarse el mínimo.
+   */
+  const duracionSegundos = Math.max(
+    0,
+    Math.round(answers.reduce((suma, respuesta) => suma + respuesta.responseMs, 0) / 1000),
+  );
+
+  const cuenta = await alTerminarPartida(guestPublicId, {
+    gameId,
+    correctAnswers: summary.correctAnswers,
+    totalQuestions: summary.totalQuestions,
+    accuracyRatio: summary.accuracyPercent / 100,
+    averageDifficulty: summary.averageDifficulty,
+    bestStreak: summary.bestStreak,
+    distinctTypes: summary.byType.filter((entrada) => entrada.asked > 0).length,
+    finished: true,
+    respuestas: answers.filter((respuesta) => respuesta.answered).length,
+    segundos: duracionSegundos,
+    ...(game.origin === 'RETO_DIARIO' ? { esRetoDiario: true } : {}),
+  });
+
+  return { ok: true, summary, progresion, cuenta };
 }
 
 export async function getFinishedGame(gameId: string): Promise<{

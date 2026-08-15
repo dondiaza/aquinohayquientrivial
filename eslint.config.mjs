@@ -27,4 +27,13 @@ export default tseslint.config(
       'no-undef': 'off',
     },
   },
+  {
+    // Service worker: su global es `self`, que no existe ni en Node ni en el navegador
+    // normal. Se apaga la regla aquí en lugar de salpicar el fichero de comentarios.
+    files: ['public/sw.js'],
+    ...tseslint.configs.disableTypeChecked,
+    rules: {
+      'no-undef': 'off',
+    },
+  },
 );

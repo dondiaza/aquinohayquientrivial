@@ -1,7 +1,8 @@
 # Fase 4 · Cuentas, progresión, comunidad y notificaciones
 
-Estado: **cimientos puestos y probados; la mayor parte de las pantallas y servicios, no.**
-Al final está la lista exacta de lo que hay y lo que falta, sin adornos.
+Estado: **cuentas, progresión, social y notificaciones funcionando de punta a punta;
+comunidades, temporadas y panel de administración, no.** En §6 está la lista exacta de lo
+que hay y lo que falta, sin adornos.
 
 ---
 
@@ -143,37 +144,99 @@ a `/`.
 
 ## 6. Lo que hay hoy, exactamente
 
-**Hecho y probado (38 tests):**
+### Hecho, probado y desplegado
 
-* modelo de datos completo de la fase, migrado y aplicado;
-* libro mayor de XP con antifarmeo, topes y explicación al jugador;
-* rachas con seguro y misión de recuperación, con día local correcto;
-* motor de notificaciones: reglas, preferencias por categoría y canal, topes de frecuencia,
-  horario silencioso con cruce de medianoche, reducción por inactividad y elección de
-  momento;
-* catálogo de 21 tipos de notificación con sus textos y sus deep links.
+**Cuentas y migración de progreso**
 
-**No hecho** (y no se afirma lo contrario):
+* acceso por **enlace mágico** sin contraseña: código de 8 caracteres, hasheado, de un solo
+  uso, con caducidad de 15 minutos, tope de 5 intentos y tope de envíos por hora;
+* respuesta idéntica exista el correo o no, para no filtrar quién está registrado;
+* sesiones con cookie `httpOnly` + `sameSite=lax`, hash en la base de datos, y pantalla de
+  dispositivos con «cerrar las demás»;
+* **migración invitado → cuenta**: rellenar `GuestPlayer.userId`. Varios navegadores del
+  mismo usuario cuelgan de la misma cuenta y su progreso se SUMA;
+* nombre de usuario con validación, forma canónica anti-suplantación y enfriamiento de 30
+  días; código de amigo tipo `VECI-KNKX`;
+* borrado de cuenta con 14 días de gracia y **anonimización** en lugar de borrado en
+  cascada, para no dejar agujeros en el historial de otras personas.
 
-* **autenticación** — el modelo está (`UserAccount`, `UserSession`, `LoginToken` con hash,
-  intentos y caducidad), pero el flujo de enlace mágico necesita un proveedor de correo, y
-  **no hay credenciales de ninguno en el entorno del equipo**. Es el mismo caso que el
-  proveedor de realtime en Fase 3: se deja el modelo listo y se documenta, en lugar de
-  inventar una integración que nadie puede desplegar;
-* migración invitado → cuenta: diseñada (es un `UPDATE` de `GuestPlayer.userId`), sin
-  implementar el servicio;
-* perfil público, username con enfriamiento, friend codes;
-* amigos, presencia, invitaciones, desafíos asíncronos, revanchas, comunidades;
-* ligas y temporadas: el modelo está, los servicios y el cierre por job no;
-* buzón in-app, Web Push, service worker, permiso contextual;
-* pantalla de ajustes, privacidad, bloqueos, reportes;
-* jobs programados, analítica de retención, A/B, admin de usuarios y temporadas.
+**Progresión**
 
-Es decir: **la fase está empezada, no terminada.** Lo que hay son los cimientos sobre los
-que se apoya todo lo demás, y están puestos donde más caro sale equivocarse: el modelo de
-datos, la idempotencia del XP y las reglas que deciden cuándo se molesta a alguien.
+* libro mayor de XP enganchado al final de partida, con la duración calculada **en el
+  servidor** a partir de las respuestas (el cliente no puede declarar una partida de dos
+  horas para saltarse el mínimo);
+* antifarmeo en tres capas y explicación al jugador cuando se recorta;
+* rachas con día local, seguro de derrama y misión de recuperación;
+* liga con puntos separados del XP, tope diario, ascensos y descensos, y habilidad (Elo
+  simplificado) también separada.
 
----
+**Social**
+
+* solicitudes, aceptar, rechazar, eliminar, bloquear y desbloquear;
+* **el bloqueo gana siempre**: corta solicitudes, desafíos, invitaciones y presencia en las
+  dos direcciones, y al bloqueado no se le avisa;
+* desafíos asíncronos con semilla compartida, retos de grupo y revancha;
+* invitaciones a sala que caducan a los 30 minutos;
+* presencia filtrada por la privacidad de cada uno.
+
+**Notificaciones**
+
+* motor central: nada avisa por su cuenta;
+* buzón in-app + API, contador acotado a 99, marcar una o todas como leídas;
+* Web Push con VAPID y service worker que **solo** hace push (no cachea: una caché agresiva
+  enseñaría partidas viejas);
+* suscripciones que se limpian solas cuando el navegador las invalida (404/410);
+* cada decisión queda registrada con su motivo, así que «¿por qué no me llegó?» tiene
+  respuesta;
+* métricas agregadas de salud del canal, sin nada por usuario.
+
+**Privacidad y ajustes**
+
+* siete niveles de visibilidad, comprobados en el servidor;
+* preferencias de push por categoría y canal;
+* horario silencioso con horas reales;
+* pantalla de ajustes con todo lo anterior y el borrado de cuenta abajo, sin esconderlo.
+
+**Trabajos programados**
+
+* siete trabajos idempotentes: mantenimiento, reto diario, racha en peligro, cierre de liga,
+  aviso de liga, resumen semanal y borrados;
+* los dispara **GitHub Actions** (en Vercel no se pueden usar cron functions con este
+  despliegue), protegidos por `JOBS_SECRET`, y **si el secreto no está configurado la ruta
+  responde 503**: falla hacia el lado seguro.
+
+### Comprobado de punta a punta
+
+Contra el servidor de producción local, por HTTP:
+
+| Paso | Resultado |
+| --- | --- |
+| Pedir código | 200, código en la consola (sin proveedor de correo configurado) |
+| Canjear | cuenta creada: `vecino` / `VECI-KNKX` |
+| Reutilizar el mismo código | rechazado |
+| Sesión | `/api/amigos`, `/api/notificaciones` y `/api/ajustes` responden autenticados |
+| Solicitud de amistad por código | aceptada, y **notificación creada** con destino `/amigos/solicitudes` |
+| Registro de envío | `IN_APP ENTREGADA` + `PUSH FALLIDA (SIN_DISPOSITIVO)` |
+| Páginas | `/entrar`, `/perfil/[username]`, `/amigos`, `/ajustes` responden 200; las privadas redirigen sin sesión |
+
+### Lo que NO está
+
+Con nombre y apellidos, para que no haya sorpresas:
+
+* **proveedor de correo real**: el transporte está y se activa con tres variables de
+  entorno, pero no hay credenciales de ninguno en el entorno del equipo. En desarrollo el
+  código sale por consola y **no se finge** que se ha mandado un correo;
+* **claves VAPID**: el push está implementado de punta a punta, pero hasta que no se generen
+  las claves (`npx web-push generate-vapid-keys`) y se pongan en el entorno, no sale ningún
+  push. Queda registrado como `SIN_DISPOSITIVO`, no como enviado;
+* **comunidades**: el modelo está, los servicios y la interfaz no;
+* **temporadas y eventos**: modelo y cierre de liga sí; el calendario y los eventos
+  temáticos no;
+* **muro de actividad, recap con tarjeta compartible, A/B de notificaciones y panel de
+  administración de usuarios/temporadas**;
+* **retos semanales y objetivos personalizados**;
+* **matchmaking**: la habilidad se calcula y se guarda, pero no hay cola de emparejamiento;
+* **E2E con navegadores reales** para los flujos de cuenta.
 
 ## 7. Métrica principal propuesta (§94)
 

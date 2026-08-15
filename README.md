@@ -195,6 +195,10 @@ En Fase 3 se invierte el reparto sin tocar el motor ni el modelo de datos.
 | `/admin/preguntas/nueva` | Crear pregunta con previsualización en vivo |
 | `/admin/preguntas/[id]` | Editar, activar/desactivar, duplicar, borrar + analítica |
 | `/admin/entrar` | Acceso al panel si `ADMIN_PASSWORD` está definida |
+| `/entrar` | Guardar el progreso: acceso por enlace mágico, sin contraseña |
+| `/perfil/[username]` | Ficha pública, filtrada por la privacidad de cada uno |
+| `/amigos` | Vecinos, solicitudes y tu código de amigo |
+| `/ajustes` | Privacidad, avisos, no molestar, dispositivos y borrar la cuenta |
 | `/host` | Abrir una sala: duración, dificultad, temática y equipos |
 | `/host/[code]` | **La pantalla grande**: código enorme, QR, lobby, pregunta, revelado y ceremonia |
 | `/unirse` · `/unirse/[code]` | Entrar con código o directo desde el QR |
@@ -204,6 +208,12 @@ En Fase 3 se invierte el reparto sin tocar el motor ni el modelo de datos.
 | `POST /api/salas/[code]/intencion` | La única puerta por la que un cliente cambia algo |
 | `GET /api/salas/[code]/eventos` | Stream por cursor: SSE con caída a sondeo |
 | `GET /api/salas/[code]/snapshot` | Foto completa, ya filtrada para quien pregunta |
+| `POST /api/cuenta/acceso` · `/canjear` · `/salir` · `/borrar` | Acceso sin contraseña y ciclo de vida de la cuenta |
+| `GET`/`POST` `/api/amigos` | Vecinos, solicitudes y bloqueos |
+| `GET`/`POST` `/api/notificaciones` | Buzón y marcar como leídas |
+| `POST` `/api/notificaciones/suscripcion` | Alta de dispositivo para Web Push |
+| `GET`/`POST` `/api/ajustes` | Privacidad y preferencias de aviso |
+| `POST /api/jobs` | Trabajos programados (los dispara GitHub Actions con `JOBS_SECRET`) |
 | `POST /api/games/[gameId]/answers` | Registra una respuesta (Zod + comprobación de dueño) |
 | `POST /api/games/[gameId]/finish` | Cierra la partida y recalcula el resumen |
 
@@ -377,4 +387,8 @@ Resumido; el detalle está en [docs/FASES.md](docs/FASES.md).
   el móvil y termina con ceremonia. Queda pendiente lo que está listado al final de
   [docs/FASE3-SALAS.md](docs/FASE3-SALAS.md): rondas sociales completas, duelo 1v1,
   traspaso de presidencia y E2E con navegadores reales.
-* **Fase 4** — cuentas opcionales, progresión persistente, amigos, ligas y notificaciones.
+* **Fase 4 (en marcha)** — cuentas opcionales por enlace mágico, migración del progreso de
+  invitado, experiencia con libro mayor y antifarmeo, rachas con seguro y recuperación,
+  amigos y bloqueos, desafíos asíncronos, ligas, buzón de notificaciones con motor de
+  reglas, Web Push, privacidad y trabajos programados. Estado exacto y lo que falta en
+  [docs/FASE4-RETENCION.md](docs/FASE4-RETENCION.md).
