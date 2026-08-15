@@ -15,7 +15,10 @@ audiencias y las adaptaciones, con la estética de una junta de vecinos de princ
   preguntas del pack + 75 derivadas de la biblia, 11 familias de prueba (incluida la de
   escribir la respuesta), 14 temáticas, modo sin spoilers, 260 pruebas, 48 modos, 120
   rondas preconstruidas y 174 tarjetas. Ver [docs/CONTENIDO-ANHQV.md](docs/CONTENIDO-ANHQV.md).
-* Fase 3 (pendiente): salas online, WebSockets y móviles como mandos.
+* **Fase 3 (jugable):** salas en tiempo real. Pantalla grande con código y QR, móviles como
+  mando, servidor autoritativo, equipos, comodines multijugador, reconexión y ceremonia
+  final. Ver [docs/FASE3-SALAS.md](docs/FASE3-SALAS.md) y la decisión de transporte en
+  [docs/FASE3-REALTIME.md](docs/FASE3-REALTIME.md).
 
 > **Qué es y qué no es.** Este es un juego de aficionados sobre una serie ajena. Las
 > preguntas son **datos sobre la serie** (reparto, pisos, fechas, tramas), con su
@@ -71,6 +74,8 @@ Si prefieres tu propio PostgreSQL, olvida `db:up` y apunta `DATABASE_URL` a tu s
 | `npm run db:migrate` | Nueva migración en desarrollo |
 | `npm run db:seed` | Siembra/actualiza el banco de la serie (idempotente; archiva lo que ya no está) |
 | `npm run db:reset` | Borra y recrea la base de datos |
+| `node scripts/simular-sala.mjs --jugadores 8` | Simula una partida multijugador real contra el servidor |
+| `node scripts/colocar-imagenes.mjs <carpeta>` | Coloca tus imágenes en los huecos de `public/serie/` |
 
 ---
 
@@ -190,7 +195,15 @@ En Fase 3 se invierte el reparto sin tocar el motor ni el modelo de datos.
 | `/admin/preguntas/nueva` | Crear pregunta con previsualización en vivo |
 | `/admin/preguntas/[id]` | Editar, activar/desactivar, duplicar, borrar + analítica |
 | `/admin/entrar` | Acceso al panel si `ADMIN_PASSWORD` está definida |
-| `/unirse`, `/sala/[code]`, `/host/[code]` | Reservadas para Fase 3 (explican qué llegará) |
+| `/host` | Abrir una sala: duración, dificultad, temática y equipos |
+| `/host/[code]` | **La pantalla grande**: código enorme, QR, lobby, pregunta, revelado y ceremonia |
+| `/unirse` · `/unirse/[code]` | Entrar con código o directo desde el QR |
+| `/sala/[code]` | **El mando**: lo que ve cada jugador en su móvil |
+| `POST /api/salas` | Crea una sala y devuelve código y token de host |
+| `POST /api/salas/[code]/unirse` | Entra o **recupera** la identidad (misma llamada) |
+| `POST /api/salas/[code]/intencion` | La única puerta por la que un cliente cambia algo |
+| `GET /api/salas/[code]/eventos` | Stream por cursor: SSE con caída a sondeo |
+| `GET /api/salas/[code]/snapshot` | Foto completa, ya filtrada para quien pregunta |
 | `POST /api/games/[gameId]/answers` | Registra una respuesta (Zod + comprobación de dueño) |
 | `POST /api/games/[gameId]/finish` | Cierra la partida y recalcula el resumen |
 
@@ -360,6 +373,8 @@ Resumido; el detalle está en [docs/FASES.md](docs/FASES.md).
   ronda en el motor; el resto está descrito en `/pruebas` y aún por construir.
 * **Imágenes** — la web está completa con arte propio. Si se consigue licencia, los huecos
   de `public/serie/` (fachada, 9 zonas y 27 vecinos) se rellenan copiando ficheros.
-* **Fase 3** — salas online, WebSockets, móviles como mandos, equipos. El motor y los
-  contratos ya están hechos para eso: reducer puro y determinista, eventos tipados con
-  número de secuencia y rutas `/unirse`, `/sala/[code]`, `/host/[code]` reservadas.
+* **Fase 3** — jugable de punta a punta: se abre una sala, se escanea el QR, se juega desde
+  el móvil y termina con ceremonia. Queda pendiente lo que está listado al final de
+  [docs/FASE3-SALAS.md](docs/FASE3-SALAS.md): rondas sociales completas, duelo 1v1,
+  traspaso de presidencia y E2E con navegadores reales.
+* **Fase 4** — cuentas opcionales, progresión persistente, amigos, ligas y notificaciones.

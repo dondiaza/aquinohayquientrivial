@@ -1,14 +1,35 @@
 import type { Metadata } from 'next';
 
-import { Fase3Placeholder } from '@/components/layout/Fase3Placeholder';
+import { LinkButton } from '@/components/ui/Button';
+import { ApartmentPlaque } from '@/components/portal/Estructuras';
+import { Entrar } from '@/components/sala/Entrar';
 
-export const metadata: Metadata = { title: 'Unirse a una sala' };
+export const metadata: Metadata = {
+  title: 'Unirse a una sala',
+  description: 'Entra en una junta de vecinos con el código de cuatro caracteres.',
+};
 
-export default function JoinPage() {
+export default function UnirsePage() {
   return (
-    <Fase3Placeholder
-      titulo="Unirse a una sala"
-      descripcion="Aquí se entrará con un código de cuatro letras para usar el móvil como mando mientras la partida se ve en una pantalla grande."
-    />
+    <div className="mx-auto max-w-md px-4 py-8">
+      <ApartmentPlaque
+        vivienda="Telefonillo"
+        titulo="¿A qué comunidad vas?"
+        subtitulo="Escribe el código que sale en la pantalla grande."
+      />
+
+      <div className="mt-6">
+        <Entrar />
+      </div>
+
+      <p className="mt-8 flex flex-wrap gap-2">
+        <LinkButton href="/host" tone="papel" size="sm">
+          Abrir yo una sala
+        </LinkButton>
+        <LinkButton href="/" tone="fantasma" size="sm">
+          ← Volver al portal
+        </LinkButton>
+      </p>
+    </div>
   );
 }

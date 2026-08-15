@@ -131,10 +131,15 @@ export const EQUIPOS_DISPONIBLES = [
   { nombre: '3.º B', color: 'rojo' },
 ] as const;
 
-export function equiposParaSala(cuantos: number): { nombre: string; color: string; slot: number }[] {
+/**
+ * Equipos listos para insertar en `RoomTeam`. Se devuelve `name` y no `nombre` a propósito:
+ * es la forma exacta de la columna, y así no hay una capa de traduccion por medio que se
+ * pueda desincronizar.
+ */
+export function equiposParaSala(cuantos: number): { name: string; color: string; slot: number }[] {
   const total = Math.max(2, Math.min(cuantos, EQUIPOS_DISPONIBLES.length));
   return EQUIPOS_DISPONIBLES.slice(0, total).map((equipo, indice) => ({
-    nombre: equipo.nombre,
+    name: equipo.nombre,
     color: equipo.color,
     slot: indice,
   }));

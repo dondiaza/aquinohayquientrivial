@@ -1106,3 +1106,29 @@
     padding-left: 0;
   }
 }
+
+/* ── Fase 3: reacciones que suben por un lado de la pantalla grande ──────────── */
+@keyframes flotar-arriba {
+  from {
+    opacity: 0;
+    transform: translateY(0) scale(0.7);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-260px) scale(1.1);
+  }
+}
+
+.anim-flotar {
+  animation: flotar-arriba 3.2s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-flotar {
+    animation: none;
+  }
+}

@@ -198,6 +198,14 @@ export type VistaSala = {
   /** Cuántos se espera que respondan (jugadores activos, sin espectadores). */
   esperados: number;
   pregunta: VistaPregunta | null;
+  /**
+   * Lo que solo le incumbe a quien pide el snapshot: sus opciones descartadas, su tiempo
+   * extra, si ya respondió. Es null para el host y para los espectadores.
+   *
+   * Va en el snapshot a propósito: es lo que permite que un movil que vuelve de segundo
+   * plano recupere SU situación exacta, no solo la de la sala.
+   */
+  privada: VistaPrivada | null;
   /** Solo en REVEAL y después: reparto de respuestas y solución. */
   revelado: VistaRevelado | null;
   /** Solo cuando el host la muestra. */
