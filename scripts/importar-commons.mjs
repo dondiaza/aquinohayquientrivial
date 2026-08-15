@@ -37,6 +37,13 @@ import { pipeline } from 'node:stream/promises';
 import path from 'node:path';
 
 const API = 'https://commons.wikimedia.org/w/api.php';
+
+/**
+ * Wikimedia exige un User-Agent con contacto. Sin él responde 429 por política, no por
+ * ritmo: la misma URL da 429 con un agente anónimo y 200 con este.
+ */
+const AGENTE =
+  'DesenganyoVeintiuno/1.0 (https://github.com/dondiaza/aquinohayquientrivial; carlos.diaz@pampling.com) node-fetch';
 const DESTINO = path.join(process.cwd(), 'public', 'media', 'licensed');
 
 /** Licencias que se aceptan. Cualquier otra cosa se rechaza y se explica. */
@@ -78,7 +85,7 @@ async function pedir(parametros) {
     url.searchParams.set(clave, String(valor));
   }
   const respuesta = await fetch(url, {
-    headers: { 'user-agent': 'DesenganyoVeintiuno/1.0 (juego de aficionados; importador de medios)' },
+    headers: { 'user-agent': AGENTE },
   });
   if (!respuesta.ok) throw new Error(`Commons ha respondido ${respuesta.status}`);
   return respuesta.json();
@@ -174,7 +181,7 @@ function pareceMarca(metadatos, fichero) {
 
 async function descargar(url, destino) {
   const respuesta = await fetch(url, {
-    headers: { 'user-agent': 'DesenganyoVeintiuno/1.0 (juego de aficionados; importador de medios)' },
+    headers: { 'user-agent': AGENTE },
   });
   if (!respuesta.ok || !respuesta.body) throw new Error(`No se ha podido descargar (${respuesta.status})`);
   mkdirSync(path.dirname(destino), { recursive: true });

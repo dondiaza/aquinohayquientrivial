@@ -7,6 +7,7 @@ import {
   ESTADOS_USO,
   LICENCIAS_ADMITIDAS,
   esServible,
+  faltaAtribucion,
   requiereAtribucion,
   type MediaAsset,
 } from './tipos';
@@ -102,5 +103,46 @@ describe('la lista de deseos', () => {
   it('ningún deseo se ha colado en el manifiesto como si tuviera permiso', () => {
     const ids = new Set(MANIFIESTO.map((asset) => asset.id));
     for (const deseo of LISTA_DE_DESEOS) expect(ids.has(deseo.id), deseo.id).toBe(false);
+  });
+});
+
+describe('los retratos reales del reparto', () => {
+  const retratos = MANIFIESTO.filter((asset) => asset.usageStatus === 'licensed');
+
+  it('hay retratos de verdad, no solo dibujos', () => {
+    expect(retratos.length).toBeGreaterThan(20);
+  });
+
+  it('TODOS llevan crédito: una CC BY sin atribuir es una infracción, no un descuido', () => {
+    for (const asset of retratos) {
+      expect(faltaAtribucion(asset), `${asset.id} sin crédito`).toBe(false);
+      expect(asset.attribution, asset.id).toMatch(/·/); // autor · licencia · origen
+    }
+  });
+
+  it('el crédito nombra la misma licencia que declara el asset', () => {
+    for (const asset of retratos) {
+      expect(asset.attribution, asset.id).toContain(asset.license!);
+    }
+  });
+
+  it('cada uno enlaza a su página de origen para poder rehacer la comprobación', () => {
+    for (const asset of retratos) {
+      expect(asset.sourcePage, asset.id).toMatch(/^https:\/\/commons\.wikimedia\.org\//);
+    }
+  });
+
+  it('apuntan a WebP optimizado, no al original de cámara de 5 MB', () => {
+    for (const asset of retratos) {
+      expect(asset.localPath, asset.id).toMatch(/\.webp$/);
+      expect(asset.miniPath, asset.id).toMatch(/-mini\.webp$/);
+    }
+  });
+
+  it('ninguno se queda sin decir a quién retrata', () => {
+    for (const asset of retratos) {
+      expect(asset.characters?.length ?? 0, asset.id).toBeGreaterThan(0);
+      expect(asset.interprete, asset.id).toBeTruthy();
+    }
   });
 });

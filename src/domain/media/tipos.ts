@@ -88,6 +88,10 @@ export type MediaAsset = {
   /** Cuándo se comprobó la licencia. Sin fecha, la comprobación no vale nada. */
   verifiedAt?: string;
 
+  /** Versión pequeña ya recortada, para listas y marcadores. Evita servir 640 px para 28. */
+  miniPath?: string;
+  /** Quién sale en la foto, cuando el asset es un retrato de reparto. */
+  interprete?: string;
   /** Para el dibujo original: qué componente lo pinta. */
   renderer?: string;
   /** Notas para quien revise. */
@@ -130,6 +134,11 @@ export const LICENCIAS_ADMITIDAS = [
   'CC BY-SA 2.5',
   'CC BY-SA 3.0',
   'CC BY-SA 4.0',
+  // Portes regionales de las CC: son la misma licencia adaptada a una jurisdicción, no una
+  // licencia distinta. El barrido trajo una CC BY-SA 2.0 fr y rechazarla sería un error.
+  'CC BY-SA 2.0 fr',
+  'CC BY-SA 3.0 es',
+  'CC BY-SA 2.5 es',
 ] as const;
 
 export function licenciaAdmitida(licencia: string | undefined): boolean {

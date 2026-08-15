@@ -20,6 +20,8 @@
  */
 
 import type { MediaAsset } from '@/domain/media/tipos';
+
+import { RETRATOS_COMMONS } from './commons';
 import { PERSONAJES, ZONAS } from '@/content/serie';
 
 /**
@@ -118,31 +120,24 @@ const AMBIENTE_ORIGINAL: MediaAsset[] = [
  * Para añadir más: `node scripts/importar-commons.mjs "Nombre de archivo.jpg" --personaje "X"`.
  * El script rechaza cualquier licencia que no esté en la lista blanca.
  */
-const CON_LICENCIA: MediaAsset[] = [
-  {
-    id: 'commons:marivi-bilbao',
-    type: 'image',
-    category: 'character',
-    title: 'Mariví Bilbao en el Festival de Cine de Huesca (2008)',
-    localPath: '/media/licensed/marivi-bilbao.jpg',
-    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Marivi_Bilbao.jpg',
-    sourcePage: 'https://commons.wikimedia.org/wiki/Category:Aqu%C3%AD_no_hay_quien_viva_(Espa%C3%B1a)',
-    characters: ['Marisa Benito'],
-    tags: ['reparto', 'interprete', 'foto'],
-    usageStatus: 'licensed',
-    license: 'Dominio público',
-    attribution: 'Foto: Tgenerelo · Festival Internacional de Cine de Huesca, 2008 · Dominio público',
-    verifiedAt: '2026-08-15',
-    notes:
-      'El autor la liberó al dominio público. Es una foto de la intérprete en un acto público, no un fotograma de la serie.',
-  },
-];
+/**
+ * Entradas con licencia escritas a mano.
+ *
+ * Está vacío, y no por descuido: la única que había —el retrato de Mariví Bilbao— la genera
+ * ahora el barrido de Commons con la misma licencia y mejor atribución, y tenerla dos veces
+ * era un id duplicado que cazó el test del manifiesto.
+ *
+ * El sitio sigue aquí para lo que el barrido no puede traer: material que llegue por permiso
+ * escrito del titular, que se añade a mano con su correo de autorización citado en `notes`.
+ */
+const CON_LICENCIA: MediaAsset[] = [];
 
 export const MANIFIESTO: readonly MediaAsset[] = [
   ...RETRATOS_ORIGINALES,
   ...ZONAS_ORIGINALES,
   ...AMBIENTE_ORIGINAL,
   ...CON_LICENCIA,
+  ...RETRATOS_COMMONS,
 ];
 
 /** Índice por id, para las búsquedas del servicio. */

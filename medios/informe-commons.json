@@ -1,0 +1,3362 @@
+{
+  "generadoEl": "2026-08-15",
+  "interpretes": [
+    {
+      "interprete": "José Luis Gil",
+      "personaje": "Juan Cuesta",
+      "candidatos": 30,
+      "admitidos": [
+        {
+          "fichero": "José Luis Gil 2016.jpg",
+          "localPath": "/media/licensed/jose-luis-gil.jpg",
+          "licencia": "CC BY-SA 2.0",
+          "autor": "Festival Internacional de  Teatro Clásico de Almagro",
+          "credito": "https://www.flickr.com/photos/festivalinternacionaldeteatroclasicodealmagro/33733137200/",
+          "descripcion": "Spanish Actor José Luis Gil.",
+          "fecha": "2016-11-26 16:41:10",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Luis_Gil_2016.jpg",
+          "tamano": "5760×3840",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Jos%C3%A9_Luis_Gil_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Jose Luis Gil-IMG 4126.jpg",
+          "localPath": "/media/licensed/jose-luis-gil-2.jpg",
+          "licencia": "CC BY-SA 2.0 fr",
+          "autor": "Rama",
+          "credito": "Own work",
+          "descripcion": "Jose Luis Gil (University of Cantabria, Spain) at the 6th World Water Forum",
+          "fecha": "Taken on 14 March 2012, 17:14 (according to Exif data)",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Jose_Luis_Gil-IMG_4126.jpg",
+          "tamano": "3488×5232",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Jose_Luis_Gil-IMG_4126.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Luis José Pereira i Arguibel.png",
+          "motivo": "demasiado pequeña (251×249)"
+        },
+        {
+          "fichero": "Don Mariano Eugenio House 2026-07-05 San Jose San Luis.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Lucia Gil (cropped).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "1871-01-30, La Ilustración de Madrid, El rey pasa revista al cuarto montado de artillería en el cuartel de San Gil, Pellicer.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Crucero de la Iglesia de San Gil Abad (Burgos).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Virgen con el Niño, Gil de Silóe.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Sepulcro de Pedro de la Encina (Iglesia de San Gil Abad, Burgos).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Cimborrio de Rodrigo Gil de Hontañón.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Sepulcro de Juan de Castro e Inés de Lerma (Iglesia de San Gil, Burgos).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Capilla del Santo Cristo, Iglesia de San Gil Abad (Burgos).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Capilla de la Natividad, Iglesia de San Gil Abad (Burgos).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Sepulcro de Diego de Frías, Iglesia de San Gil Abad (Burgos).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "La Inmaculada Concepción, Iglesia de San Gil y Santa Ana (Granada).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Interior de la Iglesia de San Gil y Santa Ana (Granada).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Dos soldados - José Benlliure.jpg",
+          "motivo": "parece logotipo, cartel o carátula (problema de marcas)"
+        },
+        {
+          "fichero": "Retablo de la Virgen de la Rosa, Iglesia de San Gil y Santa Ana (Granada).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "LdelaCruz.jpg",
+          "motivo": "demasiado pequeña (200×260)"
+        },
+        {
+          "fichero": "Ah, troppo tardi t'ho conosciuto.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Jose Luis Gil-IMG 4125.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 2.0 fr"
+        },
+        {
+          "fichero": "Jose Luis Gil-IMG 4129.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 2.0 fr"
+        },
+        {
+          "fichero": "Jose Luis Gil-IMG 4128.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 2.0 fr"
+        },
+        {
+          "fichero": "José Luis Gil Soto.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Luis de la Cruz y Goyeneche.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Cuadro al óleo por Víctor Morelli. Retrato del Tte. General Don José Cavalcanti de Alburquerque Padierna. Madrid 1926.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Meilan-inap-vimeo.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Luis Jose de Orbegoso y Moncada.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Luis de la Cruz y Goyeneche (detalle).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "José Luis Gil.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Loles León",
+      "personaje": "Paloma Hurtado",
+      "candidatos": 10,
+      "admitidos": [
+        {
+          "fichero": "Premios Goya 2019 - Loles Leon.jpg",
+          "localPath": "/media/licensed/loles-leon.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Pedro J Pacheco",
+          "credito": "Own work",
+          "descripcion": "Loles León en la alfombra roja de los Premios Goya celebrados en Sevilla en Febrero 2019",
+          "fecha": "2019-02-02 21:13:18",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Premios_Goya_2019_-_Loles_Leon.jpg",
+          "tamano": "3840×5760",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Premios_Goya_2019_-_Loles_Leon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Goyas 2024 - Loles León.jpg",
+          "localPath": "/media/licensed/loles-leon-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Pedro J Pacheco",
+          "credito": "Own work",
+          "descripcion": "Loles León en la alfombra roja de los Premios Goya 2024 celebrados en Valladolid",
+          "fecha": "2024-02-10 20:08:25",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Goyas_2024_-_Loles_Le%C3%B3n.jpg",
+          "tamano": "3689×5533",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Goyas_2024_-_Loles_Le%C3%B3n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Esa maldita costilla.jpg",
+          "motivo": "licencia no admitida: CC BY 2.5 ar"
+        },
+        {
+          "fichero": "New York- LEWIS County, Enumeration District 73, Sheet No. 7B - DPLA - 406575c6ac7a9ea996a0e4e20dfc0829.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Premios Goya 2019 - Cuatro actrices.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Premios Goya 2019 - Loles Leon (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Loles León. (21635491842).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "FullSizeRender......jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Loles León. (21635491842) (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "Loles León 20minutos.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Sofía Nieto",
+      "personaje": "Natalia Cuesta",
+      "candidatos": 12,
+      "admitidos": [
+        {
+          "fichero": "Enrique Peña Nieto and family voting in the 2018 General Election - AG 7094 (42258306325).jpg",
+          "localPath": "/media/licensed/sofia-nieto.jpg",
+          "licencia": "CC BY 2.0",
+          "autor": "Presidencia de la República Mexicana",
+          "credito": "_AG_7094",
+          "descripcion": "_AG_7094",
+          "fecha": "2018-07-01 11:52",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Enrique_Pe%C3%B1a_Nieto_and_family_voting_in_the_2018_General_Election_-_AG_7094_(42258306325).jpg",
+          "tamano": "6720×4480",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Enrique_Pe%C3%B1a_Nieto_and_family_voting_in_the_2018_General_Election_-_AG_7094_%2842258306325%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Enrique Peña Nieto and family voting in the 2018 General Election - AG 6970 (43112863222).jpg",
+          "localPath": "/media/licensed/sofia-nieto-2.jpg",
+          "licencia": "CC BY 2.0",
+          "autor": "Presidencia de la República Mexicana",
+          "credito": "_AG_6970",
+          "descripcion": "_AG_6970",
+          "fecha": "2018-07-02 18:53",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Enrique_Pe%C3%B1a_Nieto_and_family_voting_in_the_2018_General_Election_-_AG_6970_(43112863222).jpg",
+          "tamano": "2517×1750",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Enrique_Pe%C3%B1a_Nieto_and_family_voting_in_the_2018_General_Election_-_AG_6970_%2843112863222%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "José Armando Orellana Romero.jpg",
+          "motivo": "parece logotipo, cartel o carátula (problema de marcas)"
+        },
+        {
+          "fichero": "Enrique Peña Nieto and family voting in the 2018 General Election - AG 6981 (42444298994).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Enrique Peña Nieto and family voting in the 2018 General Election - ISN9480 (41350487770).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Sofía Nieto and Víctor Torres.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Enrique Peña Nieto and family voting in the 2018 General Election - ISN9666 (41351981980).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Sofía Castro Rivera en 2018.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Sofía Nieto (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Abraham Navarro.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "Sofia castro rios y enrique peña nieto.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Sofía Casanova fai o saúdo fascista arrodeada dos seus netos na súa casa de Polonia no 1938.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Eduardo García",
+      "personaje": "José Miguel Cuesta",
+      "candidatos": 30,
+      "admitidos": [
+        {
+          "fichero": "Tumba de Eduardo García López.jpg",
+          "localPath": "/media/licensed/eduardo-garcia.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Strakhov",
+          "credito": "Own work",
+          "descripcion": "Tumba de Eduardo García López y Felisa Melendo Alonso-Magadán, en el cementerio civil de Madrid.",
+          "fecha": "2016",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Tumba_de_Eduardo_Garc%C3%ADa_L%C3%B3pez.jpg",
+          "tamano": "3120×4160",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Tumba_de_Eduardo_Garc%C3%ADa_L%C3%B3pez.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Grab Eduardo García López.jpg",
+          "localPath": "/media/licensed/eduardo-garcia-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Harvey Kneeslapper",
+          "credito": "Own work",
+          "descripcion": "Das Grab des spanischen kommunistischen Politikers Eduardo García López auf dem Cemnterio Civile in Madrid.",
+          "fecha": "2019-10-18 10:08:37",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Grab_Eduardo_Garc%C3%ADa_L%C3%B3pez.jpg",
+          "tamano": "3096×4128",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Grab_Eduardo_Garc%C3%ADa_L%C3%B3pez.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Eduardo García RC.png",
+          "motivo": "demasiado pequeña (92×265)"
+        },
+        {
+          "fichero": "Martín García Mérou by Demócrito (Eduardo Sojo).jpg",
+          "motivo": "licencia no admitida: No restrictions"
+        },
+        {
+          "fichero": "Juan José García Velloso by Demócrito (Eduardo Sojo).jpg",
+          "motivo": "licencia no admitida: No restrictions"
+        },
+        {
+          "fichero": "EDUARDO GARCIA CAFFI.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Portrait of the Painter Eduardo García Bénito MET DT3184.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "Condecoracion Eduardo Liceaga - Dr Jose Laguna Garcia.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "Guardia (Eduardo García Guerra).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo García de Benito - Vogue - Cadeaux de Noël M bpt6k6540646k 1.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo García de Benito - Vogue - Collections d'hiver.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo García de Benito - Vogue - Mariées Riviera.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo García de Benito - Vogue - Sports d'hiver et Bijoux.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo García de Benito - Vogue - Les modes de printemps bpt6k9362275 305.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo García de Benito - Vogue - les modes de printemps.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "García Guerra Eduardo San Nicolas and San Miguel Alto.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "1885-12-31, El Dr. Sangredo, Dr. García Solá, Cilla.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo Garcia 2008.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Eduardo Díaz-Rubio García.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Busto del Ingeniero Eduardo García de Zúñiga.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Eduardo García de Benito - Gazette du bon ton - Longchamp.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo García de Benito - Gazette du bon ton - Pauvres petites bêtes.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo García de Benito - Gazette du bon ton - Tant de chagrin.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Vogue cover, October 15th, 1923, by Eduardo García de Benito .jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo García Serrano.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        },
+        {
+          "fichero": "Portrait of the Painter Eduardo García Bénito MET sf-rlc-1975-1-378.jpeg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "Eduardo García-Mansilla 1909.JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo García de Zúñiga.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo García Morales (Official Photo, 2006) Constituent Assembly of Bolivia.png",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Eduardo García-Mansilla para subir a wikipedia.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Fernando Tejero",
+      "personaje": "Emilio Delgado",
+      "candidatos": 30,
+      "admitidos": [
+        {
+          "fichero": "Goyas 2024 - Fernando Tejero.jpg",
+          "localPath": "/media/licensed/fernando-tejero.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Pedro J Pacheco",
+          "credito": "Own work",
+          "descripcion": "Fernando Tejero en la alfombra roja de los Premios Goya 2024 celebrados en Valladolid",
+          "fecha": "2024-02-10 19:53:12",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Goyas_2024_-_Fernando_Tejero.jpg",
+          "tamano": "4000×6000",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Goyas_2024_-_Fernando_Tejero.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Premios Goya 2020 - Fernando Tejero.jpg",
+          "localPath": "/media/licensed/fernando-tejero-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Pedro J Pacheco",
+          "credito": "Own work",
+          "descripcion": "Fernando Tejero en la alfombra roja de la ceremonia de entrega de los Premios Goya 2020 celebrada en Málaga",
+          "fecha": "2020-01-25 21:04:10",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Fernando_Tejero.jpg",
+          "tamano": "3754×5631",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Premios_Goya_2020_-_Fernando_Tejero.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Clausura del Festival CIBRA 03.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Clausura del Festival CIBRA 04.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Fernando Tejero (8998301233).jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07622jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 33.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07622jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 39.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07622jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 06.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07622jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 30.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07577jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 32.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07622jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 42.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07622jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 16.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07577jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 33.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07577jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 10.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07622jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 28.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07668jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 04.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07577jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 35.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07622jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 07.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07577jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 11.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07577jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 28.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07622jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 45.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07622jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 37.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07622jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 34.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07577jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 45.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "07622jfChino Roces Avenue Buildings Pio del Pilar Makati Cityfvf 43.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Fernando Tejero - Seminci 2012.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Goyas 2024 - Fernando Tejero (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Fernando Tejero (48520792017).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 2.0"
+        },
+        {
+          "fichero": "Goyas 2023 - Fernando Tejero.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Goyas 2023 - Fernando Tejero (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Eduardo Gómez",
+      "personaje": "Mariano Delgado",
+      "candidatos": 30,
+      "admitidos": [
+        {
+          "fichero": "Eduardo Gómez.jpg",
+          "localPath": "/media/licensed/eduardo-gomez.jpg",
+          "licencia": "Public domain",
+          "autor": "Gabrielicus",
+          "credito": "Own work",
+          "descripcion": null,
+          "fecha": null,
+          "pagina": "https://commons.wikimedia.org/wiki/File:Eduardo_G%C3%B3mez.jpg",
+          "tamano": "2181×3020",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Eduardo_G%C3%B3mez.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "1918-08-01, España Médica, Eduardo G. Gereda.jpg",
+          "localPath": "/media/licensed/eduardo-gomez-2.jpg",
+          "licencia": "Public domain",
+          "autor": "Not stated. Unknown.",
+          "credito": "(1918-08-01). \"Dr. Eduardo G. Gereda, fundador y director del Real Sanatorio del Guadarrama, propuesto para la Gran Cruz de Beneficencia\". España Médica (271): 1. ISSN 1131-2084.From Biblioteca Nacional de España (CC BY 4.0)",
+          "descripcion": "Dr. Eduardo G. Gereda, fundador y director del Real Sanatorio del Guadarrama, propuesto para la Gran Cruz de Beneficencia.",
+          "fecha": "Published on 1 August 1918",
+          "pagina": "https://commons.wikimedia.org/wiki/File:1918-08-01,_Espa%C3%B1a_M%C3%A9dica,_Eduardo_G._Gereda.jpg",
+          "tamano": "2118×2327",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/1918-08-01%2C_Espa%C3%B1a_M%C3%A9dica%2C_Eduardo_G._Gereda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Eduardo Gómez 2015 (cropped).jpg",
+          "motivo": "demasiado pequeña (209×314)"
+        },
+        {
+          "fichero": "Laureano Gomez & Eduardo Santos frente al Mural por Santiago Martinez delgado.jpg",
+          "motivo": "demasiado pequeña (200×127)"
+        },
+        {
+          "fichero": "04 - E60 Prof. Eduardo Vargas, Architekt - back cover, 1993.png",
+          "motivo": "parece logotipo, cartel o carátula (problema de marcas)"
+        },
+        {
+          "fichero": "Valor 24 Hall of Heroes ceremony, presentation for Eduardo C. Gomez.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Anxo Gómez Sánchez (AELG)-2.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Anxo Gómez Sánchez (AELG)-1.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Raúl Gómez Pato (AELG)-1.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Raúl Gómez Pato (AELG)-2.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Raúl Gómez Pato (AELG)-4.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Raúl Gómez Pato (AELG)-5.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "EDUARDO DURAN GOMEZ.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Eduardo Gómez (Newell's). - El Gráfico 1039.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo salazar gomez.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "1928-02-04, El Liberal, El andalucismo de los Quintero, por Eduardo Gómez de Baquero.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo Gómez Haro.JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "1894-06-11, El Orden, Ramón Torrijos y Gómez (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo López Bustamante. Prisionero de la dictadura.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo Navarro by Leslie Gomez. FOCA - Fundación Oceánica de Contemplación Amorosa - Uruguay - 2024.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Máximo Pacheco junto al Presidente Eduardo Frei Ruiz-Tagle.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0 cl"
+        },
+        {
+          "fichero": "Álvaro Gómez Becerra (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Los Trovadores - 1966.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo Gómez 2015.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        },
+        {
+          "fichero": "Pablo Gómez Borbón recibe el Premio Nacional Feria del Libro Eduardo León Jimenes.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "El general Solana y Eduardo de Ontañón.png",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo Gómez Baquero.png",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Eduardo Gómezmez.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Eduardo Gómez Manzano.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Eduardo Machado Gómez.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Malena Alterio",
+      "personaje": "Belén López Vázquez",
+      "candidatos": 17,
+      "admitidos": [
+        {
+          "fichero": "Goyas 2024 - Malena Alterio 01.jpg",
+          "localPath": "/media/licensed/malena-alterio.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Pedro J Pacheco",
+          "credito": "Own work",
+          "descripcion": "Malena Alterio en la alfombra roja de los Premios Goya 2024 celebrados en Valladolid Fecha",
+          "fecha": "2024-02-10 20:41:27",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Goyas_2024_-_Malena_Alterio_01.jpg",
+          "tamano": "3922×5883",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Goyas_2024_-_Malena_Alterio_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Goyas 2025 - Malena Alterio.jpg",
+          "localPath": "/media/licensed/malena-alterio-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Pedro J Pacheco",
+          "credito": "Own work",
+          "descripcion": "Malena Alterio on the red carpet of the Goya Awards held in Granada in 2025",
+          "fecha": "2025-02-08",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Goyas_2025_-_Malena_Alterio.jpg",
+          "tamano": "3638×5457",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Goyas_2025_-_Malena_Alterio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Clausura del Festival CIBRA 01.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Clausura del Festival CIBRA 05.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Malena Alterio.jpg",
+          "motivo": "demasiado pequeña (245×203)"
+        },
+        {
+          "fichero": "Premios Goya 2020 - Malena Alterio.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Goyas 2024 - Malena Alterio 02.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Premios Goya 2020 - Malena Alterio y Ernesto Alterio.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "20240114 Premios Goya presenta programación 17.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "20240114 Premios Goya presenta programación 15.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "20240114 Premios Goya presenta programación 20.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Goyas 2024 - Malena Alterio 02 (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Premios Goya 2020 - Malena Alterio 2.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Premios Goya 2020 - Malena Alterio 2 (cropped bis).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Premios Goya 2020 - Malena Alterio 2 (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Malena Alterio Clausura del Festival CIBRA 05 (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 2.0"
+        },
+        {
+          "fichero": "Malena Alterio Festival de Málaga.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Laura Pamplona",
+      "personaje": "Alicia Sanz",
+      "candidatos": 10,
+      "admitidos": [
+        {
+          "fichero": "Ciudadela-poternas 3.jpg",
+          "localPath": "/media/licensed/laura-pamplona.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "JLVwiki",
+          "credito": "Own work",
+          "descripcion": "Interior de una las poternas apoyadas en el muro de cortina sur de la Ciudadela, antigua Sala Felipe II, denominada actualmente Sala Laura Biurrun, y utilizada para la celebración de bodas civiles.",
+          "fecha": "2024-09-28 18:18:43",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Ciudadela-poternas_3.jpg",
+          "tamano": "3000×4000",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Ciudadela-poternas_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Laura at George's Island, July 2010.jpg",
+          "localPath": "/media/licensed/laura-pamplona-2.jpg",
+          "licencia": "CC BY 2.0",
+          "autor": "Vitor Pamplona from Cambridge, MA, USA",
+          "credito": "George's Island",
+          "descripcion": "The Laura at George's Island in July 2010",
+          "fecha": "2010-07-17 16:28",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Laura_at_George%27s_Island,_July_2010.jpg",
+          "tamano": "4080×2720",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Laura_at_George%27s_Island%2C_July_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Cartel Ortiz de Landazuri y Busca.jpg",
+          "motivo": "parece logotipo, cartel o carátula (problema de marcas)"
+        },
+        {
+          "fichero": "Juan Cruz Cruz.jpg",
+          "motivo": "demasiado pequeña (218×321)"
+        },
+        {
+          "fichero": "Bottiella niceforei (MNHN-IU-2014-22577) 001.jpeg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Bottiella niceforei (MNHN-IU-2014-22577) 002.jpeg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Lápida Ortiz de Landazuri y Busca.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Laura Pamplona. (21025776203).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "Laura Pamplona 2015.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "Laura Pamplona. (21025776203) (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "María Adánez",
+      "personaje": "Lucía Álvarez",
+      "candidatos": 6,
+      "admitidos": [
+        {
+          "fichero": "Premios Goya 2019 - Maria Adanez.jpg",
+          "localPath": "/media/licensed/maria-adanez.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Pedro J Pacheco",
+          "credito": "Own work",
+          "descripcion": "Maria Adanez en la alfombra roja de los Premios Goya celebrados en Sevilla en Febrero 2019",
+          "fecha": "2019-02-02 19:00:00",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Premios_Goya_2019_-_Maria_Adanez.jpg",
+          "tamano": "5688×3792",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Premios_Goya_2019_-_Maria_Adanez.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Festival de Málaga 2024 - María Adánez.jpg",
+          "localPath": "/media/licensed/maria-adanez-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Pedro J Pacheco",
+          "credito": "Own work",
+          "descripcion": "María Adánez en la alfombra roja del Festival de Málaga 2024 frente al Teatro Cervantes",
+          "fecha": "2024-03-09 18:31:40",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Festival_de_M%C3%A1laga_2024_-_Mar%C3%ADa_Ad%C3%A1nez.jpg",
+          "tamano": "3585×5377",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Festival_de_M%C3%A1laga_2024_-_Mar%C3%ADa_Ad%C3%A1nez.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "María Adánez.jpg",
+          "motivo": "licencia no admitida: CC BY-SA 2.1 es"
+        },
+        {
+          "fichero": "Premios Goya 2019 - Maria Adanez (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "María Adánez - Seminci 2011.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "María Adánez - Seminci 2011 (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Daniel Guzmán",
+      "personaje": "Roberto Alonso",
+      "candidatos": 30,
+      "admitidos": [
+        {
+          "fichero": "Block book of the County of St. Louis (Volume 1) (Book 4) Page 37 (Daniel G. Taylor's Sub. Of Lots 5, 6, & 7 in Hunt's Add.) - DPLA - 070a148e02827fc3d130ffd455dd9dc2.jpg",
+          "localPath": "/media/licensed/daniel-guzman.jpg",
+          "licencia": "Public domain",
+          "autor": "Guzman, Ignatz P",
+          "credito": "This file was contributed to Wikimedia Commons by Missouri Historical Society as part of a cooperation project. The donation was facilitated by the Digital Public Library of America, via its partner Heartland Hub.\nRecord in source catalog\nDPLA identifier: 070a148e02827fc3d130ffd455dd9dc2\nMissouri Historical Society identifier: Lib212-00001-037",
+          "descripcion": null,
+          "fecha": null,
+          "pagina": "https://commons.wikimedia.org/wiki/File:Block_book_of_the_County_of_St._Louis_(Volume_1)_(Book_4)_Page_37_(Daniel_G._Taylor%27s_Sub._Of_Lots_5,_6,_%26_7_in_Hunt%27s_Add.)_-_DPLA_-_070a148e02827fc3d130ffd455dd9dc2.jpg",
+          "tamano": "6775×4480",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Block_book_of_the_County_of_St._Louis_%28Volume_1%29_%28Book_4%29_Page_37_%28Daniel_G._Taylor%27s_Sub._Of_Lots_5%2C_6%2C_%26_7_in_Hunt%27s_Add.%29_-_DPLA_-_070a148e02827fc3d130ffd455dd9dc2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Fabulosos Cadillacs at Zócalo, 2023 (52951893461).jpg",
+          "localPath": "/media/licensed/daniel-guzman-2.jpg",
+          "licencia": "CC BY 2.0",
+          "autor": "Secretaría de Cultura  de la Ciudad de México from México",
+          "credito": "AMG Concierto Fabulosos Cadillacs En El Zocalo De La Ciudad De Mexico",
+          "descripcion": "04 De Junio De 2023. Rompen Récord De Asistencia Los Fabulosos Cadillacs Con Más De 300 Mil Personas En El Zócalo Capitalino\n\nFotografia: Alejandro Medina Guzman/Secretaria De Cultura Cdmx",
+          "fecha": "2023-06-03 21:36",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Fabulosos_Cadillacs_at_Z%C3%B3calo,_2023_(52951893461).jpg",
+          "tamano": "6000×4000",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Fabulosos_Cadillacs_at_Z%C3%B3calo%2C_2023_%2852951893461%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Daniel Guzmán.jpg",
+          "motivo": "licencia no admitida: CC BY 2.5 es"
+        },
+        {
+          "fichero": "A U.S. Marine Corps KC-130J Super Hercules aircraft prepares to transport evacuees from Tacloban airfield in Tacloban, Leyte province, Philippines, Nov. 14, 2013, in support of Operation Damayan 131114-N-BX824-241.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Premios Goya 2026 - Daniel Guzmán.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Premios Goya 2026 - Miguel Herrán & Daniel Guzmán.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Malaga Film Festival 2025 - Daniel Guzmán 01.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Daniel Guzmán en los Premios Goya 2017.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Malaga Film Festival 2025 - Daniel Guzmán.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Templo y Convento de Santo Domingo de Guzmán.JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "CiudadGuzmanCityPhoto1.JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Iglesia Santo Domingo Lepe espadaña.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Cloture-6339 10.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Malaga Film Festival 2025 - Daniel Guzmán 01 (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "San José con los donantes.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Salsipuedes-Garcia-Guzman.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Daniel Guzmán2.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 2.0"
+        },
+        {
+          "fichero": "Medalla De Honor A Ex Obispo Del Callao (6710329789).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Medalla De Honor A Ex Obispo Del Callao (6710333021).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Fabulosos Cadillacs at Zócalo, 2023 (52951893461) (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Estrela Cans. Daniel Guzmán, director e actor. Premio coloquios 2017.png",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Alzire staande tussen de stervende Guzman en geketende Zamore, RP-P-OB-14.292.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "OCPA-2005-06-17-164112 - SGT Daniel Harshman demonstrates the Future Force Warrior system suit at Soldier Modernization Day on Capitol Hill.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Wheather-vane on the church of Santo Domingo (Málaga) - 02.JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "OCPA-2005-06-17-164112 - SGT Daniel Harshman demonstrates Future Force Warrior system suit at Soldier Modernization Day on Capitol Hill.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "DANIEL GUZMÁN.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Jesus Guzman.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Jesús Guzmán, 2016.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "GUZMÁN GARZÓN Y BARQUERO.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "DanielGuzman.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Luis Merlo",
+      "personaje": "Mauri Hidalgo",
+      "candidatos": 30,
+      "admitidos": [
+        {
+          "fichero": "Arroyo Merlo San Luis.JPG",
+          "localPath": "/media/licensed/luis-merlo.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Gabriel fgm",
+          "credito": "Own work",
+          "descripcion": "water",
+          "fecha": "2013-10-17 06:07:41",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Arroyo_Merlo_San_Luis.JPG",
+          "tamano": "4608×3456",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Arroyo_Merlo_San_Luis.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Iglesia Histórica \"Nuestra Señora del Rosario\" - Merlo - San Luis.JPG",
+          "localPath": "/media/licensed/luis-merlo-2.jpg",
+          "licencia": "CC BY-SA 3.0",
+          "autor": "Carina L. Staiti",
+          "credito": "Own work",
+          "descripcion": "This is a photo of an Argentine monument identified by the ID",
+          "fecha": "2012-06-25",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Iglesia_Hist%C3%B3rica_%22Nuestra_Se%C3%B1ora_del_Rosario%22_-_Merlo_-_San_Luis.JPG",
+          "tamano": "4000×3000",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Iglesia_Hist%C3%B3rica_%22Nuestra_Se%C3%B1ora_del_Rosario%22_-_Merlo_-_San_Luis.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Escudo Municipal de Merlo (San Luis).png",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Bandera municipal de Merlo (San Luis).png",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Templo Histórico Villa de Merlo..JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Templo Histórico-Villa de Merlo. S.L.JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Merlo, San Luis.JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Merlo - panoramio (1).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Merlo - panoramio.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Merlo (San Luis) desde el Mirador del Águila - panoramio.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Ruta Provincial 5 - Merlo, San Luis - panoramio.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Camino a Merlo (RP5) - panoramio.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Arroyo de montaña - Merlo (SL).JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "100 0925 BRAZOS DE ARBOL- MERLO- SAN LUIS-.JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "ESQUINA DE MERLO - SAN LUIS-.JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Merlo, San Luis, Argentina - panoramio (1).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Merlo, San Luis, Argentina - panoramio (2).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Merlo, San Luis, Argentina - panoramio.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "FullSizeRender......jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Merlo. San Luis.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Luis Martínez de Merlo.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Merlo San Luis Argentina (40816646).jpeg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        },
+        {
+          "fichero": "Condor en San Luis 2.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "GaleriaDelSolMerloSanLuis.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Merlo San Luis.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Mirador del Sol Merlo San Luis.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Luis Merlo crédito.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Merlo-San Luis.JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Luis Merlo de la Fuente.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Luis Merlo de la Fuente (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Adrià Collado",
+      "personaje": "Fernando Navarro",
+      "candidatos": 3,
+      "admitidos": [
+        {
+          "fichero": "Rbesos01.jpg",
+          "localPath": "/media/licensed/adria-collado.jpg",
+          "licencia": "Public domain",
+          "autor": "José Luis Moncada Collado",
+          "credito": "Own work",
+          "descripcion": "Vista del Rio Besós desde el puente más antiguo de Sant Adrià de Besòs.",
+          "fecha": "2006-10-18",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Rbesos01.jpg",
+          "tamano": "2272×1704",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Rbesos01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Rbesos02.jpg",
+          "localPath": "/media/licensed/adria-collado-2.jpg",
+          "licencia": "Public domain",
+          "autor": "José Luis Moncada Collado",
+          "credito": "Own work",
+          "descripcion": "Río Besòs a su paso por Sant Adrià de Besos , dirección  mar, a menos de un km de la desembocadura",
+          "fecha": "2006-10-08",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Rbesos02.jpg",
+          "tamano": "2272×1704",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Rbesos02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Adriá Collado.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Mariví Bilbao",
+      "personaje": "Marisa Benito",
+      "candidatos": 1,
+      "admitidos": [
+        {
+          "fichero": "Marivi Bilbao.jpg",
+          "localPath": "/media/licensed/marivi-bilbao.jpg",
+          "licencia": "Public domain",
+          "autor": "Tgenerelo",
+          "credito": "Own work",
+          "descripcion": "Mariví Bilbao in the International Huesca Film Festival (14/06/08).",
+          "fecha": "2008-06-14",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Marivi_Bilbao.jpg",
+          "tamano": "415×503",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Marivi_Bilbao.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [],
+      "avisos": []
+    },
+    {
+      "interprete": "Gemma Cuervo",
+      "personaje": "Vicenta Benito",
+      "candidatos": 5,
+      "admitidos": [
+        {
+          "fichero": "Gemma Cuervo (1975).jpg",
+          "localPath": "/media/licensed/gemma-cuervo.jpg",
+          "licencia": "Public domain",
+          "autor": "Desconocido",
+          "credito": "Aragón expres : diario de la tarde: Año VII Número 1858 _ 20/01/1976, p. 24",
+          "descripcion": "Gemma Cuervo, Spanish actress, circa 1975",
+          "fecha": "1976-01-20",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Gemma_Cuervo_(1975).jpg",
+          "tamano": "611×977",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Gemma_Cuervo_%281975%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Ch. Guillaume Etienne - DPLA - 10fe749e8b224f8b27f35a8098639fa6.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Où allons-nous, où allons-nous? Nous marchons sur un volcan... - DPLA - 1401c212e4741186737022168fc0bd0c.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Ch. Etienne, en buste - DPLA - 263ebd140e02ca03d995f7a6ba21f3ed.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Gros, gras et Constitutionnel - DPLA - 244c3d38cf72f89f0fd3faba31e41d80.jpg",
+          "motivo": "no consta que sea esa persona"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Emma Penella",
+      "personaje": "Concha",
+      "candidatos": 7,
+      "admitidos": [
+        {
+          "fichero": "Emma Penella posa en las fotos promocionales de 'La que se avecina'.jpg",
+          "localPath": "/media/licensed/emma-penella.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Ayoamaro",
+          "credito": "Own work",
+          "descripcion": "Emma Penella posa para las fotos promocionarles del último trabajo en el que participó la actriz madrileña.",
+          "fecha": "2007-04-22",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Emma_Penella_posa_en_las_fotos_promocionales_de_%27La_que_se_avecina%27.jpg",
+          "tamano": "980×1473",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Emma_Penella_posa_en_las_fotos_promocionales_de_%27La_que_se_avecina%27.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "(Penella) José María Aznar se reune con un grupo de actores. Pool Moncloa. 7 de octubre de 1996 (cropped).jpg",
+          "motivo": "licencia no admitida: Attribution"
+        },
+        {
+          "fichero": "José María Aznar se reune con un grupo de actores. Pool Moncloa. 7 de octubre de 1996.jpeg",
+          "motivo": "licencia no admitida: Attribution"
+        },
+        {
+          "fichero": "Placa de la calle de Emma Penella (cropped).JPG",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Calle de Emma Penella.JPG",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Placa de la calle de Emma Penella.JPG",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Ángeles Martín (cropped).jpeg",
+          "motivo": "licencia no admitida: Attribution"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Isabel Ordaz",
+      "personaje": "Isabel Ruiz",
+      "candidatos": 4,
+      "admitidos": [
+        {
+          "fichero": "Isabel Ordaz - Seminci 2016.jpg",
+          "localPath": "/media/licensed/isabel-ordaz.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Ruben Ortega",
+          "credito": "Own work",
+          "descripcion": "Seminci 2016",
+          "fecha": "2016-10-25 18:50:04",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Isabel_Ordaz_-_Seminci_2016.jpg",
+          "tamano": "3648×2432",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Isabel_Ordaz_-_Seminci_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Y el niño qué se me hizo? (3096721136).jpg",
+          "localPath": "/media/licensed/isabel-ordaz-2.jpg",
+          "licencia": "CC BY 2.0",
+          "autor": "Gabriel S. Delgado C. from Puerto Ordaz, Venezuela",
+          "credito": "Y el niño qué se me hizo?\n\nUploaded by Fæ",
+          "descripcion": "Flickr Rally de Caracas pa' la Guaira\nLa Guaira\n\nEl reto del objeto perdido no salió sorteado pero aún así, Isabel lo consiguió y yo lo capturé... :P",
+          "fecha": "2008-12-07 11:05",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Y_el_ni%C3%B1o_qu%C3%A9_se_me_hizo%3F_(3096721136).jpg",
+          "tamano": "2560×1920",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Y_el_ni%C3%B1o_qu%C3%A9_se_me_hizo%3F_%283096721136%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Con el presidente Gustavo Díaz Ordaz.png",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "Isabel-ordaz.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Santiago Ramos",
+      "personaje": "Andrés Guerra",
+      "candidatos": 30,
+      "admitidos": [
+        {
+          "fichero": "Praia-Liceu Domingos Ramos (2).jpg",
+          "localPath": "/media/licensed/santiago-ramos.jpg",
+          "licencia": "CC BY-SA 3.0",
+          "autor": "Ji-Elle",
+          "credito": "Own work",
+          "descripcion": "Praia (Cap-Vert) : Liceu Domingos Ramos (en travaux)",
+          "fecha": "Taken on 25 February 2012",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Praia-Liceu_Domingos_Ramos_(2).jpg",
+          "tamano": "3648×2736",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Praia-Liceu_Domingos_Ramos_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Praia-Liceu Domingos Ramos (3).jpg",
+          "localPath": "/media/licensed/santiago-ramos-2.jpg",
+          "licencia": "CC BY-SA 3.0",
+          "autor": "Ji-Elle",
+          "credito": "Own work",
+          "descripcion": "Praia (Cap-Vert) : Liceu Domingos Ramos (en travaux)",
+          "fecha": "Taken on 25 February 2012",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Praia-Liceu_Domingos_Ramos_(3).jpg",
+          "tamano": "3648×2736",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Praia-Liceu_Domingos_Ramos_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Programa de las fiestas … de Santiago, Máximo Ramos, 1909.jpg",
+          "motivo": "parece logotipo, cartel o carátula (problema de marcas)"
+        },
+        {
+          "fichero": "Ramos (4446760295).jpg",
+          "motivo": "demasiado pequeña (199×298)"
+        },
+        {
+          "fichero": "Ramos Estación Mapa.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "F4 Italy 2021 Spielberg Nr. 68 Ramos (2).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "F4 Italy 2021 Spielberg Nr. 68 Ramos (back).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "F4 Italy 2021 Spielberg Nr. 68 Ramos (side) (2).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "F4 Italy 2021 Spielberg Nr. 68 Ramos (side) (1).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "FIA F3 Austria 2024 Nr. 6 Ramos (side).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "FREC 2023 Spielberg Nr. 65 (2) Ramos.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "F4 Italy 2021 Spielberg Nr. 68 Ramos (1).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Spain - Chile - 10-09-2013 - Geneva - Arturo Vidal, Sergio Ramos, Eduardo Vargas, Javi Garcia and Santiago Cazoria.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Santiago Ramos - Seminci 2011.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Fiesta de Santiago de Chejoña en los 60`s, Puno 10.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Fiesta de Santiago de Chejoña en los 60`s, Puno 11.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Fiesta de Santiago de Chejoña en los 60`s, Puno 09.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Fiesta de Santiago de Chejoña en los 60`s, Puno 07.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Fiesta de Santiago de Chejoña en los 60`s, Puno 08.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Santiago Ramos Millan Pineda.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Fiesta de Santiago de Chejoña en los 60`s, Puno 04.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Fiesta de Santiago de Chejoña en los 60`s, Puno 06.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Fiesta de Santiago de Chejoña en los 60`s, Puno 03.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Fiesta de Santiago de Chejoña en los 60`s, Puno 13.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Fiesta de Santiago de Chejoña en los 60`s, Puno 12.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Fiesta de Santiago de Chejoña en los 60`s, Puno 05.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Fiesta de Santiago de Chejoña en los 60`s, Puno 01.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Ramos casi llega (4926693103).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 2.0"
+        },
+        {
+          "fichero": "2023-02-01 José Ramos-Horta und Santiago Javier Chávez Pareja.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Santiago Ramos Rodríguez.png",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Elio González",
+      "personaje": "Pablo Guerra",
+      "candidatos": 30,
+      "admitidos": [
+        {
+          "fichero": "González de Elío.jpg",
+          "localPath": "/media/licensed/elio-gonzalez.jpg",
+          "licencia": "Public domain",
+          "autor": "Unknown authorUnknown author",
+          "credito": "https://www.euskomedia.org/aunamendi/29768",
+          "descripcion": "Spanish Politician Francisco Javier González de Castejón y Elío",
+          "fecha": "circa 1900date QS:P,+1900-00-00T00:00:00Z/9,P1480,Q5727902",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Gonz%C3%A1lez_de_El%C3%ADo.jpg",
+          "tamano": "417×563",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Gonz%C3%A1lez_de_El%C3%ADo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Francisco Javier González de Castejón y Elío, de Compañy.jpg",
+          "motivo": "demasiado pequeña (256×386)"
+        },
+        {
+          "fichero": "Iglesia de san francisco 300 dpi.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Knolparasolzwammen. 09-11-2023. (d.j.b).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "El parto de don Marcelo, de Xaudaró.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Catrinas and Catrines.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Chac Mool, Teotihuacán.JPG",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Horacio Garza Garza presidente municipal Nuevo Laredo.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "The Subtle Stone Eater, 2023.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Teotihuacán, México, 2013-10-13, DD 94.JPG",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Parroquia de Nuestra Señora de la Asunción, Real del Monte, Hidalgo, México, 2013-10-10, DD 07.JPG",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Teotihuacán, México, 2013-10-13, DD 24.JPG",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Prismas Basálticos, Huasca de Ocampo, Hidalgo, México, 2013-10-10, DD 12.JPG",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Parroquia de San Fernando, Ciudad de México, México, 2015-07-20, DD 03.JPG",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Zona arqueológica de Cantona, Puebla, México, 2013-10-11, DD 02.JPG",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "15-07-13-Teotihuacán-RalfR-N3S 9236.jpg",
+          "motivo": "licencia no admitida: GFDL 1.2"
+        },
+        {
+          "fichero": "15-07-18-Demonstration-in-Mexico-WMA 1326.jpg",
+          "motivo": "licencia no admitida: GFDL 1.2"
+        },
+        {
+          "fichero": "Zona arqueológica de Cantona, Puebla, México, 2013-10-11, DD 36.JPG",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Teotihuacán, México, 2013-10-13, DD 71.JPG",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "GMS Jaguar MD Kanal Strullendorf 7224725.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Serpent à plumes Chichen Itza.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "15-07-13-Teotihuacan-RalfR-WMA 0280.jpg",
+          "motivo": "licencia no admitida: GFDL 1.2"
+        },
+        {
+          "fichero": "US combat engineers operate FPV drones in Tunisia (9066503).jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "US combat engineers operate FPV drones in Tunisia (9066505).jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Cempasúchil, flor.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "010aeropuerto-felipe-angeles-2.jpg",
+          "motivo": "parece logotipo, cartel o carátula (problema de marcas)"
+        },
+        {
+          "fichero": "Palacio de Bellas Artes, Ciudad de México.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Capirotada.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Marcha 8M 2023 GDL 68.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Coro del Templo San Francisco de Asís, Querétaro.jpg",
+          "motivo": "no consta que sea esa persona"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Guillermo Ortega",
+      "personaje": "Álex Guerra",
+      "candidatos": 30,
+      "admitidos": [
+        {
+          "fichero": "MuralMetroTacubya04.JPG",
+          "localPath": "/media/licensed/guillermo-ortega.jpg",
+          "licencia": "CC BY-SA 3.0",
+          "autor": "AlejandroLinaresGarcia",
+          "credito": "Own work",
+          "descripcion": "Mural section in Line 1 section of Metro Tacubaya Principle artist, Guillermo Ceniceros Reyes with help from Màximo Chavez, Raymundo Rojas, Armando Lopez, Emilio Grave, Miguel Ortega and Hector Felipe",
+          "fecha": "2013-03-28 15:49:55",
+          "pagina": "https://commons.wikimedia.org/wiki/File:MuralMetroTacubya04.JPG",
+          "tamano": "6016×4000",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/MuralMetroTacubya04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Guillermo León Valencia 1a.JPG",
+          "localPath": "/media/licensed/guillermo-ortega-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Julian David Muñoz Ortega",
+          "credito": "Own work",
+          "descripcion": "Guillermo León Valencia",
+          "fecha": "2016-01-08",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Guillermo_Le%C3%B3n_Valencia_1a.JPG",
+          "tamano": "6000×4000",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Guillermo_Le%C3%B3n_Valencia_1a.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Avianca Fokker 50 - HK-4487 - Popayán (SKPP-PPN) Guillermo León Valencia (6638738449).jpg",
+          "motivo": "licencia no admitida: GFDL 1.2"
+        },
+        {
+          "fichero": "Alfredo ortega maldonado (cropped).jpg",
+          "motivo": "demasiado pequeña (226×302)"
+        },
+        {
+          "fichero": "CEREMONIA DE POSESIÓN DE NUEVAS AUTORIDADES DE GOBIERNO. QUITO, 05 DE JULIO DE 2022 (cropped 2).jpg",
+          "motivo": "licencia no admitida: CC BY 2.5"
+        },
+        {
+          "fichero": "La garza posa para la foto mientras aproxima (4096151789).jpg",
+          "motivo": "licencia no admitida: GFDL 1.2"
+        },
+        {
+          "fichero": "(Intercom) Garza a garrapatas, listos para aterrizar (4096910150).jpg",
+          "motivo": "licencia no admitida: GFDL 1.2"
+        },
+        {
+          "fichero": "Policía Nacional PNC-4014 Fumigadora Air Turbo AT-802 (4091650954).jpg",
+          "motivo": "licencia no admitida: GFDL 1.2"
+        },
+        {
+          "fichero": "Guillermo León Valencia 2a.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Guillermo Montesinos en los Premios Goya 2017.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Javier Rey, Antonio Velázquez and Guillermo Barrientos at Premios Goya 2017.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "LILIANA ORTEGA MENDOZA COFUNDADORA DE COFAVIC VENEZUELA.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Guillermo von Plocki en su taller.png",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Acto de asunción como decano de la Facultad de Humanidades y Ciencias de la Educación de la UNLP del Dr. Exequiel César Ortega 02.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Acto de asunción como decano de la Facultad de Humanidades y Ciencias de la Educación de la UNLP del Dr. Exequiel César Ortega 03.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Acto de asunción como decano de la Facultad de Humanidades y Ciencias de la Educación de la UNLP del Dr. Exequiel César Ortega 04.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "1883-12-15, La Ilustración Española y Americana, Madrid.—Visita del rey y el príncipe Federico Guillermo al cuartel de la Montaña, revista de los cuerpos de artillería.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Acto de asunción como decano de la Facultad de Humanidades y Ciencias de la Educación de la UNLP del Dr. Exequiel César Ortega 01.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Guillermo von Plocki.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "PARLAMENTARIOS DE MERCOSUR (19385586775).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 2.0"
+        },
+        {
+          "fichero": "Ceremonia de Posesión de Nuevas Autoridades, Pablo Arosemena (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Guillermo Orozco - Laura del Moral - Miquel Ortega 02.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Guillermo Orozco - Laura del Moral - Miquel Ortega 01.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Antonio López Ortega (2008).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Guillermo Bredeston by Olga Masa - Antena TV, 1965.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Alfredo ortega maldonado.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "GuillermoOrtega.png",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "CEREMONIA DE POSESIÓN DE NUEVAS AUTORIDADES DE GOBIERNO. QUITO, 05 DE JULIO DE 2022. - 52196821183 (cropped 2).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "CEREMONIA DE POSESIÓN DE NUEVAS AUTORIDADES DE GOBIERNO. QUITO, 05 DE JULIO DE 2022. - 52197291560 (cropped 2).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "Alfredo ortega maldonado (cropped 2).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Mariano Alameda",
+      "personaje": "Armando Ruiz",
+      "candidatos": 30,
+      "admitidos": [
+        {
+          "fichero": "Wikimania15 Dschwen (111).jpg",
+          "localPath": "/media/licensed/mariano-alameda.jpg",
+          "licencia": "CC BY-SA 3.0",
+          "autor": "dschwen",
+          "credito": "Own work",
+          "descripcion": "Near Alameda de Santa María, Mexico City",
+          "fecha": "2015-07-20",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Wikimania15_Dschwen_(111).jpg",
+          "tamano": "5616×3744",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Wikimania15_Dschwen_%28111%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Ministry of Foreign Affairs (01815700) (51325547094).jpg",
+          "localPath": "/media/licensed/mariano-alameda-2.jpg",
+          "licencia": "CC BY 2.0",
+          "autor": "IAEA Imagebank",
+          "credito": "Ministry of Foreign Affairs (01815700)",
+          "descripcion": "Rafael Mariano Grossi, IAEA Director General met with the Honourable Minister of State for Foreign Affairs HE Mr Carlos Alberto Franco during his official visit to Brasilia, Brazil. 20 July 2021\nPhoto Credit: Dean Calma / IAEA\nIAEA:\nIAEA Director General Rafael Mariano Grossi\nEdgard Perez Alvan, Senior Advisor to the Director General\nLuciana Viegas Assumpcao, IAEA Senior Press Officer, Office of Public Information and Communication\nBrazilian Officials:\nHE Mr. Carlos Sérgio Sobral Duarte, Resident Representative of Brazil to the IAEA\nAldo Malavasi, Technical-Scientific Advisor, Brazilian Navy Technological Center in Sao Paolo\nClaudio Medeiros Leopoldino, Head Disarmament and Sensitive Technologies Division, Ministry of Foreign Affairs, Brazil\n\nMarcelo Gameiro de Moura, Deputy Head of the Division of Disarmament and Sensitive Technologies, Ministry of External Relations, Brazil",
+          "fecha": "2021-07-20 11:31",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Ministry_of_Foreign_Affairs_(01815700)_(51325547094).jpg",
+          "tamano": "5568×3712",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Ministry_of_Foreign_Affairs_%2801815700%29_%2851325547094%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "2026. Escudo de Armas no Banco acústico. Alameda de Santiago de Compostela.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Soria 036.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Soria 035.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Guimarães Shopping.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "20200201 Guimarães 4359 (49653601508).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "20200201 Guimarães 4360 (49654139056).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "20200201 Guimarães 4364 (49654417882).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "20200201 Guimarães 4361 (49654138606).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "20200201 Guimarães 4362 (49654418382).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "20200201 Guimarães 4363 (49653600493).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Hospital da Senhora da Oliveira - Guimarães (44699075560).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Paseo de la Alameda de Los Descalzos. Vista de la Calle de Mercaderes. Paz Soldan. Geografia del Peru. Paris. 1863 (IA dr paseo-de-la-alameda-de-los-descalzos-vista-de-la-calle-de-mercaderes-paz-00574116).jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Mariano alameda islandia.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "1926-05-30 BLANCO Y NEGRO.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Alameda de Osuna, watercolor by Mariano Pedrero, collection Museo ABC, 1926.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "'Dream of a Sunday Afternoon in the Alameda' pt. 2 - Museo Mural Diego Rivera - Mexico 2024.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Alameda Cervantes - Soria 12.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Alameda Cervantes - Soria 13.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Alameda Cervantes - Soria 14.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Blanco y Negro, Alameda de Osuna, May 30th 1926, by Mariano Pedrero.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Chafariz da Alameda Mariano Felgueiras (46874119561).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 2.0"
+        },
+        {
+          "fichero": "O Colosso de Pedralva (45603401975).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 2.0"
+        },
+        {
+          "fichero": "Parque-alameda Dr. Mariano Felgueiras (44699622340).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 2.0"
+        },
+        {
+          "fichero": "La educación gana protagonismo en la parrilla de M21 radio con una hora diaria (02).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "Via Lucis Mariano 2013 Jerez-MIN-DSC04138.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Via Lucis Mariano 2013 Jerez-MIN-DSC04151.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "1926 Ceramica Ruiz de Luna Fuente Benlliure 1926 fuente de la Alameda Cádiz 01.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "AlamedaMariano.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Nathalie Seseña",
+      "personaje": "Marisa Benito (joven)",
+      "candidatos": 2,
+      "admitidos": [
+        {
+          "fichero": "Nathalie Seseña.jpg",
+          "localPath": "/media/licensed/nathalie-sesena.jpg",
+          "licencia": "CC BY-SA 3.0",
+          "autor": "20minutos.es",
+          "credito": "https://www.20minutos.es/imagen/568363",
+          "descripcion": "Spanish actress Nathalie Seseña",
+          "fecha": "Unknown date",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Nathalie_Sese%C3%B1a.jpg",
+          "tamano": "544×922",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Nathalie_Sese%C3%B1a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "NI DE COÑA 7.png",
+          "motivo": "no consta que sea esa persona"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Eva Isanta",
+      "personaje": "Bea Villarejo",
+      "candidatos": 4,
+      "admitidos": [
+        {
+          "fichero": "Eva Isanta - Seminci 2016.jpg",
+          "localPath": "/media/licensed/eva-isanta.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Ruben Ortega",
+          "credito": "Own work",
+          "descripcion": "Seminci 2016",
+          "fecha": "2016-10-22 18:40:01",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Eva_Isanta_-_Seminci_2016.jpg",
+          "tamano": "1823×2283",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Eva_Isanta_-_Seminci_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "ElviraFolguera0631.jpg",
+          "localPath": "/media/licensed/eva-isanta-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Premios Nacionales Aquí TV",
+          "credito": "Own work",
+          "descripcion": "Eva Isanta en Vila-real. ELVIRA FOLGUERÀ",
+          "fecha": "2022-10-21",
+          "pagina": "https://commons.wikimedia.org/wiki/File:ElviraFolguera0631.jpg",
+          "tamano": "2276×1518",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/ElviraFolguera0631.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Eva Isanta (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Eva Isanta.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Guillermo Ortega",
+      "personaje": "Paco",
+      "candidatos": 30,
+      "admitidos": [
+        {
+          "fichero": "MuralMetroTacubya04.JPG",
+          "localPath": "/media/licensed/guillermo-ortega.jpg",
+          "licencia": "CC BY-SA 3.0",
+          "autor": "AlejandroLinaresGarcia",
+          "credito": "Own work",
+          "descripcion": "Mural section in Line 1 section of Metro Tacubaya Principle artist, Guillermo Ceniceros Reyes with help from Màximo Chavez, Raymundo Rojas, Armando Lopez, Emilio Grave, Miguel Ortega and Hector Felipe",
+          "fecha": "2013-03-28 15:49:55",
+          "pagina": "https://commons.wikimedia.org/wiki/File:MuralMetroTacubya04.JPG",
+          "tamano": "6016×4000",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/MuralMetroTacubya04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Guillermo León Valencia 1a.JPG",
+          "localPath": "/media/licensed/guillermo-ortega-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Julian David Muñoz Ortega",
+          "credito": "Own work",
+          "descripcion": "Guillermo León Valencia",
+          "fecha": "2016-01-08",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Guillermo_Le%C3%B3n_Valencia_1a.JPG",
+          "tamano": "6000×4000",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Guillermo_Le%C3%B3n_Valencia_1a.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Avianca Fokker 50 - HK-4487 - Popayán (SKPP-PPN) Guillermo León Valencia (6638738449).jpg",
+          "motivo": "licencia no admitida: GFDL 1.2"
+        },
+        {
+          "fichero": "Alfredo ortega maldonado (cropped).jpg",
+          "motivo": "demasiado pequeña (226×302)"
+        },
+        {
+          "fichero": "CEREMONIA DE POSESIÓN DE NUEVAS AUTORIDADES DE GOBIERNO. QUITO, 05 DE JULIO DE 2022 (cropped 2).jpg",
+          "motivo": "licencia no admitida: CC BY 2.5"
+        },
+        {
+          "fichero": "La garza posa para la foto mientras aproxima (4096151789).jpg",
+          "motivo": "licencia no admitida: GFDL 1.2"
+        },
+        {
+          "fichero": "(Intercom) Garza a garrapatas, listos para aterrizar (4096910150).jpg",
+          "motivo": "licencia no admitida: GFDL 1.2"
+        },
+        {
+          "fichero": "Policía Nacional PNC-4014 Fumigadora Air Turbo AT-802 (4091650954).jpg",
+          "motivo": "licencia no admitida: GFDL 1.2"
+        },
+        {
+          "fichero": "Guillermo León Valencia 2a.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Guillermo Montesinos en los Premios Goya 2017.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Javier Rey, Antonio Velázquez and Guillermo Barrientos at Premios Goya 2017.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "LILIANA ORTEGA MENDOZA COFUNDADORA DE COFAVIC VENEZUELA.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Guillermo von Plocki en su taller.png",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Acto de asunción como decano de la Facultad de Humanidades y Ciencias de la Educación de la UNLP del Dr. Exequiel César Ortega 02.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Acto de asunción como decano de la Facultad de Humanidades y Ciencias de la Educación de la UNLP del Dr. Exequiel César Ortega 03.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Acto de asunción como decano de la Facultad de Humanidades y Ciencias de la Educación de la UNLP del Dr. Exequiel César Ortega 04.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "1883-12-15, La Ilustración Española y Americana, Madrid.—Visita del rey y el príncipe Federico Guillermo al cuartel de la Montaña, revista de los cuerpos de artillería.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Acto de asunción como decano de la Facultad de Humanidades y Ciencias de la Educación de la UNLP del Dr. Exequiel César Ortega 01.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Guillermo von Plocki.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "PARLAMENTARIOS DE MERCOSUR (19385586775).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 2.0"
+        },
+        {
+          "fichero": "Ceremonia de Posesión de Nuevas Autoridades, Pablo Arosemena (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Guillermo Orozco - Laura del Moral - Miquel Ortega 02.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Guillermo Orozco - Laura del Moral - Miquel Ortega 01.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Antonio López Ortega (2008).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Guillermo Bredeston by Olga Masa - Antena TV, 1965.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Alfredo ortega maldonado.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "GuillermoOrtega.png",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "CEREMONIA DE POSESIÓN DE NUEVAS AUTORIDADES DE GOBIERNO. QUITO, 05 DE JULIO DE 2022. - 52196821183 (cropped 2).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "CEREMONIA DE POSESIÓN DE NUEVAS AUTORIDADES DE GOBIERNO. QUITO, 05 DE JULIO DE 2022. - 52197291560 (cropped 2).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "Alfredo ortega maldonado (cropped 2).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Roberto San Martín",
+      "personaje": "Yago",
+      "candidatos": 30,
+      "admitidos": [
+        {
+          "fichero": "Plaza San Martín y Teatro español en Azul.jpg",
+          "localPath": "/media/licensed/roberto-san-martin.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Roberto Fiadone",
+          "credito": "Own work",
+          "descripcion": "Plaza San Martín y Teatro español en Azul, Provincia de Buenos Aires, Argentina.",
+          "fecha": "2023-07-31 10:37:32",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Plaza_San_Mart%C3%ADn_y_Teatro_espa%C3%B1ol_en_Azul.jpg",
+          "tamano": "4640×3472",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Plaza_San_Mart%C3%ADn_y_Teatro_espa%C3%B1ol_en_Azul.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Palacio San Martín Puerta de hierro.jpg",
+          "localPath": "/media/licensed/roberto-san-martin-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Roberto Fiadone",
+          "credito": "Own work",
+          "descripcion": "This is a photo of an Argentine monument identified by the ID",
+          "fecha": "2015-09-27 17:59:24",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Palacio_San_Mart%C3%ADn_Puerta_de_hierro.jpg",
+          "tamano": "4608×3456",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Palacio_San_Mart%C3%ADn_Puerta_de_hierro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Edificio San Martín 128 (1979).JPG",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Monumento a San Martín Batalla de Salta Ebarlein.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Roberto Ampuero y Jorge Faurie 02.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "San Martín de Tours patrono mosaico.JPG",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Roberto Ampuero y Jorge Faurie 01.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Calle San Martín, Buenos Aires, De Rivadavia al sur.JPG",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Monumento a San Martín La Batalla Ebarlein.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Monumento a San Martín La Victoria Ebarlein.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Plaza San Martín en Puerto Iguazú, Misiones, Argentina (año 2014).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Palacio San Martín patio interior.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Plaza San Martín Monumento al General San Martín y a los Ejércitos de la Independencia Gustav Eberlein.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Plaza San Martín y Catedral, en Azul.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Plaza General José de San Martín, Azul.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Plaza San Martín, Azul.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Cuartel de Palermo del Regimiento de Granaderos a Caballo General San Martín, fachada.JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Construcción E.E.T. 3154 'Roberto Romero' - Fortín Dragones - Embarcación - San Martín - panoramio (1).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        },
+        {
+          "fichero": "San Martín 344.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Escuela Nº 4795 ‘Luis María Preti’ - Bº Roberto Romero - Tartagal - San Martín - panoramio - José Luis Fernández.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        },
+        {
+          "fichero": "Escuela Nº 4795 ‘Luis María Preti’ - Bº Roberto Romero - Tartagal - San Martín - panoramio.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        },
+        {
+          "fichero": "Placa homenaje a San Martín, Independencia de Perú.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "Teresa Castaldo recibe Orden de San Martín 02.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Plaza San Martín, vaso decorativo 01.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Plaza San Martín, vaso decorativo 02.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Teresa Castaldo recibe Orden de San Martín 03.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Teresa Castaldo recibe Orden de San Martín 01.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Construcción E.E.T. 3154 'Roberto Romero' - Fortín Dragones - Embarcación - San Martín - panoramio (2).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        },
+        {
+          "fichero": "Construcción E.E.T. 3154 'Roberto Romero' - Fortín Dragones - Embarcación - San Martín - panoramio.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        },
+        {
+          "fichero": "Ballerini, Augusto - La sombra del general San Martín (1881).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Beatriz Carvajal",
+      "personaje": "María Jesús Vázquez",
+      "candidatos": 10,
+      "admitidos": [
+        {
+          "fichero": "Sepulcros en la Iglesia de San Martín (Trujillo).jpg",
+          "localPath": "/media/licensed/beatriz-carvajal.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "José Luis Filpo Cabana",
+          "credito": "Own work",
+          "descripcion": "Muro de la sacristía. Sepulcros de los Vargas, Ulloa, Carvajal y de Luis de Camargo y esposa.",
+          "fecha": "2017-10",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Sepulcros_en_la_Iglesia_de_San_Mart%C3%ADn_(Trujillo).jpg",
+          "tamano": "2888×2888",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Sepulcros_en_la_Iglesia_de_San_Mart%C3%ADn_%28Trujillo%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Unidad deportiva Ángel Carvajal en Apetatitlán, Tlaxcala 01.jpg",
+          "localPath": "/media/licensed/beatriz-carvajal-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Isaacvp",
+          "credito": "Own work",
+          "descripcion": "Unidad deportiva Ángel Carvajal en Apetatitlán, Tlaxcala",
+          "fecha": "2021-03-18 11:46:13",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Unidad_deportiva_%C3%81ngel_Carvajal_en_Apetatitl%C3%A1n,_Tlaxcala_01.jpg",
+          "tamano": "2954×2215",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Unidad_deportiva_%C3%81ngel_Carvajal_en_Apetatitl%C3%A1n%2C_Tlaxcala_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Photo 3 from Varios Blanco y Negro (cropped).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Varios Blanco y Negro.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Beatriz Carvajal.JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Encuentro Frente Amplio 18 mayo 2021.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Paulina Bobadilla Encuentro Frente Amplio 2021.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Tomás Vodanovic - Encuentro Frente Amplio 01.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Tomás Vodanovic - Encuentro Frente Amplio 02.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Carvajal2013.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Nicolás Dueñas",
+      "personaje": "Rafael Álvarez",
+      "candidatos": 6,
+      "admitidos": [
+        {
+          "fichero": "Vista del río Rímac desde el puente Nicolás Dueñas.jpg",
+          "localPath": "/media/licensed/nicolas-duenas.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Angie Valle Jayo",
+          "credito": "Own work",
+          "descripcion": "Contaminación hídrica del río Rímac",
+          "fecha": "2025-09-20 12:50:46",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Vista_del_r%C3%ADo_R%C3%ADmac_desde_el_puente_Nicol%C3%A1s_Due%C3%B1as.jpg",
+          "tamano": "4000×3000",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Vista_del_r%C3%ADo_R%C3%ADmac_desde_el_puente_Nicol%C3%A1s_Due%C3%B1as.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "DUENAS VICENTE SAN NICOLAS - DPLA - 28481617e958865e45f232fea7acb8b1.jpg",
+          "localPath": "/media/licensed/nicolas-duenas-2.jpg",
+          "licencia": "Public domain",
+          "autor": "U.S. District Court for the District of Massachusetts. 1789",
+          "credito": "This file was contributed to Wikimedia Commons by National Archives and Records Administration as part of a cooperation project. The donation was facilitated by the Digital Public Library of America, via its partner Digital Public Library of America.\nRecord in source catalog\nDPLA identifier: 28481617e958865e45f232fea7acb8b1\nNational Archives Identifier: 65721588",
+          "descripcion": "Birth Year: 1915 Spouse: [Blank] Admission Year: 1943 Court: District",
+          "fecha": null,
+          "pagina": "https://commons.wikimedia.org/wiki/File:DUENAS_VICENTE_SAN_NICOLAS_-_DPLA_-_28481617e958865e45f232fea7acb8b1.jpg",
+          "tamano": "1428×901",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/DUENAS_VICENTE_SAN_NICOLAS_-_DPLA_-_28481617e958865e45f232fea7acb8b1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Nicolás Dueñas.jpg",
+          "motivo": "parece logotipo, cartel o carátula (problema de marcas)"
+        },
+        {
+          "fichero": "Restaurante Salomé.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "1st Peruvian wikipedians meetup.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Exp Manuel Jacinto de Bringas Congregaciones Cofradías y Hermandades Provincia de Toro 1771.jpg",
+          "motivo": "parece logotipo, cartel o carátula (problema de marcas)"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Vanesa Romero",
+      "personaje": "Ana",
+      "candidatos": 11,
+      "admitidos": [
+        {
+          "fichero": "Premios Goya 2026 - Vanesa Romero.jpg",
+          "localPath": "/media/licensed/vanesa-romero.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Pedro J Pacheco",
+          "credito": "Own work",
+          "descripcion": "Vanesa Romero at Red Carpet of Goya Awards 2026 in Barcelona",
+          "fecha": "2026-02-28",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Premios_Goya_2026_-_Vanesa_Romero.jpg",
+          "tamano": "4000×6000",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Premios_Goya_2026_-_Vanesa_Romero.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Festival de Málaga 2024 - Vanesa Romero.jpg",
+          "localPath": "/media/licensed/vanesa-romero-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Pedro J Pacheco",
+          "credito": "Own work",
+          "descripcion": "Vanesa Romero en la alfombra roja del Festival de Málaga 2024 frente al Teatro Cervantes",
+          "fecha": "2024-03-01 18:08:47",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Festival_de_M%C3%A1laga_2024_-_Vanesa_Romero.jpg",
+          "tamano": "3829×5743",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Festival_de_M%C3%A1laga_2024_-_Vanesa_Romero.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Premios Goya 2026 - Equipo de Sexo a los 70.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Premios Goya 2026 - Vanesa Romero (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Festival de Málaga 2024 - Vanesa Romero (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Vanesa Romero 2019.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 2.0"
+        },
+        {
+          "fichero": "Vanesa Romero, Judit Mascó, Juana Acosta, Edurne y Patricia Jordán 01.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        },
+        {
+          "fichero": "Vanesa Romero, Judit Mascó, Juana Acosta 02.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        },
+        {
+          "fichero": "Vanesa Romero 2013.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        },
+        {
+          "fichero": "Patricia Jordán 03.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        },
+        {
+          "fichero": "Vanesa Romero 2013 (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Carmen Balagué",
+      "personaje": "Nieves Cuesta",
+      "candidatos": 2,
+      "admitidos": [
+        {
+          "fichero": "Colomer-Gàmiz-Balagué.jpg",
+          "localPath": "/media/licensed/carmen-balague.jpg",
+          "licencia": "CC BY 2.0",
+          "autor": "Moritz Barcelona/Oriol Miralles",
+          "credito": "https://www.flickr.com/photos/moritzbarcelona/8160562976/in/album-72157631941771462/",
+          "descripcion": "Las actrices Imma Colomer, Rosa Gàmiz y Carme Balagué en el estreno de la película Fènix 11:23.",
+          "fecha": "2012-11-05 21:23:21",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Colomer-G%C3%A0miz-Balagu%C3%A9.jpg",
+          "tamano": "1063×708",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Colomer-G%C3%A0miz-Balagu%C3%A9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Carmen Balagué Colomer-Gàmiz-Balagué (cropped).jpg",
+          "localPath": "/media/licensed/carmen-balague-2.jpg",
+          "licencia": "CC BY 2.0",
+          "autor": "Moritz Barcelona/Oriol Miralles",
+          "credito": "https://www.flickr.com/photos/moritzbarcelona/8160562976/in/album-72157631941771462/",
+          "descripcion": "Las actrices Imma Colomer, Rosa Gàmiz y Carme Balagué en el estreno de la película Fènix 11:23.",
+          "fecha": "2012-11-05 21:23:21",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Carmen_Balagu%C3%A9_Colomer-G%C3%A0miz-Balagu%C3%A9_(cropped).jpg",
+          "tamano": "304×432",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Carmen_Balagu%C3%A9_Colomer-G%C3%A0miz-Balagu%C3%A9_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [],
+      "avisos": []
+    },
+    {
+      "interprete": "Ana Rayo",
+      "personaje": "Alicia",
+      "candidatos": 30,
+      "admitidos": [],
+      "descartes": [
+        {
+          "fichero": "Iglesia Parroquial Santa Ana 1870s.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Santa Ana, pared.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Ana María R-R.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Tussen Dolany-Balkovy en Slatina, weg over de Poleňka IMG 3060 2022-08-07 10.14.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Rayos catódicos.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Tarian Buyung Syarat Akan Makna.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "A50, Sutton Lane Bridge - geograph.org.uk - 4240450.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Layby on Southbound A470 - geograph.org.uk - 5013651.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "A14, North of Needham Market - geograph.org.uk - 3846043.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Layby on Southbound A1 near to Weston, - geograph.org.uk - 4925649.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Eastbound A14 near Harrington Lodge - geograph.org.uk - 3815172.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Northbound A9 - geograph.org.uk - 5745948.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Layby on the Westbound A14 - geograph.org.uk - 3819769.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "A14 near Woodford - geograph.org.uk - 3819700.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Westbound A55, Exit Sliproad at junction 33 - geograph.org.uk - 5615681.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "DHL landing - geograph.org.uk - 6173758.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Nottingham Road, Ravenshead - geograph.org.uk - 6269315.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Northbound A1, Tickencote Services - geograph.org.uk - 4217293.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "A14 near Sproughton, Bridge Carrying A1071 - geograph.org.uk - 3868080.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Bridge (A5007) over Uttoxeter Road - geograph.org.uk - 4241994.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Westbound A30 at Alphington - geograph.org.uk - 7917070.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "A34 North of Bullington Cross - geograph.org.uk - 3287452.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "A14, Bury St Edmunds - geograph.org.uk - 3853662.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "A14 Northbound at Copdock - geograph.org.uk - 3852272.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Footbridge over Westbound A14 - geograph.org.uk - 3853619.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "North Wales Expressway between Rhuallt and St Asaph - geograph.org.uk - 5615763.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "North Wales Expressway, Overhead Sign Gantry at Junction 18 - geograph.org.uk - 5689517.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Lockett's Lane Footbridge, Uttoxeter Road - geograph.org.uk - 4242001.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "Westbound A50 near Hell Clough - geograph.org.uk - 4241490.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        },
+        {
+          "fichero": "A12, Stratford St Mary - geograph.org.uk - 3848686.jpg",
+          "motivo": "no es un retrato (escudo, mapa, firma, edificio…)"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Cristina Castaño",
+      "personaje": "Bea",
+      "candidatos": 30,
+      "admitidos": [
+        {
+          "fichero": "Cristina Castaño en los Premios Goya 2017.jpg",
+          "localPath": "/media/licensed/cristina-castano.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Ruben Ortega",
+          "credito": "Own work",
+          "descripcion": "Premios Goya 2017",
+          "fecha": "2017-02-04 20:06:07",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Cristina_Casta%C3%B1o_en_los_Premios_Goya_2017.jpg",
+          "tamano": "5472×3648",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Cristina_Casta%C3%B1o_en_los_Premios_Goya_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Goyas 2024 - Cristina Castaño.jpg",
+          "localPath": "/media/licensed/cristina-castano-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Pedro J Pacheco",
+          "credito": "Own work",
+          "descripcion": "Cristina Castaño en la alfombra roja de los Premios Goya 2024 celebrados en Valladolid",
+          "fecha": "2024-02-10 18:01:19",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Goyas_2024_-_Cristina_Casta%C3%B1o.jpg",
+          "tamano": "3585×5378",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Goyas_2024_-_Cristina_Casta%C3%B1o.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "ToyBoy.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Iglesia dek Monasterio de Santa Cristina de Ribas de Sil.jpg",
+          "motivo": "parece logotipo, cartel o carátula (problema de marcas)"
+        },
+        {
+          "fichero": "Premios Goya 2019 - Cristina Castaño.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Cristina Castaño.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 2.0"
+        },
+        {
+          "fichero": "Premios Goya 2020 - Cristina Castaño.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Parque María Cristina Algeciras 2024 (4).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "Busto General Castaños Algeciras.JPG",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Arcada románica del Monasterio de Santa Cristina de Ribas de Sil.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "Claustro del monasterio de Santa Cristina de Ribas de Sil.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "Detalle chapitel del Monasterio de Santa Cristina de Ribas de Sil.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        },
+        {
+          "fichero": "Premios Goya 2018 - Cristina Castaño.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Premios Goya 2020 - Cristina Castaño (cropped2).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Goyas 2023 - Cristina Castaño.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Goyas 2024 - Cristina Castaño (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Carmena en la celebración de la festividad de la Virgen de la Paloma (08).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "Carmena en la celebración de la festividad de la Virgen de la Paloma (09).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "La alcaldesa, Manuela Carmena, en los actos del Dos de Mayo 2017 01.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "La alcaldesa, Manuela Carmena, en los actos del Dos de Mayo 2017 03.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "La alcaldesa, Manuela Carmena, en los actos del Dos de Mayo 2017 04.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "La alcaldesa, Manuela Carmena, en los actos del Dos de Mayo 2017 05.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "La alcaldesa, Manuela Carmena, en los actos del Dos de Mayo 2017 06.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "La alcaldesa, Manuela Carmena, en los actos del Dos de Mayo 2017 07.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "Cristina Castaño en los Premios Goya 2017 (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Todo Madrid en FITUR 02.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 4.0"
+        },
+        {
+          "fichero": "Generalcastañosalgeciras.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Cristina Castaño Premios Platino 2017.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY 3.0"
+        },
+        {
+          "fichero": "Premios Goya 2020 - Cristina Castaño (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Cristina Castaño in 2019.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Fernando Boza",
+      "personaje": "Vicente",
+      "candidatos": 0,
+      "admitidos": [],
+      "descartes": [],
+      "avisos": []
+    },
+    {
+      "interprete": "Emilio Gutiérrez Caba",
+      "personaje": "Padre de Juan",
+      "candidatos": 12,
+      "admitidos": [
+        {
+          "fichero": "Premios Goya 2026- Emilio Gutiérrez Caba-3.jpg",
+          "localPath": "/media/licensed/emilio-gutierrez-caba.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Pedro J Pacheco",
+          "credito": "Own work",
+          "descripcion": "Emilio Gutiérrez Caba at Red Carpet of Goya Awards 2026 in Barcelona",
+          "fecha": "2026-02-28",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Premios_Goya_2026-_Emilio_Guti%C3%A9rrez_Caba-3.jpg",
+          "tamano": "5826×3884",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Premios_Goya_2026-_Emilio_Guti%C3%A9rrez_Caba-3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Premios Goya 2026- Emilio Gutiérrez Caba.jpg",
+          "localPath": "/media/licensed/emilio-gutierrez-caba-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Pedro J Pacheco",
+          "credito": "Own work",
+          "descripcion": "Emilio Gutiérrez Caba at Red Carpet of Goya Awards 2026 in Barcelona",
+          "fecha": "2026-02-28",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Premios_Goya_2026-_Emilio_Guti%C3%A9rrez_Caba.jpg",
+          "tamano": "3832×5748",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Premios_Goya_2026-_Emilio_Guti%C3%A9rrez_Caba.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Goyas 2023 - Grupo sin identificar 029.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Goyas 2025 - Emilio Gutiérrez Caba.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Medalla del CEC a la actriz revelacion 2018.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Jesus Vidal recibe Medalla del CEC.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Emilio Gutiérrez Caba 2019.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Emilio Gutiérrez Caba-16.10.2010.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Premios Goya 2026- Emilio Gutiérrez Caba-2.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Goyas 2024 - Emilio Gutiérrez Caba.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Emilio Gutiérrez Caba-16.10.2010 (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "Public domain"
+        },
+        {
+          "fichero": "Goyas 2024 - Emilio Gutiérrez Caba (cropped).jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "interprete": "Antonio Molero",
+      "personaje": "Ramón",
+      "candidatos": 11,
+      "admitidos": [
+        {
+          "fichero": "Antonio Molero, premio Un León en el Foro (2017).jpg",
+          "localPath": "/media/licensed/antonio-molero.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Malopez 21",
+          "credito": "Own work",
+          "descripcion": "Antonio Molero, premio Un León en el Foro en la Peña Athletic Club de Bilbao de Euskal Etxea Madrid, (2017)",
+          "fecha": "2017-10-28 12:01:48",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Antonio_Molero,_premio_Un_Le%C3%B3n_en_el_Foro_(2017).jpg",
+          "tamano": "5396×3597",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Antonio_Molero%2C_premio_Un_Le%C3%B3n_en_el_Foro_%282017%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        },
+        {
+          "fichero": "Antonio Molero, premio León en el Foro.jpg",
+          "localPath": "/media/licensed/antonio-molero-2.jpg",
+          "licencia": "CC BY-SA 4.0",
+          "autor": "Malopez 21",
+          "credito": "Own work",
+          "descripcion": "Antonio Molero, 6º premio un León en el Foro la Peña Athletic Club de Bilbao de Euskal Etxea Madrid",
+          "fecha": "2017-10-28 12:39:12",
+          "pagina": "https://commons.wikimedia.org/wiki/File:Antonio_Molero,_premio_Le%C3%B3n_en_el_Foro.jpg",
+          "tamano": "3556×4687",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Antonio_Molero%2C_premio_Le%C3%B3n_en_el_Foro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "bajado": true
+        }
+      ],
+      "descartes": [
+        {
+          "fichero": "Clausura del Festival CiBRA 2019.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Clausura del Festival del Cine y la Palabra (CIBRA) - 52495215756.jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Clausura del Festival del Cine y la Palabra (CIBRA).jpg",
+          "motivo": "no consta que sea esa persona"
+        },
+        {
+          "fichero": "Universidad de Alcalá (2021) Museo de Educación Antonio Molero, logotipo simplificado.png",
+          "motivo": "parece logotipo, cartel o carátula (problema de marcas)"
+        },
+        {
+          "fichero": "Universidad de Alcalá (2021) Museo de Educación Antonio Molero, logotipo.png",
+          "motivo": "parece logotipo, cartel o carátula (problema de marcas)"
+        },
+        {
+          "fichero": "María Sánchez Puig.jpg",
+          "motivo": "demasiado pequeña (77×98)"
+        },
+        {
+          "fichero": "Estampa de San Antonio de Padua en casa Cebrian Molero.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 4.0"
+        },
+        {
+          "fichero": "Antonio Molero.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC BY-SA 3.0"
+        },
+        {
+          "fichero": "Antonio de Oquendo2.jpg",
+          "motivo": "apto pero no hace falta (ya hay 2 mejores)",
+          "licencia": "CC0"
+        }
+      ],
+      "avisos": []
+    }
+  ]
+}
