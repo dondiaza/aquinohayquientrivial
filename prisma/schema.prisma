@@ -137,8 +137,10 @@ model GuestPlayer {
   createdAt   DateTime @default(now())
   lastSeenAt  DateTime @updatedAt
 
+  /// Cuenta a la que se ha atado este invitado, si el jugador se registró después.
+  /// La migración invitado -> cuenta es rellenar esta columna: nada se copia ni se pierde.
   userId String?
-  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+  user   UserAccount? @relation(fields: [userId], references: [id], onDelete: SetNull)
 
   games        Game[]
   profile      PlayerProfile?
@@ -146,15 +148,6 @@ model GuestPlayer {
   dailyResults DailyResult[]
 
   @@index([userId])
-}
-
-/// Cuentas opcionales. Reservado para Fase 2/3; la experiencia principal no las exige.
-model User {
-  id          String        @id @default(cuid())
-  email       String        @unique
-  displayName String?
-  createdAt   DateTime      @default(now())
-  guests      GuestPlayer[]
 }
 
 model Game {
@@ -581,4 +574,631 @@ model RoomReaction {
   at       DateTime   @default(now())
 
   @@index([roomId, at])
+}
+
+// ── FASE 4 · CUENTAS, PROGRESIÓN, COMUNIDAD Y NOTIFICACIONES ─────────────────
+//
+// Principios que se respetan aquí (el porqué está en docs/FASE4-RETENCION.md):
+//
+// 1. JUGAR PRIMERO, REGISTRARSE DESPUÉS. `GuestPlayer` (Fase 1) sigue siendo el sujeto
+//    real del juego. Una `UserAccount` es algo que se le ATA encima, no algo que lo
+//    sustituya: por eso la migración de invitado a cuenta es un `UPDATE` de una columna
+//    y no una copia de datos que se pueda quedar a medias.
+//
+// 2. EL XP ES UN LIBRO MAYOR, NO UN CONTADOR. `XpTransaction` guarda cada concesión con
+//    su motivo y su origen, y `UserProfile.xp` es solo la suma cacheada. Sin esto, un
+//    reintento duplica XP y no hay forma de auditarlo. La clave única por
+//    (usuario, motivo, origen) hace que conceder dos veces lo mismo sea imposible.
+//
+// 3. LO QUE CADUCA, CADUCA EN LA BASE DE DATOS. Invitaciones, desafíos y notificaciones
+//    llevan `expiresAt`. Nada de «Pablo te invita» cuatro horas después de que la partida
+//    terminara.
+//
+// 4. LA PRIVACIDAD ES UNA COLUMNA, NO UN `if` EN LA UI. Cada cosa que se puede ver tiene
+//    su nivel (TODOS / AMIGOS / NADIE) y se comprueba en el servidor.
+
+enum VisibilidadPerfil {
+  TODOS
+  AMIGOS
+  NADIE
+}
+
+enum EstadoAmistad {
+  PENDIENTE
+  ACEPTADA
+  RECHAZADA
+  CANCELADA
+}
+
+enum EstadoCuenta {
+  ACTIVA
+  SUSPENDIDA
+  BANEADA
+  /// Ha pedido borrarse: hay periodo de gracia para arrepentirse.
+  PENDIENTE_BORRADO
+}
+
+enum CanalNotificacion {
+  IN_APP
+  PUSH
+  EMAIL
+}
+
+enum EstadoEnvio {
+  PENDIENTE
+  ENVIADA
+  ENTREGADA
+  ABIERTA
+  FALLIDA
+  /// Descartada por preferencias, horario silencioso o tope de frecuencia.
+  DESCARTADA
+}
+
+enum EstadoDesafio {
+  ABIERTO
+  COMPLETADO
+  CADUCADO
+  RECHAZADO
+}
+
+/// Cuenta opcional. Nunca es obligatoria para jugar.
+model UserAccount {
+  id     String       @id @default(cuid())
+  email  String       @unique
+  estado EstadoCuenta @default(ACTIVA)
+
+  /// Nombre público único. NUNCA se usa para identificar internamente: para eso está `id`.
+  username         String   @unique
+  /// Cuándo se cambió por última vez: hay enfriamiento para que no sea un nombre volátil.
+  usernameChangedAt DateTime?
+  /// Código para añadir amigos sin exponer el id interno: «PACO-82K7».
+  friendCode       String   @unique
+
+  /// Zona horaria IANA del usuario. Decide su día para la racha y sus horas silenciosas.
+  timezone String @default("Europe/Madrid")
+  locale   String @default("es-ES")
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  lastSeenAt  DateTime  @default(now())
+  /// Cuándo se podrá borrar de verdad, si lo ha pedido.
+  deleteAfter DateTime?
+
+  guests        GuestPlayer[]
+  profile       UserProfile?
+  settings      UserSettings?
+  sessions      UserSession[]
+  xp            XpTransaction[]
+  streak        Streak?
+  logros        UserAchievement[]
+  insignias     UserBadge[]
+  suscripciones PushSubscription[]
+  notificaciones Notification[]
+  envios        NotificationDelivery[]
+  amistadesA    Friendship[]           @relation("amistadA")
+  amistadesB    Friendship[]           @relation("amistadB")
+  solicitudesEnviadas  FriendRequest[] @relation("solicitante")
+  solicitudesRecibidas FriendRequest[] @relation("destinatario")
+  bloqueosHechos  Block[]              @relation("bloqueador")
+  bloqueosSufridos Block[]             @relation("bloqueado")
+  desafiosEnviados  Challenge[]        @relation("retador")
+  participaciones   ChallengeParticipant[]
+  comunidades       CommunityMember[]
+  ligas             LeagueParticipant[]
+  temporadas        UserSeasonProgress[]
+  actividad         ActivityEvent[]
+  reportesHechos    Report[]           @relation("reportante")
+  reportesRecibidos Report[]           @relation("reportado")
+
+  @@index([estado, lastSeenAt])
+  @@index([deleteAfter])
+}
+
+/// Sesión con dispositivo. Cerrar sesión en el móvil no debe tirar la del portátil.
+model UserSession {
+  id        String      @id @default(cuid())
+  userId    String
+  user      UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /// Hash del token de sesión. El token en claro solo existe en la cookie del navegador.
+  tokenHash String      @unique
+  /// Nombre legible del dispositivo, para la pantalla de «sesiones activas».
+  dispositivo String?
+  userAgent   String?
+  /// Solo el prefijo de la IP, para detectar sesiones raras sin guardar la IP entera.
+  ipPrefijo   String?
+  createdAt   DateTime @default(now())
+  lastSeenAt  DateTime @default(now())
+  expiresAt   DateTime
+  revokedAt   DateTime?
+
+  @@index([userId, expiresAt])
+}
+
+/// Enlaces mágicos y códigos de acceso. De un solo uso y con vida corta.
+model LoginToken {
+  id        String   @id @default(cuid())
+  /// Hash del código. Nunca se guarda el código en claro.
+  tokenHash String   @unique
+  email     String
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+  usedAt    DateTime?
+  /// Intentos fallidos contra este token: freno a la fuerza bruta.
+  intentos  Int      @default(0)
+
+  @@index([email, createdAt])
+  @@index([expiresAt])
+}
+
+/// Perfil público. Se crea al crear la cuenta y hereda lo del invitado.
+model UserProfile {
+  userId String      @id
+  user   UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  displayName String?
+  titulo      String? // título cosmético desbloqueado
+  arquetipo   String  @default("presidente")
+  colorAvatar String  @default("verde")
+  marco       String  @default("ninguno")
+  fondo       String  @default("ninguno")
+
+  /// Suma cacheada del libro mayor. La verdad está en `XpTransaction`.
+  xp    Int @default(0)
+  nivel Int @default(1)
+  /// Id del rango temático (src/domain/progression).
+  rango String @default("visitante")
+
+  /// Habilidad estimada, SEPARADA del XP: el XP es tiempo jugado, esto es acierto.
+  skillRating   Int @default(1000)
+  skillPartidas Int @default(0)
+
+  partidas   Int   @default(0)
+  victorias  Int   @default(0)
+  aciertos   Int   @default(0)
+  respuestas Int   @default(0)
+  mejorRacha Int   @default(0)
+  /// Categoría con más aciertos, para el perfil.
+  categoriaFavorita String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([xp])
+  @@index([skillRating])
+}
+
+model UserSettings {
+  userId String      @id
+  user   UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // ── Privacidad (§63) ──
+  perfilVisible      VisibilidadPerfil @default(TODOS)
+  estadisticasVisibles VisibilidadPerfil @default(TODOS)
+  presenciaVisible   VisibilidadPerfil @default(AMIGOS)
+  actividadVisible   VisibilidadPerfil @default(AMIGOS)
+  quienPuedeInvitar  VisibilidadPerfil @default(AMIGOS)
+  quienPuedeRetar    VisibilidadPerfil @default(AMIGOS)
+  quienPuedeSolicitar VisibilidadPerfil @default(TODOS)
+
+  // ── Horario silencioso (§36). Minutos desde medianoche en hora local. ──
+  silencioActivo Boolean @default(true)
+  silencioDesde  Int     @default(1380) // 23:00
+  silencioHasta  Int     @default(540)  // 09:00
+
+  /// Hora habitual de juego, en minutos locales. Se aprende del uso, no se pregunta.
+  horaHabitual Int?
+
+  reduccionMovimiento Boolean @default(false)
+  sonido              Boolean @default(true)
+
+  updatedAt DateTime @updatedAt
+
+  preferencias NotificationPreference[]
+}
+
+/// Preferencia por categoría y canal: nada de un único interruptor gigante (§35).
+model NotificationPreference {
+  id        String            @id @default(cuid())
+  userId    String
+  settings  UserSettings      @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  /// Id de la categoría (src/domain/notificaciones/catalogo.ts).
+  categoria String
+  canal     CanalNotificacion
+  activa    Boolean           @default(true)
+
+  @@unique([userId, categoria, canal])
+  @@index([userId])
+}
+
+/// LIBRO MAYOR DE XP. Cada línea es una concesión, con su motivo y su origen.
+model XpTransaction {
+  id     String      @id @default(cuid())
+  userId String
+  user   UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  cantidad Int
+  /// Motivo del catálogo (PARTIDA_TERMINADA, RETO_DIARIO, LOGRO…).
+  motivo   String
+  /// Qué lo originó: id de partida, de reto, de logro. Con el motivo forma la clave.
+  sourceId String
+
+  /// XP que se ha recortado por tope diario o rendimientos decrecientes, para poder
+  /// explicárselo al jugador («hoy ya has sacado el máximo de partidas rápidas»).
+  recortado Int @default(0)
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, motivo, sourceId])
+  @@index([userId, createdAt])
+  @@index([userId, motivo, createdAt])
+}
+
+/// Racha diaria. Un día cuenta si hubo actividad SIGNIFICATIVA, no por abrir la app.
+model Streak {
+  userId String      @id
+  user   UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  actual Int @default(0)
+  mejor  Int @default(0)
+  /// Último día local con actividad válida (YYYY-MM-DD en la zona del usuario).
+  ultimoDia String?
+  /// Seguros de derrama disponibles: cubren un día perdido.
+  seguros   Int @default(0)
+  /// Cuántos días se han salvado con seguro, para no regalarlos sin límite.
+  segurosUsados Int @default(0)
+
+  /// Misión de recuperación abierta tras romper una racha larga.
+  recuperacionHasta   DateTime?
+  recuperacionObjetivo Int      @default(0)
+  recuperacionHechos   Int      @default(0)
+  /// Racha que se recupera si se completa la misión.
+  recuperacionRacha    Int      @default(0)
+
+  updatedAt DateTime @updatedAt
+}
+
+model UserAchievement {
+  id            String      @id @default(cuid())
+  userId        String
+  user          UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+  achievementId String
+  unlockedAt    DateTime    @default(now())
+  /// Qué lo desbloqueó, para poder enseñarlo y para la idempotencia.
+  sourceId      String?
+
+  @@unique([userId, achievementId])
+  @@index([userId, unlockedAt])
+}
+
+model UserBadge {
+  id       String      @id @default(cuid())
+  userId   String
+  user     UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badgeId  String
+  /// Si el jugador la ha puesto en su perfil.
+  destacada Boolean    @default(false)
+  earnedAt DateTime    @default(now())
+
+  @@unique([userId, badgeId])
+  @@index([userId, destacada])
+}
+
+// ── Social ──────────────────────────────────────────────────────────────────
+
+/// Amistad ya aceptada. Se guarda UNA fila con los ids ordenados, para no duplicar.
+model Friendship {
+  id      String      @id @default(cuid())
+  aId     String
+  a       UserAccount @relation("amistadA", fields: [aId], references: [id], onDelete: Cascade)
+  bId     String
+  b       UserAccount @relation("amistadB", fields: [bId], references: [id], onDelete: Cascade)
+  since   DateTime    @default(now())
+  /// Partidas jugadas juntos, para el «tú vs Pablo».
+  juntos  Int         @default(0)
+
+  @@unique([aId, bId])
+  @@index([aId])
+  @@index([bId])
+}
+
+model FriendRequest {
+  id             String        @id @default(cuid())
+  solicitanteId  String
+  solicitante    UserAccount   @relation("solicitante", fields: [solicitanteId], references: [id], onDelete: Cascade)
+  destinatarioId String
+  destinatario   UserAccount   @relation("destinatario", fields: [destinatarioId], references: [id], onDelete: Cascade)
+  estado         EstadoAmistad @default(PENDIENTE)
+  mensaje        String?
+  createdAt      DateTime      @default(now())
+  resueltaAt     DateTime?
+
+  @@unique([solicitanteId, destinatarioId])
+  @@index([destinatarioId, estado])
+}
+
+/// Bloqueo. Al bloqueado NO se le avisa (§64).
+model Block {
+  id           String      @id @default(cuid())
+  bloqueadorId String
+  bloqueador   UserAccount @relation("bloqueador", fields: [bloqueadorId], references: [id], onDelete: Cascade)
+  bloqueadoId  String
+  bloqueado    UserAccount @relation("bloqueado", fields: [bloqueadoId], references: [id], onDelete: Cascade)
+  createdAt    DateTime    @default(now())
+
+  @@unique([bloqueadorId, bloqueadoId])
+  @@index([bloqueadoId])
+}
+
+/// Desafío asíncrono: A juega, B intenta superarlo con la MISMA semilla.
+model Challenge {
+  id        String        @id @default(cuid())
+  retadorId String
+  retador   UserAccount   @relation("retador", fields: [retadorId], references: [id], onDelete: Cascade)
+  estado    EstadoDesafio @default(ABIERTO)
+
+  /// Semilla y configuración: es lo que garantiza que juegan lo mismo.
+  seed      String
+  config    Json
+  /// Etiqueta legible para compartir.
+  etiqueta  String  @unique
+
+  /// Marca del retador. Se rellena cuando termina su partida.
+  puntosRetador Int?
+  gameIdRetador String?
+
+  /// Reto de grupo: varios amigos, mismo desafío, plazo común.
+  esGrupal Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+
+  participantes ChallengeParticipant[]
+
+  @@index([retadorId, estado])
+  @@index([expiresAt])
+}
+
+model ChallengeParticipant {
+  id          String      @id @default(cuid())
+  challengeId String
+  challenge   Challenge   @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  userId      String
+  user        UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  puntos    Int?
+  precision Float?
+  gameId    String?
+  jugadoAt  DateTime?
+  /// Es una revancha de otro desafío.
+  revanchaDe String?
+
+  createdAt DateTime @default(now())
+
+  @@unique([challengeId, userId])
+  @@index([userId, jugadoAt])
+}
+
+/// Comunidad: grupo privado ligero. NO es un chat.
+model Community {
+  id          String   @id @default(cuid())
+  nombre      String
+  icono       String   @default("🏢")
+  /// Código de invitación. Se puede regenerar.
+  codigo      String   @unique
+  descripcion String?
+  createdAt   DateTime @default(now())
+
+  miembros CommunityMember[]
+
+  @@index([codigo])
+}
+
+model CommunityMember {
+  id          String      @id @default(cuid())
+  communityId String
+  community   Community   @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  userId      String
+  user        UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+  esAdmin     Boolean     @default(false)
+  joinedAt    DateTime    @default(now())
+  /// Puntuación normalizada de la comunidad, recalculada por el job semanal.
+  puntosSemana Int        @default(0)
+  puntosMes    Int        @default(0)
+  puntosTotal  Int        @default(0)
+
+  @@unique([communityId, userId])
+  @@index([communityId, puntosSemana])
+}
+
+// ── Temporadas y ligas ──────────────────────────────────────────────────────
+
+model Season {
+  id        String   @id @default(cuid())
+  nombre    String
+  slug      String   @unique
+  empiezaAt DateTime
+  terminaAt DateTime
+  activa    Boolean  @default(false)
+  /// Retos y recompensas de la temporada, como datos: se cambian sin tocar código.
+  config    Json
+
+  ligas     LeagueSeason[]
+  progresos UserSeasonProgress[]
+
+  @@index([activa, terminaAt])
+}
+
+model UserSeasonProgress {
+  id       String      @id @default(cuid())
+  seasonId String
+  season   Season      @relation(fields: [seasonId], references: [id], onDelete: Cascade)
+  userId   String
+  user     UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+  xp       Int         @default(0)
+  retos    Json        @default("{}")
+
+  @@unique([seasonId, userId])
+  @@index([seasonId, xp])
+}
+
+/// Una liga es un nivel (Portal, Bronce…). Una temporada de liga son sus grupos.
+model LeagueSeason {
+  id        String   @id @default(cuid())
+  seasonId  String
+  season    Season   @relation(fields: [seasonId], references: [id], onDelete: Cascade)
+  /// Id del nivel de liga (src/domain/ligas).
+  liga      String
+  empiezaAt DateTime
+  terminaAt DateTime
+  cerrada   Boolean  @default(false)
+
+  grupos LeagueGroup[]
+
+  @@unique([seasonId, liga])
+  @@index([terminaAt, cerrada])
+}
+
+/// Grupo pequeño: se compite contra 20-30 personas, no contra el mundo.
+model LeagueGroup {
+  id             String       @id @default(cuid())
+  leagueSeasonId String
+  leagueSeason   LeagueSeason @relation(fields: [leagueSeasonId], references: [id], onDelete: Cascade)
+  numero         Int
+
+  participantes LeagueParticipant[]
+
+  @@unique([leagueSeasonId, numero])
+}
+
+model LeagueParticipant {
+  id      String      @id @default(cuid())
+  groupId String
+  group   LeagueGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  userId  String
+  user    UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  /// Puntos de liga. NO son XP: se calculan aparte y tienen tope diario.
+  puntos      Int @default(0)
+  puntosHoy   Int @default(0)
+  /// Día local del último punto, para reiniciar el tope.
+  ultimoDia   String?
+  posicionFinal Int?
+  /// ASCIENDE | MANTIENE | DESCIENDE, al cerrar.
+  resultado   String?
+
+  updatedAt DateTime @updatedAt
+
+  @@unique([groupId, userId])
+  @@index([groupId, puntos])
+  @@index([userId])
+}
+
+// ── Notificaciones ──────────────────────────────────────────────────────────
+
+/// Buzón dentro de la app. SIEMPRE se escribe, aunque el push esté apagado (§91).
+model Notification {
+  id       String      @id @default(cuid())
+  userId   String
+  user     UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tipo     String
+  categoria String
+  titulo   String
+  cuerpo   String
+  /// Adónde lleva al pulsarla. Nunca a la portada (§56).
+  deepLink String
+  payload  Json?
+  prioridad Int        @default(0)
+
+  createdAt DateTime  @default(now())
+  readAt    DateTime?
+  expiresAt DateTime?
+
+  envios NotificationDelivery[]
+
+  @@index([userId, readAt, createdAt])
+  @@index([expiresAt])
+}
+
+model PushSubscription {
+  id       String      @id @default(cuid())
+  userId   String
+  user     UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+  endpoint String      @unique
+  p256dh   String
+  auth     String
+  /// Para la pantalla de dispositivos.
+  dispositivo String?
+  userAgent   String?
+  createdAt   DateTime  @default(now())
+  lastOkAt    DateTime?
+  /// Fallos seguidos: a partir de un umbral se da por muerta y se borra.
+  fallos      Int       @default(0)
+
+  @@index([userId])
+}
+
+/// Un envío por canal. Es la tabla que responde a «¿por qué no me llegó?».
+model NotificationDelivery {
+  id             String            @id @default(cuid())
+  notificationId String?
+  notification   Notification?     @relation(fields: [notificationId], references: [id], onDelete: SetNull)
+  userId         String
+  user           UserAccount       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  canal          CanalNotificacion
+  tipo           String
+  categoria      String
+  estado         EstadoEnvio       @default(PENDIENTE)
+  /// Por qué se descartó, si se descartó: PREFERENCIA, SILENCIO, TOPE, SIN_DISPOSITIVO…
+  motivoDescarte String?
+  /// Variante del experimento, si lo hubiera.
+  variante       String?
+
+  createdAt DateTime  @default(now())
+  sentAt    DateTime?
+  openedAt  DateTime?
+
+  @@index([userId, createdAt])
+  @@index([tipo, estado, createdAt])
+}
+
+/// Muro de actividad muy pequeño: solo hitos, nunca cada respuesta (§31).
+model ActivityEvent {
+  id       String      @id @default(cuid())
+  userId   String
+  user     UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tipo     String
+  texto    String
+  deepLink String?
+  payload  Json?
+  createdAt DateTime   @default(now())
+
+  @@index([userId, createdAt])
+}
+
+model Report {
+  id           String      @id @default(cuid())
+  reportanteId String
+  reportante   UserAccount @relation("reportante", fields: [reportanteId], references: [id], onDelete: Cascade)
+  reportadoId  String
+  reportado    UserAccount @relation("reportado", fields: [reportadoId], references: [id], onDelete: Cascade)
+  motivo       String
+  detalle      String?
+  resuelto     Boolean     @default(false)
+  resueltoPor  String?
+  createdAt    DateTime    @default(now())
+
+  @@index([resuelto, createdAt])
+  @@index([reportadoId])
+}
+
+/// Registro de acciones administrativas. Todo lo que un admin hace queda escrito.
+model AdminAudit {
+  id        String   @id @default(cuid())
+  actor     String
+  accion    String
+  objetivo  String?
+  detalle   Json?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
 }

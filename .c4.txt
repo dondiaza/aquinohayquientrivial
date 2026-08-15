@@ -1,0 +1,54 @@
+feat(fase4): cimientos de cuentas, progresion y notificaciones
+
+Empieza la Fase 4 por donde más caro sale equivocarse: el modelo de datos, la
+idempotencia del XP y las reglas que deciden cuándo se molesta a alguien.
+NO está terminada; lo que falta está listado en docs/FASE4-RETENCION.md.
+
+Modelo de datos (migración fase4_cuentas_progresion)
+- UserAccount, UserProfile, UserSettings, UserSession, LoginToken, XpTransaction,
+  Streak, Friendship, FriendRequest, Block, Challenge, Community, Season, League,
+  Notification, PushSubscription, NotificationDelivery, ActivityEvent, Report.
+- Jugar primero, registrarse después: GuestPlayer sigue siendo el sujeto real y
+  la cuenta se le ATA encima. Migrar es rellenar una columna, no copiar datos,
+  así que no se puede quedar a medías.
+- Se elimina el modelo User de Fase 1, que era un hueco reservado sin usar: dos
+  tablas de usuario compitiendo es el principio de una tarde muy mala.
+- Solo se guarda el prefijo de la IP, y los tokens van como hash.
+
+El XP es un libro mayor, no un contador
+- XpTransaction con motivo y origen, y clave unica (usuario, motivo, origen):
+  conceder dos veces lo mismo no es que esté mal visto, es que la base de datos
+  no deja.
+- Antifarmeo en tres capas que no castigan a quien juega normal: partida
+  significativa (5 respuestas y 45 s), rendimientos decrecientes por día con
+  suelo, y topes díarios por fuente.
+- Cuando se recorta, se le dice al jugador sin regañarle. Hay un test que
+  comprueba que el texto no es una reprimenda.
+
+Rachas que no castigan
+- Cuenta la actividad, no la visita: abrir la app no es nada.
+- El día es el LOCAL del usuario, no UTC: quien juega a las 00:30 en Madrid no
+  pierde la racha. Con test.
+- Seguro de derrama: cubre un día perdido, se gana jugando y no se vende.
+- Misión de recuperación: romper una racha de 20 días y volver a cero es la
+  mejor forma de que alguien no vuelva. Tres días para recuperarla entera.
+
+Motor de notificaciones
+- suceso -> regla -> preferencia -> tope -> horario silencioso -> canal.
+- El buzón dentro de la app SIEMPRE se escribe: quien lo apaga todo no se pierde
+  nada. Eso quita la tentación de insistir por push.
+- Distinción clave: ENGANCHE (gasta tope, se apaga si no vuelves) frente a HECHO
+  (un amigo te ha retado). Confundirlas es como se quema el canal.
+- Máximo 2 push de enganche al día y 6 a la semana; nada repetido en 20 h;
+  silencio 23:00-09:00 en hora local, con el cruce de medíanoche bien resuelto.
+- Los cambios de puesto de liga NO mandan push, a propósito.
+- Ninguna notificación abre la portada: 21 tipos, 21 destinos exactos. Con test.
+
+Autenticación: el modelo está, el flujo no. El enlace mágico necesita un
+proveedor de correo y no hay credenciales de ninguno en el entorno, igual que
+pasaba con el realtime en Fase 3. Se deja listo y documentado en vez de inventar
+una integración que nadie pueda desplegar.
+
+Verificación: typecheck OK, lint OK, 271 tests OK, build OK.
+
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
