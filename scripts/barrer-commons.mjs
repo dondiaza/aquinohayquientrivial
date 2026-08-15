@@ -6,9 +6,9 @@
  *
  * ## Qué hace y qué no
  *
- * Recorre los 27 intérpretes de la serie y, por cada uno, busca en Commons de tres maneras
- * distintas —categoría exacta, búsqueda por nombre en el espacio de ficheros y categoría con
- * el nombre invertido— porque Commons es irregular y con una sola vía se pierden fotos.
+ * Recorre el reparto y, por cada intérprete, lee SU CATEGORÍA de Commons. Solo eso: la
+ * búsqueda por texto se probó y hubo que quitarla, porque bajaba lápidas y partidos de fútbol
+ * para nombres comunes. Ver el comentario de `candidatosDe`.
  *
  * De cada candidato pide la licencia REAL a la API y la compara con la lista blanca. Nada se
  * baja «porque salió en la búsqueda». Además aplica dos filtros que no son de licencia:
@@ -196,50 +196,42 @@ async function pedir(parametros, intentos = 6) {
   throw new Error('agotados los intentos');
 }
 
-/** Tres vías, porque Commons es irregular y con una sola se pierden fotos. */
+/**
+ * SOLO la categoría personal de Commons. Ni búsqueda por texto ni inventos.
+ *
+ * La primera versión buscaba también por texto (`list=search`) «para no perder fotos». El
+ * resultado, comprobado mirando las imágenes una a una: para «Eduardo García» bajó una
+ * lápida, para «Santiago Ramos» un partido de fútbol y para «Elio González» un grabado
+ * militar del siglo XIX. Ningún filtro de texto puede arreglar eso, porque el problema no es
+ * el filtro: es que **el texto no dice quién sale en la foto**.
+ *
+ * `Category:Fernando Tejero` sí lo dice. Las categorías de persona en Commons las mantiene
+ * gente que mira las fotos, y una foto metida ahí es de esa persona. Es menos material y es
+ * material bueno, que es el único que sirve.
+ *
+ * Si un intérprete no tiene categoría, se queda sin foto y consta en el informe. Preferible
+ * a poner la cara de otro.
+ */
 async function candidatosDe(interprete, avisos) {
   const encontrados = new Set();
-
-  const porCategoria = async (nombre) => {
-    try {
-      const datos = await pedir({
-        action: 'query',
-        list: 'categorymembers',
-        cmtitle: `Category:${nombre}`,
-        cmtype: 'file',
-        cmlimit: '50',
-      });
-      for (const miembro of datos?.query?.categorymembers ?? []) {
-        encontrados.add(String(miembro.title).replace(/^File:/, ''));
-      }
-    } catch (error) {
-      // Una categoría que no existe es lo normal y no se avisa. Un fallo de red o un 429 sí:
-      // si no, un barrido estrangulado se lee como «este actor no tiene fotos libres».
-      avisos.push(`categoría «${nombre}»: ${error.message}`);
-    }
-  };
-
-  await porCategoria(interprete);
-
-  // Nombre invertido («Apellido, Nombre»): unas categorías lo usan y otras no.
-  const partes = interprete.split(' ');
-  if (partes.length >= 2) {
-    await porCategoria(`${partes.slice(1).join(' ')}, ${partes[0]}`);
-  }
 
   try {
     const datos = await pedir({
       action: 'query',
-      list: 'search',
-      srsearch: `${interprete} filetype:bitmap`,
-      srnamespace: '6',
-      srlimit: '30',
+      list: 'categorymembers',
+      cmtitle: `Category:${interprete}`,
+      cmtype: 'file',
+      cmlimit: '100',
     });
-    for (const resultado of datos?.query?.search ?? []) {
-      encontrados.add(String(resultado.title).replace(/^File:/, ''));
+    const miembros = datos?.query?.categorymembers ?? [];
+    for (const miembro of miembros) {
+      encontrados.add(String(miembro.title).replace(/^File:/, ''));
+    }
+    if (miembros.length === 0) {
+      avisos.push(`sin categoría propia en Commons: se queda sin foto`);
     }
   } catch (error) {
-    avisos.push(`búsqueda «${interprete}»: ${error.message}`);
+    avisos.push(`categoría «${interprete}»: ${error.message}`);
   }
 
   return [...encontrados].filter((fichero) =>
@@ -324,20 +316,33 @@ function juzgar(fichero, metadatos, interprete) {
   if ((metadatos.ancho ?? 0) < 260 || (metadatos.alto ?? 0) < 260) {
     return { admitido: false, motivo: `demasiado pequeña (${metadatos.ancho}×${metadatos.alto})` };
   }
-  // El nombre o la descripción tiene que mencionar a quien buscamos. Sin esto la búsqueda
-  // por texto cuela fotos de otras personas que compartían el pie de foto.
-  const apellidos = interprete
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .toLowerCase()
-    .split(' ')
-    .filter((parte) => parte.length > 3);
-  const textoSinTildes = texto.normalize('NFD').replace(/[̀-ͯ]/g, '');
-  if (!apellidos.some((parte) => textoSinTildes.includes(parte))) {
-    return { admitido: false, motivo: 'no consta que sea esa persona' };
-  }
+  /**
+   * ¿Es esta persona?
+   *
+   * La primera versión aceptaba si CUALQUIER parte del nombre de más de tres letras aparecía
+   * en el texto. Con «Eduardo García» eso significa que basta un «garcia» en el pie de foto,
+   * y por ahí entraron caras de otras personas: el usuario lo detectó mirando la web, que es
+   * el peor sitio donde detectarlo.
+   *
+   * Ahora hacen falta TODAS las partes significativas del nombre, y se puntúa mejor si el
+   * nombre completo está en el propio fichero —que es el indicio fuerte en Commons, donde el
+   * nombre del fichero lo pone quien sube la foto—.
+   */
+  const sinTildes = (valor) => valor.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
-  return { admitido: true };
+  const partes = sinTildes(interprete)
+    .split(/\s+/)
+    .filter((parte) => parte.length >= 3);
+  const textoPlano = sinTildes(texto);
+  const ficheroPlano = sinTildes(fichero);
+
+  // Que la persona esté ya garantizada por la categoría no quita que dentro de su categoría
+  // haya fotos de grupo, carteles de sus obras o su casa. El nombre en el fichero se usa para
+  // ORDENAR —primero los retratos que se llaman como ella—, no para admitir o rechazar.
+  void textoPlano;
+  const enFichero = partes.every((parte) => ficheroPlano.includes(parte));
+
+  return { admitido: true, enFichero };
 }
 
 /**
@@ -416,12 +421,15 @@ async function main() {
         entrada.descartes.push({ fichero, motivo: veredicto.motivo });
         continue;
       }
-      aptos.push({ fichero, metadatos });
+      aptos.push({ fichero, metadatos, enFichero: veredicto.enFichero === true });
     }
 
     // …y solo después se eligen las mejores y se bajan. A mayor resolución, mejor recorte de
     // cara; a igualdad, el orden es estable por nombre para que dos barridos den lo mismo.
     aptos.sort((a, b) => {
+      // El nombre completo en el fichero manda sobre la resolución: más vale una foto de
+      // 400 px que SÍ es quien dice ser que una de 4000 px que quizá no.
+      if (a.enFichero !== b.enFichero) return a.enFichero ? -1 : 1;
       const areaA = (a.metadatos.ancho ?? 0) * (a.metadatos.alto ?? 0);
       const areaB = (b.metadatos.ancho ?? 0) * (b.metadatos.alto ?? 0);
       return areaB - areaA || a.fichero.localeCompare(b.fichero);

@@ -5,119 +5,133 @@
 | | |
 |---|---|
 | Huecos declarados | **87** |
-| Con fotografía real y licencia verificada | **26** (los 26 personajes del catálogo) |
+| Retratos con licencia **confirmados a ojo** | **23** |
+| Candidatos bajados pero **sin confirmar** (no se sirven) | los que queden en `/admin/medios/revisar` |
+| Rechazados con motivo registrado | **17** |
+| Fotos de lugar con licencia | **2** (la calle del Desengaño y su azulejo) |
 | Resueltos con arte propio | **9** |
 | Esperando permiso del titular | **52** |
-| Peso total de las fotos | **3,4 MB** (venían pesando 271 MB) |
+| Peso total | **1,3 MB** |
 
-Se puede mirar en vivo en `/admin/medios`.
-
----
-
-## Lo que se pidió y lo que se hizo
-
-La petición era llenar la aplicación de imágenes reales de la serie sacándolas de un buscador,
-y poner el logotipo de *Aquí no hay quien viva* como identidad de la portada.
-
-Eso no se ha hecho, y conviene que quede escrito por qué:
-
-- Los **fotogramas, promocionales y carteles** son de Atresmedia y de la productora. Que una
-  imagen sea accesible en internet no la hace reutilizable. Publicarlas en un sitio en
-  producción es redistribuirlas.
-- El **logotipo** es además un problema distinto y peor: es una marca. Usarla como identidad
-  de una aplicación ajena sugiere una relación que no existe. (Ojo con una trampa concreta:
-  en Commons el logotipo figura como dominio público por `PD-textlogo`, que significa que la
-  *forma* no llega al umbral de originalidad para tener copyright. No significa que se pueda
-  usar como marca.)
-
-Lo que sí se ha hecho es la versión máxima de lo mismo que sí es defendible: **fotografías
-reales de los 26 intérpretes**, obtenidas de Wikimedia Commons con la licencia comprobada una
-por una, y un hueco declarado y auditable para todo lo demás.
+En vivo: `/admin/medios`.
 
 ---
 
-## Cómo se consiguieron las 55 fotos
+## La lección que costó dos despliegues
+
+La primera versión de esto publicó 55 retratos «verificados». Bastó mirarlos para encontrar:
+
+- una **lápida** en el hueco de Eduardo García,
+- un **partido de fútbol** en el de Santiago Ramos,
+- un **grabado militar del siglo XIX** en el de Elio González,
+- una rueda de prensa del Athletic en el de Antonio Molero.
+
+El barrido comprobaba la licencia impecablemente. Lo que no podía comprobar es **quién sale en
+la foto**, y estaba fingiendo que sí.
+
+Se intentó arreglar con filtros de texto más estrictos —exigir todas las partes del nombre en
+lugar de una— y no sirve, porque el problema no es el filtro: **el texto no dice quién sale en
+la foto**. Se restringió a las categorías personales de Commons, que las mantiene gente que
+mira las imágenes, y mejoró mucho; pero tampoco basta, porque los nombres colisionan: hay un
+piloto de carreras llamado Santiago Ramos y su categoría son coches.
+
+### Cómo está resuelto ahora
+
+Todo lo que baja el barrido entra como **`pending`**, y `pending` no es servible: ya existía
+esa garantía en el tipo, ahora se usa para esto. Solo se publica lo que figura en
+`src/content/media/confirmados.ts` porque **alguien lo ha mirado**.
+
+Los rechazos también se registran, con su motivo. No es documentación, es memoria: sin esa
+lista el siguiente barrido vuelve a bajar la lápida, vuelve a proponerla y alguien vuelve a
+tener que descubrir que está mal.
+
+Hay cinco pruebas que lo blindan, incluida la que exige que **nada sin confirmar sea
+servible**.
+
+---
+
+## El edificio: no se puede fotografiar porque no existe
+
+Se pidió que la portada enseñara el edificio original de la serie en vez de un dibujo.
+
+El edificio de *Desengaño 21* **nunca existió**. El rodaje se hizo en una nave industrial de
+2.000 m² en la calle de Luna del polígono San Millán, en Moraleja de Enmedio, y la fachada era
+decorado. Toda imagen de ese edificio es un fotograma o un promocional de Atresmedia.
+
+Pero **la calle del Desengaño sí existe**, en el centro de Madrid, y sus edificios son
+decimonónicos con balcones y bajos comerciales, exactamente como el de la ficción. Y aquí hay
+una vía legítima: España tiene **libertad de panorama** (art. 35.2 LPI) — las obras
+permanentemente situadas en la vía pública se pueden reproducir y publicar libremente. Además
+las dos fotos que se usan tienen licencia Creative Commons del propio fotógrafo.
+
+Así que la portada enseña **la calle de verdad**, con su crédito. Es lo más cerca que se puede
+llegar de forma legítima, y resulta que es bastante cerca.
+
+---
+
+## AQUINOLAB: se usa en local, no se despliega
+
+El otro proyecto tiene 28 retratos de personaje que son justo lo que se quiere. Su propio
+`ATTRIBUTION.md` dice de dónde salen —fotogramas y promocionales de Atresmedia recogidos de
+FormulaTV, GQ España, 20minutos/Cinemanía, La Vanguardia y Series de España Wiki— y termina
+con esta condición:
+
+> These frames and promotional assets are used as editorial references in a local prototype.
+> **Obtain the appropriate rights before any public or commercial distribution.**
+
+El proyecto que las reunió ya dejó escrito que valen en local y no para publicar. Así que:
 
 ```
-node scripts/barrer-commons.mjs --bajar        # busca, comprueba licencia y descarga
-node scripts/optimizar-medios.mjs              # 271 MB → 3,4 MB en WebP, dos tamaños
+node scripts/importar-aquinolab.mjs ../aquinolab
+```
+
+Las copia a `public/serie/vecinos/`, que está **gitignorada**. Resultado:
+
+- en `npm run dev` la web se ve con las caras de la serie, que es para lo que se quieren;
+- `git status` sigue limpio y el deploy no las lleva.
+
+El sistema de huecos ya daba prioridad a lo aportado sobre lo licenciado, así que en local
+esas caras tapan a las de Commons sin tocar una línea. El día que haya autorización de
+Atresmedia, se quita la regla del `.gitignore` y ya está.
+
+Los nombres se traducen con una tabla a mano (`EQUIVALENCIAS`), porque los catálogos no
+coinciden —allí `paloma-cuesta`, aquí `paloma-hurtado`— y adivinarlo por parecido de cadena es
+exactamente cómo se acaba poniendo la cara de uno en la ficha de otro.
+
+---
+
+## Cómo se rehace el barrido
+
+```
+node scripts/barrer-commons.mjs --bajar        # solo categorías personales de Commons
+node scripts/optimizar-medios.mjs              # a WebP, dos tamaños
 node scripts/generar-manifiesto-commons.mjs    # escribe src/content/media/commons.ts
+# … y después MIRAR las fotos y actualizar confirmados.ts
 ```
 
-El barrido recorre los 34 intérpretes buscando por tres vías distintas (categoría exacta,
-categoría con el nombre invertido, y búsqueda por texto) porque Commons es irregular y con una
-sola se pierden fotos. De cada candidato pide la licencia **real** a la API y la compara con
-la lista blanca. Nada se descarga por haber salido en una búsqueda.
-
-Encima de la licencia hay tres filtros más:
-
-- **marca** — logotipos, carteles y carátulas se rechazan aunque su licencia sea impecable;
-- **retrato útil** — fuera escudos, mapas, firmas, edificios y todo lo menor de 260 px;
-- **identidad** — el nombre de la persona tiene que constar en el fichero o en la descripción,
-  o la búsqueda por texto cuela fotos de quien compartía pie de foto.
-
-De los aptos se quedan **los dos de mayor resolución por intérprete**. El resto queda anotado
-en el informe con su licencia por si algún día hace falta.
-
-Todo queda en `medios/informe-commons.json`: cada candidato, admitido o descartado, **con el
-motivo**. Ese fichero es la prueba de que lo publicado se comprobó.
-
-### Dos cosas que costaron y merecen quedar escritas
-
-**Wikimedia responde 429 si el User-Agent no lleva contacto.** No es cuestión de ir despacio:
-se comprobó que la misma URL da 429 con un agente anónimo y 200 con uno que identifica la
+**Wikimedia responde 429 si el User-Agent no lleva contacto.** No es cuestión de ritmo: se
+comprobó que la misma URL da 429 con un agente anónimo y 200 con uno que identifica la
 herramienta y da un correo. El primer barrido «encontró 0 candidatos» para 25 intérpretes y
 parecía que no había material; lo que había era una política de uso incumplida.
 
-**Un descarte por estrangulamiento se lee igual que un descarte por licencia.** El segundo
-informe daba 185 ficheros aptos y 179 con «no se pudo bajar». Ahí se vio que el freno estaba
-solo en las consultas y no en las descargas. En un fichero que sirve de prueba de que se
-comprobó, eso es exactamente lo que no puede pasar: se arregló el freno y se hizo que los
-avisos salgan en el informe en vez de tragárselos un `catch` vacío.
+Todo queda en `medios/informe-commons.json`: cada candidato, admitido o descartado, con el
+motivo.
 
 ---
 
 ## Citar es obligatorio
 
-De las 55 fotos, 47 son CC BY o CC BY-SA. Esas licencias **no son «gratis»: son «gratis
-citando»**. La cita tiene que estar donde está la foto y ser legible.
-
-Por eso la atribución se compone en el generador y viaja pegada al asset, y el componente
-`RetratoReal` la pinta él mismo: no hay forma de poner la foto y olvidar el crédito, porque
-son la misma llamada. En listas largas —los 26 vecinos del catálogo— la atribución se agrupa
-en una sección de créditos al pie de la misma página, que es lo razonable para el medio; lo
-que no vale es no ponerla.
-
-Hay tres pruebas que lo blindan (`src/domain/media/tipos.test.ts`): que ninguna licenciada se
-quede sin crédito, que el crédito nombre la misma licencia que declara el asset, y que cada
-una enlace a su página de origen.
-
----
-
-## Los 87 huecos
-
-`src/content/media/huecos.ts` declara **todos** los sitios que la aplicación espera llenar. Sin
-esa lista no se puede decir que falte nada, porque no consta que debiera estar.
-
-| Familia | Qué es | Cuántos |
-|---|---|---|
-| El portal | Fachada, entrada, versión nocturna | 3 |
-| Personajes | Un retrato y una escena por vecino | 52 |
-| Zonas | Cada vivienda y espacio común | 9 |
-| Temporadas | Una imagen por temporada | 5 |
-| Situaciones | Junta, ascensor averiado, derrama, mudanza… | 10 |
-| Elementos | Buzones, telefonillo, tablón, escalera… | 8 |
-
-Los 52 «esperando» son, casi todos, `escenas/<personaje>` y las situaciones: material que solo
-puede salir de un fotograma. Están declarados con su nombre exacto, así que **el día que
-llegue el permiso basta con dejar el fichero en `public/serie/<hueco>.webp` y volver a
-desplegar**. Ni una línea de código.
+Casi todas las fotos son CC BY o CC BY-SA: **no son «gratis», son «gratis citando»**. La
+atribución se compone en el generador y viaja pegada al asset, y el componente `RetratoReal`
+la pinta él mismo, de modo que no hay forma de poner la foto y olvidar el crédito porque son
+la misma llamada. En listas largas se agrupa al pie de la misma página, que es lo razonable
+para el medio.
 
 ---
 
 ## Aviso de no afiliación
 
-Está pintado en la página del portal, junto a los créditos:
+Pintado junto a los créditos del portal:
 
 > Fotografías de los intérpretes en actos públicos, obtenidas de Wikimedia Commons bajo
 > licencias que permiten su reutilización con atribución. No son fotogramas de la serie. Este

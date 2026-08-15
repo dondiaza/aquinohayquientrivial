@@ -22,6 +22,7 @@
 import type { MediaAsset } from '@/domain/media/tipos';
 
 import { RETRATOS_COMMONS } from './commons';
+import { estaConfirmado } from './confirmados';
 import { PERSONAJES, ZONAS } from '@/content/serie';
 
 /**
@@ -123,21 +124,74 @@ const AMBIENTE_ORIGINAL: MediaAsset[] = [
 /**
  * Entradas con licencia escritas a mano.
  *
- * Está vacío, y no por descuido: la única que había —el retrato de Mariví Bilbao— la genera
- * ahora el barrido de Commons con la misma licencia y mejor atribución, y tenerla dos veces
- * era un id duplicado que cazó el test del manifiesto.
+ * Aquí va lo que el barrido de reparto no puede traer: lugares, y material que llegue por
+ * permiso escrito del titular (que se añadiría con su correo de autorización citado en
+ * `notes`).
  *
- * El sitio sigue aquí para lo que el barrido no puede traer: material que llegue por permiso
- * escrito del titular, que se añade a mano con su correo de autorización citado en `notes`.
+ * ## La calle del Desengaño, que es real
+ *
+ * El edificio de la serie NO se puede fotografiar: no existe. El rodaje fue en una nave
+ * industrial de 2.000 m² en Moraleja de Enmedio y la fachada era decorado. Todas las imágenes
+ * de «Desengaño 21» son fotogramas o promocionales de Atresmedia.
+ *
+ * Pero la **calle del Desengaño sí existe**, en el centro de Madrid, y sus edificios son
+ * decimonónicos con balcones y bajos comerciales, exactamente como el de la ficción. España
+ * tiene libertad de panorama (art. 35.2 LPI): las obras permanentemente situadas en la vía
+ * pública se pueden fotografiar y publicar libremente. Y estas dos fotos, además, tienen
+ * licencia Creative Commons del propio fotógrafo.
+ *
+ * Así que la portada enseña la calle de verdad. Es lo más cerca que se puede llegar de forma
+ * legítima, y resulta que es bastante cerca.
  */
-const CON_LICENCIA: MediaAsset[] = [];
+const CON_LICENCIA: MediaAsset[] = [
+  {
+    id: 'commons:desengano-calle',
+    type: 'image',
+    category: 'building',
+    title: 'La calle del Desengaño, en el centro de Madrid',
+    localPath: '/media/licensed/desengano-calle.webp',
+    miniPath: '/media/licensed/desengano-calle-mini.webp',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Calle_del_Desenga%C3%B1o_(Madrid)_01.jpg',
+    sourcePage: 'https://commons.wikimedia.org/wiki/File:Calle_del_Desenga%C3%B1o_(Madrid)_01.jpg',
+    location: 'portal',
+    tags: ['portal', 'fachada', 'madrid', 'desengano', 'calle'],
+    usageStatus: 'licensed',
+    license: 'CC BY-SA 3.0 es',
+    attribution: 'Foto: Luis García (Zaqarbal) · CC BY-SA 3.0 es · vía Wikimedia Commons',
+    verifiedAt: '2026-08-15',
+    notes:
+      'La calle real que da nombre al edificio de la serie. Libertad de panorama (art. 35.2 LPI) más licencia CC del fotógrafo. No es el edificio del rodaje, porque ese era un decorado en una nave de Moraleja de Enmedio.',
+  },
+  {
+    id: 'commons:desengano-azulejo',
+    type: 'image',
+    category: 'decoration',
+    title: 'Azulejo de la calle del Desengaño',
+    localPath: '/media/licensed/desengano-azulejo.webp',
+    miniPath: '/media/licensed/desengano-azulejo-mini.webp',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Calle_del_Desenga%C3%B1o_(Madrid).jpg',
+    sourcePage: 'https://commons.wikimedia.org/wiki/File:Calle_del_Desenga%C3%B1o_(Madrid).jpg',
+    location: 'portal',
+    tags: ['portal', 'placa', 'madrid', 'desengano', 'azulejo'],
+    usageStatus: 'licensed',
+    license: 'CC BY-SA 3.0',
+    attribution: 'Foto: Basilio · CC BY-SA 3.0 · vía Wikimedia Commons',
+    verifiedAt: '2026-08-15',
+    notes: 'El azulejo cerámico de rotulación madrileña, con la escena que da nombre a la calle.',
+  },
+];
 
 export const MANIFIESTO: readonly MediaAsset[] = [
   ...RETRATOS_ORIGINALES,
   ...ZONAS_ORIGINALES,
   ...AMBIENTE_ORIGINAL,
   ...CON_LICENCIA,
-  ...RETRATOS_COMMONS,
+  // Los retratos del barrido pasan por la lista blanca: lo que nadie ha mirado queda como
+  // `pending`, y `pending` no se sirve. El barrido acierta la licencia; la CARA la confirma
+  // una persona. Ver `confirmados.ts` para lo que costó aprenderlo.
+  ...RETRATOS_COMMONS.map((asset) =>
+    estaConfirmado(asset.id) ? asset : { ...asset, usageStatus: 'pending' as const },
+  ),
 ];
 
 /** Índice por id, para las búsquedas del servicio. */

@@ -28,6 +28,30 @@ import type { DeseoMedia } from '@/domain/media/tipos';
 
 export const LISTA_DE_DESEOS: readonly DeseoMedia[] = [
   {
+    id: 'atresmedia:desengano-21',
+    title: 'La fachada de Desengaño 21',
+    describe:
+      'Imagen promocional del edificio de la serie publicada por Antena 3. Es la fachada que todo el mundo reconoce.',
+    sourcePage: 'https://www.atresplayer.com/antena3/series/aqui-no-hay-quien-viva/',
+    motivo:
+      'Promocional de Atresmedia. Está en el proyecto AQUINOLAB del propietario, cuyo ATTRIBUTION.md la marca «© Atresmedia, editorial reference in a local prototype» y advierte de obtener derechos antes de cualquier distribución pública.',
+    queHaceFalta:
+      'Autorización de Atresmedia para uso no comercial en una web pública. Mientras tanto la portada usa una foto real de la calle del Desengaño de Madrid, que sí es libre.',
+    registradoEl: '2026-08-15',
+  },
+  {
+    id: 'atresmedia:retratos-personajes',
+    title: 'Los 28 retratos de personaje de AQUINOLAB',
+    describe:
+      'Fotogramas y retratos promocionales de los personajes, uno por vecino, recogidos de FormulaTV, GQ España, 20minutos/Cinemanía, La Vanguardia y Series de España Wiki.',
+    sourcePage: 'https://github.com/dondiaza/aquinolab',
+    motivo:
+      'Todos son material de Atresmedia. El ATTRIBUTION.md que los acompaña autoriza su uso como referencia editorial en un prototipo local y pide obtener derechos antes de distribuirlos públicamente.',
+    queHaceFalta:
+      'Autorización de Atresmedia. Se pueden usar YA en local: node scripts/importar-aquinolab.mjs <ruta a aquinolab> los copia a public/serie/, que está gitignorada y no se despliega.',
+    registradoEl: '2026-08-15',
+  },
+  {
     id: 'deseo:promocional-serie',
     title: 'Imagen promocional de la serie',
     describe: 'Foto de grupo del reparto en el portal. Sería la cabecera ideal de la portada.',

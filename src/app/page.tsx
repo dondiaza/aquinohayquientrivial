@@ -36,6 +36,7 @@ import { currentGuestPlayerId, readGuestId } from '@/server/guest';
 import { avatarDeInvitado, avatarDeUsuario } from '@/server/avatar/service';
 import { idUsuarioActual } from '@/server/cuentas/sesion';
 import { avatarAleatorio } from '@/domain/avatar/config';
+import { getMediaAsset } from '@/server/media/service';
 
 export const dynamic = 'force-dynamic';
 
@@ -56,6 +57,7 @@ export default async function HomePage() {
   ]);
 
   const miVecino = avatarCuenta ?? avatarInvitado;
+  const fachada = getMediaAsset('commons:desengano-calle');
   // Un vecino de muestra, siempre el mismo, para el que todavía no tiene el suyo: enseña qué
   // se va a encontrar mejor que cualquier icono genérico.
   const vecinoDeMuestra = avatarAleatorio(0.42);
@@ -70,7 +72,38 @@ export default async function HomePage() {
         {/* El edificio se ve entero: es la puerta de entrada al juego, no un adorno.
             Si alguien con licencia pone una imagen en public/serie/portal/, sustituye al
             dibujo sin tocar nada más (ver src/content/imagenes.ts). */}
-        {imagenDe('portal/fachada') ? (
+        {/* LA FACHADA.
+            El edificio de la serie no se puede fotografiar porque no existe: el rodaje fue en
+            una nave industrial de 2.000 m² en Moraleja de Enmedio y la fachada era decorado,
+            así que toda imagen de «Desengaño 21» es un fotograma de Atresmedia.
+            Pero la calle del Desengaño SÍ existe, en el centro de Madrid, y sus edificios son
+            decimonónicos con balcones y bajos comerciales igual que el de la ficción. España
+            tiene libertad de panorama (art. 35.2 LPI) y además el fotógrafo la publicó con
+            licencia CC. Así que la portada enseña la calle de verdad. */}
+        {fachada?.localPath ? (
+          <figure className="relative m-0">
+            <img
+              src={fachada.localPath}
+              alt="La calle del Desengaño, en el centro de Madrid"
+              width={1600}
+              height={700}
+              className="max-h-[26rem] w-full object-cover"
+              fetchPriority="high"
+            />
+            {fachada.attribution ? (
+              <figcaption className="absolute bottom-0 right-0 bg-tinta/70 px-2 py-0.5 text-[0.55rem] text-papel">
+                <a
+                  href={fachada.sourcePage}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="underline"
+                >
+                  {fachada.attribution}
+                </a>
+              </figcaption>
+            ) : null}
+          </figure>
+        ) : imagenDe('portal/fachada') ? (
           <Foto
             hueco="portal/fachada"
             alt={`Fachada de ${SERIE.direccionFicticia}`}

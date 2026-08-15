@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import { MANIFIESTO } from '@/content/media/manifiesto';
 import { LISTA_DE_DESEOS } from '@/content/media/wishlist';
+import { CONFIRMADOS, RECHAZADOS, estaConfirmado } from '@/content/media/confirmados';
 import {
   ESTADOS_SERVIBLES,
   ESTADOS_USO,
@@ -140,9 +141,51 @@ describe('los retratos reales del reparto', () => {
   });
 
   it('ninguno se queda sin decir a quién retrata', () => {
-    for (const asset of retratos) {
+    // Solo los retratos: desde que entró la calle del Desengaño hay material con licencia que
+    // no retrata a nadie, y exigirle un intérprete no tenía sentido.
+    for (const asset of retratos.filter((entrada) => entrada.category === 'character')) {
       expect(asset.characters?.length ?? 0, asset.id).toBeGreaterThan(0);
       expect(asset.interprete, asset.id).toBeTruthy();
+    }
+  });
+});
+
+describe('la lista blanca de caras', () => {
+  it('lo confirmado y lo rechazado no se solapan', () => {
+    for (const rechazado of RECHAZADOS) {
+      expect(CONFIRMADOS, rechazado.id).not.toContain(rechazado.id);
+    }
+  });
+
+  it('todo rechazo lleva motivo: si no, se vuelve a proponer y a colar', () => {
+    for (const rechazado of RECHAZADOS) {
+      expect(rechazado.motivo.length, rechazado.id).toBeGreaterThan(10);
+    }
+  });
+
+  it('lo que NO ha mirado nadie queda como pending, y pending no se sirve', () => {
+    const commons = MANIFIESTO.filter((asset) => asset.id.startsWith('commons:'));
+    for (const asset of commons) {
+      if (estaConfirmado(asset.id)) {
+        expect(esServible(asset), `${asset.id} confirmado pero no servible`).toBe(true);
+      } else {
+        expect(asset.usageStatus, `${asset.id} sin confirmar pero servible`).toBe('pending');
+        expect(esServible(asset), asset.id).toBe(false);
+      }
+    }
+  });
+
+  it('nada rechazado llega a pintarse', () => {
+    for (const rechazado of RECHAZADOS) {
+      const asset = MANIFIESTO.find((entrada) => entrada.id === rechazado.id);
+      if (asset) expect(esServible(asset), rechazado.id).toBe(false);
+    }
+  });
+
+  it('cada foto confirmada existe de verdad en el manifiesto', () => {
+    const ids = new Set(MANIFIESTO.map((asset) => asset.id));
+    for (const id of CONFIRMADOS) {
+      expect(ids.has(id), `${id} confirmado pero no está en el manifiesto`).toBe(true);
     }
   });
 });
