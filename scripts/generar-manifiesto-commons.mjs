@@ -12,7 +12,7 @@
  * CC BY-SA no son «gratis», son «gratis citando», y citar mal es no citar.
  */
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
 const INFORME = path.join(process.cwd(), 'medios', 'informe-commons.json');
@@ -58,6 +58,13 @@ function main() {
   for (const bloque of informe.interpretes) {
     for (const admitido of bloque.admitidos) {
       if (!admitido.bajado) continue;
+
+      // El fichero tiene que existir AHORA, no solo haberse bajado en su momento.
+      // Al borrar los retratos rechazados, el manifiesto se quedó con 32 entradas apuntando
+      // a ficheros inexistentes: invisibles porque estaban en `pending`, pero listas para
+      // dar un 404 en cuanto alguien confirmara una.
+      const webpEsperado = admitido.localPath.replace(/\.(jpe?g|png)$/i, '.webp');
+      if (!existsSync(path.join(process.cwd(), 'public', webpEsperado))) continue;
       const id = `commons:${path.basename(admitido.localPath, path.extname(admitido.localPath))}`;
 
       const yaEstaba = porId.get(id);

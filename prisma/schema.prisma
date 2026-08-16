@@ -842,6 +842,10 @@ model XpTransaction {
   @@unique([userId, motivo, sourceId])
   @@index([userId, createdAt])
   @@index([userId, motivo, createdAt])
+  /// Para la clasificación por ventana («esta semana», «este mes»), que filtra por fecha y
+  /// agrupa por usuario SIN saber de quién. Los otros dos índices empiezan por `userId`, así
+  /// que no sirven para eso: haría un recorrido completo en cuanto la tabla crezca.
+  @@index([createdAt, userId])
 }
 
 /// Racha diaria. Un día cuenta si hubo actividad SIGNIFICATIVA, no por abrir la app.
@@ -1212,4 +1216,18 @@ model AdminAudit {
   createdAt DateTime @default(now())
 
   @@index([createdAt])
+}
+
+/// Recuento diario de eventos. Agregado a propósito: para un embudo hace falta el número,
+/// no el detalle, y así no se guarda nada que identifique a nadie ni la tabla crece sin
+/// control. Ver src/app/api/analitica/route.ts.
+model AnalyticsCount {
+  dia    String
+  evento String
+  veces  Int    @default(0)
+
+  updatedAt DateTime @updatedAt
+
+  @@id([dia, evento])
+  @@index([dia])
 }

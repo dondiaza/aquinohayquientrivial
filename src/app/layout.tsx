@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Anton, Caveat, Courier_Prime, Inter } from 'next/font/google';
 
+import { Recolector } from '@/components/analitica/Recolector';
 import { OfflineNotice } from '@/components/layout/OfflineNotice';
 import { SiteFooter } from '@/components/layout/SiteFooter';
 import { SiteHeader } from '@/components/layout/SiteHeader';
@@ -77,6 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             Saltar al contenido
           </a>
           <OfflineNotice />
+          <Recolector />
           <SiteHeader />
           <main id="contenido" className="flex-1">
             {children}

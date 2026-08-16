@@ -4,10 +4,8 @@ import { LinkButton } from '@/components/ui/Button';
 import { Chip, Sello } from '@/components/ui/Surfaces';
 import { ApartmentPlaque, PaperNotice } from '@/components/portal/Estructuras';
 import { Foto } from '@/components/serie/Foto';
-import { Retrato } from '@/components/serie/Retrato';
-import { CreditosDeMedios, RetratoReal } from '@/components/serie/RetratoReal';
-import type { MediaAsset } from '@/domain/media/tipos';
-import { getQuestionMediaDePersonaje } from '@/server/media/service';
+import { Cara, CreditosDeCaras } from '@/components/serie/Cara';
+import { caraDePersonaje, creditosDeCaras, type FuenteCara } from '@/server/media/caras';
 import {
   PERSONAJES,
   RELACIONES,
@@ -16,7 +14,7 @@ import {
   ZONAS,
   personajesDeZona,
 } from '@/content/serie';
-import { imagenDe, huecoDeVecino, huecoDeZona, resumenDeImagenes } from '@/content/imagenes';
+import { imagenDe, huecoDeZona, resumenDeImagenes } from '@/content/imagenes';
 import { PORTAL_PAGE } from '@/domain/copy/ui';
 
 export const metadata: Metadata = {
@@ -33,35 +31,21 @@ function vecinosSinZona() {
 
 function FichaVecino({
   personaje,
-  foto,
+  cara,
 }: {
   personaje: (typeof PERSONAJES)[number];
-  /** Fotografía real del intérprete, si la hay con licencia. */
-  foto: MediaAsset | null;
+  cara: FuenteCara;
 }) {
   return (
     <article className="papel flex gap-3 p-3">
-      {/* Tres niveles, en este orden: lo que aportó quien tiene los derechos, la fotografía
-          real con licencia, y el retrato dibujado. El crédito no se pinta aquí sino agrupado
-          al pie de la página: 27 líneas de atribución bajo 27 caras no hay quien las lea, y
-          una sección de créditos en la misma página cumple igual. */}
-      <Foto
-        hueco={huecoDeVecino(personaje.nombre)}
-        alt={`${personaje.nombre}, personaje de Aquí no hay quien viva`}
-        proporcion="retrato"
-        className="w-20 shrink-0 border-2 border-tinta bg-gotele"
-      >
-        <RetratoReal asset={foto} tamano={80} mini conCredito={false}>
-          <Retrato nombre={personaje.nombre} paleta={personaje.paleta} tamano={80} />
-        </RetratoReal>
-      </Foto>
+      {/* La cascada —aportado, con licencia, dibujo— la resolvió ya `caraDePersonaje`. Aquí
+          solo se pinta. El crédito va agrupado al pie: veintiséis líneas de atribución bajo
+          veintiséis caras no hay quien las lea. */}
+      <Cara fuente={cara} tamano={80} placa={personaje.zona} />
 
       <div className="min-w-0">
         <h3 className="texto-cartel text-base leading-tight">{personaje.nombre}</h3>
-        <p className="texto-sello text-tinta-tenue">
-          {personaje.interprete}
-          {foto ? <span title="Con fotografía de licencia libre"> · 📷</span> : null}
-        </p>
+        <p className="texto-sello text-tinta-tenue">{personaje.interprete}</p>
         <p className="mt-1 text-sm text-tinta-suave">{personaje.rol}</p>
         <p className="mt-2 flex flex-wrap gap-1">
           <Chip>{personaje.zona}</Chip>
@@ -83,14 +67,10 @@ export default function PortalPage() {
   const imagenes = resumenDeImagenes();
   const sinZona = vecinosSinZona();
 
-  // Se resuelve UNA vez para toda la página: la ficha no debe ir a buscar su foto por su
-  // cuenta, porque entonces los créditos del pie no sabrían qué se ha pintado arriba.
-  const fotos = new Map<string, MediaAsset>();
-  for (const personaje of PERSONAJES) {
-    const foto = getQuestionMediaDePersonaje(personaje.nombre);
-    if (foto) fotos.set(personaje.nombre, foto);
-  }
-  const usadas = [...fotos.values()];
+  // Se resuelve UNA vez para toda la página: la ficha no va a buscar su foto por su cuenta,
+  // que es lo que hacía que los créditos del pie no supieran qué se había pintado arriba.
+  const caras = new Map(PERSONAJES.map((p) => [p.nombre, caraDePersonaje(p.nombre)]));
+  const creditos = creditosDeCaras(caras.values());
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8">
@@ -141,7 +121,7 @@ export default function PortalPage() {
                     <FichaVecino
                       key={personaje.nombre}
                       personaje={personaje}
-                      foto={fotos.get(personaje.nombre) ?? null}
+                      cara={caras.get(personaje.nombre)!}
                     />
                   ))}
                 </div>
@@ -162,7 +142,7 @@ export default function PortalPage() {
                 <FichaVecino
                       key={personaje.nombre}
                       personaje={personaje}
-                      foto={fotos.get(personaje.nombre) ?? null}
+                      cara={caras.get(personaje.nombre)!}
                     />
               ))}
             </div>
@@ -227,7 +207,7 @@ export default function PortalPage() {
 
       {/* Los créditos de todo lo que se ha pintado arriba. Obligatorios en CC BY y CC BY-SA:
           la foto es gratis citando, no gratis. */}
-      <CreditosDeMedios assets={usadas} />
+      <CreditosDeCaras creditos={creditos} />
 
       <p className="mt-6 flex flex-wrap gap-2">
         <LinkButton href="/jugar/solo" tone="rojo">

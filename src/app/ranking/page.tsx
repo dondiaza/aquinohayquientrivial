@@ -167,49 +167,81 @@ export default async function RankingPage({
             </section>
           ) : null}
 
-          {/* Resto de la tabla. */}
+          {/* EL RESTO.
+              Dos presentaciones del mismo dato. En móvil, tarjetas de dos líneas: la tabla
+              tenía `min-width: 34rem` y obligaba a arrastrar el dedo para ver la precisión,
+              que es un patrón de escritorio en un juego que se mira con el móvil en la mano.
+              De 40 rem para arriba, la tabla, que en una tele se lee mejor. */}
           {resto.length > 0 ? (
-            <section className="mt-6 overflow-x-auto">
-              <table className="w-full min-w-[34rem] border-collapse text-sm">
-                <caption className="sr-only">
-                  Clasificación {ETIQUETAS[tramo].toLowerCase()}
-                </caption>
-                <thead>
-                  <tr className="texto-sello text-left text-tinta-tenue">
-                    <th scope="col" className="p-2">#</th>
-                    <th scope="col" className="p-2">Vecino</th>
-                    <th scope="col" className="p-2 text-right">Puntos</th>
-                    <th scope="col" className="p-2 text-right">Nivel</th>
-                    <th scope="col" className="p-2 text-right">Precisión</th>
-                    <th scope="col" className="p-2 text-right">Partidas</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {resto.map((fila) => (
-                    <tr
-                      key={fila.userId}
-                      className={`border-t border-linea ${fila.esTu ? 'bg-mostaza-claro/40' : ''}`}
-                    >
-                      <td className="marcador p-2 text-tinta-tenue">{fila.posicion}</td>
-                      <td className="p-2">
-                        <span className="flex items-center gap-2">
-                          <CaraDe fila={fila} tamano={28} />
-                          <Link href={`/u/${fila.username}`} className="underline">
-                            {fila.username}
-                          </Link>
-                          {fila.racha >= 3 ? (
-                            <span className="texto-sello">🔥 {fila.racha}</span>
-                          ) : null}
-                        </span>
-                      </td>
-                      <td className="marcador p-2 text-right text-verde-portal">{fila.puntos}</td>
-                      <td className="p-2 text-right">{fila.nivel}</td>
-                      <td className="p-2 text-right">{fila.precision} %</td>
-                      <td className="p-2 text-right">{fila.partidas}</td>
+            <section className="mt-6">
+              <h2 className="sr-only">Clasificación {ETIQUETAS[tramo].toLowerCase()}</h2>
+
+              <ul className="flex flex-col gap-1.5 sm:hidden">
+                {resto.map((fila) => (
+                  <li
+                    key={fila.userId}
+                    className={`papel flex items-center gap-2.5 p-2.5 ${fila.esTu ? 'ring-2 ring-verde-portal' : ''}`}
+                  >
+                    <span className="marcador w-8 shrink-0 text-right text-lg text-tinta-tenue">
+                      {fila.posicion}
+                    </span>
+                    <CaraDe fila={fila} tamano={36} />
+                    <span className="min-w-0 flex-1">
+                      <Link href={`/u/${fila.username}`} className="block truncate underline">
+                        {fila.username}
+                      </Link>
+                      <span className="texto-sello block text-[0.62rem] text-tinta-tenue">
+                        Nivel {fila.nivel} · {fila.precision} % · {fila.partidas}{' '}
+                        {fila.partidas === 1 ? 'partida' : 'partidas'}
+                        {fila.racha >= 3 ? ` · 🔥 ${fila.racha}` : ''}
+                      </span>
+                    </span>
+                    <span className="marcador shrink-0 text-lg text-verde-portal">
+                      {fila.puntos}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="hidden overflow-x-auto sm:block">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="texto-sello text-left text-tinta-tenue">
+                      <th scope="col" className="p-2">#</th>
+                      <th scope="col" className="p-2">Vecino</th>
+                      <th scope="col" className="p-2 text-right">Puntos</th>
+                      <th scope="col" className="p-2 text-right">Nivel</th>
+                      <th scope="col" className="p-2 text-right">Precisión</th>
+                      <th scope="col" className="p-2 text-right">Partidas</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {resto.map((fila) => (
+                      <tr
+                        key={fila.userId}
+                        className={`border-t border-linea ${fila.esTu ? 'bg-mostaza-claro/40' : ''}`}
+                      >
+                        <td className="marcador p-2 text-tinta-tenue">{fila.posicion}</td>
+                        <td className="p-2">
+                          <span className="flex items-center gap-2">
+                            <CaraDe fila={fila} tamano={28} />
+                            <Link href={`/u/${fila.username}`} className="underline">
+                              {fila.username}
+                            </Link>
+                            {fila.racha >= 3 ? (
+                              <span className="texto-sello">🔥 {fila.racha}</span>
+                            ) : null}
+                          </span>
+                        </td>
+                        <td className="marcador p-2 text-right text-verde-portal">{fila.puntos}</td>
+                        <td className="p-2 text-right">{fila.nivel}</td>
+                        <td className="p-2 text-right">{fila.precision} %</td>
+                        <td className="p-2 text-right">{fila.partidas}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </section>
           ) : null}
         </>

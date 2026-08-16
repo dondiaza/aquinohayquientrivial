@@ -16,6 +16,7 @@ import { assembleQuestion, questionRecordSchema, type QuestionRecord } from '@/d
 import type { Question } from '@/domain/questions/types';
 
 import { preguntasDerivadas } from './derivadas';
+import { preguntasVisuales } from './visuales';
 import { importarPack, type Diagnostico } from './importar';
 import type { PreguntaPack } from './tipos';
 
@@ -37,11 +38,14 @@ export type BancoANHQV = {
 export function bancoANHQV(): BancoANHQV {
   const { registros: delPack, diagnostico } = importarPack(preguntasDelPack());
   const derivadas = preguntasDerivadas();
+  // Las visuales solo existen si hay caras en disco: si no hay material, no se generan y el
+  // banco sigue funcionando igual. Ver src/content/anhqv/visuales.ts.
+  const visuales = preguntasVisuales();
 
   const vistos = new Set<string>();
   const validados: QuestionRecord[] = [];
 
-  for (const registro of [...delPack, ...derivadas]) {
+  for (const registro of [...delPack, ...derivadas, ...visuales]) {
     let validado: QuestionRecord;
     try {
       validado = questionRecordSchema.parse(registro);
@@ -64,7 +68,7 @@ export function bancoANHQV(): BancoANHQV {
 
   return {
     registros: validados,
-    diagnostico: { ...diagnostico, derivadas: derivadas.length },
+    diagnostico: { ...diagnostico, derivadas: derivadas.length + visuales.length },
   };
 }
 
