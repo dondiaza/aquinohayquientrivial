@@ -178,7 +178,10 @@ export default async function AdminMediosPage({
         </ul>
       </section>
 
-      <p className="mt-8">
+      <p className="mt-8 flex flex-wrap gap-2">
+        <LinkButton href="/admin/medios/revisar" tone="mostaza" size="sm">
+          Revisar caras pendientes
+        </LinkButton>
         <LinkButton href="/admin" tone="fantasma" size="sm">
           ← Portería
         </LinkButton>

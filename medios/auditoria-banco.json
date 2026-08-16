@@ -1,12 +1,12 @@
 {
-  "generadoEl": "2026-08-15",
+  "generadoEl": "2026-08-16",
   "preguntas": 958,
   "pruebas": 260,
   "repartoPosicion": {
-    "0": 100,
-    "1": 100,
+    "0": 101,
+    "1": 95,
     "2": 100,
-    "3": 100
+    "3": 104
   },
   "porTipo": {
     "correcta-mas-larga": 17
@@ -15,103 +15,103 @@
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0176",
-      "detalle": "padre de Pablo y Álex | arquitecto | amiga y compañera inseparable de Marisa y Vicenta | padre de Emilio",
+      "detalle": "padre de Emilio | padre de Pablo y Álex | amiga y compañera inseparable de Marisa y Vicenta | arquitecto",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0191",
-      "detalle": "Radio Patio | periodista | presidente de la comunidad | pareja de Mauri durante buena parte de la serie",
+      "detalle": "periodista | pareja de Mauri durante buena parte de la serie | Radio Patio | presidente de la comunidad",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0206",
-      "detalle": "amigas y compañeras de piso durante una etapa | profesor | padre de Emilio | abogado",
+      "detalle": "amigas y compañeras de piso durante una etapa | profesor | abogado | padre de Emilio",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0215",
-      "detalle": "la Pija | abogado | padre de Emilio | esposa de Juan Cuesta durante las primeras temporadas",
+      "detalle": "esposa de Juan Cuesta durante las primeras temporadas | la Pija | abogado | padre de Emilio",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0218",
-      "detalle": "tres plantas principales, ático, portería y local | se casan | Puerto Banús | 1.º B",
+      "detalle": "Puerto Banús | se casan | 1.º B | tres plantas principales, ático, portería y local",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0245",
-      "detalle": "en la quinta temporada | termitas que afectan a la estructura | en la noche de bodas | en coma",
+      "detalle": "en la noche de bodas | termitas que afectan a la estructura | en la quinta temporada | en coma",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0248",
-      "detalle": "2.º A | Yago | se marchan a un apartotel en Benidorm | Diego, hermano de Lucía",
+      "detalle": "Yago | 2.º A | se marchan a un apartotel en Benidorm | Diego, hermano de Lucía",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0251",
-      "detalle": "Estados Unidos | el videoclub | 3.º B | se van en caravana por Europa",
+      "detalle": "se van en caravana por Europa | Estados Unidos | 3.º B | el videoclub",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0281",
-      "detalle": "el videoclub | una caída con el ascensor y pierde la memoria | en coma | es su marido",
+      "detalle": "es su marido | una caída con el ascensor y pierde la memoria | el videoclub | en coma",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0302",
-      "detalle": "en la quinta temporada | se casan | la portería | Yamiley",
+      "detalle": "la portería | se casan | Yamiley | en la quinta temporada",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0320",
-      "detalle": "Paloma Urban Fashion | 13 años | adaptaciones internacionales en varios países | tres años consecutivos",
+      "detalle": "Paloma Urban Fashion | 13 años | tres años consecutivos | adaptaciones internacionales en varios países",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0377",
-      "detalle": "abogado | modelo y compañera de piso | hija de Juan y Paloma | hijo de Juan y Paloma; miembro del Consejo de Sabios",
+      "detalle": "hija de Juan y Paloma | abogado | modelo y compañera de piso | hijo de Juan y Paloma; miembro del Consejo de Sabios",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0551",
-      "detalle": "vecinos de rellano | relación sentimental central e intermitente | padre e hija | madre e hijo",
+      "detalle": "vecinos de rellano | relación sentimental central e intermitente | madre e hijo | padre e hija",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0561",
-      "detalle": "suegra y yerno | padre e hija | pareja / matrimonio en crisis | vecinos de rellano",
+      "detalle": "vecinos de rellano | padre e hija | pareja / matrimonio en crisis | suegra y yerno",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0682",
-      "detalle": "Laura Pamplona | Eduardo Gómez | al abuelo de Laura y Alberto Caballero | A tortas con la vida",
+      "detalle": "al abuelo de Laura y Alberto Caballero | Eduardo Gómez | A tortas con la vida | Laura Pamplona",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0691",
-      "detalle": "Portugal | un décimo de lotería | Francia | 220 euros",
+      "detalle": "un décimo de lotería | Portugal | 220 euros | Francia",
       "gravedad": "aviso"
     },
     {
       "tipo": "correcta-mas-larga",
       "id": "pregunta:Q0721",
-      "detalle": "Vocal Factory | Cook | 2.507.000 espectadores | las sitcoms de 22 minutos frente a capítulos mucho más largos",
+      "detalle": "las sitcoms de 22 minutos frente a capítulos mucho más largos | Cook | 2.507.000 espectadores | Vocal Factory",
       "gravedad": "aviso"
     }
   ]

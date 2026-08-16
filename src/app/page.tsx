@@ -16,6 +16,7 @@ import { GossipTicker } from '@/components/portal/Espectaculo';
 import { NeighbourAvatar } from '@/components/portal/Avatar';
 import { Vecino } from '@/components/avatar/Vecino';
 import { PortalFacade } from '@/components/portal/PortalScene';
+import { FachadaViva } from '@/components/portal/FachadaViva';
 import { Retrato } from '@/components/serie/Retrato';
 import { Foto } from '@/components/serie/Foto';
 import { RESUMEN_PACK } from '@/content/anhqv/catalogos';
@@ -29,6 +30,8 @@ import { QUESTION_TYPE_LIST } from '@/domain/questions/registry';
 import { claveDelDia, configuracionDelReto } from '@/domain/challenges/daily';
 import { rangoPorId } from '@/domain/progression/progression';
 import { LOGROS } from '@/domain/achievements/achievements';
+import { unstable_cache } from 'next/cache';
+
 import { countQuestions } from '@/server/questions/repository';
 import { recentGames } from '@/server/games/service';
 import { obtenerPerfil, resultadoDelDia } from '@/server/players/service';
@@ -40,6 +43,22 @@ import { getMediaAsset } from '@/server/media/service';
 
 export const dynamic = 'force-dynamic';
 
+/**
+ * Lo que es igual para todo el mundo se cachea una hora.
+ *
+ * La portada hacía seis consultas por visita y cuatro devolvían lo mismo a cualquiera durante
+ * horas: cuántas preguntas hay en el banco y cuál es el reto del día. Es la primera pantalla
+ * que ve quien llega por un enlace de WhatsApp, así que es justo donde menos se puede permitir
+ * el trabajo de más.
+ *
+ * Lo que depende de la cookie —perfil, partidas, avatar— sigue siendo dinámico, porque tiene
+ * que serlo.
+ */
+const bancoCacheado = unstable_cache(async () => countQuestions(), ['portada:banco'], {
+  revalidate: 3600,
+  tags: ['banco'],
+});
+
 export default async function HomePage() {
   const [guestPublicId, guestId] = await Promise.all([readGuestId(), currentGuestPlayerId()]);
   const dailyKey = claveDelDia(new Date());
@@ -48,7 +67,7 @@ export default async function HomePage() {
   const userId = await idUsuarioActual();
 
   const [bank, previous, perfil, retoHecho, avatarCuenta, avatarInvitado] = await Promise.all([
-    countQuestions(),
+    bancoCacheado(),
     guestPublicId ? recentGames(guestPublicId, 3) : Promise.resolve([]),
     guestId ? obtenerPerfil(guestId) : Promise.resolve(null),
     guestId ? resultadoDelDia(guestId, dailyKey) : Promise.resolve(null),
@@ -57,6 +76,9 @@ export default async function HomePage() {
   ]);
 
   const miVecino = avatarCuenta ?? avatarInvitado;
+  // Tres niveles, como toda la biblioteca: lo aportado manda, luego la calle real del
+  // Desengaño con su licencia CC, y si no hay nada, el dibujo.
+  const aportada = imagenDe('portal/fachada');
   const fachada = getMediaAsset('commons:desengano-calle');
   // Un vecino de muestra, siempre el mismo, para el que todavía no tiene el suyo: enseña qué
   // se va a encontrar mejor que cualquier icono genérico.
@@ -82,38 +104,15 @@ export default async function HomePage() {
                de la ficción. Libertad de panorama (art. 35.2 LPI) más licencia CC del
                fotógrafo.
             3. Y si tampoco, el dibujo propio. */}
-        {imagenDe('portal/fachada') ? (
-          <Foto
-            hueco="portal/fachada"
-            alt={`Fachada de ${SERIE.direccionFicticia}`}
-            proporcion="escena"
-            className="max-h-[26rem] w-full"
-          >
-            <PortalFacade className="h-44 w-full sm:h-64 lg:h-[26rem]" />
-          </Foto>
+        {aportada ? (
+          <FachadaViva src={aportada} alt={`Fachada de ${SERIE.direccionFicticia}`} />
         ) : fachada?.localPath ? (
-          <figure className="relative m-0">
-            <img
-              src={fachada.localPath}
-              alt="La calle del Desengaño, en el centro de Madrid"
-              width={1600}
-              height={700}
-              className="max-h-[26rem] w-full object-cover"
-              fetchPriority="high"
-            />
-            {fachada.attribution ? (
-              <figcaption className="absolute bottom-0 right-0 bg-tinta/70 px-2 py-0.5 text-[0.55rem] text-papel">
-                <a
-                  href={fachada.sourcePage}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="underline"
-                >
-                  {fachada.attribution}
-                </a>
-              </figcaption>
-            ) : null}
-          </figure>
+          <FachadaViva
+            src={fachada.localPath}
+            alt="La calle del Desengaño, en el centro de Madrid"
+            credito={fachada.attribution}
+            origen={fachada.sourcePage}
+          />
         ) : (
           <PortalFacade className="h-44 w-full sm:h-64 lg:h-[26rem]" />
         )}

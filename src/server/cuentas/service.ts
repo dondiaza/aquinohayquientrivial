@@ -19,7 +19,7 @@
 import type { Prisma } from '@prisma/client';
 
 import { prisma } from '../db';
-import { heredarAvatarDeInvitado } from '../avatar/service';
+import { fusionarApariencia } from './fusion';
 import {
   ENFRIAMIENTO_USERNAME_DIAS,
   generarFriendCode,
@@ -146,8 +146,9 @@ export async function migrarInvitado(
   if (invitado.userId && invitado.userId !== userId) return null;
 
   await prisma.guestPlayer.update({ where: { id: invitado.id }, data: { userId } });
-  // Y el vecino que se dibujó antes de registrarse: se lo lleva a la cuenta.
-  await heredarAvatarDeInvitado(userId, invitado.id);
+  // Y la apariencia que se eligió antes de registrarse. Va por `fusionarApariencia` y no
+  // campo a campo: copiarlos a mano fue lo que dejó el avatar sin migrar durante varias fases.
+  await fusionarApariencia(userId, invitado.id);
   const resumen = await recalcularPerfil(userId);
 
   return {

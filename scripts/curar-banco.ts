@@ -24,9 +24,9 @@
  * **3. Doce pruebas estaban duplicadas.** Mismo nombre y mismo nivel que otra anterior.
  *
  * **4. La respuesta correcta caía en la opción A un 33 % de las veces.**
- * Con cuatro opciones debería rondar el 25 %. Ocho puntos de sesgo son suficientes para que
- * «ante la duda, la primera» sea estrategia. Se barajan las opciones con un orden
- * determinista derivado del id, que reparte sin volverse aleatorio entre despliegues.
+ * Con cuatro opciones debería rondar el 25 %. Ocho puntos de sesgo bastan para que «ante la
+ * duda, la primera» sea estrategia. La posición se deriva del id de la pregunta: sale
+ * repartida al 25 % y es la misma en cada pasada.
  *
  * **5. Distractores que se solapan con la correcta o entre sí.**
  * «pareja» / «pareja principal inicial» / «matrimonio» en la misma pregunta dejan una de
@@ -36,14 +36,19 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
+import { PERSONAJES } from '../src/content/serie';
+
 const DATA = path.join(process.cwd(), 'src', 'content', 'anhqv', 'data');
 
-const leer = (nombre) => JSON.parse(readFileSync(path.join(DATA, nombre), 'utf8'));
-const escribir = (nombre, valor) =>
+/** El pack viene sin tipar; se trabaja sobre registros sueltos y se valida en el seed. */
+type Registro = Record<string, unknown> & { id: string };
+
+const leer = (nombre: string): Registro[] => JSON.parse(readFileSync(path.join(DATA, nombre), 'utf8'));
+const escribir = (nombre: string, valor: unknown): void =>
   writeFileSync(path.join(DATA, nombre), `${JSON.stringify(valor, null, 2)}\n`, 'utf8');
 
 /** Orden determinista a partir de una cadena: mismo id, misma baraja, siempre. */
-function semilla(texto) {
+function semilla(texto: string): number {
   let valor = 0x811c9dc5;
   for (let i = 0; i < texto.length; i += 1) {
     valor ^= texto.charCodeAt(i);
@@ -52,7 +57,7 @@ function semilla(texto) {
   return valor >>> 0;
 }
 
-function barajarCon(lista, clave) {
+function barajarCon<T>(lista: readonly T[], clave: string): T[] {
   const copia = [...lista];
   let estado = semilla(clave) || 1;
   for (let i = copia.length - 1; i > 0; i -= 1) {
@@ -84,7 +89,7 @@ const cambios = {
 /** Ids que se retiran del banco por ser redundantes sin arreglo posible. */
 const aRetirar = new Set();
 
-function normaliza(valor) {
+function normaliza(valor: unknown): string {
   return String(valor)
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
@@ -120,14 +125,15 @@ const listaNombres = [...nombres].sort();
 const falsosUsados = new Set();
 
 /** Un par que NO está vinculado, elegido de forma determinista a partir del id. */
-function parNoVinculado(id, evitarUno) {
+function parNoVinculado(id: string, evitarUno: string): [string, string] | null {
+
   let estado = semilla(id) || 1;
   for (let intento = 0; intento < 200; intento += 1) {
     estado = (estado * 1103515245 + 12345) & 0x7fffffff;
     const a = listaNombres[estado % listaNombres.length];
     estado = (estado * 1103515245 + 12345) & 0x7fffffff;
     const b = listaNombres[estado % listaNombres.length];
-    if (!a || !b || a === b) continue;
+    if (typeof a !== 'string' || typeof b !== 'string' || a === b) continue;
     if (vinculados.has(`${a}||${b}`)) continue;
     if (a === evitarUno && b === evitarUno) continue;
     if (falsosUsados.has(`${a}||${b}`) || falsosUsados.has(`${b}||${a}`)) continue;
@@ -137,17 +143,16 @@ function parNoVinculado(id, evitarUno) {
   return null;
 }
 
-// Se cambia UNA DE CADA DOS, por orden de id: así queda mitad y mitad y sigue siendo
-// reproducible. Cambiarlas al azar dejaría el reparto a merced de la suerte.
-let indiceRelacion = 0;
+// Mitad y mitad, decidido por el id y no por el orden de recorrido: así una pregunta ya
+// volteada no vuelve a voltearse en la siguiente pasada. La condición de que siga diciendo
+// «Verdadero» es la que hace el proceso repetible.
 for (const pregunta of preguntas) {
   const m = String(pregunta.question).match(/^(.+?) y (.+?) aparecen vinculados como relación clave\.$/);
   if (!m) continue;
-  const debeSerFalsa = indiceRelacion % 2 === 1;
-  indiceRelacion += 1;
-  if (!debeSerFalsa) continue;
+  if (pregunta.answer !== 'Verdadero') continue;
+  if (semilla(`relacion:${pregunta.id}`) % 2 === 0) continue;
 
-  const par = parNoVinculado(pregunta.id, m[1]);
+  const par = parNoVinculado(pregunta.id, m[1] ?? '');
   if (!par) continue;
 
   pregunta.question = `${par[0]} y ${par[1]} aparecen vinculados como relación clave.`;
@@ -163,7 +168,7 @@ for (const pregunta of preguntas) {
  * generarlas sería peor: un distractor tiene que ser plausible Y estar bien separado de la
  * correcta, y eso no lo decide un algoritmo de parecido de cadenas.
  */
-const DISTRACTORES = {
+const DISTRACTORES: Record<string, { options: string[] }> = {
   Q0547: {
     // «pareja principal inicial» / «pareja» / «matrimonio» eran la misma idea tres veces.
     options: ['hermanos', 'matrimonio', 'vecinos de rellano', 'suegra y yerno'],
@@ -184,6 +189,7 @@ const DISTRACTORES = {
 for (const pregunta of preguntas) {
   const arreglo = DISTRACTORES[pregunta.id];
   if (!arreglo) continue;
+  if (typeof pregunta.answer !== 'string') continue;
   if (!arreglo.options.includes(pregunta.answer)) continue;
   pregunta.options = arreglo.options;
   cambios.distractores += 1;
@@ -201,15 +207,32 @@ for (const pregunta of preguntas) {
  * material para cuatro opciones honestas —meter dos ajenos daría dos respuestas válidas—, así
  * que esa se convierte en verdadero/falso, que sí se puede responder con lo que hay.
  */
-const ZONAS = JSON.parse(
-  readFileSync(path.join(process.cwd(), 'medios', 'zonas.json'), 'utf8'),
+/**
+ * El catálogo se lee DIRECTAMENTE, no de una copia.
+ *
+ * La primera versión extraía las relaciones y las zonas de `serie.ts` con expresiones
+ * regulares y dejaba dos JSON en `medios/` que además se commitearon. Eso son dos copias de
+ * un dato que ya existe: si alguien edita el catálogo, los JSON se quedan viejos y la
+ * siguiente curación trabaja con datos caducados sin avisar de nada.
+ *
+ * Por eso este script pasó de `.mjs` a `.ts` y se ejecuta con `tsx`: para poder importar el
+ * catálogo como lo importa el resto del proyecto. Una fuente y punto.
+ */
+const CORTO_A_NOMBRE = new Map(PERSONAJES.map((p) => [p.corto as string, p.nombre as string]));
+
+const RELACIONES: Record<string, string[]> = Object.fromEntries(
+  PERSONAJES.map((personaje) => [
+    personaje.nombre as string,
+    (personaje.relaciones as readonly string[]).map((corto) => CORTO_A_NOMBRE.get(corto) ?? corto),
+  ]),
 );
-const RELACIONES = JSON.parse(
-  readFileSync(path.join(process.cwd(), 'medios', 'relaciones.json'), 'utf8'),
+
+const ZONAS: Record<string, string> = Object.fromEntries(
+  PERSONAJES.map((personaje) => [personaje.nombre as string, personaje.zona as string]),
 );
 const TODOS = Object.keys(RELACIONES);
 
-function intrusoPara(sujeto, id) {
+function intrusoPara(sujeto: string, id: string): string | null {
   const suyas = new Set([sujeto, ...(RELACIONES[sujeto] ?? [])]);
   const ajenos = TODOS.filter((nombre) => !suyas.has(nombre));
   if (ajenos.length === 0) return null;
@@ -221,7 +244,7 @@ for (const pregunta of preguntas) {
     /^Entre las relaciones clave de (.+?), ¿qué nombre sería el intruso\?$/,
   );
   if (!m) continue;
-  const sujeto = m[1];
+  const sujeto = m[1] ?? '';
   const reales = RELACIONES[sujeto] ?? [];
   const intruso = intrusoPara(sujeto, pregunta.id);
   if (!intruso) continue;
@@ -266,11 +289,11 @@ const VINCULOS = [
   'cuñados',
 ];
 
-function seParecen(uno, otro) {
+function seParecen(uno: string, otro: string): boolean {
   const a = normaliza(uno);
   const b = normaliza(otro);
   if (a === b || a.includes(b) || b.includes(a)) return true;
-  const familia = (texto) => /pareja|sentimental|matrimonio|novi|romant/.test(texto);
+  const familia = (texto: string): boolean => /pareja|sentimental|matrimonio|novi|romant/.test(texto);
   return familia(a) && familia(b);
 }
 
@@ -349,18 +372,18 @@ const preguntasCuradas = preguntas.filter((pregunta) => !aRetirar.has(pregunta.i
 // ── 4. Sesgo de posición ────────────────────────────────────────────────────────
 
 /**
- * Se COLOCA la correcta, no se baraja.
+ * Se COLOCA la correcta, no se baraja, y la posición sale del ID.
  *
- * El primer intento barajaba con una semilla del id. Barajar reparte al azar, y al azar sobre
- * 407 preguntas el sesgo no desaparece: se mueve. Pasó del 33 % en A al 33 % en B, que es
- * exactamente el mismo problema con otra letra.
+ * Dos intentos hicieron falta. El primero barajaba con una semilla: barajar reparte al azar, y
+ * al azar sobre 400 preguntas el sesgo no desaparece, se mueve — pasó del 33 % en A al 33 %
+ * en B. El segundo repartía por turno rotatorio, que sí da 25 % clavado… pero depende del
+ * ORDEN DE RECORRIDO, así que volver a pasar el curador colocaba todo en otro sitio y cambiaba
+ * seiscientas líneas sin arreglar nada.
  *
- * Lo que hace falta no es azar sino reparto: a cada pregunta le toca una posición por turno
- * rotatorio, así que con cuatro opciones sale 25 % clavado. Los distractores sí se barajan
- * entre sí —para que no queden siempre en el mismo orden relativo—, pero la correcta va donde
- * le toca.
+ * La posición se deriva ahora del id de la pregunta. Sale igual de repartida, es la misma
+ * siempre, y pasar el curador dos veces no toca un solo byte — que es lo que su propia
+ * cabecera prometía y no cumplía.
  */
-const turno = new Map();
 
 for (const pregunta of preguntas) {
   const opciones = pregunta.options;
@@ -368,12 +391,13 @@ for (const pregunta of preguntas) {
   if (!opciones.includes(pregunta.answer)) continue;
 
   const cuantas = opciones.length;
-  const usado = turno.get(cuantas) ?? 0;
-  turno.set(cuantas, usado + 1);
-  const destino = usado % cuantas;
+  const destino = semilla(`posicion:${pregunta.id}`) % cuantas;
 
+  // Se ORDENAN antes de barajar. Barajar partiendo del orden actual hacía que el resultado
+  // dependiera de cómo estuviera el fichero, y por eso una segunda pasada movía 374 preguntas
+  // sin cambiar nada de fondo: la correcta caía bien, los distractores bailaban.
   const distractores = barajarCon(
-    opciones.filter((opcion) => opcion !== pregunta.answer),
+    opciones.filter((opcion) => opcion !== pregunta.answer).sort(),
     pregunta.id,
   );
 

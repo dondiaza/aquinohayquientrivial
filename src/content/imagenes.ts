@@ -17,7 +17,7 @@
  * SOLO SERVIDOR: se lee el disco al arrancar. No importar desde un componente de cliente.
  */
 
-import { readdirSync } from 'node:fs';
+import { existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 /** Extensiones admitidas, en orden de preferencia. */
@@ -72,7 +72,36 @@ export function imagenDe(hueco: string): string | null {
     const candidato = `${hueco}.${extension}`;
     if (PRESENTES.has(candidato)) return `/${CARPETA_PUBLICA}/${candidato}`;
   }
+  avisarSiAparecio(hueco);
   return null;
+}
+
+/**
+ * En DESARROLLO, avisa si el fichero está en disco pero no en la lista.
+ *
+ * `PRESENTES` se calcula una sola vez al cargar el módulo, y eso está bien: en producción la
+ * carpeta no cambia sin volver a desplegar. Lo que no está bien es el silencio — copié la
+ * fachada, recargué, y la web seguía sin verla. Media hora buscando un fallo en el código
+ * cuando lo único que pasaba era que el servidor se había arrancado antes que el fichero.
+ *
+ * En producción no hace nada: allí tocar el disco en cada fallo sería absurdo.
+ */
+const YA_AVISADOS = new Set<string>();
+
+function avisarSiAparecio(hueco: string): void {
+  if (process.env.NODE_ENV === 'production') return;
+  if (YA_AVISADOS.has(hueco)) return;
+
+  for (const extension of EXTENSIONES) {
+    const ruta = join(process.cwd(), 'public', CARPETA_PUBLICA, `${hueco}.${extension}`);
+    if (!existsSync(ruta)) continue;
+    YA_AVISADOS.add(hueco);
+    console.warn(
+      `[imagenes] «${hueco}.${extension}» está en disco pero no en el índice: se leyó al ` +
+        'arrancar. Reinicia el servidor para que aparezca.',
+    );
+    return;
+  }
 }
 
 export function huecoDeVecino(nombre: string): string {

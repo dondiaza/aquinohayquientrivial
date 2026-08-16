@@ -28,6 +28,18 @@ import type { DeseoMedia } from '@/domain/media/tipos';
 
 export const LISTA_DE_DESEOS: readonly DeseoMedia[] = [
   {
+    id: 'falta:rafael-alvarez',
+    title: 'Una cara para Rafael Álvarez',
+    describe:
+      'Retrato de Nicolás Dueñas, el intérprete de Rafael Álvarez, el padre de Lucía. Es el único personaje del catálogo sin fotografía.',
+    sourcePage: 'https://commons.wikimedia.org/wiki/Special:Search?search=Nicol%C3%A1s+Due%C3%B1as',
+    motivo:
+      'No está en AQUINOLAB y no tiene categoría propia en Wikimedia Commons, así que el barrido no encuentra nada admisible. Cae al retrato dibujado, que funciona pero desentona en la rejilla.',
+    queHaceFalta:
+      'O una foto suya con licencia libre (es actor de teatro veterano y aparece en actos públicos), o añadir su imagen a AQUINOLAB y volver a importar.',
+    registradoEl: '2026-08-16',
+  },
+  {
     id: 'atresmedia:desengano-21',
     title: 'La fachada de Desengaño 21',
     describe:

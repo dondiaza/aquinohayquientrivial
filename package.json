@@ -20,7 +20,11 @@
     "setup": "prisma migrate deploy && prisma generate && tsx prisma/seed.ts",
     "verify": "npm run typecheck && npm run lint && npm run test && npm run build",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui"
+    "test:e2e:ui": "playwright test --ui",
+    "banco:auditar": "node scripts/auditar-banco.mjs",
+    "banco:curar": "tsx scripts/curar-banco.ts",
+    "medios:barrer": "node scripts/barrer-commons.mjs --bajar && node scripts/optimizar-medios.mjs && node scripts/generar-manifiesto-commons.mjs",
+    "medios:aquinolab": "node scripts/importar-aquinolab.mjs"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
